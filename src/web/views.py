@@ -1,4 +1,3 @@
-from turtle import position
 from django.shortcuts import render
 
 from web.models import Accordation, Company, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, Post, Postsection, Slide, Smallcard
