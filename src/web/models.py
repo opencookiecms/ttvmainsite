@@ -1,6 +1,5 @@
 
 from django.db import models
-from django_quill.fields import QuillField
 
 # Create your models here.
 
@@ -52,7 +51,7 @@ class Company(models.Model):
     companyname = models.CharField(max_length=100, null=True, blank=True)
     phonenumber = models.CharField(max_length=100, null=True, blank=True)
     email = models.CharField(max_length=100, null=True, blank=True)
-    address = QuillField(null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
     logo = models.ImageField(null=True, blank=True)
     biglogo = models.ImageField(null=True, blank=True)
 
