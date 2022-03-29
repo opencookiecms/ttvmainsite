@@ -1,0 +1,49 @@
+/*-----------------------------------------------------------------------------------
+
+    Theme Name: Sperty - Multipurpose Business HTML Template
+    Description: Multipurpose Business HTML Template
+    Author: Website Design Templates
+    Version: 2.0
+
+-----------------------------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+			[ All CSS Plugins & Default Classes File ]
+-----------------------------------------------------------------*/
+
+/* == bootstrap == */
+@import url("plugins/bootstrap.min.css");
+
+/* == animate css == */
+@import url("plugins/animate.css");
+
+/* == animated headline css == */
+@import url("plugins/animated-headline.css");
+
+/* == font awesome css == */
+@import url("plugins/fontawesome-all.min.css");
+
+/* == et line css == */
+@import url("plugins/et-line.css");
+
+/* == themify icon font == */
+@import url("plugins/themify-icons.css");
+
+/* == magnific-popup == */
+@import url("plugins/magnific-popup.css");
+
+/* == lightgallery css == */
+@import url("plugins/lightgallery.css");
+
+/* == owl.carousel == */
+@import url("plugins/owl.carousel.css");
+@import url("plugins/owl.theme.default.css");
+
+/* == default classes == */
+@import url("plugins/default.css");
+
+/* == navigation == */
+@import url("plugins/nav-menu.css");
+
+/* == prism css == */
+@import url("plugins/prism.css");

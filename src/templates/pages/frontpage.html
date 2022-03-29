@@ -1,0 +1,181 @@
+   {% extends 'based/based.html' %}
+   {% block content %}
+   {% load static %}
+   
+   <!-- BANNER
+        ================================================== -->
+        <section class="top-position p-0">
+            <div class="container-fluid px-0">
+                <div class="slider-fade1 owl-carousel owl-theme w-100">
+                    <div class="item bg-img cover-background pt-6 pb-10 pt-sm-6 pb-sm-14 py-md-16 py-lg-20 py-xxl-24" data-overlay-dark="0" data-background="/media/{{slide.picture}}">
+                        <div class="container pt-6 pt-md-0">
+                            <div class="row align-items-center">
+                                <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 py-6 position-relative">
+                                    <span class="h5 text-secondary">{{slide.smtitle}}</span>
+                                    <h1 class="display-17 display-sm-11 display-md-9 display-lg-8 display-xl-4 mb-3 title text-white">{{slide.bgtitle}}</h1>
+                                   {{slide.slidecontet|safe}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="triangle-shape top-15 right-10 z-index-9 d-none d-md-block"></div>
+            <div class="square-shape top-25 left-5 z-index-9 d-none d-xl-block"></div>
+            <div class="shape-five z-index-9 right-10 bottom-15"></div>
+        </section>
+
+
+        <!-- SERVICES
+        ================================================== -->
+        <section class="p-0 overflow-visible service-block">
+            <div class="container">
+                <div class="row mt-n1-9">
+                    {% for smc in smcard %}
+                    <div class="col-md-6 col-lg-4 mt-1-9">
+                        <div class="card card-style1 h-100 primary-shadow">
+                            <div class="card-body media p-1-6 p-sm-1-9">
+                                <i class="{{smc.icon}}"></i>
+                                <div class="media-body ms-4">
+                                    <h4 class="h5">{{smc.cardcontent}}</h4>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- ABOUT
+        ================================================== -->
+        <section>
+            <div class="container pt-lg-4">
+                <div class="row align-items-xl-center about-style1">
+                    <div class="col-lg-6 mb-6 mb-md-8 mb-lg-0 wow fadeIn" data-wow-delay="200ms">
+                        <div class="position-relative">
+                            <div class="position-relative overflow-hidden pe-xl-7 pe-md-5">
+                                <img src="media/{{hero1.picture}}" class="position-relative pb-1-9 z-index-1 rounded" alt="...">
+                            </div>
+                            <div class="shadow-block py-4 pe-4 ps-5 bg-dark rounded">
+                                <i class="icon-trophy text-white opacity3"></i>
+                                <p class="mb-0 text-uppercase font-weight-500 text-white alt-font lh-base"><span class="d-block font-weight-600 display-6 no-letter-spacing">{{hero1.experiance}}</span> years of <br> experince</p>
+                            </div>
+                            <div class="ani-left-right light-title text-primary opacity1 left-n10 bottom-75 alt-font d-none d-lg-block">{{hero1.transtext}}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="400ms">
+                        <div class="ps-xl-4">
+                            <div class="mb-1-9">
+                                <h2 class="cd-headline clip display-20 display-md-18 font-weight-600">{{hero1.titletxt}} <span class="cd-words-wrapper p-0 text-primary d-block d-sm-inline-block d-md-block d-xl-inline-block">
+                                        {{hero1.txtanimator|safe}}
+                                    </span>
+                                </h2>
+                            </div>
+                         {{hero1.herocontent|safe}}
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shape-five right-5 bottom-45 opacity3"></div>
+        </section>
+
+
+        <!-- COUNTER
+        ================================================== -->
+        <section class="p-0 wow fadeIn" data-wow-delay="100ms">
+            <div class="container">
+                <div class="right-container">
+                    <div class="row position-relative z-index-9 align-items-center py-1-9 py-lg-0">
+                        <div class="col-6 col-lg-3 d-none d-lg-block">
+                            <img src="media/{{hero4.picture}}" alt="">
+                        </div>
+                        {{hero4.content1|safe}}
+                        {{hero4.content2|safe}}
+                        {{hero4.content3|safe}}
+                     
+                    
+                  
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WHY CHOOSE US
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row align-items-lg-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 wow fadeIn" data-wow-delay="200ms">
+                        <div class="pe-xl-8">
+                            <div class="mb-1-9">
+                                <h3 class="display-20 display-md-18 font-weight-600">{{hero3.txtitle}}</h3>
+                            </div>
+                            {% include "partial/accordation1.html" %}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative wow fadeIn" data-wow-delay="400ms">
+                        <div class="row g-0 position-relative z-index-9">
+                            <div class="col-sm-6">
+                                <div class="d-block bg-primary px-3 px-sm-5 py-7 py-sm-8 py-lg-10 rounded-top position-relative overflow-hidden">
+                                    <h4 class="mb-0 text-white">{{hero3.imgtxt1}}</h4>
+                                    <i class="{{hero3.icon1}}"></i>
+                                </div>
+                                <div class="mb-sm-5">
+                                    <img src="media/{{hero3.img1}}" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="mt-1-9 mt-sm-5">
+                                    <img src="media/{{hero3.img2}}" alt="">
+                                </div>
+                                <div class="d-block bg-dark px-3 px-sm-5 py-7 py-sm-8 py-lg-10 rounded-bottom position-relative overflow-hidden">
+                                    <h4 class="mb-0 text-white">{{hero3.imgtxt2}} </h4>
+                                    <i class="{{hero3.icon2}}"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="ani-left-right light-title text-secondary opacity1 right-n10 bottom-75 bottom-xl-70 alt-font d-none d-lg-block">Why Us</div>
+                    </div>
+                </div>
+            </div>
+            <div class="square-shape-two left-5 bottom-45 d-none d-xl-block"></div>
+        </section>
+
+        
+
+        <!-- SERVICES
+        ================================================== -->
+        <section class="bg-dark mx-lg-4 rounded-lg">
+            <div class="container position-relative z-index-1">
+                <div class="title-style1 white wow fadeIn" data-wow-delay="100ms">
+                    <h2 class="h1 text-white">{{hero5.bigtitle}}</h2>
+                    <span>{{hero5.smalltitle}}</span>
+                </div>
+                <div class="row mt-n1-9">
+            
+                    {{hero5.content|safe}}
+                 
+                
+                </div>
+            </div>
+            <div class="round-shape-one top-n10 left-90"></div>
+            <div class="ani-left-right light-title text-white opacity1 left bottom-n10 bottom-xl-n15 alt-font d-none d-lg-block z-index-0 wow fadeIn" data-wow-delay="200ms">{{hero5.transani}}</div>
+        </section>
+
+     
+        <!-- BLOG
+        ================================================== -->
+        <section>
+     
+        </section>
+
+        {% endblock content %}

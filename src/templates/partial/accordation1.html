@@ -1,0 +1,20 @@
+
+<div id="accordion" class="accordion-style1">
+    {% for acc in accordation %}
+        <div class="{{acc.cssclass}}">
+            <div class="card-header" id="{{acc.labelbyid}}">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-bs-toggle="{{acc.toggle}}" data-bs-target="#{{acc.bstarget}}" aria-expanded="{{acc.ariaexpanded}}" aria-controls="collapseOne">
+                        {{acc.title}}
+                    </button>
+                </h5>
+            </div>
+            <div id="{{acc.bstarget}}" class="{{acc.toggle}} {{acc.show}}" aria-labelledby="{{acc.labelbyid}}" data-bs-parent="#{{acc.bsparent}}">
+                <div class="card-body">
+                    {{acc.opentitle}}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+ 
+</div>

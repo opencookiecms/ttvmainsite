@@ -1,0 +1,23 @@
+from django.contrib import admin
+
+from web.models import Accordation, Category, Company, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, PhotoLib, Post, Postsection, Product, Slide, Smallcard
+
+# Register your models here.
+admin.site.register(Company)
+admin.site.register(Slide)
+admin.site.register(Smallcard)
+admin.site.register(Herotypeone)
+admin.site.register(Herotypetwo)
+admin.site.register(Herotypethree)
+admin.site.register(Herotypefour)
+admin.site.register(Herotypefive)
+
+admin.site.register(Post)
+admin.site.register(Category)
+admin.site.register(Product)
+admin.site.register(Accordation)
+admin.site.register(PhotoLib)
+admin.site.register(Postsection)
+admin.site.register(Herosix)
+admin.site.register(Heroseven)
+
