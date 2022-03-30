@@ -52,4 +52,19 @@ def vision(request):
 
     return render(request, 'pages/vision.html',context)
 
+def semiconductor(request):
+    return render(request, 'pages/semiconductor.html')
+def pv(request):
+    return render(request, 'pages/pv.html')
+
+def robotic(request):
+    return render(request, 'pages/robotic.html')
+
+def robotic1(request):
+    return render(request, 'pages/robotic1.html')
+def robotic2(request):
+    return render(request, 'pages/robotic2.html')
+def robotic3(request):
+    return render(request, 'pages/robotic3.html')
+
     

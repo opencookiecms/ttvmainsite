@@ -23,7 +23,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index' ),
     path('company-background',views.companybackground, name="cb"),
-    path('mision-vision',views.vision, name="vision")
+    path('mision-vision',views.vision, name="vision"),
+    path('semiconductor', views.semiconductor, name="semiconductor"),
+    path('robotic',views.robotic, name="robotic"),
+    path('pv-inspections', views.pv, name="pv"),
+    path('robotic/robotic-machine-tending',views.robotic1, name="tending"),
+    path('robotic/robotic-spot-welding',views.robotic2, name="welding"),
+    path('robotic/robotic-pick-and-place',views.robotic3, name="pnp"),
+
+
 ]
 
 if settings.DEBUG:

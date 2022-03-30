@@ -1,0 +1,85 @@
+{% extends 'based/based.html' %}
+{% load static %}
+{% block content %}
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-3.png'%}">
+            <div class="container">
+
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <span>Our Innovation</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">Advance Robotic Solution</h1>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+   
+        <section>
+            <div class="container">
+                <div class="title-style2 text-center mb-2-9 mb-lg-6 wow fadeIn" data-wow-delay="100ms">
+                    <span class="sub-title">we make robotic</span>
+                  
+                </div>
+                <div class="row mt-n1-9">
+                 
+                    <div class="col-sm-4 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="400ms">
+                        <div class="team-style2">
+                            <div class="team-image">
+                                <img src="{% static 'img/ttvimg/Robotic_tending1.jpg'%}" class="rounded-top-lg" alt="...">
+                            </div>
+                            <div class="team-content">
+                             
+                                <h3 class="h5 mb-1 pt-4"><a href="team-single.html">Robotic Machine Tending</a></h3>
+                                
+                                <a class="text-uppercase read-more" href="{% url 'tending' %}">Learn More</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="400ms">
+                        <div class="team-style2">
+                            <div class="team-image">
+                                <img src="{% static 'img/ttvimg/robotic2.png'%}" class="rounded-top-lg" alt="..." height="550">
+                            </div>
+                            <div class="team-content">
+                             
+                                <h3 class="h5 mb-1 pt-4"><a href="team-single.html">Robotic Spot Welding</a></h3>
+                                <a class="text-uppercase read-more" href="{% url 'welding' %}">Learn More</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="400ms">
+                        <div class="team-style2">
+                            <div class="team-image">
+                                <img src="{% static 'img/ttvimg/robotic_pnp.jpg'%}" class="rounded-top-lg" alt="...">
+                            </div>
+                            <div class="team-content">
+                             
+                                <h3 class="h5 mb-1 pt-4"><a href="team-single.html">Robotic Pick and Place + Assembly</a></h3>
+                                <a class="text-uppercase read-more" href="{% url 'pnp' %}">Learn More</a>
+                            </div>
+                        </div>
+
+                    </div>
+               
+            
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- TESTIMONIALS
+        ================================================== -->
+        <section class="bg-light-gray pt-15 pt-lg-20">
+          
+        </section>
+        {% endblock content %}
+      
