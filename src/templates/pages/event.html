@@ -1,0 +1,85 @@
+{% extends "based/based.html" %}
+{% load static %}
+{% block content %}
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/event.jpg'%}">
+            <div class="container">
+
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <span> - be ready.</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">Our Event</h1>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICES
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 order-2 order-lg-1">
+                        <div class="pe-lg-4 pe-xl-5">
+
+                            <div class="list-style5 mb-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                <ul class="bg-light mb-0">
+                                    
+                                    {% for i in etitle %}
+                                    <li><a href="{% url 'event' slug=i.slug %}">{{i.ttitle}}</a></li>
+                                    {% endfor %}
+                                   
+                                </ul>
+                            </div>
+                  
+                          
+
+                            <div class="bg-img secondary-overlay cover-background rounded wow fadeInUp" data-wow-delay="200ms" data-overlay-dark="85" data-background="img/bg/bg-06.jpg">
+                                <div class="position-relative z-index-9 text-center py-5 px-1-9">
+                                    <i class="fas fa-headset text-white mb-4 display-14"></i>
+                                    <h5 class="text-white mb-4">How can we help?</h5>
+                                    <div class="separator-line-horrizontal-full bg-white opacity4 mb-4"></div>
+                                    <ul class="text-center mb-0 list-unstyled ps-0">
+                                        <li class="text-white mb-2"><i class="fa fa-phone small text-white me-2"></i><a href="#!" class="text-white">+1 234 567 890</a></li>
+                                        <li class="text-white"><i class="fa fa-envelope-open small text-white me-2"></i><a href="#!" class="text-white">addyour@emailhere</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-8 order-1 order-lg-2 mb-5 mb-lg-0">
+
+                        
+
+                        <div class="wow fadeIn" data-wow-delay="200ms">
+                            <h2 class="mb-3">{{e.eventtitle}}</h2>
+                            {{e.eventcontent|safe}}
+                        </div>
+
+                        <div class="row mb-2-9">
+
+                        
+                         
+
+                        </div>
+                        <div class="row mb-2-9 mt-n4">
+                            {% for p in pe %}
+                            <div class="col-md-4 mt-4 wow fadeInUp" data-wow-delay="200ms">
+                                <img src="/media/{{p.img}}" class="rounded" alt="...">
+                            </div>
+                            {% endfor %}
+                          
+                        </div>
+                    
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endblock content %}

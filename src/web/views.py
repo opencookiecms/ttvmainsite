@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from web.models import Accordation, Company, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, Post, Postsection, Slide, Smallcard
+from web.models import Accordation, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, PhotoEvent, Post, Postsection, Slide, Smallcard
 
 # Create your views here.
 
@@ -56,6 +56,22 @@ def semiconductor(request):
     return render(request, 'pages/semiconductor.html')
 def pv(request):
     return render(request, 'pages/pv.html')
+
+def award(request):
+    return render(request, 'pages/award.html')
+
+def event(request,slug):
+
+    events = EventNews.objects.filter(slug=slug).first()
+    eventtitle = EventNews.objects.all()
+    pe = PhotoEvent.objects.filter(postlib__slug=slug)
+    context = {
+        'etitle':eventtitle,
+        'e':events,
+        'pe':pe,
+
+    }
+    return render(request, 'pages/event.html',context)
 
 def robotic(request):
     return render(request, 'pages/robotic.html')

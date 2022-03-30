@@ -56,15 +56,15 @@
             var logoDark = $(".navbar-brand.dark img");
             if (scroll <= 50) {
                 $("header").removeClass("scrollHeader").addClass("fixedHeader");
-                logochange.attr('src', 'media/logo.png');
-                logodefault.attr('src', 'media/logo.png');
-                logoDark.attr('src', 'media/logo.png');
+                logochange.attr('src', '/media/logo.png');
+                logodefault.attr('src', '/media/logo.png');
+                logoDark.attr('src', '/media/logo.png');
             } 
             else {
                 $("header").removeClass("fixedHeader").addClass("scrollHeader");
-                logochange.attr('src', 'media/logo.png');
-                logodefault.attr('src', 'media/logo.png');
-                logoDark.attr('src', 'media/logo.png');
+                logochange.attr('src', '/media/logo.png');
+                logodefault.attr('src', '/media/logo.png');
+                logoDark.attr('src', '/media/logo.png');
             }
         });
 

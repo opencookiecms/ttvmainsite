@@ -1,6 +1,7 @@
 
 from django.db import models
 
+
 # Create your models here.
 
 class Category(models.Model):
@@ -38,10 +39,37 @@ class Postsection(models.Model):
     def __str__(self):
         return self.bgtitle
 
+class News(models.Model):
+    titles = models.CharField(max_length=500, null=True, blank=True)
+    newsdate = models.CharField(max_length=100, null=True, blank=True) 
+    links  = models.CharField(max_length=200, null=True, blank=True)
+    ct = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
+
+    def __str__(self):
+        return self.titles
+
+class EventNews(models.Model):
+    ttitle = models.CharField(max_length=150, null=True, blank=True)
+    eventtitle = models.CharField(max_length=200, null=True, blank=True)
+    eventcontent = models.TextField(null=True, blank=True)
+    eventpic = models.ImageField(null=True, blank=True)
+    eventlink = models.CharField(max_length=150, null=True, blank=True)
+    slug = models.CharField(max_length=200, null=True, blank=True) 
+    url = models.CharField(max_length=150, null=True, blank=True)
+
+
+
 class PhotoLib(models.Model):
     imgtitle =  models.CharField(max_length=20, null=True,blank=True)
     img = models.ImageField(null=True, blank=True)
     postlib = models.ForeignKey(Post, blank=True, null=True,on_delete = models.SET_NULL)
+
+class PhotoEvent(models.Model):
+    imgtitle =  models.CharField(max_length=150, null=True,blank=True)
+    imgtitle2 = models.CharField(max_length=150, null=True,blank=True)
+    img = models.ImageField(null=True, blank=True)
+    wowdelay = models.CharField(max_length=10, null=True,blank=True)
+    postlib = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
 
     def __str__(self):
         return self.imgtitle
