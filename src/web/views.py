@@ -87,7 +87,7 @@ def press(request):
     }
     return render(request, 'pages/press.html',context)
 
-def medianews(request):
+def newsm(request):
     return render(request, 'pages/media.html')
 
 def robotic(request):
