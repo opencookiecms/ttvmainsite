@@ -87,6 +87,9 @@ def press(request):
     }
     return render(request, 'pages/press.html',context)
 
+def media(request):
+    return render(request, 'pages/media.html')
+
 def robotic(request):
     return render(request, 'pages/robotic.html')
 
