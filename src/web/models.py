@@ -40,9 +40,11 @@ class Postsection(models.Model):
         return self.bgtitle
 
 class News(models.Model):
-    titles = models.CharField(max_length=500, null=True, blank=True)
+    titles = models.CharField(max_length=150, null=True, blank=True)
+    titlecon = models.CharField(max_length=250, null=True, blank=True)
     newsdate = models.CharField(max_length=100, null=True, blank=True) 
     links  = models.CharField(max_length=200, null=True, blank=True)
+    wowdelay = models.CharField(max_length=20, null=True, blank=True)
     ct = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
 
     def __str__(self):
@@ -56,6 +58,10 @@ class EventNews(models.Model):
     eventlink = models.CharField(max_length=150, null=True, blank=True)
     slug = models.CharField(max_length=200, null=True, blank=True) 
     url = models.CharField(max_length=150, null=True, blank=True)
+
+    
+    def __str__(self):
+        return self.ttitle
 
 
 

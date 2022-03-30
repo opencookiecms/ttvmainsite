@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from web.models import Accordation, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, PhotoEvent, Post, Postsection, Slide, Smallcard
+from web.models import Accordation, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Slide, Smallcard
 
 # Create your views here.
 
@@ -72,6 +72,20 @@ def event(request,slug):
 
     }
     return render(request, 'pages/event.html',context)
+
+def news(request):
+    nw = News.objects.all()
+    context = {
+        'news':nw,
+    }
+    return render(request, 'pages/news.html',context)
+
+def press(request):
+    nw = News.objects.all()
+    context = {
+        'news':nw,
+    }
+    return render(request, 'pages/press.html',context)
 
 def robotic(request):
     return render(request, 'pages/robotic.html')
