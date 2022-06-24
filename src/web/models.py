@@ -45,6 +45,7 @@ class News(models.Model):
     newsdate = models.CharField(max_length=100, null=True, blank=True) 
     links  = models.CharField(max_length=200, null=True, blank=True)
     wowdelay = models.CharField(max_length=20, null=True, blank=True)
+    newspicture = models.ImageField(null=True, blank=True)
     ct = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
 
     def __str__(self):
@@ -62,6 +63,26 @@ class EventNews(models.Model):
     
     def __str__(self):
         return self.ttitle
+
+class Annoucement(models.Model):
+    anoncetitle = models.CharField(max_length=150, null=True, blank=True)
+    stockname = models.CharField(max_length=150, null=True, blank=True)
+    companyname = models.CharField(max_length=150, null=True, blank=True)
+    andescription = models.TextField(null=True, blank=True)
+    anousetype = models.CharField(max_length=50, null=True, blank=True)
+    ansubject = models.CharField(max_length=150, null=True, blank=True)
+    andescription = models.CharField(max_length=150, null=True, blank=True)
+    andate = models.DateField(null=True, blank=True)
+    anslug = models.CharField(max_length=200, null=True, blank=True)
+    anpostimg = models.ImageField(blank=True, null=True)
+    anmstatus = models.BooleanField(blank=True, null=True)
+    ancategory = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
+    ancreated_at = models.DateTimeField(auto_now_add=True, editable=False)
+    anupdated_at = models.DateTimeField(auto_now=True, editable=False)
+
+    def __str__(self):
+        return self.anoncetitle
+
 
 
 

@@ -13,7 +13,7 @@ def index(request):
     hero4 = Herotypetwo.objects.get(positionhero=4)
     hero3 = Herotypethree.objects.get(positionhero=6)
     hero5 = Herotypefour.objects.get(positionhero=7)
-    accordation = Accordation.objects.filter(positionhero=5).order_by('sortnumber')
+    accordation = Accordation.objects.filter(positionhero=5).order_by('sortnumber').filter(status=True)
     context = {
 
         'slide':slide,
@@ -79,6 +79,13 @@ def news(request):
         'news':nw,
     }
     return render(request, 'pages/news.html',context)
+
+def newslist(request):
+    nw = News.objects.all()
+    context = {
+        'news':nw,
+    }
+    return render(request, 'pages/blog-list.html',context)
 
 def press(request):
     nw = News.objects.all()

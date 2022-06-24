@@ -27,6 +27,7 @@ urlpatterns = [
     path('award', views.award, name="award"),
     path('event/<str:slug>', views.event, name="event"),
     path('news', views.news, name="news"),
+    path('news-list',views.newslist, name="newslist"),
     path('press-release', views.news, name="press"),
     path('newsm', views.newsm, name="newsm"),
     path('semiconductor', views.semiconductor, name="semiconductor"),
