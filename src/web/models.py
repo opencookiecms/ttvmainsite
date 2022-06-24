@@ -306,6 +306,18 @@ class Accordation(models.Model):
     def __str__(self):
         return self.title
 
+class Contact(models.Model):
+    contactname = models.CharField(max_length=50, null=True, blank=True)
+    companyname = models.CharField(max_length=100, null=True, blank=True)
+    country = models.CharField(max_length=20, null=True, blank=True)
+    contactemail = models.CharField(max_length=50, null=True, blank=True)
+    contacttel = models.CharField(max_length=20, null=True, blank=True)
+    contactaddress = models.TextField(blank=True, null=True)
+    looking = models.CharField(max_length=50, null=True, blank=True)
+    enquirytype = models.CharField(max_length=50, null=True, blank=True)
+    enquirysubject = models.CharField(max_length=150, null=True, blank=True)
+    enquirycontent = models.TextField(blank=True, null=True)
+
 
 
 

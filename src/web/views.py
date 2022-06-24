@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from web.models import Accordation, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Slide, Smallcard
+from .forms import ContactForm
 
 # Create your views here.
 
@@ -56,6 +57,23 @@ def semiconductor(request):
     return render(request, 'pages/semiconductor.html')
 def pv(request):
     return render(request, 'pages/pv.html')
+
+def contactus(request):
+
+    form = ContactForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            form = ContactForm
+            return redirect('thankyou')
+        else:
+            print(form.errors)
+            print('fail to save')
+    
+    context = {
+        'form':form
+    }
+    return render(request, 'pages/contact.html',context)
 
 def award(request):
     return render(request, 'pages/award.html')
