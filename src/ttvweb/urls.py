@@ -33,10 +33,24 @@ urlpatterns = [
     path('newsm', views.newsm, name="newsm"),
     path('semiconductor', views.semiconductor, name="semiconductor"),
     path('robotic',views.robotic, name="robotic"),
+    path('pv-inspection',views.pvinspect, name="pvinspect"),
+    path('semiconductorlist', views.semiconductorlist, name="semiconductorlist"),
+  
     path('pv-inspections', views.pv, name="pv"),
-    path('robotic/robotic-machine-tending',views.robotic1, name="tending"),
-    path('robotic/robotic-spot-welding',views.robotic2, name="welding"),
-    path('robotic/robotic-pick-and-place',views.robotic3, name="pnp"),
+    path('investor-relation/announcement', views.investor, name="investor"),
+    path('careers',views.career, name="career"),
+
+    path('robotic/<str:slug>', views.rpv, name="robotic"),
+    path('pv-inspection/<str:slug>',views.pinspection, name="pvinspection"),
+
+
+    path('semiconductor/wafer-and-package-AOI',views.semi1, name="semi1"),
+    path('semiconductor/wirebond-AOI-Equipment',views.semi2, name="semi2"),
+    path('semiconductor/Substrate-Package-AOI',views.semi3, name="semi3"),
+
+
+
+
 
 
 ]

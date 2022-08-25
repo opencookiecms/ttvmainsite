@@ -12,7 +12,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 py-6 position-relative">
                                     <span class="h5 text-secondary">{{slide.smtitle}}</span>
-                                    <h1 class="display-17 display-sm-11 display-md-9 display-lg-8 display-xl-4 mb-3 title text-white">{{slide.bgtitle}}</h1>
+                                    <h3 class="display-17 display-sm-11 display-md-9 display-lg-8 display-xl-12 mb-3 title text-white">{{slide.bgtitle}}</h3>
                                    {{slide.slidecontet|safe}}
                                 </div>
                             </div>
@@ -88,88 +88,100 @@
 
         <!-- COUNTER
         ================================================== -->
-        <section class="p-0 wow fadeIn" data-wow-delay="100ms">
-            <div class="container">
-                <div class="right-container">
-                    <div class="row position-relative z-index-9 align-items-center py-1-9 py-lg-0">
-                        <div class="col-6 col-lg-3 d-none d-lg-block">
-                            <img src="media/{{hero4.picture}}" alt="">
-                        </div>
-                        {{hero4.content1|safe}}
-                        {{hero4.content2|safe}}
-                        {{hero4.content3|safe}}
-                     
-                    
-                  
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- WHY CHOOSE US
-        ================================================== -->
-        <section>
-            <div class="container">
-                <div class="row align-items-lg-center">
-                    <div class="col-lg-6 mb-5 mb-lg-0 wow fadeIn" data-wow-delay="200ms">
-                        <div class="pe-xl-8">
-                            <div class="mb-1-9">
-                                <h3 class="display-20 display-md-18 font-weight-600">{{hero3.txtitle}}</h3>
-                            </div>
-                            {% include "partial/accordation1.html" %}
-                        </div>
-                    </div>
-                    <div class="col-lg-6 position-relative wow fadeIn" data-wow-delay="400ms">
-                        <div class="row g-0 position-relative z-index-9">
-                            <div class="col-sm-6">
-                                <div class="d-block bg-primary px-3 px-sm-5 py-7 py-sm-8 py-lg-10 rounded-top position-relative overflow-hidden">
-                                    <h4 class="mb-0 text-white">{{hero3.imgtxt1}}</h4>
-                                    <i class="{{hero3.icon1}}"></i>
-                                </div>
-                                <div class="mb-sm-5">
-                                    <img src="media/{{hero3.img1}}" alt="">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="mt-1-9 mt-sm-5">
-                                    <img src="media/{{hero3.img2}}" alt="">
-                                </div>
-                                <div class="d-block bg-dark px-3 px-sm-5 py-7 py-sm-8 py-lg-10 rounded-bottom position-relative overflow-hidden">
-                                    <h4 class="mb-0 text-white">{{hero3.imgtxt2}} </h4>
-                                    <i class="{{hero3.icon2}}"></i>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="ani-left-right light-title text-secondary opacity1 right-n10 bottom-75 bottom-xl-70 alt-font d-none d-lg-block">Why Us</div>
-                    </div>
-                </div>
-            </div>
-            <div class="square-shape-two left-5 bottom-45 d-none d-xl-block"></div>
-        </section>
-
         
+        <section class="bg-img cover-background" data-overlay-dark="8" data-background="img/bg/bg-15.jpg">
+            <div class="container position-relative">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-1-9 mb-lg-0 wow fadeIn" data-wow-delay="200ms">
+                        <div class="title-style3 mb-3">
+                            <span>our achievement</span>
+                        </div>
+                        <h2 class="h1 mb-0 text-white">Some Little Facts About Our Company</h2>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="row g-2">
+                            <div class="col-sm-12 wow fadeIn" data-wow-delay="100ms">
+                                <div class="counter-style border-radius-10 p-4 text-center h-100">
+                                    <h3 class="h1 text-white"><span style="margin-right:10px">Over</span><span class="countup">3</span><span style="margin-left:10px">GW</span></h3>
+                                    <p class="mb-0 text-white">Photovoltaic Production Capacity</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 wow fadeIn" data-wow-delay="100ms">
+                                <div class="counter-style border-radius-10 p-4 text-center h-100">
+                                    <h3 class="h1 text-white"><span style="margin-right:10px">Over</span><span style="margin-left:10px">Billion</span></h3>
+                                    <p class="mb-0 text-white">Inspection Capacity</p>
+                                </div>
+                            </div>
+                         
+                         
+                        </div>
+                    </div>
+                </div>
 
-        <!-- SERVICES
+               
+
+
+
+            </div>
+        </section>
+        
+  
+        <section>
+        </section>
+
+
+
+              <!-- PORTFOLIO
         ================================================== -->
-        <section class="bg-dark mx-lg-4 rounded-lg">
+        <section class="bg-light mx-lg-1-9 border-radius-10">
             <div class="container position-relative z-index-1">
-                <div class="title-style1 white wow fadeIn" data-wow-delay="100ms">
-                    <h2 class="h1 text-white">{{hero5.bigtitle}}</h2>
-                    <span>{{hero5.smalltitle}}</span>
+                <div class="title-style3 text-center mb-2-3 mb-md-6 wow fadeIn" data-wow-delay="100ms">
+                    <span>our services</span>
+                    <h2 class="h1 mb-0">What We Do</h2>
                 </div>
                 <div class="row mt-n1-9">
-            
-                    {{hero5.content|safe}}
-                 
-                
+                    <div class="col-md-6 col-xl-4 mt-1-9 wow fadeIn" data-wow-delay="200ms">
+                        <div class="card card-style10 border-0 border-radius-10 ms-4">
+                            <div class="position-relative">
+                                <img src="media/{{hero7.img1}}" alt="...">
+                            </div>
+                            <div class="card-heading position-relative">
+                                <h3 class="h5 mb-0 text-white"><a href="marketing-research.html">{{hero7.bgtitle1}}</a></h3>
+                                <i class="icon-magnifying-glass display-7 text-white opacity2 position-absolute top-n10 end-0"></i>
+                            </div>
+                         
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4 mt-1-9 wow fadeIn" data-wow-delay="400ms">
+                        <div class="card card-style10 border-0 border-radius-10 ms-4">
+                            <div class="position-relative">
+                                <img src="media/{{hero7.img2}}" alt="...">
+                            </div>
+                            <div class="card-heading position-relative">
+                                <h3 class="h5 mb-0 text-white"><a href="business-analysis.html">{{hero7.bgtitle2}}</a></h3>
+                                <i class="icon-magnifying-glass display-7 text-white opacity2 position-absolute top-n10 end-0"></i>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4 mt-1-9 wow fadeIn" data-wow-delay="600ms">
+                        <div class="card card-style10 border-0 border-radius-10 ms-4">
+                            <div class="position-relative">
+                                <img src="media/{{hero7.img3}}" alt="...">
+                            </div>
+                            <div class="card-heading position-relative">
+                                <h3 class="h5 mb-0 text-white"><a href="investment-plan.html">{{hero7.bgtitle3|safe}}</a></h3>
+                                <i class="icon-magnifying-glass display-7 text-white opacity2 position-absolute top-n10 end-0"></i>
+                            </div>
+                         
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="round-shape-one top-n10 left-90"></div>
-            <div class="ani-left-right light-title text-white opacity1 left bottom-n10 bottom-xl-n15 alt-font d-none d-lg-block z-index-0 wow fadeIn" data-wow-delay="200ms">{{hero5.transani}}</div>
+            <div class="ani-left-right light-title text-white opacity1 left bottom-n10 bottom-xl-n15 alt-font d-none d-lg-block z-index-0 wow fadeIn" data-wow-delay="200ms">services</div>
         </section>
+
 
      
         <!-- BLOG

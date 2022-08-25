@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-67#-)#&c$99hfij3=#@^oalw(=5@gvxv2n^9ik2_g0@uy+ju!=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','35.223.197.35','beta.ttvision-tech.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','35.223.197.35','beta.ttvision-tech.com','192.168.0.229']
 
 
 # Application definition
@@ -135,6 +135,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.office365.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'ttvision.net@ttvision-tech.com'
+EMAIL_HOST_PASSWORD = 'TTVision2022'
+SERVER_EMAIL = EMAIL_HOST_USER
 
 VENV_PATH = os.path.dirname(BASE_DIR)
 STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')

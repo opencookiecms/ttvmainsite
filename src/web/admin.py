@@ -1,7 +1,7 @@
 from multiprocessing.dummy import Event
 from django.contrib import admin
 
-from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, PhotoLib, Post, Postsection, Product, Slide, Smallcard
+from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, PhotoLib, Post, Postsection, Product, Slide, Smallcard, Timeline
 
 # Register your models here.
 admin.site.register(Company)
@@ -26,4 +26,5 @@ admin.site.register(PhotoEvent)
 admin.site.register(EventNews)
 admin.site.register(Annoucement)
 admin.site.register(Contact)
+admin.site.register(Timeline)
 

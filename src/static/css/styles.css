@@ -116,6 +116,10 @@ a:hover, a:active {
 .bg-dark {
   background-color: #2a334e !important; }
 
+.bg-ttvision{
+  background-color: #1e272e !important;
+}
+
 .secondary-overlay[data-overlay-dark]:before {
   background: #33d687; }
 
@@ -1109,7 +1113,7 @@ a:hover, a:active {
     height: 0px;
     border-radius: 3px;
     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-    background-color: #33d687; }
+    background-color: #0652DD; }
   .card-style1.feel:before, .card-style1:hover:before {
     height: 100%; }
   .card-style1 i {
@@ -1441,7 +1445,7 @@ a:hover, a:active {
 
 /* card-style10 */
 .card-style10 .card-heading {
-  background: #4e86ff;
+  background: #222f3e;
   padding: 18px 30px;
   border-radius: 10px;
   margin-right: 30px;
@@ -1451,7 +1455,7 @@ a:hover, a:active {
   z-index: 9;
   transition: all .3s ease; }
 .card-style10:hover .card-heading {
-  background: #33d687; }
+  background: #0652DD; }
 .card-style10 img {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px; }
@@ -2766,6 +2770,23 @@ h2.resp-accordion.resp-tab-active {
   display: inline-block;
   text-align: center;
   position: relative; }
+
+  
+/* process-style1 */
+.process-style12 span {
+
+  font-size: 22px;
+  
+  font-weight: 600;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+  text-align: center;
+  position: relative; }
+
+  .p12{
+    padding-bottom: 3.7rem;
+  }
 
 /* about-style1 */
 .about-style1 .shadow-block {

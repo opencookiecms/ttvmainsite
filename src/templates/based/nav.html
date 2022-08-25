@@ -3,7 +3,7 @@
 
     <div class="navbar-header navbar-header-custom">
         <!-- start logo -->
-        <a href="{% url 'index' %}" class="navbar-brand logodefault"><img id="logo" src="{% static 'img/ttvimg/logo.png' %}" alt="logo"></a>
+        <a href="{% url 'index' %}" class="navbar-brand logodefault"><img id="logo" src="{% static 'img/ttvimg/logo.png' %}" alt="logo" width="150"></a>
         <!-- end logo -->
     </div>
 
@@ -26,15 +26,15 @@
     </li>
     <li><a href="#!">Product and Solutions</a>
         <ul>
-            <li><a href="{% url 'semiconductor' %}">Semiconductor/LED Inspection Solution</a></li>
-            <li><a href="{% url 'pv' %}">PV Inspection, Test and Sort Solution</a></li>
+            <li><a href="{% url 'semiconductorlist' %}">Semiconductor/LED Inspection Solution</a></li>
+            <li><a href="{% url 'pvinspect' %}">PV Inspection, Test and Sort Solution</a></li>
             <li><a href="{% url 'robotic' %}">Advances Robotic Solution</a></li>
       
         </ul>
     </li>
     <li><a href="#!">News and Event</a>
         <ul>
-            <li><a href="{% url 'news' %}">News</a></li>
+            <li><a href="{% url 'newslist' %}">News</a></li>
             <li><a href="{% url 'press' %}">Press Release</a></li>
             <li><a href="#">Media</a></li>
             <li><a href="{% url 'event' slug='universal-robots-on-tour' %}">Event</a></li>
@@ -43,12 +43,17 @@
     </li>
     <li><a href="#!">Investor Relation</a>
         <ul>
+            <!--
             <li><a href="#">Overview</a></li>
-            <li><a href="#">Financial Report</a></li>
-            <li><a href="#">Announcement</a></li>
+            <li><a href="#">Financial Report</a></li>-->
+            <li><a href="{% url 'investor' %}">Announcement</a></li>
           
             
         </ul>
+    </li>
+    <li><a href="{% url 'career' %}">Career
+    </a>
+      
     </li>
  
 </ul>

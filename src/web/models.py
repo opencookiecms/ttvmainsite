@@ -1,17 +1,41 @@
 
 from django.db import models
+from django.utils.translation import gettext as _
+
 
 
 # Create your models here.
 
 class Category(models.Model):
+
+    CAT_ONE = 1
+    CAT_TWO = 2
+    CAT_THREE = 3
+    CAT_FOR = 4
+    CAT_CHOICES = [
+        (CAT_ONE, _("Bursa")),
+        (CAT_TWO, _("Post")),
+        (CAT_THREE, _("Product")),
+        (CAT_FOR, _("News")),
+    ]
+   
     category = models.CharField(max_length=100, null=True, blank=True)
+    catype = models.PositiveSmallIntegerField(choices=CAT_CHOICES, null=True, blank=True)
 
     def __str__(self):
         return self.category
 
 class Product(models.Model):
     producttitle = models.CharField(max_length=100, null=True, blank=True)
+    productslug =  models.CharField(max_length=200, null=True, blank=True)
+    productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
+    productimg = models.ImageField(null=True, blank=True)
+    productfea  = models.TextField(null=True, blank=True)
+    productspec  = models.TextField(null=True, blank=True)
+    status = models.BooleanField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, editable=False)
+
 
     def __str__(self):
         return self.producttitle
@@ -71,7 +95,7 @@ class Annoucement(models.Model):
     andescription = models.TextField(null=True, blank=True)
     anousetype = models.CharField(max_length=50, null=True, blank=True)
     ansubject = models.CharField(max_length=150, null=True, blank=True)
-    andescription = models.CharField(max_length=150, null=True, blank=True)
+    adlink = models.CharField(max_length=300, null=True, blank=True)
     andate = models.DateField(null=True, blank=True)
     anslug = models.CharField(max_length=200, null=True, blank=True)
     anpostimg = models.ImageField(blank=True, null=True)
@@ -317,6 +341,13 @@ class Contact(models.Model):
     enquirytype = models.CharField(max_length=50, null=True, blank=True)
     enquirysubject = models.CharField(max_length=150, null=True, blank=True)
     enquirycontent = models.TextField(blank=True, null=True)
+
+class Timeline(models.Model):
+    timelinename = models.CharField(max_length=50, null=True, blank=True)
+    yearsstring = models.CharField(max_length=20, null=True, blank=True)
+    thetitle = models.CharField(max_length=150, null=True, blank=True)
+    thedescription = models.TextField(blank=True, null=True)
+    position  = models.IntegerField(null=True, blank=True)
 
 
 
