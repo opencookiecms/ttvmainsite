@@ -182,6 +182,13 @@ def pinspection(request, slug):
     }
     return render(request, 'pages/productviews.html',context)
 
+def icled(request, slug):
+    pr = Product.objects.get(productslug=slug)
+    context = {
+        'pr':pr
+    }
+
+    return render(request, 'pages/productviews.html',context)
 
 
 def semi1(request):

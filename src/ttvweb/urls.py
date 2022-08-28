@@ -42,6 +42,7 @@ urlpatterns = [
 
     path('robotic/<str:slug>', views.rpv, name="robotic"),
     path('pv-inspection/<str:slug>',views.pinspection, name="pvinspection"),
+    path('semiconductor-inspection/<str:slug>',views.icled, name="icled"),
 
 
     path('semiconductor/wafer-and-package-AOI',views.semi1, name="semi1"),
