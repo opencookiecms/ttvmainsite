@@ -68,7 +68,7 @@ def pv(request):
     return render(request, 'pages/pv.html')
 
 def contactus(request):
-
+    company = Company.objects.get(id=1)
     form = ContactForm(request.POST or None)
     if request.method == 'POST':
 
@@ -100,7 +100,8 @@ def contactus(request):
 
     
     context = {
-        'form':form
+        'form':form,
+        'com':company
     }
     return render(request, 'pages/contact.html',context)
 
@@ -109,6 +110,7 @@ def award(request):
     company = Company.objects.get(id=1)
     post = Post.objects.get(slug="awardandachievment")
     timeline = Timeline.objects.all().order_by('position')
+  
     context = {
         'com':company,
         'timeline':timeline,
@@ -123,25 +125,31 @@ def event(request,slug):
     events = EventNews.objects.filter(slug=slug).first()
     eventtitle = EventNews.objects.all()
     pe = PhotoEvent.objects.filter(postlib__slug=slug)
+    company = Company.objects.get(id=1)
     context = {
         'etitle':eventtitle,
         'e':events,
         'pe':pe,
+        'com':company
 
     }
     return render(request, 'pages/event.html',context)
 
 def news(request):
     nw = News.objects.all()
+    company = Company.objects.get(id=1)
     context = {
         'news':nw,
+        'com':company,
     }
     return render(request, 'pages/news.html',context)
 
 def newslist(request):
     nw = News.objects.all()
+    company = Company.objects.get(id=1)
     context = {
         'news':nw,
+        'com':company,
     }
     return render(request, 'pages/blog-list.html',context)
 
@@ -153,39 +161,69 @@ def press(request):
     return render(request, 'pages/press.html',context)
 
 def newsm(request):
-    return render(request, 'pages/media.html')
+    company = Company.objects.get(id=1)
+    context = {
+
+        'com':company,
+
+    }
+    return render(request, 'pages/media.html',context)
 
 def robotic(request):
-    return render(request, 'pages/robotic.html')
+    company = Company.objects.get(id=1)
+    context = {
+
+        'com':company,
+
+    }
+    return render(request, 'pages/robotic.html',context)
 
 def pvinspect(request):
-    return render(request, 'pages/inspectionlist.html')
+    company = Company.objects.get(id=1)
+    context = {
+
+        'com':company,
+
+    }
+    return render(request, 'pages/inspectionlist.html',context)
 
 def semiconductorlist(request):
-    return render(request, 'pages/semiconductorlist.html')
+    company = Company.objects.get(id=1)
+    context = {
+
+        'com':company,
+
+    }
+    return render(request, 'pages/semiconductorlist.html',context)
 
 def rpv(request, slug):
 
     pr = Product.objects.get(productslug=slug)
+    company = Company.objects.get(id=1)
 
     context = {
-        'pr':pr
+        'pr':pr,
+        'com':company
     }
     return render(request, 'pages/productviews.html',context)
 
 def pinspection(request, slug):
 
     pr = Product.objects.get(productslug=slug)
+    company = Company.objects.get(id=1)
 
     context = {
-        'pr':pr
+        'pr':pr,
+        'com':company
     }
     return render(request, 'pages/productviews.html',context)
 
 def icled(request, slug):
     pr = Product.objects.get(productslug=slug)
+    company = Company.objects.get(id=1)
     context = {
-        'pr':pr
+        'pr':pr,
+        'com':company
     }
 
     return render(request, 'pages/productviews.html',context)
@@ -202,20 +240,25 @@ def investor(request):
 
     iv = Annoucement.objects.all()
     b = Category.objects.filter(catype=1)
+    company = Company.objects.get(id=1)
 
     context = {
         'title':'Investor Relation - Announcement',
         'iv':iv,
         'bursa':b,
+        'com':company,
     }
     return render(request, 'pages/invester.html',context)
 
 def career(request):
 
+    company = Company.objects.get(id=1)
+
     context = {
-        'title':'Careers'
+        'title':'Careers',
+        'com':company,
     }
-    return render(request, 'pages/career.html')
+    return render(request, 'pages/career.html',context)
 
 
 
