@@ -92,7 +92,7 @@ def contactus(request):
         
             send_mail(subject, message, email_from, recipient_list,fail_silently=False,)
 
-            return redirect('')
+            return redirect('contactdone')
         else:
             print(form.errors)
             print('fail to save')
@@ -104,6 +104,14 @@ def contactus(request):
         'com':company
     }
     return render(request, 'pages/contact.html',context)
+
+def contactdone(request):
+    company = Company.objects.get(id=1)
+    context = {
+     
+        'com':company
+    }
+    return render(request, 'pages/success.html',context)
 
 def award(request):
     
