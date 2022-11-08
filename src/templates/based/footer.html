@@ -6,9 +6,9 @@
                 <div class="row">
 
                     <div class="col-lg-3 mb-1-9 mb-lg-0 wow fadeIn" data-wow-delay="200ms">
-                        <img src="{{com.logo.url}}" class="mb-4" alt="ttv" />
+                        <img src="{{com.logo.url}}" class="mb-4" alt="ttv" width="195">
                     
-                        <p class="text-white w-xxl-85">201801011030 ( 1273046-H )</p>
+                        <div class="text-white w-xxl-85 h6"><span>201801011030 (1273046-H)</span></div>
         
                         <p class="mb-1-9 text-white w-xxl-85">Follow us on</p>
                         <div class="social-icons2">
@@ -63,17 +63,16 @@
                             <div class="col-sm-6 col-lg-4 mb-1-9 mb-lg-0 wow fadeIn" data-wow-delay="400ms">
                                 <h3>About Us</h3>
                                 <ul class="ps-0 mb-0">
-                                    <li><a href="services.html">Company Backgroud</a></li>
-                                    <li><a href="team.html">Vision and Mission</a></li>
-                                    <li><a href="contact.html">Award and Achievment</a></li>
+                                    <li><a href="{% url 'cb' %}">Company Backgroud</a></li>
+                                    <li><a href="{% url 'vision' %}">Vision and Mission</a></li>
+                                    <li><a href="{% url 'award' %}">Award and Achievment</a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-6 col-lg-4 mb-1-9 mb-lg-0 wow fadeIn" data-wow-delay="500ms">
                                 <h3>Investor Relation</h3>
                                 <ul class="ps-0 mb-0">
-                                    <li><a href="portfolio.html">Overview</a></li>
-                                    <li><a href="our-core-values.html">Financial Report</a></li>
-                                    <li><a href="blog-post.html">Announcement</a></li>
+                                   
+                                    <li><a href="{% url 'investor' %}">Announcement</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="600ms">
