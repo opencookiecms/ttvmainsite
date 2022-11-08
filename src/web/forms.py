@@ -11,7 +11,7 @@ class ContactForm(forms.ModelForm):
         ('Linkedin','Linkedin'),
         ('Exhibition','Exhibition'),
         ('Email Newsletter','Email Newsletter'),
-        ('Facebook','Facebook'),
+        ('Youtube','Youtube'),
         ('Others','Others'),
     )
 
