@@ -199,7 +199,7 @@ header{ transition: all 0.5s ease 0s; position: relative; z-index: 99999; }
 	.navbar ul ul li.active > a{ color: #000;  }
 	.navbar .sub-title { color: #282b2d; }
 
-	.navbar-nav{ background: #fff; -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); -ms-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); position: absolute; top: 71px; left: 0; width: 100%; transition-duration: 0; -ms-transition-duration: 0; -moz-transition-duration: 0; -webkit-transition-duration: 0; -o-transition-duration: 0; width: 100%; display: none; transition: none; -ms-transition: none; -moz-transition: none; -webkit-transition: none; -o-transition: none;  }
+	.navbar-nav{ background: #3b3838;; -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); -ms-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); position: absolute; top: 71px; left: 0; width: 100%; transition-duration: 0; -ms-transition-duration: 0; -moz-transition-duration: 0; -webkit-transition-duration: 0; -o-transition-duration: 0; width: 100%; display: none; transition: none; -ms-transition: none; -moz-transition: none; -webkit-transition: none; -o-transition: none;  }
 	.navbar-nav li.active > a{ opacity: 1;  }
 	.navbar-nav ul{ width: 100%; display: none; transition: none; -ms-transition: none; -moz-transition: none; -webkit-transition: none; -o-transition: none;  }
 	.navbar-nav li{ width: 100%; border-top: 1px solid #e6e6e6; position: relative; padding: 0; margin: 0;  }
