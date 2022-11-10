@@ -122,7 +122,7 @@ def award(request):
     context = {
         'com':company,
         'timeline':timeline,
-        'about':'Award and Our Accomplishment',
+        'about':'Awards and Achievements',
         'post':post
     }
 
