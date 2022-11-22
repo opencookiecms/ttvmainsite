@@ -18,9 +18,9 @@ const checkUsername = () => {
     const username = contactname.value.trim();
 
     if (!isRequired(username)) {
-        showError(contactname, 'Username cannot be blank.');
+        showError(contactname, 'Please insert your name.');
     } else if (!isBetween(username.length, min, max)) {
-        showError(contactname, `Username must be between ${min} and ${max} characters.`)
+        showError(contactname, `Your name must be between ${min} and ${max} characters.`)
     } else {
         showSuccess(contactname);
         valid = true;
