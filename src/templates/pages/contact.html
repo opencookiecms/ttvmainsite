@@ -75,7 +75,7 @@
                     <div class="col-lg-10 wow fadeIn" data-wow-delay="400ms">
                         <div class="primary-shadow bg-white p-1-6 p-sm-2-9 rounded z-index-9 position-relative">
                             <h2 class="mb-1-9">Drop Us a Line</h2>
-                            <form class="" action="{% url 'contact' %}" method="post" enctype="multipart/form-data" onclick="">
+                            <form class="" id="signup" action="{% url 'contact' %}" method="post" enctype="multipart/form-data" onclick="">
                                 {% csrf_token %}
                                 <div class="quform-elements">
                                     <div class="row">
@@ -86,6 +86,7 @@
                                                 <label for="name">Your Name <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.contactname}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,6 +98,7 @@
                                                 <label for="email">Your Email <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.contactemail}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,6 +109,7 @@
                                                 <label for="email">Company Name <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.companyname}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -117,6 +120,7 @@
                                                 <label for="subject">Country <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.country}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -129,6 +133,7 @@
                                                 <label for="subject">How do you know about us <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.looking}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -141,6 +146,7 @@
                                                 <div class="quform-input">
                                                     
                                                     <input type="tel" id="{{form.contacttel.id_for_label}}" name="{{form.contacttel.name}}" class="form-control"/>
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -153,6 +159,7 @@
                                                 <label for="email">Subject <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.enquirysubject}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -163,6 +170,7 @@
                                                 <label for="message">Message <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.enquirycontent}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
