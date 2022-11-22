@@ -108,6 +108,26 @@ class Annoucement(models.Model):
         return self.anoncetitle
 
 
+class AnnoucementMeetings(models.Model):
+    anoncetitle = models.CharField(max_length=150, null=True, blank=True)
+    stockname = models.CharField(max_length=150, null=True, blank=True)
+    companyname = models.CharField(max_length=150, null=True, blank=True)
+    andescription = models.TextField(null=True, blank=True)
+    anousetype = models.CharField(max_length=50, null=True, blank=True)
+    ansubject = models.CharField(max_length=150, null=True, blank=True)
+    adlink = models.CharField(max_length=300, null=True, blank=True)
+    andate = models.DateField(null=True, blank=True)
+    anslug = models.CharField(max_length=200, null=True, blank=True)
+    anpostimg = models.ImageField(blank=True, null=True)
+    anmstatus = models.BooleanField(blank=True, null=True)
+    ancategory = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
+    ancreated_at = models.DateTimeField(auto_now_add=True, editable=False)
+    anupdated_at = models.DateTimeField(auto_now=True, editable=False)
+
+    def __str__(self):
+        return self.anoncetitle
+
+
 
 
 class PhotoLib(models.Model):
