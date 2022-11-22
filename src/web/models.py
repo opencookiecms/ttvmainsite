@@ -12,11 +12,13 @@ class Category(models.Model):
     CAT_TWO = 2
     CAT_THREE = 3
     CAT_FOR = 4
+    CAT_FIVE = 5
     CAT_CHOICES = [
         (CAT_ONE, _("Bursa")),
         (CAT_TWO, _("Post")),
         (CAT_THREE, _("Product")),
         (CAT_FOR, _("News")),
+        (CAT_FIVE, _("Meetings")),
     ]
    
     category = models.CharField(max_length=100, null=True, blank=True)
