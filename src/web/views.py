@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.core.mail import send_mail
 from django.conf import settings
-from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline
+from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings
 from .forms import ContactForm
 
 # Create your views here.
@@ -261,6 +261,20 @@ def investor(request):
     }
     return render(request, 'pages/invester.html',context)
 
+def meetings(request):
+
+    iv = AnnoucementMeetings.objects.all()
+    b = Category.objects.filter(catype=1)
+    company = Company.objects.get(id=1)
+
+    context = {
+        'title':'Meetings',
+        'iv':iv,
+        'bursa':b,
+        'com':company,
+    }
+    return render(request, 'pages/mettings.html',context)
+
 def career(request):
 
     company = Company.objects.get(id=1)
@@ -274,6 +288,9 @@ def career(request):
 
 def callinaction(request):
     return render(request, 'pages/callinaction.html')
+
+def fr(request):
+    return render(request, 'pages/fr.html')
 
 
 
