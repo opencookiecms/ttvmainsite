@@ -264,7 +264,7 @@ def investor(request):
 def meetings(request):
 
     iv = AnnoucementMeetings.objects.all()
-    b = Category.objects.filter(catype=1)
+    b = Category.objects.filter(catype=5)
     company = Company.objects.get(id=1)
 
     context = {
