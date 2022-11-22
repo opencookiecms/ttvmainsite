@@ -210,6 +210,7 @@ def rpv(request, slug):
     company = Company.objects.get(id=1)
 
     context = {
+        'rpv':True,
         'pr':pr,
         'com':company
     }
@@ -221,6 +222,7 @@ def pinspection(request, slug):
     company = Company.objects.get(id=1)
 
     context = {
+        'ins':True,
         'pr':pr,
         'com':company
     }
@@ -230,6 +232,7 @@ def icled(request, slug):
     pr = Product.objects.get(productslug=slug)
     company = Company.objects.get(id=1)
     context = {
+        'icled':True,
         'pr':pr,
         'com':company
     }
