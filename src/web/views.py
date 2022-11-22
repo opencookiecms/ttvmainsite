@@ -269,6 +269,10 @@ def career(request):
     return render(request, 'pages/career.html',context)
 
 
+def callinaction(request):
+    return render(request, 'pages/callinaction.html')
+
+
 
 
     

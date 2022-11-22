@@ -50,6 +50,8 @@ urlpatterns = [
     path('semiconductor/wirebond-AOI-Equipment',views.semi2, name="semi2"),
     path('semiconductor/Substrate-Package-AOI',views.semi3, name="semi3"),
 
+    path('investor-relation/enquiry',views.callinaction, name="callinaction"),
+
 
 
 
