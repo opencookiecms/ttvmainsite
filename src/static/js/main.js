@@ -791,3 +791,15 @@
     });
 
 })(jQuery);
+
+$(document).ready(function () {
+    $("#mygallery").justifiedGallery({
+        rowHeight :300,
+        lastRow : 'nojustify',
+        margins : 3,
+        sizeRangeSuffixes: { }
+      
+    });
+   
+});
+
