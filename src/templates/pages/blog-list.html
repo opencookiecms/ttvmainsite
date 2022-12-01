@@ -50,14 +50,33 @@
                    
 
               
-
                         <div class="wow fadeIn mt-2-9" data-wow-delay="200ms">
+                            {% if news.has_other_pages %}
                             <ul class="pagination justify-content-center d-block d-sm-flex text-center text-sm-start">
-                                <li><span aria-current="page" class="page-numbers current">1</span></li>
-                                <li><a class="page-numbers" href="#!">2</a></li>
-                                <li><a class="next page-numbers" href="#!"><i class="fa fa-angle-double-right"></i></a></li>
+
+                                {% if news.has_previous %}
+                                <li><a class="page-numbers" href="?page={{ news.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
+                                {% else %}
+                                <li><a class="page-numbers disabled" href=""><i class="fa fa-angle-double-left"></i></a></li>
+                                {% endif %}
+                                
+                                {% for i in news.paginator.page_range %}
+                                    {% if news.number == i %}
+                                    <li><span aria-current="page" class="page-numbers current">{{ i }}</span></li>
+                                    {% else %}
+                                    <li><a class="page-numbers" href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if news.has_next %}
+                                <li><a class="page-numbers" href="?page={{ users.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
+                                {% else %}
+                                <li class="disabled"><a class="page-numbers " href=""><i class="fa fa-angle-double-right"></i></a></li>
+                                {% endif %}
                             </ul>
+                            {% endif %}
                         </div>
+                     
 
                     </div>
                     <div class="col-lg-4">

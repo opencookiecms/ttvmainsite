@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings
 from .forms import ContactForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
@@ -145,18 +146,38 @@ def event(request,slug):
 
 def news(request):
     nw = News.objects.all()
+    page = request.GET.get('page',1)
+    paginator = Paginator(nw,10)
+
+    try:
+        newss = paginator.page(page)
+    except PageNotAnInteger:
+        newss = paginator.page(1)
+    except EmptyPage:
+        newss = paginator.page(paginator.num_pages)
+
     company = Company.objects.get(id=1)
     context = {
-        'news':nw,
+        'news':newss,
         'com':company,
     }
     return render(request, 'pages/news.html',context)
 
 def newslist(request):
     nw = News.objects.all()
+    page = request.GET.get('page',1)
+    paginator = Paginator(nw,2)
+
+    try:
+        newss = paginator.page(page)
+    except PageNotAnInteger:
+        newss = paginator.page(1)
+    except EmptyPage:
+        newss = paginator.page(paginator.num_pages)
+
     company = Company.objects.get(id=1)
     context = {
-        'news':nw,
+        'news':newss,
         'com':company,
     }
     return render(request, 'pages/blog-list.html',context)

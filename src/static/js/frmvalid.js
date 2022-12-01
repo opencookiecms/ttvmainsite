@@ -158,7 +158,8 @@ form.addEventListener('submit', function (e){
         isMessagevalid
 
     if (isFormValid) {
-
+        document.getElementById("signup").submit();
+        console.log("done");
     }
 });
 

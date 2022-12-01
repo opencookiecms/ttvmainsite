@@ -357,7 +357,7 @@ class Contact(models.Model):
     companyname = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=20, null=True, blank=True)
     contactemail = models.CharField(max_length=50, null=True, blank=True)
-    contacttel = PhoneNumberField(blank=True)
+    contacttel = models.CharField(max_length=50, null=True, blank=True)
     contactaddress = models.TextField(blank=True, null=True)
     looking = models.CharField(max_length=50, null=True, blank=True)
     enquirytype = models.CharField(max_length=50, null=True, blank=True)
