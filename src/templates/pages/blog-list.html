@@ -57,7 +57,7 @@
                                 {% if news.has_previous %}
                                 <li><a class="page-numbers" href="?page={{ news.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
                                 {% else %}
-                                <li><a class="page-numbers disabled" href=""><i class="fa fa-angle-double-left"></i></a></li>
+      
                                 {% endif %}
                                 
                                 {% for i in news.paginator.page_range %}
@@ -71,7 +71,7 @@
                                 {% if news.has_next %}
                                 <li><a class="page-numbers" href="?page={{ users.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
                                 {% else %}
-                                <li class="disabled"><a class="page-numbers " href=""><i class="fa fa-angle-double-right"></i></a></li>
+                             
                                 {% endif %}
                             </ul>
                             {% endif %}
