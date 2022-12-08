@@ -202,6 +202,7 @@ form.addEventListener('input', debounce(function (e) {
 var input = document.querySelector("#id_contacttel");
 var iti = window.intlTelInput(input, {
   // separateDialCode:true,
+  initialCountry: 'my',
   utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.3/build/js/utils.js",
 });
 
