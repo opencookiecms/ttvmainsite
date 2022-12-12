@@ -21,6 +21,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('term-and-condition',views.term, name="term"),
     path('', views.index, name='index' ),
     path('contact-us',views.contactus, name="contact"),
     path('contact-us/success',views.contactdone, name="contactdone"),

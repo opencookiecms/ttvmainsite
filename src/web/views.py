@@ -1,5 +1,7 @@
 from django.shortcuts import redirect, render
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 from django.conf import settings
 from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings
 from .forms import ContactForm
@@ -82,16 +84,23 @@ def contactus(request):
             form.save()
             form = ContactForm
 
-            subject = 'Welcome to TT Vision Holding Berhad'
-            subject2 = f'{contactname}, From {companyname}, - {subjects},'
-            message = f'Hi {contactname}, thank you for contact us .'
-            message2 = f'Hi {contactname}, thank you for contact us .'
+            #subject = 'Welcome to TT Vision Holding Berhad'
+            message = render_to_string('pages/mail.html',{'pr':contactname})
+            textcontent = strip_tags(message)
+            
             email_from = settings.SERVER_EMAIL
             recipient_list = [contactmail, ]
-            recipient_list2 = ['adrewlee@ttvision-tech.com','sales@ttvision-tech.com'],['syed.afiq@ttvision-tech.com']
+            recipient_list2 = ['adrewlee@ttvision-tech.com','syed.afiq@ttvision-tech.com']
+
+            subject, from_email, to = subjects, email_from, recipient_list
+
+            msg = EmailMultiAlternatives(subject,textcontent,from_email,to, cc=recipient_list2)
+            msg.attach_alternative(message, "text/html")
+            msg.send()
+        
 
         
-            send_mail(subject, message, email_from, recipient_list,fail_silently=False,)
+            #send_mail(subject, message, email_from, recipient_list,fail_silently=False,)
 
             return redirect('contactdone')
         else:
@@ -312,6 +321,9 @@ def callinaction(request):
 
 def fr(request):
     return render(request, 'pages/fr.html')
+
+def term(request):
+    return render(request, 'pages/privacy.html')
 
 
 
