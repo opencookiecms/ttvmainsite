@@ -90,7 +90,7 @@ def contactus(request):
             
             email_from = settings.SERVER_EMAIL
             recipient_list = [contactmail, ]
-            recipient_list2 = ['adrewlee@ttvision-tech.com','syed.afiq@ttvision-tech.com']
+            recipient_list2 = ['adrewlee@ttvision-tech.com','syed.afiq@ttvision-tech.com','sales.ttvision-tech.com']
 
             subject, from_email, to = subjects, email_from, recipient_list
 
