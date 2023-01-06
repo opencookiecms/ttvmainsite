@@ -800,6 +800,6 @@ $(document).ready(function () {
         sizeRangeSuffixes: { }
       
     });
-   
 });
+
 

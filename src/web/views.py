@@ -6,6 +6,8 @@ from django.conf import settings
 from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings
 from .forms import ContactForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import json
+import requests
 
 # Create your views here.
 
@@ -290,6 +292,48 @@ def investor(request):
         'com':company,
     }
     return render(request, 'pages/invester.html',context)
+
+def leapmarket(request):
+
+    b = Category.objects.filter(catype=1)
+    company = Company.objects.get(id=1)
+    
+    url = 'https://www.bursamalaysia.com/api/v1/announcements/search?ann_type=company&company=03020&per_page=50&page=1&_=1672847484446'
+    res = requests.get(url)
+    data = res.json()
+
+    p  = data['data']
+
+
+    context = {
+        'title':'Investor Relation - Announcement:LEAP Market',
+        'bursa':b,
+        'com':company,
+        'data':p
+    }
+
+    return render(request, 'pages/leap-market.html',context)
+
+def acemarket(request):
+
+
+    url = 'https://www.bursamalaysia.com/api/v1/announcements/search?ann_type=company&company=0272&per_page=50&page=1&_=1672995464303'
+    res = requests.get(url)
+    data = res.json()
+
+    p = data['data']
+
+    b = Category.objects.filter(catype=1)
+    company = Company.objects.get(id=1)
+
+    context = {
+        'title':'Investor Relation - Annoucement:ACE Market',
+        'bursa':b,
+        'com':company,
+        'data':p,
+    }
+
+    return render(request, 'pages/ace-market.html',context)  
 
 def meetings(request):
 

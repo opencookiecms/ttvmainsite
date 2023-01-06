@@ -42,6 +42,8 @@ urlpatterns = [
   
     path('pv-inspections', views.pv, name="pv"),
     path('investor-relation/announcement', views.investor, name="investor"),
+    path('investor-relation/announcement/leap-market', views.leapmarket, name="leapmarket"),
+    path('investor-relation/announcement/ace-market',views.acemarket,name='acemarket'),
     path('careers',views.career, name="career"),
 
     path('robotic/<str:slug>', views.rpv, name="robotic"),
