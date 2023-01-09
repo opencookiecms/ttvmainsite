@@ -23,68 +23,46 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mb-2-9 mb-lg-0">
-                        {% for row in iv %}
-                        <article class="card card-style2 mb-2">
-                          
-
-                            <div class="card-body p-2-0 p-xl-2-4">
-                          
-
-
-
-                                <div class="wow fadeIn" data-wow-delay="200ms">
-                                    <h3 class="h4 mb-3">{{row.anoncetitle}}</h3>
-
-                                    <p class="mb-0">{{row.andescription}}</p>
-
-
-
-                                </div>
-
-                                <div class="row border-top border-color-light-black pt-5 mt-5 g-0">
-                                    <div class="col-md-9 mb-4 mb-md-0 wow fadeIn" data-wow-delay="200ms">
-                                        <h5 class="h6 mb-3">Related Tags:</h5>
-                                        <div class="tags mt-n2">
-                                            <a>{{row.andate}}</a>
-                                            <a>Stok Name: {{row.stockname}}</a>
-                                            <a>Category : {{row.anousetype}}</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 wow fadeIn" data-wow-delay="400ms">
-                                        <div class="blog-share-icon text-start text-md-end">
-                                            <h5 class="h6 mb-3">Link:</h5>
-                                            <ul class="share-post m-0 p-0">
-                                                <li><a href="{{row.adlink}}" target="_blank" class="btn btn-primary text-white">More Information</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-lg-4 mb-2-9 mb-lg-0">
+                        <article class="card card-style2 primary-shadow">
+                            <div class="card-img position-relative">
+                                <img src="{% static 'img/ttvimg/leap-market.jpg'%}" class="card-img-top" alt="...">
+                             
                             </div>
-
+                            <div class="card-body p-2-0 p-xl-2-4">
+                               
+                                <h3 class="h5 mb-4"><a href="{% url 'leapmarket' %}">LEAP Market</a></h3>
+                                <a href="{% url 'leapmarket' %}" class="font-weight-600">Read More &#10230;</a>
+                            </div>
+                            <div class="card-footer bg-white px-2-0 px-xl-2-4 py-3">
+                              
+                            </div>
                         </article>
-                        {% endfor %}
-
-
-
+                     
+                    </div>
+                    <div class="col-lg-4 mb-2-9 mb-lg-0">
+                        <article class="card card-style2 primary-shadow">
+                            <div class="card-img position-relative">
+                                <img src="{% static 'img/ttvimg/ace-market.jpg'%}" class="card-img-top" alt="...">
+                              
+                            </div>
+                            <div class="card-body p-2-0 p-xl-2-4">
+                                
+                                <h3 class="h5 mb-4"><a href="{% url 'acemarket' %}">ACE Market</a></h3>
+                                <a href="{% url 'acemarket' %}" class="font-weight-600">Read More &#10230;</a>
+                            </div>
+                            <div class="card-footer bg-white px-2-0 px-xl-2-4 py-3">
+                               
+                            </div>
+                        </article>
+                     
                     </div>
                     <div class="col-lg-4">
                         <div class="ps-lg-4 ps-xl-5">
                            
 
                           
-                            <div class="widget wow fadeInUp" data-wow-delay="400ms">
-                                <div class="title-style3 mb-4">
-                                    <span>Categories</span>
-                                </div>
-                                <ul class="category-listing">
-                                    {% for row in bursa %}
-                                    <li><a href="#!">{{row.category}} <span class="float-end"></span></a></li>
-                                    {% endfor %}
-                                    
-                                </ul>
-                            </div>
-        
+                          
                             <div class="widget wow fadeInUp" data-wow-delay="600ms">
                                 <div class="title-style3 mb-4">
                                     <span>Follow Us</span>

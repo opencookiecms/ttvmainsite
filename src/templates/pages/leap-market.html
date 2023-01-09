@@ -56,7 +56,7 @@
                                         <div class="blog-share-icon text-start text-md-end">
                                             <h5 class="h6 mb-3">Link:</h5>
                                             <ul class="share-post m-0 p-0">
-                                                <li class="lop"><a class="kul" href="{{row.adlink}}" target="_blank" class="btn btn-dark text-white">More Info</a></li>
+                                                <li class="lop">{{d.3|safe}}</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -71,6 +71,20 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="ps-lg-4 ps-xl-5">
+
+                            <div class="widget wow fadeInUp" data-wow-delay="400ms">
+                                <div class="title-style3 mb-4">
+                                    <span>Market</span>
+                                </div>
+                                <ul class="category-listing">
+                                    
+                                    <li><a href="{% url 'leapmarket' %}">LEAP Market <span class="float-end"></span></a></li>
+                                    <li><a href="{% url 'acemarket' %}">ACE Market Market <span class="float-end"></span></a></li>
+                                   
+                                    
+                                </ul>
+                            </div>
+        
                            
 
         
