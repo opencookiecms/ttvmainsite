@@ -174,7 +174,7 @@ def event(request,slug):
     return render(request, 'pages/event.html',context)
 
 def news(request):
-    nw = News.objects.all().order_by('-created_at')
+    nw = News.objects.all().order_by('created_at')
     page = request.GET.get('page',1)
     paginator = Paginator(nw,10)
 
