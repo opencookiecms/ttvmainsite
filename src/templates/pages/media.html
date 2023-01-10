@@ -1,7 +1,6 @@
-{% extends "based/based.html" %}
-{% load static %}
+{% extends 'based/based.html' %}
 {% block content %}
-
+{% load static %}
         <!-- PAGE TITLE
         ================================================== -->
         <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/event.jpg'%}">
@@ -19,48 +18,29 @@
             </div>
         </section>
 
-        <!-- VIDEO
+        <!-- BLOG
         ================================================== -->
         <section>
             <div class="container">
-                <div class="row justify-content-center">
-
-                    <div class="col-lg-9">
-
-                        <div class="mb-6 mb-lg-8 position-relative elements-block">
-
-                            <div class="inner-title">
-                                <h2 class="mb-0">Youtube Iframe Video</h2>
-                            </div>
-
-                            <!-- iframe video section -->
-                            <iframe class="w-100 min-height-300 border-none" src="https://www.youtube.com/embed/CiBu9_lkysA"  allow="encrypted-media" allowfullscreen></iframe>
-                            <!-- end iframe video section -->
-
-                            <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section">Copy</a></div>
-                            <div class="source-element"><a class="source-modal" href="#copy-code">Source</a></div>
-
-                            <div id="copy-code" class="mfp-hide white-popup-block popup-copy">
-                                <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section">copy</a></div>
-                                <pre id="section"></pre>
-                            </div>
-
-                        </div>
+                <div class="row">
+                    <div class="col-lg-8 mb-2-9 mb-lg-0 mt-n2-9">
+                      
+               
 
                         <div class="mb-6 mb-lg-8 position-relative elements-block">
 
                             <div class="inner-title">
-                                <h2 class="mb-0">Youtube Video</h2>
+                                <h2 class="mb-0">29 Dec 2022 - TTVHB - Coverage on TV1</h2>
                             </div>
 
                             <!-- youtube video section -->
                             <div class="min-height-300">
 
-                                <div class="bg-img cover-background min-height-300" data-overlay-dark="0" data-background="img/bg/bg-01.jpg">
+                                <div class="bg-img cover-background min-height-300" data-overlay-dark="0" data-background="{% static 'img/bg/5559852.jpg'%}">
                                     <div class="opacity-extra-medium bg-black"></div>
                                     <div class="inner-border"></div>
                                     <div class="text-center position-absolute top-50 start-50 translate-middle z-index-1">
-                                        <a class="popup-social-video video_btn" href="https://www.youtube.com/watch?v=CiBu9_lkysA">
+                                        <a class="popup-social-video video_btn" href="{% static 'vedio/29 Dec 2022 - TTVHB - Coverage on TV1.mp4' %}">
                                             <i class="fa fa-play"></i>
                                         </a>
                                     </div>
@@ -68,31 +48,46 @@
 
                             </div>
 
-                            <!-- end youtube video section -->
+                         
 
-                            <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section1">Copy</a></div>
-                            <div class="source-element"><a class="source-modal" href="#copy-code1">Source</a></div>
+                        </div>
 
-                            <div id="copy-code1" class="mfp-hide white-popup-block popup-copy">
-                                <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section1">copy</a></div>
-                                <pre id="section1"></pre>
+                        <div class="position-relative elements-block mb-lg-8">
+
+                            <div class="inner-title">
+                                <h2 class="mb-0">29 Dec 2022 - TTVHB - Coverage on TV3</h2>
                             </div>
+                            <!-- vimeo video section -->
+                            <div class="min-height-300">
+                                <div class="bg-img cover-background min-height-300" data-overlay-dark="0" data-background="{% static 'img/bg/5559852.jpg'%}">
+                                    <div class="opacity-extra-medium bg-black"></div>
+                                    <div class="inner-border"></div>
+                                    <div class="text-center position-absolute top-50 start-50 translate-middle z-index-1">
+                                        <a class="popup-social-video video_btn" href="{% static 'vedio/29 Dec 2022 - TTVHB - Coverage on TV3.mp4' %}">
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                      
 
                         </div>
 
                         <div class="position-relative elements-block">
 
+                    
                             <div class="inner-title">
-                                <h2 class="mb-0">Vimeo Video</h2>
+                                <h2 class="mb-0">29 Dec - TTVHB - Coverage on BFM</h2>
                             </div>
-
                             <!-- vimeo video section -->
                             <div class="min-height-300">
-                                <div class="bg-img cover-background min-height-300" data-overlay-dark="0" data-background="img/bg/bg-01.jpg">
+                                <div class="bg-img cover-background min-height-300" data-overlay-dark="0" data-background="{% static 'img/bg/5559852.jpg'%}">
                                     <div class="opacity-extra-medium bg-black"></div>
                                     <div class="inner-border"></div>
                                     <div class="text-center position-absolute top-50 start-50 translate-middle z-index-1">
-                                        <a class="popup-social-video video_btn" href="https://vimeo.com/241203735">
+                                        <a class="popup-social-video video_btn" href="{% static 'vedio/29 Dec - TTVHB - Coverage on BFM.mp3' %}">
                                             <i class="fa fa-play"></i>
                                         </a>
                                     </div>
@@ -100,21 +95,37 @@
 
                             </div>
 
-                            <!-- end vimeo video section -->
-
-                            <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section2">Copy</a></div>
-                            <div class="source-element"><a class="source-modal" href="#copy-code2">Source</a></div>
-
-                            <div id="copy-code2" class="mfp-hide white-popup-block popup-copy">
-                                <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section2">copy</a></div>
-                                <pre id="section2">></pre>
-                            </div>
+                      
 
                         </div>
+                   
 
+              
+                 
+
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ps-lg-4 ps-xl-5">
+                        
+                    
+                   
+                            <div class="bg-img bg-dark cover-background rounded wow fadeInUp" data-wow-delay="200ms" data-overlay-dark="85" data-background="img/bg/bg-06.jpg">
+                                <div class="position-relative z-index-9 text-center py-5 px-1-9">
+                                    <i class="fa fa-smile-o  text-white mb-4 display-14"></i>
+                                    <img src="{% static 'img/ttvimg/customer-service(2).png' %}"/>
+                                    <p>
+                                    <h5 class="text-white mb-4">How can we help?</h5>
+                                    <div class="separator-line-horrizontal-full bg-white opacity4 mb-4"></div>
+                                    <ul class="text-center mb-0 list-unstyled ps-0">
+                                        <li class="text-white mb-2"><i class="fa fa-phone small text-white me-2"></i><a href="tel:604-6456294" class="text-white">604-6456294</a></li>
+                                        <li class="text-white"><i class="fa fa-envelope-open small text-white me-2"></i><a href="mailto:sales@ttvision-tech.com" class="text-white">sales@ttvision-tech.com</a></li>
+                                        <li class="text-white"><i class="fa fa-mail-open small text-white me-2"></i><a href="{% url 'contact' %}" class="text-white"><b><u>Enquiry</u></b></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
         {% endblock content %}
