@@ -67,11 +67,13 @@ class Postsection(models.Model):
 
 class News(models.Model):
     titles = models.CharField(max_length=150, null=True, blank=True)
-    titlecon = models.CharField(max_length=250, null=True, blank=True)
+    titlecon = models.CharField(max_length=400, null=True, blank=True)
     newsdate = models.CharField(max_length=100, null=True, blank=True) 
     links  = models.CharField(max_length=200, null=True, blank=True)
     wowdelay = models.CharField(max_length=20, null=True, blank=True)
     newspicture = models.ImageField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     ct = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
 
     def __str__(self):
