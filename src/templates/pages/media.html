@@ -1,0 +1,120 @@
+{% extends "based/based.html" %}
+{% load static %}
+{% block content %}
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/event.jpg'%}">
+            <div class="container">
+
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <span>medium</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">Media</h1>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VIDEO
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-9">
+
+                        <div class="mb-6 mb-lg-8 position-relative elements-block">
+
+                            <div class="inner-title">
+                                <h2 class="mb-0">Youtube Iframe Video</h2>
+                            </div>
+
+                            <!-- iframe video section -->
+                            <iframe class="w-100 min-height-300 border-none" src="https://www.youtube.com/embed/CiBu9_lkysA"  allow="encrypted-media" allowfullscreen></iframe>
+                            <!-- end iframe video section -->
+
+                            <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section">Copy</a></div>
+                            <div class="source-element"><a class="source-modal" href="#copy-code">Source</a></div>
+
+                            <div id="copy-code" class="mfp-hide white-popup-block popup-copy">
+                                <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section">copy</a></div>
+                                <pre id="section"></pre>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-6 mb-lg-8 position-relative elements-block">
+
+                            <div class="inner-title">
+                                <h2 class="mb-0">Youtube Video</h2>
+                            </div>
+
+                            <!-- youtube video section -->
+                            <div class="min-height-300">
+
+                                <div class="bg-img cover-background min-height-300" data-overlay-dark="0" data-background="img/bg/bg-01.jpg">
+                                    <div class="opacity-extra-medium bg-black"></div>
+                                    <div class="inner-border"></div>
+                                    <div class="text-center position-absolute top-50 start-50 translate-middle z-index-1">
+                                        <a class="popup-social-video video_btn" href="https://www.youtube.com/watch?v=CiBu9_lkysA">
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- end youtube video section -->
+
+                            <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section1">Copy</a></div>
+                            <div class="source-element"><a class="source-modal" href="#copy-code1">Source</a></div>
+
+                            <div id="copy-code1" class="mfp-hide white-popup-block popup-copy">
+                                <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section1">copy</a></div>
+                                <pre id="section1"></pre>
+                            </div>
+
+                        </div>
+
+                        <div class="position-relative elements-block">
+
+                            <div class="inner-title">
+                                <h2 class="mb-0">Vimeo Video</h2>
+                            </div>
+
+                            <!-- vimeo video section -->
+                            <div class="min-height-300">
+                                <div class="bg-img cover-background min-height-300" data-overlay-dark="0" data-background="img/bg/bg-01.jpg">
+                                    <div class="opacity-extra-medium bg-black"></div>
+                                    <div class="inner-border"></div>
+                                    <div class="text-center position-absolute top-50 start-50 translate-middle z-index-1">
+                                        <a class="popup-social-video video_btn" href="https://vimeo.com/241203735">
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- end vimeo video section -->
+
+                            <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section2">Copy</a></div>
+                            <div class="source-element"><a class="source-modal" href="#copy-code2">Source</a></div>
+
+                            <div id="copy-code2" class="mfp-hide white-popup-block popup-copy">
+                                <div class="copy-element"><a class="copy-clipboard" data-clipboard-target="#section2">copy</a></div>
+                                <pre id="section2">></pre>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endblock content %}

@@ -95,7 +95,7 @@ def contactus(request):
             
             email_from = settings.SERVER_EMAIL
             recipient_list = [contactmail, ]
-            recipient_list2 = ['adrewlee@ttvision-tech.com','syed.afiq@ttvision-tech.com','sales.ttvision-tech.com']
+            recipient_list2 = ['syed.afiq@ttvision-tech.com']
 
             subject, from_email, to = subjects, email_from, recipient_list
 
@@ -195,7 +195,7 @@ def news(request):
 def newslist(request):
     nw = News.objects.all()
     page = request.GET.get('page',1)
-    paginator = Paginator(nw,2)
+    paginator = Paginator(nw,4)
 
     try:
         newss = paginator.page(page)
@@ -387,6 +387,9 @@ def fr(request):
 def term(request):
     return render(request, 'pages/privacy.html')
 
+
+def mediakit(request):
+    return render(request, 'pages/media.html')
 
 
 

@@ -58,6 +58,7 @@ urlpatterns = [
     path('investor-relation/enquiry',views.callinaction, name="callinaction"),
     
     path('newsletter', views.newsletter, name='newletter'),
+    path('media', views.mediakit, name='medialink'),
 
 
 

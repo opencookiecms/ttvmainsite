@@ -118,7 +118,7 @@
                     <div class="row mb-4">
                         <div class="col-md-12">
                             
-                            <form class="quform" action="{% url 'newletter'%}" method="post" enctype="multipart/form-data" onclick="">
+                            <form id="modalform" action="{% url 'newletter'%}" method="post" enctype="multipart/form-data" onclick="">
                                 {% csrf_token %}
 		
                                 <div class="quform-elements">
@@ -129,8 +129,9 @@
                                         <div class="col-md-12 mb-2">
                                             <div class="quform-element mb-0">
                                                 <div class="quform-input">
-                                                    <label for="email">Name <span class="quform-required">*</span></label>
+                                                    <label for="name">Name <span class="quform-required">*</span></label>
                                                     {{form2.newname}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -143,8 +144,9 @@
                                         <div class="col-md-12 mb-2">
                                             <div class="quform-element mb-0">
                                                 <div class="quform-input">
-                                                    <label for="email">Company Name<span class="quform-required">*</span></label>
+                                                    <label for="company">Company Name<span class="quform-required">*</span></label>
                                                     {{form2.company}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,6 +161,7 @@
                                                 <div class="quform-input">
                                                     <label for="email">Email Address <span class="quform-required">*</span></label>
                                                     {{form2.mailaddress}}
+                                                    <small class="text-danger"></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -178,7 +181,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button submit" name="submit" class="btn btn-primary">Save changes</button>
+                <button class="butn-style1" type="submit"><span>Send Message</span></button>
             </div>
         </form>
         </div>
