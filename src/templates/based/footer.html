@@ -78,9 +78,25 @@
                                 </ul>
                             </div>
                             <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="600ms">
-                                
+                                <h3>Newsletter</h3>
+                             
+
+                                    <div class="quform-elements">
+
+                                        <div class="row">
+                                           
+
+                                            <!-- Begin Submit button -->
+                                            <div class="col-md-12 ">
+                                                <div class="quform-submit-inner">
+                                                    <button class="butn shadow-none white medium m-0 w-100 " data-bs-toggle="modal" data-bs-target="#grid" type="submit">Subscribe</button>
+                                                </div>
+                                               
+                                            </div>
+                                            <!-- End Submit button -->
+                                        </div>
+                                    </div>
                                
-                                
                             </div>
                         </div>
                     </div>
@@ -88,6 +104,87 @@
                 </div>
 
             </div>
+
+            <!-- Using the grid modal -->
+<div class="modal fade" id="grid" tabindex="-1" aria-labelledby="gridLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gridLabel">Newsletter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            
+                            <form class="quform" action="{% url 'newletter'%}" method="post" enctype="multipart/form-data" onclick="">
+                                {% csrf_token %}
+		
+                                <div class="quform-elements">
+
+                                    <div class="row">
+                                        <!-- Begin Text input element -->
+
+                                        <div class="col-md-12 mb-2">
+                                            <div class="quform-element mb-0">
+                                                <div class="quform-input">
+                                                    <label for="email">Name <span class="quform-required">*</span></label>
+                                                    {{form2.newname}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+
+                                     
+                                    </div>
+                                    <div class="row">
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-12 mb-2">
+                                            <div class="quform-element mb-0">
+                                                <div class="quform-input">
+                                                    <label for="email">Company Name<span class="quform-required">*</span></label>
+                                                    {{form2.company}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+
+                                     
+                                    </div>
+                                    <div class="row">
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-12">
+                                            <div class="quform-element mb-0">
+                                                <div class="quform-input">
+                                                    <label for="email">Email Address <span class="quform-required">*</span></label>
+                                                    {{form2.mailaddress}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+
+                                     
+                                    </div>
+                                </div>
+                           
+                        </div>
+                     
+                    </div>
+                  
+                    
+               
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button submit" name="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+                    
 
             <div class="footer-bar wow fadeIn" data-wow-delay="200ms">
                 <div class="container">

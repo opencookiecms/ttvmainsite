@@ -372,6 +372,12 @@ class Timeline(models.Model):
     position  = models.IntegerField(null=True, blank=True)
 
 
+class Newsletter(models.Model):
+    mailaddress = models.CharField(max_length=150, null=True, blank=True)
+    newname = models.CharField(max_length=150, null=True, blank=True)
+    company  = models.CharField(max_length=150, null=True, blank=True)
+
+
 
 
 

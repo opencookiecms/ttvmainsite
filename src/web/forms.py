@@ -1,8 +1,23 @@
 from django import forms
 from django.db import models
-from .models import Contact
+from .models import Contact, Newsletter
 from django_countries import Countries
 from django.db.models.fields import BLANK_CHOICE_DASH
+
+
+class NewsletterForm(forms.ModelForm):
+    
+    mailaddress = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name Here'}))
+    newname = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name Here'}))
+    company  = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name Here'}))
+
+    class Meta:
+        model = Newsletter
+        fields = [
+            'mailaddress',
+            'newname',
+            'company',
+        ]
 
 class ContactForm(forms.ModelForm):
 

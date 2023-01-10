@@ -56,7 +56,8 @@ urlpatterns = [
     path('semiconductor/Substrate-Package-AOI',views.semi3, name="semi3"),
 
     path('investor-relation/enquiry',views.callinaction, name="callinaction"),
-
+    
+    path('newsletter', views.newsletter, name='newletter'),
 
 
 

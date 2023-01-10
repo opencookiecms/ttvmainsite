@@ -3,8 +3,9 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
-from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings
-from .forms import ContactForm
+from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError,HttpResponseRedirect
+from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter
+from .forms import ContactForm, NewsletterForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 import requests
@@ -22,6 +23,7 @@ def index(request):
     hero5 = Herotypefour.objects.get(positionhero=7)
     hero7 = Heroseven.objects.get(positionhero=2)
     accordation = Accordation.objects.filter(positionhero=5).order_by('sortnumber').filter(status=True)
+  
     context = {
 
         'slide':slide,
@@ -32,7 +34,8 @@ def index(request):
         'hero3':hero3,
         'hero5':hero5,
         'hero7':hero7,
-        'accordation':accordation
+        'accordation':accordation,
+   
     }
 
     
@@ -116,6 +119,21 @@ def contactus(request):
         'com':company
     }
     return render(request, 'pages/contact.html',context)
+
+def newsletter(request):
+    form = NewsletterForm(request.POST or None)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            form = NewsletterForm
+            return redirect('contactdone')
+        else:
+            print(form.errors)
+            print("error")
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))  
+    
+    
 
 def contactdone(request):
     company = Company.objects.get(id=1)
