@@ -74,6 +74,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ttvweb.wsgi.application'
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

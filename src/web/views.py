@@ -178,6 +178,7 @@ def event(request,slug):
     return render(request, 'pages/event.html',context)
 
 def news(request):
+    company = Company.objects.get(id=1)
     nw = News.objects.all().order_by('created_at')
     page = request.GET.get('page',1)
     paginator = Paginator(nw,10)
@@ -189,7 +190,7 @@ def news(request):
     except EmptyPage:
         newss = paginator.page(paginator.num_pages)
 
-    company = Company.objects.get(id=1)
+   
     context = {
         'news':newss,
         'com':company,
@@ -197,9 +198,9 @@ def news(request):
     return render(request, 'pages/news.html',context)
 
 def newslist(request):
-    nw = News.objects.all().order_by('-created_at')
+    nw = News.objects.all().order_by('created_at')
     page = request.GET.get('page',1)
-    paginator = Paginator(nw,3)
+    paginator = Paginator(nw,4)
 
     try:
         newss = paginator.page(page)
