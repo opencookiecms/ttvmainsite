@@ -55,7 +55,7 @@
                             <ul class="pagination justify-content-center d-block d-sm-flex text-center text-sm-start">
 
                                 {% if news.has_previous %}
-                                <li><a class="page-numbers" href="?page={{ news.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
+                                <li><a class="page-numbers" href="news-list?page={{ news.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
                                 {% else %}
       
                                 {% endif %}
@@ -64,12 +64,12 @@
                                     {% if news.number == i %}
                                     <li><span aria-current="page" class="page-numbers current">{{ i }}</span></li>
                                     {% else %}
-                                    <li><a class="page-numbers" href="?page={{ i }}">{{ i }}</a></li>
+                                    <li><a class="page-numbers" href="news-list?page={{ i }}">{{ i }}</a></li>
                                     {% endif %}
                                 {% endfor %}
 
                                 {% if news.has_next %}
-                                <li><a class="page-numbers" href="?page={{ users.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
+                                <li><a class="page-numbers" href="news-list?page={{ users.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
                                 {% else %}
                              
                                 {% endif %}
