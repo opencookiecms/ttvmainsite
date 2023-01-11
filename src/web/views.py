@@ -193,7 +193,7 @@ def news(request):
     return render(request, 'pages/news.html',context)
 
 def newslist(request):
-    nw = News.objects.all().order_by('created_at')
+    nw = News.objects.all().order_by('-created_at')
     page = request.GET.get('page',1)
     paginator = Paginator(nw,4)
 
