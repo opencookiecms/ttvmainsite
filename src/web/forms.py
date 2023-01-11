@@ -2,6 +2,8 @@ from django import forms
 from django.db import models
 from .models import Contact, Newsletter
 from django_countries import Countries
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
 
 
 
@@ -281,6 +283,7 @@ class ContactForm(forms.ModelForm):
     looking = forms.ChoiceField(choices=Find, required=False, widget=forms.Select(attrs={'class':'form-control'}))
     country = forms.ChoiceField(choices=COUNTRIES, required=False, widget=forms.Select(attrs={'class':'form-control'}))
     contacttel = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control'}))
+    capcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     enquirysubject = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your subject enquiry here'}))
     enquirycontent = forms.CharField(required=False, widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'Your Enquiry', 'rows':'4'}))

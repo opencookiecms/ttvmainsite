@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'web',
     'phonenumber_field',
+    'captcha',
     
 ]
 
@@ -78,6 +79,10 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SAMESITE = 'None'
+
+
+RECAPTCHA_PUBLIC_KEY = "6LcRhOsjAAAAAF-E6NTl_ScyLMdxHNp8ySj9-heM"
+RECAPTCHA_PRIVATE_KEY = "6LcRhOsjAAAAAAhVWhCslYEteQR0HLFlNIj7A6Cl"
 
 
 # Database
