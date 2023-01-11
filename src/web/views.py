@@ -39,11 +39,9 @@ def index(request):
         'meta':meta
    
     }
-
-    
-
-    
+   
     return render(request,'pages/frontpage.html',context)
+    
 
 def companybackground(request):
     company = Company.objects.get(id=1)
@@ -397,21 +395,39 @@ def career(request):
 
 def callinaction(request):
     meta = Metapro.objects.get(position=7)
+    company = Company.objects.get(id=1)
 
     context = {
-        'meta':meta
+        'meta':meta,
+        'com':company
     }
     return render(request, 'pages/callinaction.html',context)
 
 def fr(request):
-    return render(request, 'pages/fr.html')
+    company = Company.objects.get(id=1)
+
+    context = {
+        'com':company
+    }
+    return render(request, 'pages/fr.html',context)
 
 def term(request):
-    return render(request, 'pages/privacy.html')
+    company = Company.objects.get(id=1)
+
+    context = {
+        'com':company
+    }
+    return render(request, 'pages/privacy.html',context)
 
 
 def mediakit(request):
-    return render(request, 'pages/media.html')
+
+    company = Company.objects.get(id=1)
+
+    context = {
+        'com':company
+    }
+    return render(request, 'pages/media.html',context)
 
 
 

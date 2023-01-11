@@ -9,7 +9,7 @@ $(document).ready(function () {
        
      }
      if(httpss){
-        links[i].href=href.replace(/ttvision-tech.com/, encodeURIComponent("www.bursamalaysia.com"));
+        links[i].href=href.replace(/ttvision-tech.com/, encodeURIComponent("bursamalaysia.com"));
      }
      
    }
@@ -30,7 +30,7 @@ $(document).ready(function () {
        
      }
      if(httpss){
-        links[i].href=href.replace(/ttvision-tech.com/, encodeURIComponent("www.bursamalaysia.com"));
+        links[i].href=href.replace(/ttvision-tech.com/, encodeURIComponent("bursamalaysia.com"));
      }
      
    }
@@ -53,7 +53,7 @@ $(document).ready(function () {
        
      }
      if(httpss){
-        links[i].href=href.replace(/ttvision-tech.com/, encodeURIComponent("www.bursamalaysia.com"));
+        links[i].href=href.replace(/ttvision-tech.com/, encodeURIComponent("bursamalaysia.com"));
      }
      
    }
