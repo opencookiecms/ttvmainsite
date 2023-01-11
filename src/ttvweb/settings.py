@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-67#-)#&c$99hfij3=#@^oalw(=5@gvxv2n^9ik2_g0@uy+ju!=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','ttvision-tech.com','192.168.0.239','35.247.139.211']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','ttvision-tech.com','www.ttvision-tech.com','192.168.0.239','35.247.139.211']
 
 
 # Application definition
