@@ -391,6 +391,15 @@ class Pressrelease(models.Model):
     position  = models.IntegerField(null=True, blank=True)
 
 
+class Metapro(models.Model):
+    urlcontent = models.CharField(max_length=150, null=True, blank=True)
+    typecontent = models.CharField(max_length=150, null=True, blank=True)
+    titlecontent = models.CharField(max_length=150, null=True, blank=True)
+    description = models.CharField(max_length=500, null=True, blank=True)
+    imagelink = models.CharField(max_length=150, null=True, blank=True)
+    position  = models.IntegerField(null=True, blank=True)
+
+
 
 
 

@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError,HttpResponseRedirect
-from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease
+from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro
 from .forms import ContactForm, NewsletterForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
@@ -23,6 +23,7 @@ def index(request):
     hero5 = Herotypefour.objects.get(positionhero=7)
     hero7 = Heroseven.objects.get(positionhero=2)
     accordation = Accordation.objects.filter(positionhero=5).order_by('sortnumber').filter(status=True)
+    meta = Metapro.objects.get(position=1)
   
     context = {
 
@@ -35,6 +36,7 @@ def index(request):
         'hero5':hero5,
         'hero7':hero7,
         'accordation':accordation,
+        'meta':meta
    
     }
 
@@ -46,10 +48,12 @@ def index(request):
 def companybackground(request):
     company = Company.objects.get(id=1)
     post = Post.objects.get(slug="historyandbussiness")
+    meta = Metapro.objects.get(position=2)
     context = {
         'com':company,
         'about':'Company Background',
-        'post':post
+        'post':post,
+        'meta':meta,
     }
     return render(request, 'pages/companybackground.html',context)
 
@@ -77,6 +81,7 @@ def pv(request):
 
 def contactus(request):
     company = Company.objects.get(id=1)
+    meta = Metapro.objects.get(position=3)
     form = ContactForm(request.POST or None)
     if request.method == 'POST':
 
@@ -116,7 +121,8 @@ def contactus(request):
     
     context = {
         'form':form,
-        'com':company
+        'com':company,
+        'meta':meta,
     }
     return render(request, 'pages/contact.html',context)
 
@@ -305,12 +311,14 @@ def investor(request):
     iv = Annoucement.objects.all()
     b = Category.objects.filter(catype=1)
     company = Company.objects.get(id=1)
+    meta = Metapro.objects.get(position=6)
 
     context = {
         'title':'Investor Relation - Announcement',
         'iv':iv,
         'bursa':b,
         'com':company,
+        'meta':meta,
     }
     return render(request, 'pages/invester.html',context)
 
@@ -318,6 +326,7 @@ def leapmarket(request):
 
     b = Category.objects.filter(catype=1)
     company = Company.objects.get(id=1)
+    meta = Metapro.objects.get(position=8)
     
     url = 'https://www.bursamalaysia.com/api/v1/announcements/search?ann_type=company&company=03020&per_page=50&page=1&_=1672847484446'
     res = requests.get(url)
@@ -330,7 +339,8 @@ def leapmarket(request):
         'title':'Investor Relation - Announcement:LEAP Market',
         'bursa':b,
         'com':company,
-        'data':p
+        'data':p,
+        'meta':meta,
     }
 
     return render(request, 'pages/leap-market.html',context)
@@ -341,6 +351,7 @@ def acemarket(request):
     url = 'https://www.bursamalaysia.com/api/v1/announcements/search?ann_type=company&company=0272&per_page=50&page=1&_=1672995464303'
     res = requests.get(url)
     data = res.json()
+    meta = Metapro.objects.get(position=4)
 
     p = data['data']
 
@@ -352,6 +363,7 @@ def acemarket(request):
         'bursa':b,
         'com':company,
         'data':p,
+        'meta':meta,
     }
 
     return render(request, 'pages/ace-market.html',context)  
@@ -373,16 +385,23 @@ def meetings(request):
 def career(request):
 
     company = Company.objects.get(id=1)
+    meta = Metapro.objects.get(position=5)
 
     context = {
         'title':'Careers',
         'com':company,
+        'meta':meta,
     }
     return render(request, 'pages/career.html',context)
 
 
 def callinaction(request):
-    return render(request, 'pages/callinaction.html')
+    meta = Metapro.objects.get(position=7)
+
+    context = {
+        'meta':meta
+    }
+    return render(request, 'pages/callinaction.html',context)
 
 def fr(request):
     return render(request, 'pages/fr.html')
