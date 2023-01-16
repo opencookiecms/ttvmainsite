@@ -26,5 +26,5 @@ header.scrollHeader .navbar-default{
 }
 
 @media screen and (min-width: 1320px){
-    .header-style2 .navbar-nav > li > a { color: #dfe6e9; }
+    .header-style2 .navbar-nav > li > a { color: #dfe6e9;font-size: 15px; }
 }
