@@ -133,8 +133,8 @@ header{ transition: all 0.5s ease 0s; position: relative; z-index: 99999; }
 	    Header style02
 	====================================== */
 	.header-style2 .navbar-default { box-shadow: none; }
-	.header-style2 .navbar-nav li a { color: #6f6f6f; font-size: 12px; }
-	.header-style2 .navbar-nav > li > a { color: #282b2d; font-size:12px; }
+	.header-style2 .navbar-nav li a { color: #6f6f6f;}
+	.header-style2 .navbar-nav > li > a { color: #282b2d; }
 	.header-style2 .navbar-nav li > ul { background: #fff; }
 	.header-style2 .navbar ul ul li.active > a { color: #282b2d; }
 	.header-style2 .navbar-nav li.has-sub a:hover{ color: #282b2d; }

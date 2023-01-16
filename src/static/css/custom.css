@@ -17,9 +17,9 @@ header.scrollHeader .navbar-default{
 .header-style2.scrollHeader .navbar-nav > li.has-sub > a:hover { color: #f5f6fa; }
 
 
-@media screen and (min-width: 922px){
-    .navbar-nav li a { color: #6f6f6f; font-size: 12px; }
-	.navbar-nav > li > a { color: #282b2d; font-size:12px; }
+@media screen and (min-width: 1200px){
+    .header-style2 .navbar-nav li a { color: #6f6f6f; font-size: 12px; }
+	.header-style2 .navbar-nav > li > a { color: #282b2d; font-size:12px; }
 }
 
 
