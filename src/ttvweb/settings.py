@@ -153,7 +153,7 @@ EMAIL_HOST = 'smtp.office365.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'ttvision.net@ttvision-tech.com'
-EMAIL_HOST_PASSWORD = 'TTVision2022'
+EMAIL_HOST_PASSWORD = 'TTVision2023'
 SERVER_EMAIL = EMAIL_HOST_USER
 
 VENV_PATH = os.path.dirname(BASE_DIR)
