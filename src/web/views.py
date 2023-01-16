@@ -87,12 +87,28 @@ def contactus(request):
         companyname = request.POST['companyname']
         contactmail = request.POST['contactemail']
         subjects = request.POST['enquirysubject']
+        country = request.POST['country']
+        how = request.POST['looking']
+        tel = request.POST['contacttel']
+        content = request.POST['enquirycontent']
        
         if form.is_valid():
             form.save()
             form = ContactForm
 
             #subject = 'Welcome to TT Vision Holding Berhad'
+            message2 = render_to_string('pages/mail2.html',{
+                'name':contactname,
+                'company':companyname,
+                'mail':contactmail,
+                'con':country,
+                'how':how,
+                'tel':tel,
+                'mailtext':content,
+                'sub':subjects
+            })
+            text2content = strip_tags(message2)
+
             message = render_to_string('pages/mail.html',{'pr':contactname})
             textcontent = strip_tags(message)
             
@@ -100,11 +116,16 @@ def contactus(request):
             recipient_list = [contactmail, ]
             recipient_list2 = ['syed.afiq@ttvision-tech.com']
 
-            subject, from_email, to = subjects, email_from, recipient_list
+            subject1, from_email, to = subjects, email_from, recipient_list
+            subject2, from2_email,to2 = subjects, email_from,recipient_list2
 
-            msg = EmailMultiAlternatives(subject,textcontent,from_email,to, cc=recipient_list2)
+            msg = EmailMultiAlternatives(subject1,textcontent,from_email,to)
             msg.attach_alternative(message, "text/html")
             msg.send()
+
+            msg2 = EmailMultiAlternatives(subject2,text2content,from2_email,to2)
+            msg2.attach_alternative(message2,"text/html")
+            msg2.send()
         
 
         
