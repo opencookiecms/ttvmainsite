@@ -23,8 +23,10 @@ header.scrollHeader .navbar-default{
 
 @media screen and (min-width: 800px){
     .header-style2 .navbar-nav > li > a { color: #dfe6e9;font-size: 12px; }
+    .header-style2 .navbar > ul > li.has-sub > a:hover:after{ border-color: transparent #ffc107  #d1d1d1 transparent; }
 }
 
 @media screen and (min-width: 1366px){
     .header-style2 .navbar-nav > li > a { color: #dfe6e9;font-size: 15px; }
+    .header-style2 .navbar > ul > li.has-sub > a:hover:after{ border-color: transparent #ffc107  #d1d1d1 transparent; }
 }
