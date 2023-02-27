@@ -334,7 +334,7 @@ def investor(request):
     meta = Metapro.objects.get(position=6)
 
     context = {
-        'title':'Investor Relation - Announcement',
+        'title':'Investor Relation - Announcements',
         'iv':iv,
         'bursa':b,
         'com':company,
@@ -356,7 +356,7 @@ def leapmarket(request):
 
 
     context = {
-        'title':'Investor Relation - Announcement:LEAP Market',
+        'title':'Investor Relation - Announcements:LEAP Market',
         'bursa':b,
         'com':company,
         'data':p,
@@ -379,7 +379,7 @@ def acemarket(request):
     company = Company.objects.get(id=1)
 
     context = {
-        'title':'Investor Relation - Annoucement:ACE Market',
+        'title':'Investor Relation - Announcements:ACE Market',
         'bursa':b,
         'com':company,
         'data':p,
