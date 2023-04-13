@@ -454,7 +454,13 @@ def mediakit(request):
 
 def coporategovernage(request):
 
-    return render(request, 'pages/corporate-governace.html')
+    company = Company.objects.get(id=1)
+
+    context = {
+        'com':company
+    }
+
+    return render(request, 'pages/corporate-governace.html',context)
 
 
 
