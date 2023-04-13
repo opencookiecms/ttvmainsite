@@ -56,6 +56,7 @@ urlpatterns = [
     path('semiconductor/Substrate-Package-AOI',views.semi3, name="semi3"),
 
     path('investor-relation/enquiry',views.callinaction, name="callinaction"),
+    path('investor-relation/corporate-governance',views.coporategovernage, name="cg"),
     
     path('newsletter', views.newsletter, name='newletter'),
     path('news-media', views.mediakit, name='medialink'),

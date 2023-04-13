@@ -452,5 +452,10 @@ def mediakit(request):
     return render(request, 'pages/media.html',context)
 
 
+def coporategovernage(request):
+
+    return render(request, 'pages/corporate-governace.html')
+
+
 
     
