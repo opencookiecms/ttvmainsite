@@ -58,6 +58,7 @@ urlpatterns = [
     path('investor-relation/enquiry',views.callinaction, name="callinaction"),
     path('investor-relation/corporate-governance',views.coporategovernage, name="cg"),
     path('investor-relation/shareholdermeetings',views.agmegm, name="agmegm"),
+    path('investor-relation/annual-report',views.annualreport, name="ar"),
     
     path('newsletter', views.newsletter, name='newletter'),
     path('news-media', views.mediakit, name='medialink'),

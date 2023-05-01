@@ -474,5 +474,17 @@ def agmegm(request):
     return render(request, 'pages/agmegm.html',context)
 
 
+def annualreport(request):
+
+
+    company = Company.objects.get(id=1)
+
+    context = {
+        'com':company
+    }
+
+    return render(request, 'pages/annualreport.html',context)
+
+
 
     
