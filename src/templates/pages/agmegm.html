@@ -1,0 +1,87 @@
+{% extends 'based/based.html' %}
+{% block content %}
+{% load static %}
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/event.jpg'%}">
+            <div class="container">
+
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <span>Investor Relations</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">Shareholder’s Meeting</h1>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICES
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <div class="wow fadeIn" data-wow-delay="200ms">
+                            <h2 class="mb-3">5<sup>th</sup> ANNUAL GENERAL MEETING</h2>
+                            
+                        </div>
+
+                        <div class="wow fadeIn" data-wow-delay="200ms">
+                            <table class="table">
+                                <tr>
+                                    <td>Date of Meeting</td>
+                                    <td>29 May 2023</td>
+                                </tr>
+                                <tr>
+                                    <td>Time</td>
+                                    <td>02:30 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Venue(s)</td>
+                                    <td>Meeting Room 9, Level 2, AC Hotel by Marriot Penang 213, Jalan Bukit Gambir Bukit Jambul 11950 Pulau Pinang Malaysia </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                   
+
+
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ps-lg-4 ps-xl-5">
+
+                            <div class="widget wow fadeInUp" data-wow-delay="200ms">
+                                <h4 class="h5 mb-1-6">Downloads</h4>
+                                <ul class="downloads m-0 p-0">
+                                    <li><a href="https://ttvision-tech.com/static/doc/investorrelation/TTVHB_Notice_of_5th_AGM.pdf" target="_blank"><i class="far fa-file-pdf"></i><span class="label font-weight-600">Notice of AGM</span></a></li>
+                                    <li><a href="https://ttvision-tech.com/static/doc/investorrelation/TTVHB%20-%20Proxy%20form%20(5th%20AGM).pdf" target="_blank"><i class="far fa-file-pdf"></i><span class="label font-weight-600">Proxy Form</span></a></li>
+                                    <li><a href="https://ttvision-tech.com/static/doc/investorrelation/TTVHB-%20Notification%20letter%20to%20shs%20(5th%20AGM).pdf" target="_blank"><i class="far fa-file-pdf"></i><span class="label font-weight-600">Notification Letter to shareholders</span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-img bg-dark cover-background rounded wow fadeInUp" data-wow-delay="200ms" data-overlay-dark="85" data-background="img/bg/bg-06.jpg">
+                                <div class="position-relative z-index-9 text-center py-5 px-1-9">
+                                    <i class="fa fa-smile-o  text-white mb-4 display-14"></i>
+                                    <img src="{% static 'img/ttvimg/customer-service(2).png' %}"/>
+                                    <p>
+                                    <h5 class="text-white mb-4">How can we help?</h5>
+                                    <div class="separator-line-horrizontal-full bg-white opacity4 mb-4"></div>
+                                    <ul class="text-center mb-0 list-unstyled ps-0">
+                                        <li class="text-white mb-2"><i class="fa fa-phone small text-white me-2"></i><a href="tel:604-6456294" class="text-white">604-6456294</a></li>
+                                        <li class="text-white"><i class="fa fa-envelope-open small text-white me-2"></i><a href="mailto:sales@ttvision-tech.com" class="text-white">sales@ttvision-tech.com</a></li>
+                                        <li class="text-white"><i class="fa fa-mail-open small text-white me-2"></i><a href="{% url 'contact' %}" class="text-white"><b><u>Enquiry</u></b></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endblock content %} 
