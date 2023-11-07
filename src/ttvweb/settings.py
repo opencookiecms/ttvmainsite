@@ -168,5 +168,6 @@ MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
+# Redirect addresses with www and / to the same address
+APPEND_SLASH = True
+PREPEND_WWW = True

@@ -14,12 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from web import views
+from django.views.generic.base import RedirectView
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='https://www.ttvision-tech.com', permanent=True), name='redirect-to-www'),
+    
     path('admin/', admin.site.urls),
     path('term-and-condition',views.term, name="term"),
     path('', views.index, name='index' ),
@@ -62,11 +65,6 @@ urlpatterns = [
     
     path('newsletter', views.newsletter, name='newletter'),
     path('news-media', views.mediakit, name='medialink'),
-
-
-
-
-
 ]
 
 if settings.DEBUG:
