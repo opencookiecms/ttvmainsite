@@ -13,9 +13,10 @@
     <!--Added additional info to title to make it unique for each page-->
     <title>{{com.companyname}}   
       {% if title %}
-      | {{title}}
+        | {{title}}
         {% if news %}
          (page {{newss}})
+        {% endif %}
       {% endif %}
     </title>
 
