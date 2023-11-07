@@ -48,6 +48,7 @@ def companybackground(request):
     post = Post.objects.get(slug="historyandbussiness")
     meta = Metapro.objects.get(position=2)
     context = {
+        'title': 'Company Background',
         'com':company,
         'about':'Company Background',
         'post':post,
@@ -61,6 +62,7 @@ def vision(request):
     hero7 = Heroseven.objects.get(positionhero=2)
     company = Company.objects.get(id=1)
     context = {
+        'title': 'Vision and Mission',
         'com':company,
         'pv':postvision,
         'hero5':hero5,
@@ -139,6 +141,7 @@ def contactus(request):
 
     
     context = {
+        'title': 'Contact Us',
         'form':form,
         'com':company,
         'meta':meta,
@@ -163,7 +166,7 @@ def newsletter(request):
 def contactdone(request):
     company = Company.objects.get(id=1)
     context = {
-     
+        'title': 'Contact Us',
         'com':company
     }
     return render(request, 'pages/success.html',context)
@@ -175,6 +178,7 @@ def award(request):
     timeline = Timeline.objects.all().order_by('position')
   
     context = {
+        'title': 'Awards and Achievements',
         'com':company,
         'timeline':timeline,
         'about':'Awards and Achievements',
@@ -190,6 +194,7 @@ def event(request,slug):
     pe = PhotoEvent.objects.filter(postlib__slug=slug)
     company = Company.objects.get(id=1)
     context = {
+        'title': 'Events',
         'etitle':eventtitle,
         'e':events,
         'pe':pe,
@@ -213,6 +218,7 @@ def news(request):
 
    
     context = {
+        'title': 'News',
         'news':newss,
         'com':company,
     }
@@ -232,6 +238,7 @@ def newslist(request):
 
     company = Company.objects.get(id=1)
     context = {
+        'title': 'News',
         'news':newss,
         'com':company,
     }
@@ -242,6 +249,7 @@ def press(request):
     pressl = Pressrelease.objects.all().order_by('created_at')
     company = Company.objects.get(id=1)
     context = {
+        'title': 'Press Release',
         'press':pressl,
          'com':company,
     }
@@ -250,7 +258,7 @@ def press(request):
 def newsm(request):
     company = Company.objects.get(id=1)
     context = {
-
+        'title': 'Media',
         'com':company,
 
     }
@@ -259,7 +267,7 @@ def newsm(request):
 def robotic(request):
     company = Company.objects.get(id=1)
     context = {
-
+        'title': 'Advance Robotics Solutions',
         'com':company,
 
     }
@@ -268,7 +276,7 @@ def robotic(request):
 def pvinspect(request):
     company = Company.objects.get(id=1)
     context = {
-
+        'title': 'PV Inspection, Test and Sort Solutions',
         'com':company,
 
     }
@@ -277,7 +285,7 @@ def pvinspect(request):
 def semiconductorlist(request):
     company = Company.objects.get(id=1)
     context = {
-
+        'title': 'Semiconductor & LED Inspection Solutions',
         'com':company,
 
     }
@@ -289,6 +297,7 @@ def rpv(request, slug):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': pr,
         'rpv':True,
         'pr':pr,
         'com':company
@@ -301,6 +310,7 @@ def pinspection(request, slug):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': pr,
         'ins':True,
         'pr':pr,
         'com':company
@@ -311,6 +321,7 @@ def icled(request, slug):
     pr = Product.objects.get(productslug=slug)
     company = Company.objects.get(id=1)
     context = {
+        'title': pr,
         'icled':True,
         'pr':pr,
         'com':company
@@ -420,6 +431,7 @@ def callinaction(request):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': 'Enquiry',
         'meta':meta,
         'com':company
     }
@@ -429,6 +441,7 @@ def fr(request):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': 'Quarterly Report',
         'com':company
     }
     return render(request, 'pages/fr.html',context)
@@ -447,6 +460,7 @@ def mediakit(request):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': 'Media',
         'com':company
     }
     return render(request, 'pages/media.html',context)
@@ -457,6 +471,7 @@ def coporategovernage(request):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': 'Corporate Governance',
         'com':company
     }
 
@@ -468,6 +483,7 @@ def agmegm(request):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': 'Shareholders Meeting (AGM/EGM)',
         'com':company
     }
 
@@ -480,6 +496,7 @@ def annualreport(request):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': 'Annual Report',
         'com':company
     }
 
