@@ -69,7 +69,7 @@
                                 {% endfor %}
 
                                 {% if news.has_next %}
-                                <li><a class="page-numbers" href="news-list?page={{ users.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
+                                <li><a class="page-numbers" href="news-list?page={{ news.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
                                 {% else %}
                              
                                 {% endif %}
