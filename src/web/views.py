@@ -194,7 +194,7 @@ def event(request,slug):
     pe = PhotoEvent.objects.filter(postlib__slug=slug)
     company = Company.objects.get(id=1)
     context = {
-        'title': 'Events',
+        'title': eventtitle,
         'etitle':eventtitle,
         'e':events,
         'pe':pe,
