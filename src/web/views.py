@@ -450,6 +450,7 @@ def term(request):
     company = Company.objects.get(id=1)
 
     context = {
+        'title': 'Terms and Condition',
         'com':company
     }
     return render(request, 'pages/privacy.html',context)
