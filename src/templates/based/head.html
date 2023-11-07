@@ -10,7 +10,12 @@
     <meta name="description" content="TT Vision Holdings Berhad - Advanced Machine Vision">
 
     <!-- title  -->
-    <title>{{com.companyname}} | test</title>
+    <title>{{com.companyname}} 
+      <!--Add additional info to title to make it unique for each page-->
+      {% if title %}
+      | { {title} }
+      {% endif %}
+    </title>
 
     <!-- favicon -->
     <link rel="shortcut icon" href="img/logos/favicon.png">
