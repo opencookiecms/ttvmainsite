@@ -10,7 +10,11 @@
     <meta name="keywords" content="{{keywords}}">
     {% comment %} <meta name="description" content="TT Vision Holdings Berhad - Advanced Machine Vision"> {% endcomment %}
     <meta name="description" content="{{description}}">
+    {% if noindex %}
+    <meta name="robots" content="noindex, nofollow">
+    {% else %}
     <meta name="robots" content="index, follow">
+    {% endif %}
 
     <!-- title  -->
     <!--First if: for any pages that have their own titles-->

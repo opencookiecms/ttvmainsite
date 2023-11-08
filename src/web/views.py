@@ -53,6 +53,8 @@ def companybackground(request):
         'about':'Company Background',
         'post':post,
         'meta':meta,
+        'keywords': "technology, technology company, technology driven, automated machine vision, pc-based vision systems, vision systems, TTVHB, TT Vision Holdings Berhad, TTVTSB, TT Vision Technologies Sdn Bhd, TTICSB, TT Innovation Centre Sdn Bhd, investment holding company, development and manufacturing, development, manufacturing, manufacturing and development, vision inspection module, optoelectronics, solar wafer, solar cell, discrete components, IC chips, vision guided robotic equipment, vision guided robot, semiconductor components, Goon Koon Yin, Wong Yih Hsow, Jennie Tan Yen-Li",
+        'description': "TT Vision's Company Background"
     }
     return render(request, 'pages/companybackground.html',context)
 
@@ -67,7 +69,7 @@ def vision(request):
         'pv':postvision,
         'hero5':hero5,
         'hero7':hero7,
-        'keywords': "innovate, equipment inspection, innovate equipment inspection, leading brand, equipment vision inspection, vision inspection",
+        'keywords': "mission, vision, mission and vision, vision and mission, innovate, equipment inspection, innovate equipment inspection, leading brand, equipment vision inspection, vision inspection",
         'description': "TT Vision's Mission and Vision"
     }
 
@@ -146,6 +148,8 @@ def contactus(request):
         'form':form,
         'com':company,
         'meta':meta,
+        'keywords': "contact, contact us, location, tel, telephone, email, fax, phone, sales@ttvision-tech.com, 604-6456294, 604-6456295",
+        'description': "Contact Us At Email: 'sales@ttvision-tech.com' | Tel: 604-6456294 | Fax:604-6456295 | Location: Plot 106, Hilir Sungai Keluang 5, Bayan Lepas Phase 4, 11900, Penang, Malaysia"
     }
     return render(request, 'pages/contact.html',context)
 
@@ -168,7 +172,8 @@ def contactdone(request):
     company = Company.objects.get(id=1)
     context = {
         'title': 'Contact Us',
-        'com':company
+        'com':company,
+        'noindex': True,
     }
     return render(request, 'pages/success.html',context)
 
