@@ -166,8 +166,7 @@ def newsletter(request):
             print("error")
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))  
     
-    
-
+# if noindex=true, robot meta tag is set to noindex and nofollow    
 def contactdone(request):
     company = Company.objects.get(id=1)
     context = {
@@ -204,8 +203,9 @@ def event(request,slug):
         'etitle':eventtitle,
         'e':events,
         'pe':pe,
-        'com':company
-
+        'com':company,
+        'keywords':"events",
+        'description':"TT Vision's Past Events"
     }
     return render(request, 'pages/event.html',context)
 
@@ -227,6 +227,8 @@ def news(request):
         'title': 'News',
         'news':newss,
         'com':company,
+        'keywords':"news",
+        'description':"TT Vision's News"
     }
     return render(request, 'pages/news.html',context)
 
@@ -247,6 +249,8 @@ def newslist(request):
         'title': 'News',
         'news':newss,
         'com':company,
+        'keywords':"news",
+        'description':"TT Vision's News"
     }
     return render(request, 'pages/blog-list.html',context)
 
@@ -257,7 +261,9 @@ def press(request):
     context = {
         'title': 'Press Release',
         'press':pressl,
-         'com':company,
+        'com':company,
+        'keywords':"press releases, current affairs",
+        'description':"TT Vision's Latest Press Releases and Affairs"
     }
     return render(request, 'pages/press.html',context)
 
@@ -266,7 +272,8 @@ def newsm(request):
     context = {
         'title': 'Media',
         'com':company,
-
+        'keywords':"media",
+        'description':"TT Vision's Media"
     }
     return render(request, 'pages/media.html',context)
 
@@ -275,7 +282,8 @@ def robotic(request):
     context = {
         'title': 'Advance Robotics Solutions',
         'com':company,
-
+        'keywords':"autonomous mobile robot, Mobile robot, amr, autonomous mobile robot AMR, machine tending, fluid dispensing, wire mesh handling, assembly, collaborative, tester handling, machine vision, polishing, i4.0, auto welding, cobot, system integration, end effector, robotic, pick and place, auto packing, palletizing, warehouse automation, auto sanding, AGV, systems and iot",
+        'description':"TT Vision&#8242s Advance Robotic Solutions and Products: Robotic Machine Tending, Robotic Spot Welding, Robotic Pick & Place + Assembly, Cobot Dispensing, Cobot Test Handler, Robot Auto Packing, Mobile Robot Integration, Robot Palletizer"
     }
     return render(request, 'pages/robotic.html',context)
 
