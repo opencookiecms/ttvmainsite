@@ -386,6 +386,7 @@ def leapmarket(request):
         'com':company,
         'data':p,
         'meta':meta,
+        'noindex':True
     }
 
     return render(request, 'pages/leap-market.html',context)
