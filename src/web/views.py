@@ -67,7 +67,8 @@ def vision(request):
         'pv':postvision,
         'hero5':hero5,
         'hero7':hero7,
-        'keywords':"innovate, equipment inspection, innovate equipment inspection, leading brand, equipment vision inspection, vision inspection"
+        'keywords': "innovate, equipment inspection, innovate equipment inspection, leading brand, equipment vision inspection, vision inspection",
+        'description': "TT Vision's Mission and Vision"
     }
 
     
