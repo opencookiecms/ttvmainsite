@@ -200,7 +200,7 @@ def event(request,slug):
     eventtitle = EventNews.objects.all()
     pe = PhotoEvent.objects.filter(postlib__slug=slug)
     company = Company.objects.get(id=1)
-    desc = "TT Vision's Past Events - " + EventNews.objects.filter(slug=slug).first()
+    desc = render_to_string("TT Vision's Past Events - " + EventNews.objects.filter(slug=slug).first())
     context = {
         'title': events,
         'etitle':eventtitle,
