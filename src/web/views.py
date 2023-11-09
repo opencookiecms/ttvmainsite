@@ -207,7 +207,7 @@ def event(request,slug):
         'pe':pe,
         'com':company,
         'keywords':"events",
-        'description':"TT Vision's Past Events - " . events,
+        'description':"TT Vision's Past Events - {{events}}",
     }
     return render(request, 'pages/event.html',context)
 
