@@ -16,6 +16,8 @@
     <!--meta description for pages that has it own description, else use the default description-->
     {% if e %}
     <meta name="description" content="{{description}}{{title}}">
+    {% elif news %}
+    <meta name="description" content="{{description}}{{number}}">
     {% elif description %}
     <meta name="description" content="{{description}}">
     {% elif title %}

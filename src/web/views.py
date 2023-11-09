@@ -230,7 +230,7 @@ def news(request):
         'news':newss,
         'com':company,
         'keywords':"news",
-        'description':"TT Vision's News"
+        'description':"TT Vision's News - "
     }
     return render(request, 'pages/news.html',context)
 
