@@ -14,11 +14,10 @@
     {% endif %}
 
     <!--meta description for pages that has it own description, else use the default description-->
-    {% if description %}
-    <meta name="description" content="{{description}}">
     {% if e %}
     <meta name="description" content="{{description}}{{title}}">
-    {% endif %}
+    {% elif description %}
+    <meta name="description" content="{{description}}">
     {% elif title %}
     <meta name="description" content="{{title}} information">
     {% else %}
