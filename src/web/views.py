@@ -187,7 +187,9 @@ def award(request):
         'com':company,
         'timeline':timeline,
         'about':'Awards and Achievements',
-        'post':post
+        'post':post,
+        'keywords': "1-inno cert, 1-inno cert rating AAA, SME, SME Corporation Malaysia, Small and Medium Enterprises Corporation Malaysia, MiGHT, Malaysian Industry Government Group of High Technology, Innovation Certificate, Enterprise Rating and Transformation, ISO 9001:2015, TUV Rheinland Cert GmbH, SCORE, SME Competitive Rating for Enhancement, Enterprise 50, SMIDEC, Golden Bull, Golden Bull 2007, Golden Bull 2006, Golden Bull 2005, Nanyang Siang Pau, Deloitte, Technology Fast 500 Asia Pacific 2006",
+        'description': "TT Vision's Awards and Achievement"
     }
 
     return render(request, 'pages/award.html',context)
@@ -292,7 +294,8 @@ def pvinspect(request):
     context = {
         'title': 'PV Inspection, Test and Sort Solutions',
         'com':company,
-
+        'keywords':"solar test and sort, solar sort, solar test, perovskite, Electroluminescence EL, machine vision, bottom cell, unloader, innovation, automation, solarpv, Transflection TF, solar wafer sorting, sorting, Photoluminescence PL, testing, top cell, loader, microcrack, handler",
+        'description':"TT Vision's PV Inspections, Test & Sort Solutions and Products: Solar Cell FRV-AOI, Solar Cell PL-AOI, Solar CEll TF-AOI, IBC Cell Sorter, Quad Cell Sorter",
     }
     return render(request, 'pages/inspectionlist.html',context)
 
@@ -301,6 +304,8 @@ def semiconductorlist(request):
     context = {
         'title': 'Semiconductor & LED Inspection Solutions',
         'com':company,
+        'keywords':"automated optical inspection, wirebond aoi, substrate, vision module, LED, post tape, automated optical inspection, axi, optoelectronics, semiconductor aoi, package, 3D inspection, vision, wirebond, wafer, x-ray",
+        'description':"TT Vision's Semiconductor/LED Inspection Solutions and Products: Substrate Package AOI Machine, Wafer AOI Machine, Wirebond AOI Machine"
 
     }
     return render(request, 'pages/semiconductorlist.html',context)
@@ -364,6 +369,8 @@ def investor(request):
         'bursa':b,
         'com':company,
         'meta':meta,
+        'keywords':"investor relation, bursa, bursa malaysia, ace market, stocks",
+        'description':"TT Vision's Investor Relations Announcment"
     }
     return render(request, 'pages/invester.html',context)
 
@@ -425,6 +432,8 @@ def meetings(request):
         'iv':iv,
         'bursa':b,
         'com':company,
+        'keywords':'EGM, meetings',
+        'description':"TT Vision's Meeting Announcements"
     }
     return render(request, 'pages/mettings.html',context)
 
@@ -437,6 +446,8 @@ def career(request):
         'title':'Careers',
         'com':company,
         'meta':meta,
+        'keywords':"job, full time job, internship, intern, career, software and control engineer, mechanical design engineer, project engineer, project coordinator, software development engineer, r&d engineer, application engineer, it engineer, shipping clerk, admin clerk, mechanical engineer, e&e engineering, electrical and electronic engineering, mechatronics engineering, computer engineering, it engineering, software engineering",
+        'description':"TT Vision's Careers and Open Job Positions"
     }
     return render(request, 'pages/career.html',context)
 
@@ -448,7 +459,9 @@ def callinaction(request):
     context = {
         'title': 'Enquiry',
         'meta':meta,
-        'com':company
+        'com':company,
+        'keywords':"contact, enquiry",
+        'description': "TT Vision's Enquiry Page Regarding Investor Relations"
     }
     return render(request, 'pages/callinaction.html',context)
 
@@ -457,7 +470,9 @@ def fr(request):
 
     context = {
         'title': 'Quarterly Report',
-        'com':company
+        'com':company,
+        'keywords':"financial report, financial summary, ipo factsheet",
+        'description': "TT Vision's Quarterly Financial Report and Summary"
     }
     return render(request, 'pages/fr.html',context)
 
@@ -466,7 +481,9 @@ def term(request):
 
     context = {
         'title': 'Terms and Conditions',
-        'com':company
+        'com':company,
+        'keywords':"terms and conditions, terms, conditions",
+        'description': "TT Vision's Website Terms and Conditions"
     }
     return render(request, 'pages/privacy.html',context)
 
@@ -477,7 +494,9 @@ def mediakit(request):
 
     context = {
         'title': 'Media',
-        'com':company
+        'com':company,
+        'keywords':"news media, media coverage, news coverage",
+        'description': "TT Vision's News and Media Coverage"
     }
     return render(request, 'pages/media.html',context)
 
@@ -488,7 +507,9 @@ def coporategovernage(request):
 
     context = {
         'title': 'Corporate Governance',
-        'com':company
+        'com':company,
+        'keywords':"corporate governance, board charter, audit & risk management committee, remuneration committee, nomination committee, code of conduct & Ethics, Anti-bribery, anti-corruption, whistleblowing, fit and proper policy, remuneration policy, remuneration, remuneration procedure",
+        'description': "TT Vision's Corporate Governance"
     }
 
     return render(request, 'pages/corporate-governace.html',context)
@@ -500,7 +521,9 @@ def agmegm(request):
 
     context = {
         'title': 'Shareholders Meeting (AGM/EGM)',
-        'com':company
+        'com':company,
+        'keywords':"agm, egm, meeting, shareholder, shareholder's meeting",
+        'description': "TT Vision's Shareholders' Meeting"
     }
 
     return render(request, 'pages/agmegm.html',context)
@@ -513,7 +536,9 @@ def annualreport(request):
 
     context = {
         'title': 'Annual Report',
-        'com':company
+        'com':company,
+        'keywords':"annual report, financial report, financial summary",
+        'description': "TT Vision's Annual Financial Report and Summary"
     }
 
     return render(request, 'pages/annualreport.html',context)
