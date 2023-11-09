@@ -16,6 +16,8 @@
     <!--meta description for pages that has it own description, else use the default description-->
     {% if description %}
     <meta name="description" content="{{description}}">
+    {% elif title %}
+    <meta name="description" content="{{title}} information">
     {% else %}
     <meta name="description" content="TT Vision Holdings Berhad - Advanced Machine Vision | Our high performance PC-based vision system offers solutions for a wide-range of industry from Semiconductor, PCB assembly, lead frame, pharmaceutical, medical and many more.">
     {% endif %}
