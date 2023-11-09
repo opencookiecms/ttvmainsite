@@ -7,13 +7,11 @@
     <base href="https://www.ttvision-tech.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     {% comment %} <meta name="keywords" content="Our high performance PC-based vision system offers solutions for a wide-range of industry from Semiconductor, PCB assembly, lead frame, pharmaceutical, medical and many more."> {% endcomment %}
-    <meta name="keywords" content="TT Vision 
-    {{% if keywords %}}
-    {{keywords}}
-    {{% else %}}
-    {{title}}
-    {{% endif %}}
-    ">
+    {% if keywords %}
+    <meta name="keywords" content="TT Vision, {{keywords}}">
+    {% else %}
+    <meta name="keywords" content="TT Vision, {{title}}">
+    {% endif %}
 
     <!--meta description for pages that has it own description, else use the default description-->
     {% if description %}
