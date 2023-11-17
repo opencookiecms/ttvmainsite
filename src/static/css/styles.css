@@ -4128,7 +4128,7 @@ footer {
   color: #33d687; }
 
 /*test*/
-.pd {
+p .pd {
   text-align:justify;
   padding:0 20px 0 20px;
 }     
