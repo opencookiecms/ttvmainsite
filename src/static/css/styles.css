@@ -4111,22 +4111,25 @@ footer {
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 0; }
-  .footer-style1 .social-icons2 li:last-child {
-    margin-right: 0; }
-  .footer-style1 .social-icons2 li a {
-    font-size: 14px;
-    height: 35px;
-    line-height: 36px;
-    width: 35px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-radius: 50px;
-    display: inline-block;
-    text-align: center; }
-    .footer-style1 .social-icons2 li a:hover {
-      background: #fff;
-      color: #33d687; }
+.footer-style1 .social-icons2 li:last-child {
+  margin-right: 0; }
+.footer-style1 .social-icons2 li a {
+  font-size: 14px;
+  height: 35px;
+  line-height: 36px;
+  width: 35px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50px;
+  display: inline-block;
+  text-align: center; }
+.footer-style1 .social-icons2 li a:hover {
+  background: #fff;
+  color: #33d687; }
 
-      
-
+/*test*/
+.pd {
+  text-align:justify;
+  padding:0 20px 0 20px;
+}     
 /*# sourceMappingURL=styles.css.map */
