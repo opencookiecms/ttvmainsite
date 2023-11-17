@@ -62,6 +62,9 @@ urlpatterns = [
     
     path('newsletter', views.newsletter, name='newletter'),
     path('news-media', views.mediakit, name='medialink'),
+
+    #tests
+    path('test-robotics-mainpage', views.robotic, name='test'),
 ]
 
 if settings.DEBUG:
