@@ -553,3 +553,16 @@ def robotic(request):
         'description':"TT Vision's Advance Robotic Solutions and Products: Robotic Machine Tending, Robotic Spot Welding, Robotic Pick & Place + Assembly, Cobot Dispensing, Cobot Test Handler, Robot Auto Packing, Mobile Robot Integration, Robot Palletizer"
     }
     return render(request, 'pages/test-robotics-mainpage.html',context)
+
+def rpv(request, slug):
+
+    pr = Product.objects.get(productslug=slug)
+    company = Company.objects.get(id=1)
+
+    context = {
+        'title': pr,
+        'rpv':True,
+        'pr':pr,
+        'com':company
+    }
+    return render(request, 'pages/test-robotics-pv.html',context)

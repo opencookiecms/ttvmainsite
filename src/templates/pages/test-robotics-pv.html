@@ -1,0 +1,97 @@
+{% extends 'based/based.html' %}
+{% load static %}
+{% block content %}
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        {% if rpv %}
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-3.png'%}">
+        {% elif ins %}
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-2.png'%}">
+        {% elif icled %}
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-1.png'%}">
+        {% else %}
+        
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-3.png'%}">
+        
+            {% endif %}
+            <div class="container">
+
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <!--<span>Robotic</span>-->
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">{{pr.producttitle}}</h1>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICES
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 order-2 order-lg-1">
+                        <div class="pe-lg-4 pe-xl-5">
+                            <!--
+                            <div class="widget wow fadeInUp" data-wow-delay="200ms">
+                                <h4 class="h5 mb-1-6">Downloads</h4>
+                                <ul class="downloads m-0 p-0">
+                                    <li><a href="#!"><i class="far fa-file-pdf bg-primary"></i><span class="label font-weight-600 bg-primary">Cataloge</span></a></li>
+                                </ul>
+                            </div>
+                        -->
+                            <div class="bg-img bg-dark cover-background rounded wow fadeInUp" data-wow-delay="200ms" data-overlay-dark="85" data-background="img/bg/bg-06.jpg">
+                                <div class="position-relative z-index-9 text-center py-5 px-1-9">
+                                    <i class="fa fa-smile-o  text-white mb-4 display-14"></i>
+                                    <img src="{% static 'img/ttvimg/customer-service(2).png' %}" alt='Customer Service'/>
+                                    <p>
+                                    <h5 class="text-white mb-4">How can we help?</h5>
+                                    <div class="separator-line-horrizontal-full bg-white opacity4 mb-4"></div>
+                                    <ul class="text-center mb-0 list-unstyled ps-0">
+                                        <li class="text-white mb-2"><i class="fa fa-phone small text-white me-2"></i><a href="tel:604-6456294" class="text-white">604-6456294</a></li>
+                                        <li class="text-white"><i class="fa fa-envelope-open small text-white me-2"></i><a href="mailto:sales@ttvision-tech.com" class="text-white">sales@ttvision-tech.com</a></li>
+                                        <li class="text-white"><i class="fa fa-mail-open small text-white me-2"></i><a href="{% url 'contact' %}" class="text-white"><b><u>Enquiry</u></b></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-8 order-1 order-lg-2 mb-5 mb-lg-0">
+
+                        <img src="{{pr.productimg.url}}" class="mb-2-9 rounded wow fadeIn" data-wow-delay="200ms" alt="...">
+                        <div class="wow fadeIn" data-wow-delay="200ms">
+                            <h2 class="mb-3">{{pr.producttitle}}</h2>
+                            <p><h5>Features</h5></p>
+                            <ul class="list-style1 mb-2-9">
+                                <li>Collaborative robots from Universal Robots (UR):<br/>
+                                    Harness the power of collaborative robots from Universal Robots (UR). These advanced robots are designed to work alongside human operators, promoting a safe and efficient collaborative working environment.
+                                </li>
+                                <li>Tending one or multiple machines:<br/>
+                                
+                                </li>
+                                <li>Customized end-effector and product trays:<br/>
+                                
+                                </li>
+                                <li>Post process quality vision inspection:<br/>
+                                
+                                </li>
+                                <li>Operate under lights-out environment:<br/>
+                                
+                                </li>
+                                <li>Cobot equipped mobile robot (AGV/AIV):<br/>
+                                
+                                </li>
+                            </ul>
+                        </div>
+                        {{pr.productspec|safe}}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endblock content %}

@@ -65,6 +65,8 @@ urlpatterns = [
 
     #tests
     path('test-robotics-mainpage', views.robotic, name='test'),
+    path('test-robotics-pv/<str:slug>', views.rpv, name="test"),
+
 ]
 
 if settings.DEBUG:
