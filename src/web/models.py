@@ -410,6 +410,9 @@ class testProduct(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
 
+    def __str__(self):
+        return self.producttitle
+
 class testProductfea(models.Model):
     features = models.TextField(null=True, blank=True)
     testProduct = models.ForeignKey(testProduct, on_delete=models.CASCADE)
