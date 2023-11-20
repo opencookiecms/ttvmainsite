@@ -412,4 +412,4 @@ class testProduct(models.Model):
 
 class testproductfea(models.Model):
     features = models.TextField(null=True, blank=True)
-    testProduct = models.ManyToOneRel(testProduct)
+    testProduct = models.ForeignKey(testProduct, on_delete=models.CASCADE)
