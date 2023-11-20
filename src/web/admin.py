@@ -31,4 +31,3 @@ admin.site.register(AnnoucementMeetings)
 admin.site.register(Newsletter)
 admin.site.register(Pressrelease)
 admin.site.register(Metapro)
-

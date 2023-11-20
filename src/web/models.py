@@ -399,15 +399,17 @@ class Metapro(models.Model):
     imagelink = models.CharField(max_length=150, null=True, blank=True)
     position  = models.IntegerField(null=True, blank=True)
 
+#test product class
+class testProduct(models.Model):
+    producttitle = models.CharField(max_length=100, null=True, blank=True)
+    productslug =  models.CharField(max_length=200, null=True, blank=True)
+    productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
+    productimg = models.ImageField(null=True, blank=True)
+    productspec  = models.TextField(null=True, blank=True)
+    status = models.BooleanField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, editable=False)
 
-
-
-
-
-
-
-
-
-
-
-    
+class testproductfea(models.Model):
+    features = models.TextField(null=True, blank=True)
+    testProduct = models.ManyToOneRel(testProduct)
