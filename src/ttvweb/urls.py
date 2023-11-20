@@ -64,8 +64,8 @@ urlpatterns = [
     path('news-media', views.mediakit, name='medialink'),
 
     #tests
-    path('test-robotics-mainpage', views.robotic, name='test'),
-    path('test-robotics-mainpage/<str:slug>', views.rpv, name="test"),
+    path('test-robotics-mainpage', views.trobotic, name='test'),
+    path('test-robotics-mainpage/<str:slug>', views.trpv, name="test"),
 
 ]
 

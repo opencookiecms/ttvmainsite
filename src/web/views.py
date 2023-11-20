@@ -544,7 +544,7 @@ def annualreport(request):
     return render(request, 'pages/annualreport.html',context)
 
 # Test
-def robotic(request):
+def trobotic(request):
     company = Company.objects.get(id=1)
     context = {
         'title': 'Advance Robotics Solutions',
@@ -554,7 +554,7 @@ def robotic(request):
     }
     return render(request, 'pages/test-robotics-mainpage.html',context)
 
-def rpv(request, slug):
+def trpv(request, slug):
 
     pr = Product.objects.get(productslug=slug)
     company = Company.objects.get(id=1)
