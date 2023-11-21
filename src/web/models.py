@@ -419,7 +419,7 @@ class Product(models.Model):
 class productFea(models.Model):
     features = models.CharField(max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(null=True, blank=True)
-    testProduct = models.ForeignKey(Product, on_delete=models.CASCADE)
+    Product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Product.producttitle + " Feature " + str(self.pk)
