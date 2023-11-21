@@ -545,8 +545,10 @@ def annualreport(request):
 
 # Test
 def trobotic(request):
+    tpr = testProduct.objects.all
     company = Company.objects.get(id=1)
     context = {
+        'pr':tpr,
         'title': 'Advance Robotics Solutions',
         'com':company,
         'keywords':"autonomous mobile robot, Mobile robot, amr, autonomous mobile robot AMR, machine tending, fluid dispensing, wire mesh handling, assembly, collaborative, tester handling, machine vision, polishing, i4.0, auto welding, cobot, system integration, end effector, robotic, pick and place, auto packing, palletizing, warehouse automation, auto sanding, AGV, systems and iot",
