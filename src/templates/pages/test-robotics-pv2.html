@@ -15,7 +15,7 @@
                         <div class="title-style3">
                             <!--<span>Robotic</span>-->
                         </div>
-                        <h1 class="text-white mb-0 text-shadow-large">{{pr.producttitle}}</h1>
+                        {% comment %} <h1 class="text-white mb-0 text-shadow-large">{{pr.producttitle}}</h1> {% endcomment %}
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                     <div class="col-lg-8 order-1 order-lg-2 mb-5 mb-lg-0">
                         <img src="{{pr.productimg.url}}" class="mb-2-9 rounded wow fadeIn" data-wow-delay="200ms" alt="...">
                         <div class="wow fadeIn" data-wow-delay="200ms">
-                            <h2 class="mb-3">{{pr.producttitle}}</h2>
+                            {% comment %} <h2 class="mb-3">{{pr.producttitle}}</h2> {% endcomment %}
                             <p><h5>Features</h5></p>
                             <ul class="list-style1 mb-2-9">
                                 {% comment %} {% for f in f %}
