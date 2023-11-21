@@ -564,6 +564,7 @@ def trpv(request, slug):
         'title': tpr,
         'rpv':True,
         'pr':tpr,
-        'com':company
+        'com':company,
+        'f': fea
     }
     return render(request, 'pages/test-robotics-pv2.html',context)
