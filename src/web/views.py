@@ -279,15 +279,16 @@ def newsm(request):
     }
     return render(request, 'pages/media.html',context)
 
-def robotic(request):
-    company = Company.objects.get(id=1)
-    context = {
-        'title': 'Advance Robotics Solutions',
-        'com':company,
-        'keywords':"autonomous mobile robot, Mobile robot, amr, autonomous mobile robot AMR, machine tending, fluid dispensing, wire mesh handling, assembly, collaborative, tester handling, machine vision, polishing, i4.0, auto welding, cobot, system integration, end effector, robotic, pick and place, auto packing, palletizing, warehouse automation, auto sanding, AGV, systems and iot",
-        'description':"TT Vision's Advance Robotic Solutions and Products: Robotic Machine Tending, Robotic Spot Welding, Robotic Pick & Place + Assembly, Cobot Dispensing, Cobot Test Handler, Robot Auto Packing, Mobile Robot Integration, Robot Palletizer"
-    }
-    return render(request, 'pages/robotic.html',context)
+#---------------------------old views-------------------------
+# def robotic(request):
+#     company = Company.objects.get(id=1)
+#     context = {
+#         'title': 'Advance Robotics Solutions',
+#         'com':company,
+#         'keywords':"autonomous mobile robot, Mobile robot, amr, autonomous mobile robot AMR, machine tending, fluid dispensing, wire mesh handling, assembly, collaborative, tester handling, machine vision, polishing, i4.0, auto welding, cobot, system integration, end effector, robotic, pick and place, auto packing, palletizing, warehouse automation, auto sanding, AGV, systems and iot",
+#         'description':"TT Vision's Advance Robotic Solutions and Products: Robotic Machine Tending, Robotic Spot Welding, Robotic Pick & Place + Assembly, Cobot Dispensing, Cobot Test Handler, Robot Auto Packing, Mobile Robot Integration, Robot Palletizer"
+#     }
+#     return render(request, 'pages/robotic.html',context)
 
 def pvinspect(request):
     company = Company.objects.get(id=1)
@@ -310,18 +311,18 @@ def semiconductorlist(request):
     }
     return render(request, 'pages/semiconductorlist.html',context)
 
-def rpv(request, slug):
+# def rpv(request, slug):
 
-    pr = Product.objects.get(productslug=slug)
-    company = Company.objects.get(id=1)
+#     pr = Product.objects.get(productslug=slug)
+#     company = Company.objects.get(id=1)
 
-    context = {
-        'title': pr,
-        'rpv':True,
-        'pr':pr,
-        'com':company
-    }
-    return render(request, 'pages/productviews.html',context)
+#     context = {
+#         'title': pr,
+#         'rpv':True,
+#         'pr':pr,
+#         'com':company
+#     }
+#     return render(request, 'pages/productviews.html',context)
 
 def pinspection(request, slug):
 
@@ -543,32 +544,34 @@ def annualreport(request):
 
     return render(request, 'pages/annualreport.html',context)
 
-# Test
-def trobotic(request):
-    tpr = testProduct.objects.all()
+#---------------------------new views-------------------------
+#robotic mainpage
+def robotic(request):
+    pr = Product.objects.all()
     company = Company.objects.get(id=1)
     context = {
-        'pr':tpr,
+        'pr': pr,
         'title': 'Advance Robotics Solutions',
         'com':company,
         'keywords':"autonomous mobile robot, Mobile robot, amr, autonomous mobile robot AMR, machine tending, fluid dispensing, wire mesh handling, assembly, collaborative, tester handling, machine vision, polishing, i4.0, auto welding, cobot, system integration, end effector, robotic, pick and place, auto packing, palletizing, warehouse automation, auto sanding, AGV, systems and iot",
         'description':"TT Vision's Advance Robotic Solutions and Products: Robotic Machine Tending, Robotic Spot Welding, Robotic Pick & Place + Assembly, Cobot Dispensing, Cobot Test Handler, Robot Auto Packing, Mobile Robot Integration, Robot Palletizer"
     }
-    return render(request, 'pages/test-robotics-mainpage.html',context)
+    return render(request, 'pages/robotic.html',context)
 
-def trpv(request, slug):
+#robotic product page
+def rpv(request, slug):
     try: 
-        tpr = testProduct.objects.get(productslug=slug)
-        fea = productFea.objects.filter(testProduct = tpr)
+        pr = Product.objects.get(productslug=slug)
+        fea = productFea.objects.filter(testProduct = pr)
     except:
-        return redirect('test-robotics-mainpage')
+        return redirect('frontpage.html')
     company = Company.objects.get(id=1)
 
     context = {
-        'title': 'test',
-        'rpv':True,
-        'pr':tpr,
+        'title': pr,
+        'rpv': True,
+        'pr': pr,
         'com':company,
         'f': fea
     }
-    return render(request, 'pages/test-robotics-pv2.html',context)
+    return render(request, 'pages/productviews.html',context)

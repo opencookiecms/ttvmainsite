@@ -27,20 +27,21 @@ class Category(models.Model):
     def __str__(self):
         return self.category
 
-class Product(models.Model):
-    producttitle = models.CharField(max_length=100, null=True, blank=True)
-    productslug =  models.CharField(max_length=200, null=True, blank=True)
-    productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
-    productimg = models.ImageField(null=True, blank=True)
-    productfea  = models.TextField(null=True, blank=True)
-    productspec  = models.TextField(null=True, blank=True)
-    status = models.BooleanField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    updated_at = models.DateTimeField(auto_now=True, editable=False)
+#-------------------old product model-----------------------
+# class Product(models.Model):
+#     producttitle = models.CharField(max_length=100, null=True, blank=True)
+#     productslug =  models.CharField(max_length=200, null=True, blank=True)
+#     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
+#     productimg = models.ImageField(null=True, blank=True)
+#     productfea  = models.TextField(null=True, blank=True)
+#     productspec  = models.TextField(null=True, blank=True)
+#     status = models.BooleanField(blank=True, null=True)
+#     created_at = models.DateTimeField(auto_now_add=True, editable=False)
+#     updated_at = models.DateTimeField(auto_now=True, editable=False)
 
 
-    def __str__(self):
-        return self.producttitle
+#     def __str__(self):
+#         return self.producttitle
 
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
@@ -399,8 +400,8 @@ class Metapro(models.Model):
     imagelink = models.CharField(max_length=150, null=True, blank=True)
     position  = models.IntegerField(null=True, blank=True)
 
-#test product class
-class testProduct(models.Model):
+#-------------------new product model-----------------------
+class Product(models.Model):
     producttitle = models.CharField(max_length=100, null=True, blank=True)
     productintro = models.TextField(null=True, blank=True)
     productdesc = models.TextField(null=True, blank=True)
@@ -418,7 +419,7 @@ class testProduct(models.Model):
 class productFea(models.Model):
     features = models.CharField(max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(null=True, blank=True)
-    testProduct = models.ForeignKey(testProduct, on_delete=models.CASCADE)
+    testProduct = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.testProduct.producttitle + " Feature " + str(self.pk)
+        return self.Product.producttitle + " Feature " + str(self.pk)
