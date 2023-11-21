@@ -59,7 +59,7 @@ class Product(models.Model):
     def __str__(self):
         return self.producttitle
 
-class productFea(models.Model):
+class productfea(models.Model):
     features = models.CharField(max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(null=True, blank=True)
     Product = models.ForeignKey(Product, on_delete=models.CASCADE)
