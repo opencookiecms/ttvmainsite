@@ -557,7 +557,7 @@ def trobotic(request):
 def trpv(request, slug):
 
     tpr = testProduct.objects.get(productslug=slug)
-    fea = testProductfea.objects.get(testProduct = tpr)
+    fea = testProductfea.objects.filter(testProduct = tpr)
     company = Company.objects.get(id=1)
 
     context = {
