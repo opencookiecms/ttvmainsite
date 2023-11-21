@@ -561,7 +561,7 @@ def trpv(request, slug):
     company = Company.objects.get(id=1)
 
     context = {
-        'title': tpr,
+        'title': 'test',
         'rpv':True,
         'pr':tpr,
         'com':company,
