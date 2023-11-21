@@ -421,4 +421,4 @@ class productFea(models.Model):
     testProduct = models.ForeignKey(testProduct, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.testProduct.producttitle + " Feature " + self.pk
+        return self.testProduct.producttitle + " Feature " + str(self.pk)
