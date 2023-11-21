@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError,HttpResponseRedirect
-from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro
+from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro, testProduct, testProductfea
 from .forms import ContactForm, NewsletterForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
@@ -556,13 +556,14 @@ def trobotic(request):
 
 def trpv(request, slug):
 
-    pr = Product.objects.get(productslug=slug)
+    tpr = testProduct.objects.get(productslug=slug)
+    fea = testProductfea.objects.get(testProduct = tpr.producttitle)
     company = Company.objects.get(id=1)
 
     context = {
-        'title': pr,
+        'title': tpr,
         'rpv':True,
-        'pr':pr,
+        'pr':tpr,
         'com':company
     }
-    return render(request, 'pages/test-robotics-pv.html',context)
+    return render(request, 'pages/test-robotics-pv2.html',context)
