@@ -545,7 +545,7 @@ def annualreport(request):
 
 # Test
 def trobotic(request):
-    tpr = testProduct.objects.all
+    tpr = testProduct.objects.all()
     company = Company.objects.get(id=1)
     context = {
         'pr':tpr,
