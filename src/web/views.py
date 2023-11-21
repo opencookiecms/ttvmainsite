@@ -555,9 +555,11 @@ def trobotic(request):
     return render(request, 'pages/test-robotics-mainpage.html',context)
 
 def trpv(request, slug):
-
-    tpr = testProduct.objects.get(productslug=slug)
-    fea = testproductfea.objects.filter(testProduct = tpr)
+    try: 
+        tpr = testProduct.objects.get(productslug=slug)
+        fea = testproductfea.objects.filter(testProduct = tpr)
+    except:
+        return redirect('test-robotics-mainpage')
     company = Company.objects.get(id=1)
 
     context = {
