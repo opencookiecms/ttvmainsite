@@ -43,6 +43,30 @@ class Category(models.Model):
 #     def __str__(self):
 #         return self.producttitle
 
+#-------------------new product model-----------------------
+class Product(models.Model):
+    producttitle = models.CharField(max_length=100, null=True, blank=True)
+    productintro = models.TextField(null=True, blank=True)
+    productdesc = models.TextField(null=True, blank=True)
+    productslug =  models.CharField(max_length=200, null=True, blank=True)
+    productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
+    productimg = models.ImageField(null=True, blank=True)
+    productspec  = models.TextField(null=True, blank=True)
+    status = models.BooleanField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, editable=False)
+
+    def __str__(self):
+        return self.producttitle
+
+class productFea(models.Model):
+    features = models.CharField(max_length=400, null=True, blank=True)
+    featuresdesc = models.TextField(null=True, blank=True)
+    Product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Product.producttitle + " Feature " + str(self.pk)
+    
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     content = models.TextField(null=True, blank=True)
@@ -399,27 +423,3 @@ class Metapro(models.Model):
     description = models.CharField(max_length=500, null=True, blank=True)
     imagelink = models.CharField(max_length=150, null=True, blank=True)
     position  = models.IntegerField(null=True, blank=True)
-
-#-------------------new product model-----------------------
-class Product(models.Model):
-    producttitle = models.CharField(max_length=100, null=True, blank=True)
-    productintro = models.TextField(null=True, blank=True)
-    productdesc = models.TextField(null=True, blank=True)
-    productslug =  models.CharField(max_length=200, null=True, blank=True)
-    productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
-    productimg = models.ImageField(null=True, blank=True)
-    productspec  = models.TextField(null=True, blank=True)
-    status = models.BooleanField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    updated_at = models.DateTimeField(auto_now=True, editable=False)
-
-    def __str__(self):
-        return self.producttitle
-
-class productFea(models.Model):
-    features = models.CharField(max_length=400, null=True, blank=True)
-    featuresdesc = models.TextField(null=True, blank=True)
-    Product = models.ForeignKey(Product, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.Product.producttitle + " Feature " + str(self.pk)
