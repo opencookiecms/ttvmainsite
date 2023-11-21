@@ -402,6 +402,8 @@ class Metapro(models.Model):
 #test product class
 class testProduct(models.Model):
     producttitle = models.CharField(max_length=100, null=True, blank=True)
+    productintro = models.TextField(null=True, blank=True)
+    productdesc = models.TextField(null=True, blank=True)
     productslug =  models.CharField(max_length=200, null=True, blank=True)
     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
     productimg = models.ImageField(null=True, blank=True)
@@ -414,5 +416,6 @@ class testProduct(models.Model):
         return self.producttitle
 
 class testproductfea(models.Model):
-    features = models.TextField(null=True, blank=True)
+    features = models.CharField(max_length=400, null=True, blank=True)
+    featuresdesc = models.TextField(null=True, blank=True)
     testProduct = models.ForeignKey(testProduct, on_delete=models.CASCADE)
