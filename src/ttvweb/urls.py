@@ -35,12 +35,13 @@ urlpatterns = [
     path('news-list',views.newslist, name="newslist"),
     path('press-release', views.press, name="press"),
     path('newsm', views.newsm, name="newsm"),
+
     path('semiconductor', views.semiconductor, name="semiconductor"),
     path('robotic',views.robotic, name="robotic"),
     path('pv-inspection',views.pvinspect, name="pvinspect"),
     path('semiconductorlist', views.semiconductorlist, name="semiconductorlist"),
-  
     path('pv-inspections', views.pv, name="pv"),
+    
     path('investor-relation/announcement', views.investor, name="investor"),
     path('investor-relation/announcement/leap-market', views.leapmarket, name="leapmarket"),
     path('investor-relation/announcement/ace-market',views.acemarket,name='acemarket'),
