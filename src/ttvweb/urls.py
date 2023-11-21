@@ -65,7 +65,7 @@ urlpatterns = [
 
     #tests
     path('test-robotics-mainpage', views.trobotic, name='test'),
-    path('test-robotics-mainpage/<str:slug>', views.trpv, name="test"),
+    path('test-robotics-mainpage/<str:slug>', views.trpv, name="test-robotics-mainpage"),
 
 ]
 
