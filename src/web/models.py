@@ -60,20 +60,12 @@ class Product(models.Model):
         return self.producttitle
 
 class Productfeas(models.Model):
-    featureid = models.IntegerField(default=1)
     features = models.CharField(max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
-    def save(self, *args, **kwargs):
-        #count no. of current features of the product
-        existing_no = Productfeas.objects.filter(product=self.product).count()
-        self.featureid = existing_no + 1
-
-        super().save(*args, **kwargs)
-
     def __str__(self):
-        return self.product.producttitle + " Feature " + self.featureid
+        return self.product.producttitle + " Feature " + str(self.pk-1)
     
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
