@@ -28,36 +28,36 @@ class Category(models.Model):
         return self.category
 
 #-------------------old product model-----------------------
-# class Product(models.Model):
-#     producttitle = models.CharField(max_length=100, null=True, blank=True)
-#     productslug =  models.CharField(max_length=200, null=True, blank=True)
-#     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
-#     productimg = models.ImageField(null=True, blank=True)
-#     productfea  = models.TextField(null=True, blank=True)
-#     productspec  = models.TextField(null=True, blank=True)
-#     status = models.BooleanField(blank=True, null=True)
-#     created_at = models.DateTimeField(auto_now_add=True, editable=False)
-#     updated_at = models.DateTimeField(auto_now=True, editable=False)
-
-
-#     def __str__(self):
-#         return self.producttitle
-
-#-------------------new product model-----------------------
 class Product(models.Model):
     producttitle = models.CharField(max_length=100, null=True, blank=True)
-    productintro = models.TextField(null=True, blank=True)
-    productdesc = models.TextField(null=True, blank=True)
     productslug =  models.CharField(max_length=200, null=True, blank=True)
     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
     productimg = models.ImageField(null=True, blank=True)
+    productfea  = models.TextField(null=True, blank=True)
     productspec  = models.TextField(null=True, blank=True)
     status = models.BooleanField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
 
+
     def __str__(self):
         return self.producttitle
+
+#-------------------new product model-----------------------
+# class Product(models.Model):
+#     producttitle = models.CharField(max_length=100, null=True, blank=True)
+#     productintro = models.TextField(null=True, blank=True)
+#     productdesc = models.TextField(null=True, blank=True)
+#     productslug =  models.CharField(max_length=200, null=True, blank=True)
+#     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
+#     productimg = models.ImageField(null=True, blank=True)
+#     productspec  = models.TextField(null=True, blank=True)
+#     status = models.BooleanField(blank=True, null=True)
+#     created_at = models.DateTimeField(auto_now_add=True, editable=False)
+#     updated_at = models.DateTimeField(auto_now=True, editable=False)
+
+#     def __str__(self):
+#         return self.producttitle
 
 class Productfea(models.Model):
     features = models.CharField(max_length=400, null=True, blank=True)
