@@ -352,7 +352,7 @@ def icled(request, slug):
 #---------------------------new views-------------------------
 #robotic mainpage
 def robotic(request):
-    pr = Product.objects.all()
+    pr = Product.objects.filter(productcategory = 'Robotic')
     company = Company.objects.get(id=1)
     context = {
         'pr': pr,
@@ -367,7 +367,7 @@ def robotic(request):
 def rpv(request, slug):
     try: 
         pr = Product.objects.get(productslug=slug)
-        fea = Productfeas.objects.filter(Product = pr)
+        fea = Productfeas.objects.filter(product = pr)
     except:
         return redirect('frontpage.html')
     company = Company.objects.get(id=1)
