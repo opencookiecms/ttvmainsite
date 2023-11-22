@@ -64,9 +64,11 @@ class Productfeas(models.Model):
     featuresdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
-    def __str__(self):
+    def get_no(self):
         #count no. of current features of the product
-        no = Productfeas.objects.filter(product=self.product).exclude(pk=self.pk).count() + 1
+        return Productfeas.objects.filter(product=self.product).count()
+    def __str__(self):
+        no = self.get_no() + 1
         #return a name for the new feature created by adding 1 to the count
         return f"{self.product.producttitle} Feature {no}"
     
