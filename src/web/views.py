@@ -367,7 +367,7 @@ def robotic(request):
 #robotic product page
 def rpv(request, slug):
     pr = Product.objects.get(productslug=slug)
-    #fea = Productfeas.objects.filter(product = pr)
+    fea = Productfeas.objects.filter(product = pr)
     company = Company.objects.get(id=1)
 
     context = {
