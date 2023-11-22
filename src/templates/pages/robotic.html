@@ -26,10 +26,8 @@
                 </div>
                 <!--Product Row (Max 3)-->
                 <div class="row mb-5 mt-n1-9">
-                {% if !pr %}
-                <h2>No Product Found</h2>
-                {% endif %}
                 <!--For loop to display all products in database with the category-->
+                {% try: %}
                 {% for pr in pr %}
                 <!--Check if there's already 3 item in the row, if true, open another row-->
                 {% if forloop.counter0|divisibleby:3 %}
@@ -54,6 +52,8 @@
                 </div>
                 {% endif %}
                 {% endfor %}
+                {% except: %}
+                <h2>No Product Found</h2>
                 </div>
             </div>
         </section>
