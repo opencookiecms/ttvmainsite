@@ -12,7 +12,6 @@ admin.site.register(Herotypetwo)
 admin.site.register(Herotypethree)
 admin.site.register(Herotypefour)
 admin.site.register(Herotypefive)
-
 admin.site.register(Post)
 admin.site.register(Category)
 admin.site.register(Product)
