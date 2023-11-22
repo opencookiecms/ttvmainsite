@@ -29,7 +29,7 @@
                 <!--For loop to display all products in database with the category-->
                 {% for pr in pr %}
                     <!--Check if there's already 3 item in the row, if true, open another row-->
-                    {% if forloop.counter0|divisibleby:3 %}
+                    {% comment %} {% if forloop.counter0|divisibleby:3 %}
                     <div class="row mb-5 mt-n1-9">
                     {% endif %}
                         <!--Product container-->
@@ -49,7 +49,7 @@
                     <!--Check if its last item or counter++ and if its the third item, if yes close div-->
                     {% if forloop.last or forloop.counter0|add:1|divisibleby:3 %}
                     </div>
-                    {% endif %}
+                    {% endif %} {% endcomment %}
                 {% endfor %}
                 </div>
             </div>
