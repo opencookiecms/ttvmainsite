@@ -352,7 +352,8 @@ def icled(request, slug):
 #---------------------------new views-------------------------
 #robotic mainpage
 def robotic(request):
-    pr = Product.objects.filter(productcategory = "robotic")
+    cat = Category.objects.get(category='Robotic')
+    pr = Product.objects.filter(productcategory = cat)
     company = Company.objects.get(id=1)
     context = {
         'pr': pr,
