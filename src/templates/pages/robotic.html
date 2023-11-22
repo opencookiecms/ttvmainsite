@@ -27,30 +27,30 @@
                 <!--Product Row (Max 3)-->
                 <div class="row mb-5 mt-n1-9">
                 <!--For loop to display all products in database with the category-->
-                {% comment %} {% for pr in pr %}
-                <!--Check if there's already 3 item in the row, if true, open another row-->
-                {% if forloop.counter0|divisibleby:3 %}
-                <div class="row mb-5 mt-n1-9">
-                {% endif %}
-                    <!--Product container-->
-                    <div class="col-md-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
-                        <!--Product info-->
-                        <div class="team-style4 mx-sm-2">
-                            <div class="profile-image">
-                                <img src="{{pr.productimg.url}}" alt="...">
-                            </div>
-                            <div class="text-center py-4">
-                                <h2 class="h5 mb-2">{{pr.producttitle}}</h2>
-                                <p class="mb-0 small pd">{{pr.productintro}}</p>
-                                <p class="mb-0 small pd"><a class="text-primary" href="{% url 'test-robotics-mainpage' slug=pr.productslug %}"><h5>Learn More</h5></a></p>
+                {% for pr in pr %}
+                    <!--Check if there's already 3 item in the row, if true, open another row-->
+                    {% if forloop.counter0|divisibleby:3 %}
+                    <div class="row mb-5 mt-n1-9">
+                    {% endif %}
+                        <!--Product container-->
+                        <div class="col-md-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                            <!--Product info-->
+                            <div class="team-style4 mx-sm-2">
+                                <div class="profile-image">
+                                    {% comment %} <img src="{{pr.productimg.url}}" alt="..."> {% endcomment %}
+                                </div>
+                                <div class="text-center py-4">
+                                    <h2 class="h5 mb-2">{{pr.producttitle}}</h2>
+                                    <p class="mb-0 small pd">{{pr.productintro}}</p>
+                                    <p class="mb-0 small pd"><a class="text-primary" href="{% url 'test-robotics-mainpage' slug=pr.productslug %}"><h5>Learn More</h5></a></p>
+                                </div>
                             </div>
                         </div>
+                    <!--Check if its last item or counter++ and if its the third item, if yes close div-->
+                    {% if forloop.last or forloop.counter0|add:1|divisibleby:3 %}
                     </div>
-                <!--Check if its last item or counter++ and if its the third item, if yes close div-->
-                {% if forloop.last or forloop.counter0|add:1|divisibleby:3 %}
-                </div>
-                {% endif %}
-                {% endfor %} {% endcomment %}
+                    {% endif %}
+                {% endfor %}
                 </div>
             </div>
         </section>
