@@ -69,7 +69,7 @@
                             </ul>
                         </div>
                         {% if pr.productspec %}
-                            {{pr.productspec}}
+                            {{pr.productspec | safe}}
                         {% endif %}
                     </div>
                 </div>
