@@ -66,9 +66,9 @@ class Productfeas(models.Model):
 
     def __str__(self):
         #count no. of current features of the product
-        no = Productfeas.objects.filter(product=self.product).count()
+        no = Productfeas.objects.filter(product=self.product).count() + 1
         #return a name for the new feature created by adding 1 to the count
-        return f"{self.product.producttitle} Feature {no+1}"
+        return f"{self.product.producttitle} Feature {no}"
     
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
