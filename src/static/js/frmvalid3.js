@@ -4,7 +4,7 @@ const jobtype = document.querySelector('#id_jobtype');
 const jobpos = document.querySelector('#id_job');
 const resume = document.querySelector('#id_resume');
 
-const form = document.querySelector('#jobapp')
+const formhr = document.querySelector('#jobapp')
 
 const checkUsername = () => {
     let valid = false;
@@ -88,30 +88,30 @@ const isBetween = (length, min, max) => length < min || length > max ? false : t
 
 const showError = (input, message) => {
     // get the form-field element
-    const formField = input.parentElement;
+    const formFieldhr = input.parentElement;
     // add the error class
-    formField.classList.remove('success');
-    formField.classList.add('error');
+    formFieldhr.classList.remove('success');
+    formFieldhr.classList.add('error');
 
     // show the error message
-    const error = formField.querySelector('small');
+    const error = formFieldhr.querySelector('small');
     error.textContent = message;
 };
 
 const showSuccess = (input) => {
     // get the form-field element
-    const formField = input.parentElement;
+    const formFieldhr = input.parentElement;
 
     // remove the error class
-    formField.classList.remove('error');
-    formField.classList.add('success');
+    formFieldhr.classList.remove('error');
+    formFieldhr.classList.add('success');
 
     // hide the error message
-    const error = formField.querySelector('small');
+    const error = formFieldhr.querySelector('small');
     error.textContent = '';
 }
 
-form.addEventListener('submit', function (e){
+formhr.addEventListener('submit', function (e){
     e.preventDefault();
 
     let isUsernameValid = checkUsername(),
@@ -146,7 +146,7 @@ const debounce = (fn, delay = 500) => {
     };
 };
 
-form.addEventListener('input', debounce(function (e) {
+formhr.addEventListener('input', debounce(function (e) {
     switch (e.target.id) {
         case 'username':
             checkUsername();
