@@ -137,8 +137,7 @@
                 e.preventDefault();
             });
         });
-    });
-    
+        
     function updateChoices() {
         var jobtype = document.getElementById('id_jobtype');
         var fulltime = document.getElementById('id_fulltime');
@@ -158,7 +157,6 @@
     }
 
     // Attach the updateChoices function to the change event of the job type field
-    document.addEventListener('DOMContentLoaded', function() {
         var jobtype = document.getElementById('id_jobtype');
         jobtype.addEventListener('change', updateChoices);
 
