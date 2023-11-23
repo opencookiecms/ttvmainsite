@@ -8,7 +8,7 @@ from django.forms.widgets import Select
 
 #disable first choice in selection boxes
 class DisableChoice(Select):
-    def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
+    def create_option(self, name, value, label, selected, index, subindex=None, attrs="'class':'form-control'"):
         option = super().create_option(name, value, label, selected, index, subindex=subindex, attrs=attrs)
         if value in ['disable']:
             option['attrs']['disabled'] = 'disabled'

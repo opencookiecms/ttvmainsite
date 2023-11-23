@@ -54,6 +54,17 @@
                                         <!-- Begin Text input element -->
                                         <div class="col-md-6">
                                             <div class="quform-element form-group">
+                                                <label for="phone">Contact Number</label>
+                                                <div class="quform-input">
+                                                    <input type="tel" id="{{form.contacttel.id_for_label}}" name="{{form.contacttel.name}}" class="form-control"/>
+                                                    <small class="text-danger"></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-6">
+                                            <div class="quform-element form-group">
                                                 <label for="subject">Country <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.country}}
@@ -89,17 +100,6 @@
                                                 <label for="subject">Job Position <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     {{form.internship}}
-                                                    <small class="text-danger"></small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Text input element -->
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-6">
-                                            <div class="quform-element form-group">
-                                                <label for="phone">Contact Number</label>
-                                                <div class="quform-input">
-                                                    <input type="tel" id="{{form.contacttel.id_for_label}}" name="{{form.contacttel.name}}" class="form-control"/>
                                                     <small class="text-danger"></small>
                                                 </div>
                                             </div>
