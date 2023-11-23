@@ -149,9 +149,9 @@
     }),
 
     function updateChoices() {
-        var jobtype = document.getElementById('jobtype');
-        var fulltime = document.getElementById('fulltime');
-        var internship = document.getElementById('internship');
+        var jobtype = document.getElementById('id_jobtype');
+        var fulltime = document.getElementById('id_fulltime');
+        var internship = document.getElementById('id_internship');
 
         var selectedJobType = jobtype.value;
 
@@ -163,7 +163,7 @@
 
     // Attach the updateChoices function to the change event of the job type field
     document.addEventListener('DOMContentLoaded', function() {
-        var jobtype = document.getElementById('jobtype');
+        var jobtype = document.getElementById('id_jobtype');
         jobtype.addEventListener('change', updateChoices);
 
         // Call the function on page load to set the initial state
