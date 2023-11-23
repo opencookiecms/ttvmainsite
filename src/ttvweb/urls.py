@@ -41,7 +41,7 @@ urlpatterns = [
     path('pv-inspection',views.pvinspect, name="pvinspect"),
     path('semiconductorlist', views.semiconductorlist, name="semiconductorlist"),
     path('pv-inspections', views.pv, name="pv"),
-    
+
     path('investor-relation/announcement', views.investor, name="investor"),
     path('investor-relation/announcement/leap-market', views.leapmarket, name="leapmarket"),
     path('investor-relation/announcement/ace-market',views.acemarket,name='acemarket'),
@@ -63,6 +63,8 @@ urlpatterns = [
     
     path('newsletter', views.newsletter, name='newletter'),
     path('news-media', views.mediakit, name='medialink'),
+    #job application
+    path('hrform', views.hrForm, name='hrform'),
 
     #tests
     # path('test-robotics-mainpage', views.trobotic, name='test'),
