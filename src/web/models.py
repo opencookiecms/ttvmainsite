@@ -449,4 +449,4 @@ class Hr(models.Model):
     internship = models.CharField(max_length=50, null=True, blank=True)
     country = models.CharField(max_length=50, null=False, blank=False)
     contacttel = models.CharField(max_length=20, null=False, blank=False)
-    resume = models.FileField(upload_to='resumes/')
+    resume = models.FileField()
