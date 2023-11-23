@@ -132,7 +132,7 @@ formhr.addEventListener('submit', function (e){
     }
 });
 
-const debounce = (fn, delay = 500) => {
+const debouncehr = (fn, delay = 500) => {
     let timeoutId;
     return (...args) => {
         // cancel the previous timer
@@ -146,7 +146,7 @@ const debounce = (fn, delay = 500) => {
     };
 };
 
-formhr.addEventListener('input', debounce(function (e) {
+formhr.addEventListener('input', debouncehr(function (e) {
     switch (e.target.id) {
         case 'username':
             checkUsername();
