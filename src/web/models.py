@@ -1,7 +1,8 @@
-
 from django.db import models
 from django.utils.translation import gettext as _
 from phonenumber_field.modelfields import PhoneNumberField
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 
 
 # Create your models here.
@@ -68,15 +69,19 @@ class Productfeas(models.Model):
     def save(self, *args, **kwargs):
         # Increment the feature count only when creating a new instance
         if not self.pk:
-            self.featureno = Productfeas.objects.filter(product=self.product).count()
+            existingNo = Productfeas.objects.filter(product=self.product).count()
+            self.featureno = existingNo + 1
         super().save(*args, **kwargs)
-
-        self.featureno += 1
-        self.save(update_fields=['featureno'])
 
     def __str__(self):
         # Construct the desired string representation
         return f"{self.product.producttitle} Feature {self.featureno}"
+    
+@receiver(pre_save, sender=Productfeas)
+def update_featureno(sender, instance, **kwargs):
+    if not instance.pk:
+        existingNo = Productfeas.objects.filter(product=instance.product).count()
+        instance.featureno  = existingNo + 1
     
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
