@@ -63,9 +63,17 @@ class Productfeas(models.Model):
     features = models.CharField(max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    featureno = models.IntegerField(default=0, editable=False)
+
+    def save(self, *args, **kwargs):
+        # Increment the feature count only when creating a new instance
+        if not self.pk:
+            self.feature_count = Productfeas.objects.filter(product=self.product).count()
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.product.producttitle + " Feature " + str(self.pk-1)
+        # Construct the desired string representation
+        return f"{self.product.producttitle} Feature {self.featureno}"
     
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
