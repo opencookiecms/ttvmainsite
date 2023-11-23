@@ -137,26 +137,26 @@
                 e.preventDefault();
             });
         });
-        
-    function updateChoices() {
-        var jobtype = document.getElementById('id_jobtype');
-        var fulltime = document.getElementById('id_fulltime');
-        var internship = document.getElementById('id_internship');
 
-        var selectedJobType = jobtype.value;
+        function updateChoices() {
+            var jobtype = document.getElementById('id_jobtype');
+            var fulltime = document.getElementById('id_fulltime');
+            var internship = document.getElementById('id_internship');
+
+            var selectedJobType = jobtype.value;
 
 
-        // Hide/show relevant fields based on the selected job type
-        if (selectedJobType == 'Internship') {
-            internship.style.display = 'block';
-            fulltime.style.display = 'none';
-        } else {
-            internship.style.display = 'none';
-            fulltime.style.display = 'block';
+            // Hide/show relevant fields based on the selected job type
+            if (selectedJobType == 'Internship') {
+                internship.style.display = 'block';
+                fulltime.style.display = 'none';
+            } else {
+                internship.style.display = 'none';
+                fulltime.style.display = 'block';
+            }
         }
-    }
 
-    // Attach the updateChoices function to the change event of the job type field
+        // Attach the updateChoices function to the change event of the job type field
         var jobtype = document.getElementById('id_jobtype');
         jobtype.addEventListener('change', updateChoices);
 
