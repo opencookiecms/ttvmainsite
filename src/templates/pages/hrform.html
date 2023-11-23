@@ -148,10 +148,13 @@
 
 
         // Hide/show relevant fields based on the selected job type
-        fulltime.style.display = selectedJobType === 'disable' ? 'block' : 'none';
-        fulltime.style.display = selectedJobType === 'Full Time' ? 'block' : 'none';
-        fulltime.style.display = selectedJobType === 'Part Time' ? 'block' : 'none';
-        internship.style.display = selectedJobType === 'Internship' ? 'block' : 'none';
+        if (selectedJobType == 'Internship') {
+            internship.style.display = 'block';
+            fulltime.style.display = 'none';
+        } else {
+            internship.style.display = 'none';
+            fulltime.style.display = 'block';
+        }
     }
 
     // Attach the updateChoices function to the change event of the job type field
