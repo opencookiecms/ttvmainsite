@@ -1,7 +1,5 @@
 const contactname = document.querySelector('#id_contactname');
 const emailEl = document.querySelector('#id_contactemail');
-const jobtype = document.querySelector('#id_jobtype');
-const jobpos = document.querySelector('#id_job');
 const resume = document.querySelector('#id_resume');
 
 const formhr = document.querySelector('#jobapp')
@@ -34,30 +32,6 @@ const checkEmail = () => {
         showError(emailEl, 'Email is not valid.')
     } else {
         showSuccess(emailEl);
-        valid = true;
-    }
-    return valid;
-};
-
-const checkJobType = () => {
-    let valid = false;
-    const jobtypechk = jobtype.value.trim();
-    if (jobtypechk === 'disable') {
-        showError(jobtype, 'Please choose an option.');
-    } else {
-        showSuccess(jobtype);
-        valid = true;
-    }
-    return valid;
-};
-
-const checkJobPos = () => {
-    let valid = false;
-    const jobposchk = jobpos.value.trim();
-    if (jobposchk === 'disable') {
-        showError(jobpos, 'Please choose an option.');
-    } else {
-        showSuccess(jobpos);
         valid = true;
     }
     return valid;
@@ -116,14 +90,10 @@ formhr.addEventListener('submit', function (e){
 
     let isUsernameValid = checkUsername(),
         isEmailValid = checkEmail(),
-        isJobTypeValid = checkJobType(),
-        isJobPosValid = checkJobPos(),
         isJobResumeValid = checkResume();
 
     let isFormValid = isUsernameValid &&
         isEmailValid &&
-        isJobTypeValid &&
-        isJobPosValid &&
         isJobResumeValid
 
     if (isFormValid) {
@@ -153,12 +123,6 @@ formhr.addEventListener('input', debouncehr(function (e) {
             break;
         case 'email':
             checkEmail();
-            break;
-        case 'jobtype':
-            checkJobType();
-            break;
-        case 'jobpos':
-            checkJobPos();
             break;
         case 'resume':
             checkResume();
