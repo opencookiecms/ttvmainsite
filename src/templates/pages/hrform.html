@@ -155,11 +155,11 @@
                 }
 
                 // Attach the updateChoices function to the change event of the job type field
-                //var jobtype = document.getElementById('id_jobtype');
-                //jobtype.addEventListener('change', updateChoices);
+                var jobtype = document.getElementById('id_jobtype');
+                jobtype.addEventListener('change', updateChoices);
 
                 // Call the function on page load to set the initial state
-                //updateChoices();
+                updateChoices();
             });
         </script>
         {% endblock content %}
