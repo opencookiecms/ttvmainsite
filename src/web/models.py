@@ -71,6 +71,9 @@ class Productfeas(models.Model):
             self.feature_count = Productfeas.objects.filter(product=self.product).count()
         super().save(*args, **kwargs)
 
+        self.featureno += 1
+        self.save(update_fields=['featureno'])
+
     def __str__(self):
         # Construct the desired string representation
         return f"{self.product.producttitle} Feature {self.featureno}"
