@@ -135,9 +135,38 @@
                 </div>
             </div>
         </section>
-
-        <!-- CONTACT MAP
-        ================================================== -->
-        <iframe class="map" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJN1jS7BfASjARyknEh5j5Kdo&key=AIzaSyDDuzHuPHJ6THtv04D6gTRWLvcas5iJTYw" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-
         {% endblock content %}
+
+<!--Javascripts-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const disabledOptions = document.querySelectorAll('select option[disabled]');
+        disabledOptions.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault();
+            });
+        });
+    }),
+
+    function updateChoices() {
+        var jobtype = document.getElementById('jobtype');
+        var fulltime = document.getElementById('fulltime');
+        var internship = document.getElementById('internship');
+
+        var selectedJobType = jobtype.value;
+
+
+        // Hide/show relevant fields based on the selected job type
+        fulltime.style.display = selectedJobType === 'fulltime' ? 'block' : 'none';
+        internship.style.display = selectedJobType === 'internship' ? 'block' : 'none';
+    }
+
+    // Attach the updateChoices function to the change event of the job type field
+    document.addEventListener('DOMContentLoaded', function() {
+        var jobtype = document.getElementById('jobtype');
+        jobtype.addEventListener('change', updateChoices);
+
+        // Call the function on page load to set the initial state
+        updateChoices();
+    });
+</script>
