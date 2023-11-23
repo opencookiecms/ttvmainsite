@@ -1,24 +1,20 @@
 const contactname = document.querySelector('#id_contactname');
 const emailEl = document.querySelector('#id_contactemail');
-const companyName = document.querySelector('#id_companyname');
-const subjectEmail = document.querySelector('#id_enquirysubject');
-const messageEmail = document.querySelector('#id_enquirycontent');
-const form = document.querySelector('#signup')
+const jobtype = document.querySelector('#id_jobtype');
+const jobpos = document.querySelector('#id_job');
+const resume = document.querySelector('#id_resume');
 
-
-
+const form = document.querySelector('#jobapp')
 
 const checkUsername = () => {
-
     let valid = false;
 
     const min = 3,
         max = 25;
-
     const username = contactname.value.trim();
 
     if (!isRequired(username)) {
-        showError(contactname, 'Please insert your name.');
+        showError(contactname, 'Please enter your name.');
     } else if (!isBetween(username.length, min, max)) {
         showError(contactname, `Your name must be between ${min} and ${max} characters.`)
     } else {
@@ -43,70 +39,43 @@ const checkEmail = () => {
     return valid;
 };
 
-
-const checkCompany = () => {
-
+const checkJobType = () => {
     let valid = false;
-
-    const min = 3,
-        max = 50;
-
-    const company = companyName.value.trim();
-
-    if (!isRequired(company)) {
-        showError(companyName, 'Company Name cannot be blank.');
-    } else if (!isBetween(company.length, min, max)) {
-        showError(companyName, `Company Name must be between ${min} and ${max} characters.`)
+    const jobtype = jobtype.value.trim();
+    if (jobtype == 'disable') {
+        showError(jobtype, 'Please choose an option.');
     } else {
-        showSuccess(companyName);
+        showSuccess(jobtype);
         valid = true;
     }
     return valid;
 };
 
-
-const checkSubject = () => {
-
+const checkJobPos = () => {
     let valid = false;
-
-    const min = 3,
-        max = 150;
-
-    const subject = subjectEmail.value.trim();
-
-    if (!isRequired(subject)) {
-        showError(subjectEmail, 'Subject cannot be blank.');
-    } else if (!isBetween(subject.length, min, max)) {
-        showError(subjectEmail, `Subject must be between ${min} and ${max} characters.`)
+    const jobpos = jobpos.value.trim();
+    if (jobpos == 'disable') {
+        showError(jobpos, 'Please choose an option.');
     } else {
-        showSuccess(subjectEmail);
+        showSuccess(jobpos);
         valid = true;
     }
     return valid;
 };
 
-
-const checkMessage = () => {
-
+const checkResume = () => {
     let valid = false;
-
-    const min = 3,
-        max = 450;
-
-    const message = messageEmail.value.trim();
-
-    if (!isRequired(message)) {
-        showError(messageEmail, 'Your enquiry cannot be blank.');
-    } else if (!isBetween(message.length, min, max)) {
-        showError(messageEmail, `Your enquiry must be between ${min} and ${max} characters.`)
+    resume = resume.files[0];
+    if (!isRequired(resume)) {
+        showError(resume, 'Please upload your resume.');
+    } else if ((resume.type) != 'application/pdf') {
+        showError(resume, 'Please upload your resume in PDF format.')
     } else {
-        showSuccess(messageEmail);
+        showSuccess(resume);
         valid = true;
     }
     return valid;
 };
-
-
 
 
 const isEmailValid = (email) => {
@@ -147,18 +116,18 @@ form.addEventListener('submit', function (e){
 
     let isUsernameValid = checkUsername(),
         isEmailValid = checkEmail(),
-        isCompanyvalid = checkCompany(),
-        isSubjectvalid = checkSubject(),
-        isMessagevalid = checkMessage();
+        isJobTypeValid = checkJobType(),
+        isJobPosValid = checkJobPos(),
+        isJobResumeValid = checkResume();
 
     let isFormValid = isUsernameValid &&
         isEmailValid &&
-        isCompanyvalid &&
-        isSubjectvalid &&
-        isMessagevalid
+        isJobTypeValid &&
+        isJobPosValid &&
+        isJobResumeValid
 
     if (isFormValid) {
-        document.getElementById("signup").submit();
+        document.getElementById("jobapp").submit();
         console.log("done");
     }
 });
@@ -185,13 +154,15 @@ form.addEventListener('input', debounce(function (e) {
         case 'email':
             checkEmail();
             break;
-        case 'subject':
-            checkSubject();
+        case 'jobtype':
+            checkJobType();
             break;
-        case 'message':
-            checkMessage();
+        case 'jobpos':
+            checkJobPos();
             break;
-    
+        case 'resume':
+            checkResume();
+            break;
     }
 }));
 
