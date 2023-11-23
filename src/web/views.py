@@ -591,6 +591,9 @@ def hrForm(request):
             send_mail(subject, message, from_email, recipient_list)
 
             return redirect('contactdone')  # Redirect to a success page
+        else:
+            print(form.errors)
+            print('Failed to send')
     else:
         form = HrForm()
 
