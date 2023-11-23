@@ -590,7 +590,7 @@ def hrForm(request):
             recipient_list = ['adriannasim@gmail.com']
             send_mail(subject, message, from_email, recipient_list)
 
-            return render(request, 'success.html')  # Redirect to a success page
+            return redirect('contactdone')  # Redirect to a success page
     else:
         form = HrForm()
 
@@ -603,4 +603,4 @@ def hrForm(request):
         'description': "Contact Us At Email: 'sales@ttvision-tech.com' | Tel: 604-6456294 | Fax:604-6456295 | Location: Plot 106, Hilir Sungai Keluang 5, Bayan Lepas Phase 4, 11900, Penang, Malaysia"
     }
 
-    return render(request, 'pages/hrform.html', {'form': form})
+    return render(request, 'pages/hrform.html', context)

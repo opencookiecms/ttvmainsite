@@ -54,7 +54,7 @@
                                         <!-- Begin Text input element -->
                                         <div class="col-md-6">
                                             <div class="quform-element form-group">
-                                                <label for="phone">Contact Number</label>
+                                                <label for="phone">Contact Number <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
                                                     <input type="tel" id="{{form.contacttel.id_for_label}}" name="{{form.contacttel.name}}" class="form-control"/>
                                                     <small class="text-danger"></small>
@@ -111,7 +111,7 @@
                                         {{form.capcha}}
                                         <!-- End Captcha element -->
                                         <!-- Begin Submit button -->
-                                        <div class="col-md-12 p-5">
+                                        <div class="col-md-12 p-3">
                                             <div class="quform-submit-inner">
                                                 <button class="butn-style1" type="submit"><span>Send Message</span></button>
                                             </div>
