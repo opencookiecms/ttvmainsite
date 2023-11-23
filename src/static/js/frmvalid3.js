@@ -41,8 +41,8 @@ const checkEmail = () => {
 
 const checkJobType = () => {
     let valid = false;
-    const jobtype = jobtype.value.trim();
-    if (jobtype == 'disable') {
+    const jobtypechk = jobtype.value.trim();
+    if (jobtypechk === 'disable') {
         showError(jobtype, 'Please choose an option.');
     } else {
         showSuccess(jobtype);
@@ -53,8 +53,8 @@ const checkJobType = () => {
 
 const checkJobPos = () => {
     let valid = false;
-    const jobpos = jobpos.value.trim();
-    if (jobpos == 'disable') {
+    const jobposchk = jobpos.value.trim();
+    if (jobposchk === 'disable') {
         showError(jobpos, 'Please choose an option.');
     } else {
         showSuccess(jobpos);
@@ -65,10 +65,10 @@ const checkJobPos = () => {
 
 const checkResume = () => {
     let valid = false;
-    resume = resume.files[0];
-    if (!isRequired(resume)) {
+    resumechk = resume.files[0];
+    if (!isRequired(resumechk)) {
         showError(resume, 'Please upload your resume.');
-    } else if ((resume.type) != 'application/pdf') {
+    } else if ((resumechk.type) !== 'application/pdf') {
         showError(resume, 'Please upload your resume in PDF format.')
     } else {
         showSuccess(resume);
