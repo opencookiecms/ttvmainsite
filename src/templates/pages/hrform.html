@@ -97,17 +97,6 @@
                                         <!-- Begin Text input element -->
                                         <div class="col-md-6">
                                             <div class="quform-element form-group">
-                                                <label for="subject">How do you know about us <span class="quform-required">*</span></label>
-                                                <div class="quform-input">
-                                                    {{form.looking}}
-                                                    <small class="text-danger"></small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Text input element -->
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-6">
-                                            <div class="quform-element form-group">
                                                 <label for="phone">Contact Number</label>
                                                 <div class="quform-input">
                                                     <input type="tel" id="{{form.contacttel.id_for_label}}" name="{{form.contacttel.name}}" class="form-control"/>
@@ -116,28 +105,6 @@
                                             </div>
                                         </div>
                                         <!-- End Text input element -->
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-12">
-                                            <div class="quform-element form-group">
-                                                <label for="email">Subject <span class="quform-required">*</span></label>
-                                                <div class="quform-input">
-                                                    {{form.enquirysubject}}
-                                                    <small class="text-danger"></small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Text input element -->
-                                        <!-- Begin Textarea element -->
-                                        <div class="col-md-12">
-                                            <div class="quform-element form-group">
-                                                <label for="message">Message <span class="quform-required">*</span></label>
-                                                <div class="quform-input">
-                                                    {{form.enquirycontent}}
-                                                    <small class="text-danger"></small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Textarea element -->
                                         <!-- Begin Captcha element -->
                                         {{form.capcha}}
                                         <!-- End Captcha element -->
