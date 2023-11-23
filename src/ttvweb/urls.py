@@ -65,7 +65,6 @@ urlpatterns = [
     path('news-media', views.mediakit, name='medialink'),
     #job application
     path('hrform', views.hrForm, name='hrform'),
-    path('hrform/success',views.contactdone, name="contactdone"),
 
     #tests
     # path('test-robotics-mainpage', views.trobotic, name='test'),
