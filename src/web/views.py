@@ -5,7 +5,7 @@ from django.utils.html import strip_tags
 from django.conf import settings
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError,HttpResponseRedirect
 from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro
-from .forms import ContactForm, NewsletterForm
+from .forms import ContactForm, NewsletterForm, HrForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 import requests
@@ -572,3 +572,35 @@ def annualreport(request):
     }
 
     return render(request, 'pages/annualreport.html',context)
+
+#Job application page
+def hrForm(request):
+    company = Company.objects.get(id=1)
+    meta = Metapro.objects.get(position=3)
+    
+    if request.method == 'POST':
+        form = HrForm(request.POST, request.FILES)
+        if form.is_valid():
+            # Save the form data to the database (optional)
+            form.save()
+            # Send an email with the form data
+            subject = f'Resume Submission For {form.cleaned_data["job"]}'
+            message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {form.cleaned_data["job"]}\nResume: {form.resume}'
+            from_email = settings.DEFAULT_FROM_EMAIL
+            recipient_list = ['adriannasim@gmail.com']
+            send_mail(subject, message, from_email, recipient_list)
+
+            return render(request, 'success.html')  # Redirect to a success page
+    else:
+        form = HrForm()
+
+    context = {
+        'title': 'Contact Us',
+        'form':form,
+        'com':company,
+        'meta':meta,
+        'keywords': "contact, contact us, location, tel, telephone, email, fax, phone, sales@ttvision-tech.com, 604-6456294, 604-6456295",
+        'description': "Contact Us At Email: 'sales@ttvision-tech.com' | Tel: 604-6456294 | Fax:604-6456295 | Location: Plot 106, Hilir Sungai Keluang 5, Bayan Lepas Phase 4, 11900, Penang, Malaysia"
+    }
+
+    return render(request, 'pages/hrform.html', {'form': form})

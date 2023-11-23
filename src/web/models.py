@@ -74,9 +74,9 @@ class Productfeas(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        # Construct the desired string representation
         return f"{self.product.producttitle} Feature {self.featureno}"
-    
+
+#update featureno    
 @receiver(pre_save, sender=Productfeas)
 def update_featureno(sender, instance, **kwargs):
     if not instance.pk:
@@ -439,3 +439,14 @@ class Metapro(models.Model):
     description = models.CharField(max_length=500, null=True, blank=True)
     imagelink = models.CharField(max_length=150, null=True, blank=True)
     position  = models.IntegerField(null=True, blank=True)
+
+#Job application form
+class Hr(models.Model):
+    contactname = models.CharField(max_length=100, null=False, blank=False)
+    contactemail = models.EmailField(null=False, blank=False)
+    jobtype = models.CharField(max_length=20, null=False, blank=False)
+    fulltime = models.CharField(max_length=50, null=False, blank=False)
+    internship = models.CharField(max_length=50, null=False, blank=False)
+    country = models.CharField(max_length=50, null=False, blank=False)
+    contacttel = models.CharField(max_length=20, null=False, blank=False)
+    resume = models.FileField(upload_to='resumes/')
