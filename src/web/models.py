@@ -68,7 +68,7 @@ class Productfeas(models.Model):
     def save(self, *args, **kwargs):
         # Increment the feature count only when creating a new instance
         if not self.pk:
-            self.feature_count = Productfeas.objects.filter(product=self.product).count()
+            self.featureno = Productfeas.objects.filter(product=self.product).count()
         super().save(*args, **kwargs)
 
         self.featureno += 1
