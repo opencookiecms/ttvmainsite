@@ -4,7 +4,7 @@ const resume = document.querySelector('#id_resume');
 
 const formhr = document.querySelector('#jobapp')
 
-const checkUsername = () => {
+const checkUsernamehr = () => {
     let valid = false;
 
     const min = 3,
@@ -23,7 +23,7 @@ const checkUsername = () => {
 };
 
 
-const checkEmail = () => {
+const checkEmailhr = () => {
     let valid = false;
     const email = jobemail.value.trim();
     if (!isRequired(email)) {
@@ -119,10 +119,10 @@ const debouncehr = (fn, delay = 500) => {
 formhr.addEventListener('input', debouncehr(function (e) {
     switch (e.target.id) {
         case 'username':
-            checkUsername();
+            checkUsernamehr();
             break;
         case 'email':
-            checkEmail();
+            checkEmailhr();
             break;
         case 'resume':
             checkResume();
