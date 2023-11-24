@@ -40,10 +40,10 @@ const checkEmailhr = () => {
 const checkResume = () => {
     let valid = false;
     resumechk = resume.files[0];
-    if (!isRequiredhr(resumechk)) {
+    if (!resumechk) {
         showErrorhr(resume, 'Please upload your resume.');
-    } else if ((resumechk.type) != 'application/pdf') {
-        showErrorhr(resume, 'Please upload your resume in PDF format.')
+    } else if (resumechk.type !== 'application/pdf') {
+        showErrorhr(resume, 'Please upload your resume in PDF format.');
     } else {
         showSuccesshr(resume);
         valid = true;
