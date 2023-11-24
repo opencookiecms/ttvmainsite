@@ -585,9 +585,9 @@ def hrForm(request):
             # Save the form data to the database
             form.save()
             # Send an email with the form data
-            if (form.jobtype == 'Full Time'):
+            if ({form.jobtype} == 'Full Time'):
                 job = form.cleaned_data["fulltime"]
-            elif (form.jobtype == 'Internship'):
+            elif ({form.jobtype} == 'Internship'):
                 job = form.cleaned_data["internship"]
 
             # subject = f'Resume Submission For {job}'
