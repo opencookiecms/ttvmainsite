@@ -11,12 +11,12 @@ const checkUsernamehr = () => {
         max = 25;
     const username = jobname.value.trim();
 
-    if (!isRequired(username)) {
-        showError(jobname, 'Please enter your name.');
-    } else if (!isBetween(username.length, min, max)) {
-        showError(jobname, `Your name must be between ${min} and ${max} characters.`)
+    if (!isRequiredhr(username)) {
+        showErrorhr(jobname, 'Please enter your name.');
+    } else if (!isBetweenhr(username.length, min, max)) {
+        showErrorhr(jobname, `Your name must be between ${min} and ${max} characters.`)
     } else {
-        showSuccess(jobname);
+        showSuccesshr(jobname);
         valid = true;
     }
     return valid;
@@ -26,12 +26,12 @@ const checkUsernamehr = () => {
 const checkEmailhr = () => {
     let valid = false;
     const email = jobemail.value.trim();
-    if (!isRequired(email)) {
-        showError(jobemail, 'Email cannot be blank.');
+    if (!isRequiredhr(email)) {
+        showErrorhr(jobemail, 'Email cannot be blank.');
     } else if (!isEmailValid(email)) {
-        showError(jobemail, 'Email is not valid.')
+        showErrorhr(jobemail, 'Email is not valid.')
     } else {
-        showSuccess(jobemail);
+        showSuccesshr(jobemail);
         valid = true;
     }
     return valid;
@@ -40,21 +40,21 @@ const checkEmailhr = () => {
 const checkResume = () => {
     let valid = false;
     resumechk = resume.files[0];
-    if (!isRequired(resumechk)) {
-        showError(resume, 'Please upload your resume.');
+    if (!isRequiredhr(resumechk)) {
+        showErrorhr(resume, 'Please upload your resume.');
     } else if ((resumechk.type) != 'application/pdf') {
-        showError(resume, 'Please upload your resume in PDF format.')
+        showErrorhr(resume, 'Please upload your resume in PDF format.')
     } else {
-        showSuccess(resume);
+        showSuccesshr(resume);
         valid = true;
     }
     return valid;
 };
 
-const isRequired = value => value === '' ? false : true;
-const isBetween = (length, min, max) => length < min || length > max ? false : true;
+const isRequiredhr = value => value === '' ? false : true;
+const isBetweenhr = (length, min, max) => length < min || length > max ? false : true;
 
-const showError = (input, message) => {
+const showErrorhr = (input, message) => {
     // get the form-field element
     const formFieldhr = input.parentElement;
     // add the error class
@@ -66,7 +66,7 @@ const showError = (input, message) => {
     error.textContent = message;
 };
 
-const showSuccess = (input) => {
+const showSuccesshr = (input) => {
     // get the form-field element
     const formFieldhr = input.parentElement;
 
@@ -82,8 +82,8 @@ const showSuccess = (input) => {
 formhr.addEventListener('submit', function (e){
     e.preventDefault();
 
-    let isUsernameValid = checkUsername(),
-        isEmailValid = checkEmail(),
+    let isUsernameValid = checkUsernamehr(),
+        isEmailValid = checkEmailhr(),
         isJobResumeValid = checkResume();
 
     let isFormValid = isUsernameValid &&
