@@ -588,7 +588,7 @@ class HrForm(forms.ModelForm):
     internship = forms.ChoiceField(choices=Internship, required=False, widget=DisableChoice)
     country = forms.ChoiceField(choices=COUNTRIES, required=False, widget=DisableChoice)
     contacttel = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control'}))
-    resume = forms.FileField(label='Upload Your Resume', required=True, widget=forms.ClearableFileInput(attrs={'multiple': False}))
+    resume = forms.FileField(label='Upload Your Resume', required=False, widget=forms.ClearableFileInput(attrs={'multiple': False}))
     capcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     class Meta:
