@@ -577,9 +577,9 @@ def annualreport(request):
 def hrForm(request):
     company = Company.objects.get(id=1)
     meta = Metapro.objects.get(position=3)
-    form = HrForm(request.POST, request.FILES)
-    
+
     if request.method == 'POST':
+        form = HrForm(request.POST, request.FILES)
         contactname = request.POST['contactname']
         contactmail = request.POST['contactemail']
         jobtype = request.POST['jobtype']
