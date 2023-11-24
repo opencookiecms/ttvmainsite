@@ -42,7 +42,7 @@ const checkResume = () => {
     resumechk = resume.files[0];
     if (!isRequired(resumechk)) {
         showError(resume, 'Please upload your resume.');
-    } else if ((resumechk.type) !== 'application/pdf') {
+    } else if ((resumechk.type) != 'application/pdf') {
         showError(resume, 'Please upload your resume in PDF format.')
     } else {
         showSuccess(resume);
