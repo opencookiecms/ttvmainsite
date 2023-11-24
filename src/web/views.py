@@ -577,15 +577,29 @@ def annualreport(request):
 def hrForm(request):
     company = Company.objects.get(id=1)
     meta = Metapro.objects.get(position=3)
+    form = HrForm(request.POST, request.FILES)
     
     if request.method == 'POST':
-        form = HrForm(request.POST, request.FILES)
+        contactname = request.POST['contactname']
+        contactmail = request.POST['contactemail']
+        jobtype = request.POST['jobtype']
+        fulltime = request.POST['fulltime']
+        internship = request.POST['internship']
+        country = request.POST['country']
+        tel = request.POST['contacttel']
+        resume = request.POST['resume']
+       
         if form.is_valid():
             # Save the form data to the database (optional)
             form.save()
             # Send an email with the form data
-            subject = f'Resume Submission For {form.cleaned_data["job"]}'
-            message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {form.cleaned_data["job"]}\nResume: {form.resume}'
+            if (fulltime):
+                job = form.cleaned_data["fulltime"]
+            elif (internship):
+                job = form.cleaned_data["internship"]
+            
+            subject = f'Resume Submission For {job}'
+            message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})\nResume: {form.resume}'
             from_email = settings.DEFAULT_FROM_EMAIL
             recipient_list = ['adriannasim@gmail.com']
             send_mail(subject, message, from_email, recipient_list)
