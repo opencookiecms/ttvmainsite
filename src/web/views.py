@@ -592,7 +592,7 @@ def hrForm(request):
 
             subject = f'Resume Submission For {job}'
             message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})\nResume: {form.resume}'
-            from_email = settings.DEFAULT_FROM_EMAIL
+            from_email = settings.EMAIL_HOST_USER
             recipient_list = ['adriannasim@gmail.com']
             try:
                 send_mail(subject, message, from_email, recipient_list)
