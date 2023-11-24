@@ -1,5 +1,5 @@
-const contactname = document.querySelector('#id_contactname');
-const emailEl = document.querySelector('#id_contactemail');
+const jobname = document.querySelector('#id_contactname');
+const jobemail = document.querySelector('#id_contactemail');
 const resume = document.querySelector('#id_resume');
 
 const formhr = document.querySelector('#jobapp')
@@ -9,14 +9,14 @@ const checkUsername = () => {
 
     const min = 3,
         max = 25;
-    const username = contactname.value.trim();
+    const username = jobname.value.trim();
 
     if (!isRequired(username)) {
-        showError(contactname, 'Please enter your name.');
+        showError(jobname, 'Please enter your name.');
     } else if (!isBetween(username.length, min, max)) {
-        showError(contactname, `Your name must be between ${min} and ${max} characters.`)
+        showError(jobname, `Your name must be between ${min} and ${max} characters.`)
     } else {
-        showSuccess(contactname);
+        showSuccess(jobname);
         valid = true;
     }
     return valid;
@@ -25,13 +25,13 @@ const checkUsername = () => {
 
 const checkEmail = () => {
     let valid = false;
-    const email = emailEl.value.trim();
+    const email = jobemail.value.trim();
     if (!isRequired(email)) {
-        showError(emailEl, 'Email cannot be blank.');
+        showError(jobemail, 'Email cannot be blank.');
     } else if (!isEmailValid(email)) {
-        showError(emailEl, 'Email is not valid.')
+        showError(jobemail, 'Email is not valid.')
     } else {
-        showSuccess(emailEl);
+        showSuccess(jobemail);
         valid = true;
     }
     return valid;
