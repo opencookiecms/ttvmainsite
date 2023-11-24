@@ -580,22 +580,14 @@ def hrForm(request):
 
     if request.method == 'POST':
         form = HrForm(request.POST, request.FILES)
-        contactname = request.POST['contactname']
-        contactmail = request.POST['contactemail']
-        jobtype = request.POST['jobtype']
-        fulltime = request.POST['fulltime']
-        internship = request.POST['internship']
-        country = request.POST['country']
-        tel = request.POST['contacttel']
-        resume = request.POST['resume']
        
         if form.is_valid():
             # Save the form data to the database (optional)
             form.save()
             # Send an email with the form data
-            if (fulltime):
+            if (form.fulltime):
                 job = form.cleaned_data["fulltime"]
-            elif (internship):
+            elif (form.internship):
                 job = form.cleaned_data["internship"]
             
             subject = f'Resume Submission For {job}'
