@@ -585,20 +585,16 @@ def hrForm(request):
             # Save the form data to the database
             form.save()
             # Send an email with the form data
-            if (form.fulltime):
+            if (form.jobtype == 'Full Time'):
                 job = form.cleaned_data["fulltime"]
-            elif (form.internship):
+            elif (form.jobtype == 'Internship'):
                 job = form.cleaned_data["internship"]
 
             subject = f'Resume Submission For {job}'
             message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})\nResume: {form.resume}'
             from_email = settings.SERVER_EMAIL
             recipient_list = ['adriannasim@gmail.com']
-            try:
-                send_mail(subject, message, from_email, recipient_list)
-            except Exception as e:
-                print(f'{e}')
-
+            send_mail(subject, message, from_email, recipient_list)
             return redirect('contactdone')  # Redirect to a success page
         else:
             print(form.errors)
