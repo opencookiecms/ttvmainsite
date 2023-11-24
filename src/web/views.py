@@ -589,34 +589,13 @@ def hrForm(request):
                 job = form.cleaned_data["fulltime"]
             elif (form.internship):
                 job = form.cleaned_data["internship"]
-            
-            
-            #email_from = settings.SERVER_EMAIL
-            #recipient_list = [contactmail, ]
-            #recipient_list2 = ['syed.afiq@ttvision-tech.com']
-
-            #subject1, from_email, to = subjects, email_from, recipient_list
-            #subject2, from2_email,to2 = subjects, email_from,recipient_list2
-
-            #msg = EmailMultiAlternatives(subject1,textcontent,from_email,to)
-            #msg.attach_alternative(message, "text/html")
-            #msg.send()
-
-            #msg2 = EmailMultiAlternatives(subject2,text2content,from2_email,to2)
-            #msg2.attach_alternative(message2,"text/html")
-            #msg2.send()
-        
-
-        
-            #send_mail(subject, message, email_from, recipient_list,fail_silently=False,)
-
 
             subject = f'Resume Submission For {job}'
             message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})\nResume: {form.resume}'
             from_email = settings.DEFAULT_FROM_EMAIL
             recipient_list = ['adriannasim@gmail.com']
             try:
-                send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+                send_mail(subject, message, from_email, recipient_list)
             except Exception as e:
                 print(f'{e}')
 
