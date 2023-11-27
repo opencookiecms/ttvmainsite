@@ -42,9 +42,9 @@ const checkResume = () => {
     let valid = false;
     resumechk = resume.files[0];
     if (!resumechk) {
-        showErrorhr(resume, '<br/>Please upload your resume.');
+        showErrorhr(resume, 'Please upload your resume.');
     } else if (resumechk.type !== 'application/pdf') {
-        showErrorhr(resume, '<br/>Please upload your resume in PDF format.');
+        showErrorhr(resume, 'Please upload your resume in PDF format.');
     } else {
         showSuccesshr(resume);
         valid = true;
@@ -56,9 +56,9 @@ const checkAppForm = () => {
     let valid = false;
     appformchk = appform.files[0];
     if (!appformchk) {
-        showErrorhr(appform, '<br/>Please upload your application form.');
+        showErrorhr(appform, 'Please upload your application form.');
     } else if (appformchk.type !== 'application/pdf') {
-        showErrorhr(appform, '<br/>Please upload your application form in PDF format.');
+        showErrorhr(appform, 'Please upload your application form in PDF format.');
     } else {
         showSuccesshr(appform);
         valid = true;
