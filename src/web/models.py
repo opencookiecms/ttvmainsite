@@ -79,8 +79,11 @@ class Productfeas(models.Model):
     #make the data in the category field persistent after clicking add another
     def addanother(self, request, obj, post_url_continue=None):
         if "_addanother" in request.POST:
+            request.POST = request.POST.copy()
+            request.POST['product'] = str(obj.product)
             return super().addanother(request, obj, post_url_continue)
-        return super().addanother(request, obj, post_url_continue)
+        else:
+            return super().addanother(request, obj)
 
 #update featureno    
 @receiver(pre_save, sender=Productfeas)
