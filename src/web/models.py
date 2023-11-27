@@ -79,8 +79,9 @@ class Productfeas(models.Model):
     #make the data in the category field persistent after clicking add another
     def response_add(self, request, obj, post_url_continue=None):
         if "_addanother" in request.POST:
-            request.POST = request.POST.copy()
-            request.POST['product'] = str(obj.product_id)
+            product = request.POST.get('product')
+            product = Product.objects.get(pk=product)
+            obj.product = product
             return super().response_add(request, obj, post_url_continue)
         else:
             return super().response_add(request, obj)
