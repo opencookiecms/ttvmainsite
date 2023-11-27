@@ -298,15 +298,15 @@ def newsm(request):
 #     }
 #     return render(request, 'pages/robotic.html',context)
     
-def pvinspect(request):
-    company = Company.objects.get(id=1)
-    context = {
-        'title': 'PV Inspection, Test and Sort Solutions',
-        'com':company,
-        'keywords':"solar test and sort, solar sort, solar test, perovskite, Electroluminescence EL, machine vision, bottom cell, unloader, innovation, automation, solarpv, Transflection TF, solar wafer sorting, sorting, Photoluminescence PL, testing, top cell, loader, microcrack, handler",
-        'description':"TT Vision's PV Inspections, Test & Sort Solutions and Products: Solar Cell FRV-AOI, Solar Cell PL-AOI, Solar CEll TF-AOI, IBC Cell Sorter, Quad Cell Sorter",
-    }
-    return render(request, 'pages/inspectionlist.html',context)
+# def pvinspect(request):
+#     company = Company.objects.get(id=1)
+#     context = {
+#         'title': 'PV Inspection, Test and Sort Solutions',
+#         'com':company,
+#         'keywords':"solar test and sort, solar sort, solar test, perovskite, Electroluminescence EL, machine vision, bottom cell, unloader, innovation, automation, solarpv, Transflection TF, solar wafer sorting, sorting, Photoluminescence PL, testing, top cell, loader, microcrack, handler",
+#         'description':"TT Vision's PV Inspections, Test & Sort Solutions and Products: Solar Cell FRV-AOI, Solar Cell PL-AOI, Solar CEll TF-AOI, IBC Cell Sorter, Quad Cell Sorter",
+#     }
+#     return render(request, 'pages/inspectionlist.html',context)
 
 def semiconductorlist(request):
     company = Company.objects.get(id=1)
@@ -332,18 +332,18 @@ def semiconductorlist(request):
 #     }
 #     return render(request, 'pages/productviews.html',context)
 
-def pinspection(request, slug):
+# def pinspection(request, slug):
 
-    pr = Product.objects.get(productslug=slug)
-    company = Company.objects.get(id=1)
+#     pr = Product.objects.get(productslug=slug)
+#     company = Company.objects.get(id=1)
 
-    context = {
-        'title': pr,
-        'ins':True,
-        'pr':pr,
-        'com':company
-    }
-    return render(request, 'pages/productviews.html',context)
+#     context = {
+#         'title': pr,
+#         'ins':True,
+#         'pr':pr,
+#         'com':company
+#     }
+#     return render(request, 'pages/productviews.html',context)
 
 def icled(request, slug):
     pr = Product.objects.get(productslug=slug)
@@ -382,6 +382,36 @@ def rpv(request, slug):
         'title': pr,
         'rpv': True,
         'pr': pr,
+        'com':company,
+        'f': fea
+    }
+    return render(request, 'pages/productviews.html',context)
+
+#solar mainpage
+def pvinspect(request):
+    cat = Category.objects.get(category='PV-Inspection')
+    pr = Product.objects.filter(productcategory = cat)
+    company = Company.objects.get(id=1)
+    context = {
+        'pr': pr,
+        'title': 'PV Inspection, Test and Sort Solutions',
+        'com':company,
+        'keywords':"solar test and sort, solar sort, solar test, perovskite, Electroluminescence EL, machine vision, bottom cell, unloader, innovation, automation, solarpv, Transflection TF, solar wafer sorting, sorting, Photoluminescence PL, testing, top cell, loader, microcrack, handler",
+        'description':"TT Vision's PV Inspections, Test & Sort Solutions and Products: Solar Cell FRV-AOI, Solar Cell PL-AOI, Solar CEll TF-AOI, IBC Cell Sorter, Quad Cell Sorter",
+    }
+    return render(request, 'pages/inspectionlist.html',context)
+
+#solar product page
+def pinspection(request, slug):
+
+    pr = Product.objects.get(productslug=slug)
+    fea = Productfeas.objects.filter(product = pr)
+    company = Company.objects.get(id=1)
+
+    context = {
+        'title': pr,
+        'ins':True,
+        'pr':pr,
         'com':company,
         'f': fea
     }
