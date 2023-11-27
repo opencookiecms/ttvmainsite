@@ -585,12 +585,12 @@ def hrForm(request):
             # Save the form data to the database
             form.save()
             # Send an email with the form data
-            if ({form.cleaned_data["jobtype"]} == 'Full Time'):
+            if form.cleaned_data["jobtype"] == 'Full Time':
                 job = form.cleaned_data["fulltime"]
-            elif ({form.cleaned_data["jobtype"]} == 'Internship'):
+            elif form.cleaned_data["jobtype"] == 'Internship':
                 job = form.cleaned_data["internship"]
 
-            subject = 'Resume Submission For ' + str(job)
+            subject = 'Resume Submission For ' + job
             # message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})\nResume: {form.cleaned_data["resume"]}'
             # from_email = settings.SERVER_EMAIL
             # recipient_list = ['adriannasim@gmail.com']
