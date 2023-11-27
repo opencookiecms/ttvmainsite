@@ -590,11 +590,11 @@ def hrForm(request):
             elif ({form.cleaned_data["jobtype"]} == 'Internship'):
                 job = form.cleaned_data["internship"]
 
-            # subject = f'Resume Submission For {job}'
-            # message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})\nResume: {form.resume}'
-            # from_email = settings.SERVER_EMAIL
-            # recipient_list = ['adriannasim@gmail.com']
-            # send_mail(subject, message, from_email, recipient_list)
+            subject = f'Resume Submission For {job}'
+            message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})\nResume: {form.cleaned_data["resume"]}'
+            from_email = settings.SERVER_EMAIL
+            recipient_list = ['adriannasim@gmail.com']
+            send_mail(subject, message, from_email, recipient_list)
             return redirect('contactdone')  # Redirect to a success page
         else:
             print(form.errors)
