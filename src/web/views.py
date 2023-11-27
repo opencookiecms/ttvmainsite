@@ -402,7 +402,7 @@ def pvinspect(request):
         'keywords':"solar test and sort, solar sort, solar test, perovskite, Electroluminescence EL, machine vision, bottom cell, unloader, innovation, automation, solarpv, Transflection TF, solar wafer sorting, sorting, Photoluminescence PL, testing, top cell, loader, microcrack, handler",
         'description':"TT Vision's PV Inspections, Test & Sort Solutions and Products: Solar Cell FRV-AOI, Solar Cell PL-AOI, Solar CEll TF-AOI, IBC Cell Sorter, Quad Cell Sorter",
     }
-    return render(request, 'pages/inspectionlist.html',context)
+    return render(request, 'pages/productmainpage.html',context)
 
 #solar product page
 def pinspection(request, slug):

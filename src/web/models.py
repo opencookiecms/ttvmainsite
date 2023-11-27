@@ -75,6 +75,12 @@ class Productfeas(models.Model):
 
     def __str__(self):
         return f"{self.product.producttitle} Feature {self.featureno}"
+    
+    #make the data in the category field persistent after clicking add another
+    def addanother(self, request, obj, post_url_continue=None):
+        if "_addanother" in request.POST:
+            return super().addanother(request, obj, post_url_continue)
+        return super().addanother(request, obj, post_url_continue)
 
 #update featureno    
 @receiver(pre_save, sender=Productfeas)
@@ -430,7 +436,6 @@ class Pressrelease(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     position  = models.IntegerField(null=True, blank=True)
-
 
 class Metapro(models.Model):
     urlcontent = models.CharField(max_length=150, null=True, blank=True)
