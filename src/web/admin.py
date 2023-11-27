@@ -9,7 +9,7 @@ class ProductfeasAdmin(admin.ModelAdmin):
     def response_add(self, request, obj, post_url_continue=None):
         if "_addanother" in request.POST:
             request.POST = request.POST.copy()
-            request.POST['product'] = str(obj.product.id)
+            request.POST['product'] = str(obj.product)
             return super().response_add(request, obj, post_url_continue)
         else:
             return super().response_add(request, obj)
