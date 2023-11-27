@@ -152,12 +152,12 @@ def contactus(request):
             print('Failed to send')
     
     context = {
-        'title': 'Contact Us',
+        'title': 'Job Application',
         'form':form,
         'com':company,
         'meta':meta,
-        'keywords': "contact, contact us, location, tel, telephone, email, fax, phone, sales@ttvision-tech.com, 604-6456294, 604-6456295",
-        'description': "Contact Us At Email: 'sales@ttvision-tech.com' | Tel: 604-6456294 | Fax:604-6456295 | Location: Plot 106, Hilir Sungai Keluang 5, Bayan Lepas Phase 4, 11900, Penang, Malaysia"
+        'keywords': "contact, contact us, location, tel, telephone, email, fax, phone, hr@ttvision-tech.com, 604-6456294, 604-6456295, job, job application, career",
+        'description': "Apply for a job in TT Vision. Contact Us At Email: 'hr@ttvision-tech.com' | Tel: 604-6456294 | Fax:604-6456295 | Location: Plot 106, Hilir Sungai Keluang 5, Bayan Lepas Phase 4, 11900, Penang, Malaysia"
     }
     return render(request, 'pages/contact.html',context)
 
