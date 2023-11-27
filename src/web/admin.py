@@ -6,14 +6,20 @@ from web.models import Accordation, Annoucement, Category, Company, Contact, Eve
 #configs
 class ProductfeasAdmin(admin.ModelAdmin):
 #make the data in the category field persistent after clicking add another
-    def response_add(self, request, obj, post_url_continue=None):
-        print("response add is called")
+    # def response_add(self, request, obj, post_url_continue=None):
+    #     print("response add is called")
+    #     if "_addanother" in request.POST:
+    #         request.POST = request.POST.copy()
+    #         request.POST['product'] = str(obj.product)
+    #         return super().response_add(request, obj, post_url_continue)
+    #     else:
+    #         return super().response_add(request, obj)
+
+    def save_model(self, request, obj, form, change):
         if "_addanother" in request.POST:
-            request.POST = request.POST.copy()
-            request.POST['product'] = str(obj.product)
-            return super().response_add(request, obj, post_url_continue)
-        else:
-            return super().response_add(request, obj)
+            form.cleaned_data['product'] = obj.product.id
+        super().save_model(request, obj, form, change)
+
 
 # Register your models here.
 admin.site.register(Company)
