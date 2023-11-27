@@ -1,0 +1,95 @@
+{% extends 'based/based.html' %}
+{% load static %}
+{% block content %}
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        {% if rpv %} 
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-3.png'%}">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <span>Our Innovation</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">Advanced Robotic Solutions</h1>
+        {% elif ins %}
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-2.png'%}">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <span>Cutting-Edge Technologies</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">PV Inspections, Test & Sort Solutions</h1>
+        {% elif icled %}
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-1.png'%}">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <span>Beyond Innovative Solutions</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">Semiconductor/LED Inspection Solutions</h1>
+        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+                <!-- TEAM
+        ================================================== -->
+        <section>
+            <div class="container">
+                {% if rpv %}
+                <div class="title-style3 text-center mb-2-3 mb-md-6 wow fadeIn" data-wow-delay="100ms">
+                    <h2 class="h1 mb-0">Robotic Products</h2>
+                    <h4 class="h4 mb-0">Revolutionize your manufacturing processes with our cutting-edge Robotic Products. <br/>Designed to enhance efficiency, precision, and automation, our diverse range includes: <br/></h4>
+                </div>
+                {% elif ins %}
+                <div class="title-style3 text-center mb-2-3 mb-md-6 wow fadeIn" data-wow-delay="100ms">
+                    <h2 class="h1 mb-0">PV Inspections, Test & Sort Products</h2>
+                    <h4 class="h4 mb-0">Elevate the efficiency and reliability of your photovoltaic (PV) manufacturing processes with our comprehensive range of Inspection, Test and Sort Products. <br/>Our cutting-edge lineup includes: <br/></h4>
+                </div>
+                {% elif icled %}
+                <div class="title-style3 text-center mb-2-3 mb-md-6 wow fadeIn" data-wow-delay="100ms">
+                    <h2 class="h1 mb-0">Semiconductor/LED Inspection Products</h2>
+                    
+                </div>
+                {% endif %}
+                <!--Product Row (Max 3)-->
+                <div class="row mb-5 mt-n1-9">
+                <!--For loop to display all products in database with the category-->
+                {% for p in pr %}
+                    <!--Check if there's already 3 item in the row, if true, open another row-->
+                    {% if forloop.counter0|divisibleby:3 %}
+                    <div class="row mb-5 mt-n1-9">
+                    {% endif %}
+                        <!--Product container-->
+                        <div class="col-md-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                            <!--Product info-->
+                            <div class="team-style4 mx-sm-2">
+                                <div class="profile-image">
+                                    <img src="{{p.productimg.url}}" alt="...">
+                                </div>
+                                <div class="text-center py-4">
+                                    <h2 class="h5 mb-2">{{p.producttitle}}</h2>
+                                    <p class="mb-0 small pd">{{p.productintro}}</p>
+                                    <p class="mb-0 small pd"><a class="text-primary" href="{% url 'robotic' slug=p.productslug %}"><h5>Learn More</h5></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    <!--Check if its last item or counter++ and if its the third item, if yes close div-->
+                    {% if forloop.last or forloop.counter0|add:1|divisibleby:3 %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- TESTIMONIALS
+        ================================================== -->
+        <section class="pt-15 pt-lg-20">
+          
+        </section>
+        {% endblock content %}
+      

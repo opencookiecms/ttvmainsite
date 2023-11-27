@@ -311,6 +311,7 @@ def newsm(request):
 def semiconductorlist(request):
     company = Company.objects.get(id=1)
     context = {
+        'icled': True,
         'title': 'Semiconductor & LED Inspection Solutions',
         'com':company,
         'keywords':"automated optical inspection, wirebond aoi, substrate, vision module, LED, post tape, automated optical inspection, axi, optoelectronics, semiconductor aoi, package, 3D inspection, vision, wirebond, wafer, x-ray",
@@ -365,12 +366,13 @@ def robotic(request):
     company = Company.objects.get(id=1)
     context = {
         'pr': pr,
+        'rpv': True,
         'title': 'Advance Robotics Solutions',
         'com':company,
         'keywords':"autonomous mobile robot, Mobile robot, amr, autonomous mobile robot AMR, machine tending, fluid dispensing, wire mesh handling, assembly, collaborative, tester handling, machine vision, polishing, i4.0, auto welding, cobot, system integration, end effector, robotic, pick and place, auto packing, palletizing, warehouse automation, auto sanding, AGV, systems and iot",
         'description':"TT Vision's Advance Robotic Solutions and Products: Robotic Machine Tending, Robotic Spot Welding, Robotic Pick & Place + Assembly, Cobot Dispensing, Cobot Test Handler, Robot Auto Packing, Mobile Robot Integration, Robot Palletizer"
     }
-    return render(request, 'pages/robotic.html',context)
+    return render(request, 'pages/productmainpage.html',context)
 
 #robotic product page
 def rpv(request, slug):
@@ -393,6 +395,7 @@ def pvinspect(request):
     pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
     context = {
+        'ins': True,
         'pr': pr,
         'title': 'PV Inspection, Test and Sort Solutions',
         'com':company,
