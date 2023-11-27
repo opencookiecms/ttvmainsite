@@ -87,20 +87,19 @@ def contactus(request):
     meta = Metapro.objects.get(position=3)
     form = ContactForm(request.POST or None)
     if request.method == 'POST':
+        form = ContactForm(request.POST)
 
-        contactname = request.POST['contactname']
-        companyname = request.POST['companyname']
-        contactmail = request.POST['contactemail']
-        subjects = request.POST['enquirysubject']
-        country = request.POST['country']
-        how = request.POST['looking']
-        tel = request.POST['contacttel']
-        content = request.POST['enquirycontent']
+        # contactname = request.POST['contactname']
+        # companyname = request.POST['companyname']
+        # contactmail = request.POST['contactemail']
+        # subjects = request.POST['enquirysubject']
+        # country = request.POST['country']
+        # how = request.POST['looking']
+        # tel = request.POST['contacttel']
+        # content = request.POST['enquirycontent']
        
         if form.is_valid():
             form.save()
-            form = ContactForm
-
             #subject = 'Welcome to TT Vision Holding Berhad'
             #message2 = render_to_string('pages/mail2.html',{
                 #'name':contactname,
@@ -136,12 +135,21 @@ def contactus(request):
         
             #send_mail(subject, message, email_from, recipient_list,fail_silently=False,)
 
+            #email contents
+            subject = 'Enquiries regarding ' + form.cleaned_data["enquirysubject"]
+            message = f'Name: {form.cleaned_data["contactname"]}\nCompany Name: {form.cleaned_data["companyname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nAddress: {form.cleaned_data["contactaddress"]}\nHow they found out about us: {form.cleaned_data["looking"]}\nEnquiry Subject: {form.cleaned_data["enquirysubject"]}\nEnquiry Message: {form.cleaned_data["enquirycontent"]}'
+            #domain email
+            from_email = settings.SERVER_EMAIL
+            #recipient email
+            recipient_list = ['adriannasim@gmail.com']
+            #attaching contents to the email to be sent
+            email = EmailMessage(subject, message, from_email, recipient_list)
+            email.send()
+            #redirect to success
             return redirect('contactdone')
         else:
             print(form.errors)
-            print('fail to save')
-    
-
+            print('Failed to send')
     
     context = {
         'title': 'Contact Us',

@@ -291,7 +291,6 @@ class ContactForm(forms.ModelForm):
     country = forms.ChoiceField(choices=COUNTRIES, required=False, widget=forms.Select(attrs={'class':'form-control'}))
     contacttel = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control'}))
     capcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
-
     enquirysubject = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your subject enquiry here'}))
     enquirycontent = forms.CharField(required=False, widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'Your Enquiry', 'rows':'4'}))
     class Meta:
