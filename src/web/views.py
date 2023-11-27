@@ -361,7 +361,7 @@ def icled(request, slug):
 #robotic mainpage
 def robotic(request):
     cat = Category.objects.get(category='Robotic')
-    pr = Product.objects.filter(productcategory = cat, status = 'Yes')
+    pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
     context = {
         'pr': pr,
@@ -390,7 +390,7 @@ def rpv(request, slug):
 #solar mainpage
 def pvinspect(request):
     cat = Category.objects.get(category='PV-Inspection')
-    pr = Product.objects.filter(productcategory = cat, status = 'Yes')
+    pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
     context = {
         'pr': pr,
