@@ -137,11 +137,11 @@ def contactus(request):
 
             #email contents
             subject = 'Enquiries regarding ' + form.cleaned_data["enquirysubject"]
-            message = f'Name: {form.cleaned_data["contactname"]}\nCompany Name: {form.cleaned_data["companyname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nAddress: {form.cleaned_data["contactaddress"]}\nHow they found out about us: {form.cleaned_data["looking"]}\nEnquiry Subject: {form.cleaned_data["enquirysubject"]}\nEnquiry Message: {form.cleaned_data["enquirycontent"]}'
+            message = f'Name: {form.cleaned_data["contactname"]}\nCompany Name: {form.cleaned_data["companyname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nHow did they find out about us: {form.cleaned_data["looking"]}\nEnquiry Subject:\n {form.cleaned_data["enquirysubject"]}\nEnquiry Message:\n {form.cleaned_data["enquirycontent"]}'
             #domain email
             from_email = settings.SERVER_EMAIL
             #recipient email
-            recipient_list = ['adriannasim@gmail.com']
+            recipient_list = ['mvr-enews@ttvision-tech.com']
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             email.send()

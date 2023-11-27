@@ -41,7 +41,7 @@ class ContactForm(forms.ModelForm):
     )
 
     COUNTRIES = (
-    ('', 'Please select your countries'),
+    ('', 'Please select your country'),
     ('MY', 'Malaysia'),
     ('AD', 'Andorra'),
     ('AE', 'United Arab Emirates'),
