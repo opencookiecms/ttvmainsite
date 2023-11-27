@@ -1,6 +1,7 @@
 const jobname = document.querySelector('#id_contactname');
 const jobemail = document.querySelector('#id_contactemail');
 const resume = document.querySelector('#id_resume');
+const appform = document.querySelector('#id_appform');
 
 const formhr = document.querySelector('#jobapp')
 
@@ -51,6 +52,20 @@ const checkResume = () => {
     return valid;
 };
 
+const checkAppForm = () => {
+    let valid = false;
+    appformchk = appform.files[0];
+    if (!appformchk) {
+        showErrorhr(appform, 'Please upload your application form.');
+    } else if (appformchk.type !== 'application/pdf') {
+        showErrorhr(appform, 'Please upload your application form in PDF format.');
+    } else {
+        showSuccesshr(appform);
+        valid = true;
+    }
+    return valid;
+};
+
 const isRequiredhr = value => value === '' ? false : true;
 const isBetweenhr = (length, min, max) => length < min || length > max ? false : true;
 
@@ -84,11 +99,12 @@ formhr.addEventListener('submit', function (e){
 
     let isUsernameValid = checkUsernamehr(),
         isEmailValid = checkEmailhr(),
-        isJobResumeValid = checkResume();
+        isJobResumeValid = checkResume(),
+        isAppFormValid = checkAppForm();
 
     let isFormValid = isUsernameValid &&
         isEmailValid &&
-        isJobResumeValid
+        isJobResumeValid && isAppFormValid
 
     if (isFormValid) {
         document.getElementById("jobapp").submit();
@@ -120,6 +136,9 @@ formhr.addEventListener('input', debouncehr(function (e) {
             break;
         case 'resume':
             checkResume();
+            break;
+        case 'appform':
+            checkAppForm();
             break;
     }
 }));
