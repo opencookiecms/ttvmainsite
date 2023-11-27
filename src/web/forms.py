@@ -602,6 +602,6 @@ class HrForm(forms.ModelForm):
             'internship', 
             'country', 
             'contacttel',
-            'resume'
+            'resume',
             'appform'
         ]
