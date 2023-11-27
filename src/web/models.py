@@ -80,7 +80,7 @@ class Productfeas(models.Model):
     def addanother(self, request, obj, post_url_continue=None):
         if "_addanother" in request.POST:
             request.POST = request.POST.copy()
-            request.POST['product'] = str(obj.product_id)
+            request.POST['product'] = str(obj.id_product)
             return super().addanother(request, obj, post_url_continue)
         else:
             return super().addanother(request, obj)
