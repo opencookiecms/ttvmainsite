@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from django.core.mail import send_mail, EmailMultiAlternatives
+from django.core.mail import send_mail, EmailMultiAlternatives, EmailMessage
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
@@ -585,17 +585,26 @@ def hrForm(request):
             # Save the form data to the database
             form.save()
             # Send an email with the form data
+            #check which job type he is applying for
             if form.cleaned_data["jobtype"] == 'Full Time':
                 job = form.cleaned_data["fulltime"]
             elif form.cleaned_data["jobtype"] == 'Internship':
                 job = form.cleaned_data["internship"]
 
+            #email contents
             subject = 'Resume Submission For ' + job
-            message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})\nResume: {form.cleaned_data["resume"]}'
+            message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})'
+            resume = form.cleaned_data["resume"]
+            #domain email
             from_email = settings.SERVER_EMAIL
+            #recipient email
             recipient_list = ['adriannasim@gmail.com']
-            send_mail(subject, message, from_email, recipient_list)
-            return redirect('contactdone')  # Redirect to a success page
+            #attaching contents to the email to be sent
+            email = EmailMessage(subject, message, from_email, recipient_list)
+            email.attach(resume.name, resume.read(), resume.content_type)
+            email.send()
+            #redirect to success
+            return redirect('contactdone')
         else:
             print(form.errors)
             print('Failed to send')
