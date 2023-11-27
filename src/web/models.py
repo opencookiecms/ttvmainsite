@@ -77,13 +77,13 @@ class Productfeas(models.Model):
         return f"{self.product.producttitle} Feature {self.featureno}"
     
     #make the data in the category field persistent after clicking add another
-    def addanother(self, request, obj, post_url_continue=None):
+    def response_add(self, request, obj, post_url_continue=None):
         if "_addanother" in request.POST:
             request.POST = request.POST.copy()
             request.POST['product'] = str(obj.id_product)
-            return super().addanother(request, obj, post_url_continue)
+            return super().response_add(request, obj, post_url_continue)
         else:
-            return super().addanother(request, obj)
+            return super().response_add(request, obj)
 
 #update featureno    
 @receiver(pre_save, sender=Productfeas)
