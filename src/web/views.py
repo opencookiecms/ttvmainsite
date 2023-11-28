@@ -141,7 +141,7 @@ def contactus(request):
             #domain email
             from_email = settings.SERVER_EMAIL
             #recipient email
-            recipient_list = ['mvr-enews@ttvision-tech.com']
+            recipient_list = ['sales@ttvision-tech.com', 'mvr-enews@ttvision-tech.com']
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             email.send()
