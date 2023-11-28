@@ -635,8 +635,8 @@ def hrForm(request):
             fname = form.cleaned_data["contactname"]
             fname = fname.replace(' ', '_')
 
-            rpath = f'resume/resume-{fname}.pdf'
-            apath = f'resume/applicationform-{fname}.pdf'
+            rpath = 'resume/resume- '+ fname +'.pdf'
+            apath = 'resume/applicationform- '+ fname +'.pdf'
 
             #email contents
             subject = 'Job Application for ' + job 
