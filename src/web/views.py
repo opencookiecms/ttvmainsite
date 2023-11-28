@@ -645,8 +645,9 @@ def hrForm(request):
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             #attaching files to email
-            rpath = f'resume/resume-{form.cleaned_data["contactname"]}.pdf'
-            apath = f'resume/applicationform-{form.cleaned_data["contactname"]}.pdf'
+            fname = form.cleaned_data["contactname"].replace(' ','_')
+            rpath = f'resume/resume-{fname}.pdf'
+            apath = f'resume/applicationform-{fname}.pdf'
 
             with open(rpath, 'rb') as rfile:
                 email.attach_file(rpath, rfile.read(), 'application/pdf')
