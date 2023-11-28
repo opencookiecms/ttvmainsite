@@ -3,7 +3,7 @@ from django.utils.translation import gettext as _
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-
+import os
 
 # Create your models here.
 
@@ -441,11 +441,11 @@ class Metapro(models.Model):
 
 #Job application form
 #filenames
-def rfilepath (instance):
-    return f'resume/resume - {instance.contactname}'
+def rfilepath (instance, filename):
+    return os.path.join('resume',f'resume - {instance.contactname}.pdf')
 
-def afilepath (instance):
-    return f'resume/applicationform - {instance.contactname}'
+def afilepath (instance, filename):
+    return os.path.join('resume',f'application form - {instance.contactname}.pdf')
 
 class Hr(models.Model):
     contactname = models.CharField(max_length=100, null=False, blank=False)
