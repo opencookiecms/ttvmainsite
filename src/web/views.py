@@ -647,15 +647,15 @@ def hrForm(request):
             #attaching files to email
             fname = form.cleaned_data["contactname"]
             fname = fname.replace(' ', '_')
-            
+
             rpath = f'resume/resume-{fname}.pdf'
             apath = f'resume/applicationform-{fname}.pdf'
 
             with open(rpath, 'rb') as rfile:
-                email.attach_file(rpath, rfile.read(), 'application/pdf')
+                email.attach(f'resume-{fname}.pdf', rfile.read(), 'application/pdf')
 
             with open(apath, 'rb') as afile:
-                email.attach_file(apath, afile.read(), 'application/pdf')
+                email.attach(f'applicationform-{fname}.pdf', afile.read(), 'application/pdf')
 
             email.send()
             #redirect to success
