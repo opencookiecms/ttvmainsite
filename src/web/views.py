@@ -9,7 +9,9 @@ from .forms import ContactForm, NewsletterForm, HrForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 import requests
-from io import BytesIO
+from email.mime.base import MIMEBase
+from email import encoders
+import mimetypes
 
 # Create your views here.
 
@@ -646,11 +648,31 @@ def hrForm(request):
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             #attaching files to email
-            resume_data = BytesIO(resume.read())
-            email.attach(resume.name, resume_data.getvalue(), resume.content_type)
-            app_data = BytesIO(appform.read())
-            email.attach(appform.name, app_data.getvalue(), appform.content_type)
+            # resume_data = BytesIO(resume.read())
+            # email.attach(resume.name, resume_data.getvalue(), resume.content_type)
+            # app_data = BytesIO(appform.read())
+            # email.attach(appform.name, app_data.getvalue(), appform.content_type)
+            # email.send()
+
+            # Attaching resume
+            resume_data = resume.read()
+            resume_mime = MIMEBase(mimetypes.guess_type(resume.name)[0], _subtype="pdf")
+            resume_mime.set_payload(resume_data)
+            encoders.encode_base64(resume_mime)
+            resume_mime.add_header("Content-Disposition", f"attachment; filename={resume.name}")
+            email.attach(resume_mime)
+
+
+            # Attaching appform
+            appform_data = appform.read()
+            appform_mime = MIMEBase(mimetypes.guess_type(appform.name)[0], _subtype="pdf")
+            appform_mime.set_payload(appform_data)
+            encoders.encode_base64(appform_mime)
+            appform_mime.add_header("Content-Disposition", f"attachment; filename={appform.name}")
+            email.attach(appform_mime)
+
             email.send()
+
             #redirect to success
             return redirect('contactdone')
         else:
