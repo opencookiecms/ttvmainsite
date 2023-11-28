@@ -633,7 +633,8 @@ def hrForm(request):
                 job = form.cleaned_data["internship"]
 
             #email contents
-            fname = form.cleaned_data["contactname"].replace(' ','_')
+            fname = form.cleaned_data["contactname"]
+            fname = fname.replace(' ', '_')
             subject = 'Job Application for ' + job 
             message = f'{fname} Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})'
             # resume = form.cleaned_data["resume"]
