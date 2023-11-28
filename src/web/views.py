@@ -647,8 +647,8 @@ def hrForm(request):
             #attaching files to email
             fname = form.cleaned_data["contactname"]
             fname = fname.replace(' ', '_')
-            rpath = os.path.join('resume', f'resume-{fname}.pdf')
-            apath = os.path.join('resume', f'applicationform-{fname}.pdf')
+            rpath = os.path.join(settings.MEDIA_ROOT, f'resume/resume-{fname}.pdf')
+            apath = os.path.join(settings.MEDIA_ROOT, f'resume/applicationform-{fname}.pdf')
 
             email.attach_file(rpath)
             email.attach_file(apath)
