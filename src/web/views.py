@@ -7,8 +7,8 @@ from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerE
 from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro
 from .forms import ContactForm, NewsletterForm, HrForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-import json
-import requests
+import json, requests, os
+
 
 # Create your views here.
 
@@ -647,14 +647,11 @@ def hrForm(request):
             #attaching files to email
             fname = form.cleaned_data["contactname"]
             fname = fname.replace(' ', '_')
-            rpath = 'resume/resume-'+ fname +'.pdf'
-            apath = 'resume/applicationform-'+ fname +'.pdf'
+            rpath = os.path.join('resume', f'resume/resume-{fname}.pdf')
+            apath = os.path.join('resume', f'resume/applicationform-{fname}.pdf')
 
-            with open(rpath, 'rb') as rfile:
-                email.attach(f'resume-{fname}.pdf', rfile.read(), 'application/pdf')
-
-            with open(apath, 'rb') as afile:
-                email.attach(f'applicationform-{fname}.pdf', afile.read(), 'application/pdf')
+            email.attach_file(rpath)
+            email.attach_file(apath)
 
             email.send()
             #redirect to success
