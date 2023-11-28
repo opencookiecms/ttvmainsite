@@ -636,7 +636,9 @@ def hrForm(request):
             subject = 'Job Application for ' + job 
             message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})'
             resume = form.cleaned_data["resume"]
+            resumedata = resume.read()
             appform = form.cleaned_data["appform"]
+            appformdata = appform.read()
             #domain email
             from_email = settings.SERVER_EMAIL
             #recipient email
@@ -645,8 +647,8 @@ def hrForm(request):
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             #attaching files to email
-            email.attach(resume.name, resume.read(), resume.content_type)
-            email.attach(appform.name, appform.read(), appform.content_type)
+            email.attach(resume.name, resumedata, resume.content_type)
+            email.attach(appform.name, appformdata, appform.content_type)
             email.send()
             #redirect to success
             return redirect('contactdone')
