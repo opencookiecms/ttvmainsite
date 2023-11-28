@@ -440,6 +440,13 @@ class Metapro(models.Model):
     position  = models.IntegerField(null=True, blank=True)
 
 #Job application form
+#filenames
+def rfilepath (instance):
+    return f'resume/resume - {instance.contactname}'
+
+def afilepath (instance):
+    return f'resume/applicationform - {instance.contactname}'
+
 class Hr(models.Model):
     contactname = models.CharField(max_length=100, null=False, blank=False)
     contactemail = models.EmailField(null=False, blank=False)
@@ -448,5 +455,6 @@ class Hr(models.Model):
     internship = models.CharField(max_length=50, null=True, blank=True)
     country = models.CharField(max_length=50, null=False, blank=False)
     contacttel = models.CharField(max_length=20, null=False, blank=False)
-    resume = models.FileField(upload_to='resume/')
-    appform = models.FileField(upload_to='resume/')
+    resume = models.FileField(upload_to=rfilepath)
+    appform = models.FileField(upload_to=afilepath)
+
