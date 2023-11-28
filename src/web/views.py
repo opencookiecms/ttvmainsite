@@ -632,15 +632,9 @@ def hrForm(request):
             elif form.cleaned_data["jobtype"] == 'Internship':
                 job = form.cleaned_data["internship"]
 
-            fname = form.cleaned_data["contactname"]
-            fname = fname.replace(' ', '_')
-
-            rpath = 'resume/resume- '+ fname +'.pdf'
-            apath = 'resume/applicationform- '+ fname +'.pdf'
-
             #email contents
             subject = 'Job Application for ' + job 
-            message = f'Name:{rpath} {apath} {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})'
+            message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})'
             # resume = form.cleaned_data["resume"]
             # appform = form.cleaned_data["appform"]
             #domain email
@@ -651,13 +645,16 @@ def hrForm(request):
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             #attaching files to email
-            
+            fname = form.cleaned_data["contactname"]
+            fname = fname.replace(' ', '_')
+            rpath = 'resume/resume-'+ fname +'.pdf'
+            apath = 'resume/applicationform-'+ fname +'.pdf'
 
-            # with open(rpath, 'rb') as rfile:
-            #     email.attach(f'resume-{fname}.pdf', rfile.read(), 'application/pdf')
+            with open(rpath, 'rb') as rfile:
+                email.attach(f'resume-{fname}.pdf', rfile.read(), 'application/pdf')
 
-            # with open(apath, 'rb') as afile:
-            #     email.attach(f'applicationform-{fname}.pdf', afile.read(), 'application/pdf')
+            with open(apath, 'rb') as afile:
+                email.attach(f'applicationform-{fname}.pdf', afile.read(), 'application/pdf')
 
             email.send()
             #redirect to success
