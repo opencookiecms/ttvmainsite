@@ -9,6 +9,7 @@ from .forms import ContactForm, NewsletterForm, HrForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 import requests
+from io import BytesIO
 
 # Create your views here.
 
@@ -645,8 +646,10 @@ def hrForm(request):
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             #attaching files to email
-            email.attach(resume.name, resume.read(), "application/pdf")
-            email.attach(appform.name, appform.read(), "application/pdf")
+            resume_data = BytesIO(resume.read())
+            email.attach(resume.name, resume_data.getvalue(), resume.content_type)
+            app_data = BytesIO(appform.read())
+            email.attach(appform.name, app_data.getvalue(), appform.content_type)
             email.send()
             #redirect to success
             return redirect('contactdone')
