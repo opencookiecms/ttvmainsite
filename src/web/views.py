@@ -633,8 +633,6 @@ def hrForm(request):
                 job = form.cleaned_data["internship"]
 
             #email contents
-            fname = form.cleaned_data["contactname"]
-            fname = fname.replace(' ', '_')
             subject = 'Job Application for ' + job 
             message = f'{fname} Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})'
             # resume = form.cleaned_data["resume"]
@@ -647,15 +645,17 @@ def hrForm(request):
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             #attaching files to email
-            # fname = form.cleaned_data["contactname"].replace(' ','_')
-            # rpath = f'resume/resume-{fname}.pdf'
-            # apath = f'resume/applicationform-{fname}.pdf'
+            fname = form.cleaned_data["contactname"]
+            fname = fname.replace(' ', '_')
+            
+            rpath = f'resume/resume-{fname}.pdf'
+            apath = f'resume/applicationform-{fname}.pdf'
 
-            # with open(rpath, 'rb') as rfile:
-            #     email.attach_file(rpath, rfile.read(), 'application/pdf')
+            with open(rpath, 'rb') as rfile:
+                email.attach_file(rpath, rfile.read(), 'application/pdf')
 
-            # with open(apath, 'rb') as afile:
-            #     email.attach_file(apath, afile.read(), 'application/pdf')
+            with open(apath, 'rb') as afile:
+                email.attach_file(apath, afile.read(), 'application/pdf')
 
             email.send()
             #redirect to success
