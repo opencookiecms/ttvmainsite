@@ -442,10 +442,10 @@ class Metapro(models.Model):
 #Job application form
 #filenames
 def rfilepath (instance, filename):
-    return os.path.join('resume',f'resume - {instance.contactname}.pdf')
+    return os.path.join('resume',f'resume-{instance.contactname}.pdf')
 
 def afilepath (instance, filename):
-    return os.path.join('resume',f'application form - {instance.contactname}.pdf')
+    return os.path.join('resume',f'applicationform-{instance.contactname}.pdf')
 
 class Hr(models.Model):
     contactname = models.CharField(max_length=100, null=False, blank=False)
