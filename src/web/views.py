@@ -640,7 +640,8 @@ def hrForm(request):
             #domain email
             from_email = settings.SERVER_EMAIL
             #recipient email
-            recipient_list = ['hr@ttvision-tech.com']
+            #recipient_list = ['hr@ttvision-tech.com']
+            recipient_list = ['adriannasim@gmail.com']
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             #attaching files to email
