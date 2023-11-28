@@ -648,8 +648,8 @@ def hrForm(request):
             #attaching files to email
             mime_type_resume, _ = mimetypes.guess_type(resume.name)
             mime_type_appform, _ = mimetypes.guess_type(appform.name)
-            email.attach(resume.name, resume, mime_type_resume)
-            email.attach(appform.name, appform, mime_type_appform)
+            email.attach(resume.name, resume.read(), mime_type_resume)
+            email.attach(appform.name, appform.read(), mime_type_appform)
             email.send()
             #redirect to success
             return redirect('contactdone')
