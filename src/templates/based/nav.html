@@ -15,16 +15,15 @@
     <li><a class="dec" href="{% url 'index' %}">Home</a>
       
     </li>
-    <li><a href="">About Us</a>
+    <li><a href="{% url 'cb' %}">About Us</a>
         <ul>
-
             <li><a href="{% url 'cb' %}">Company Background</a></li>
             <li><a href="{% url 'vision' %}">Vision and Mission</a></li>
             <li><a href="{% url 'award' %}">Awards and Achievements</a></li>
            
         </ul>
     </li>
-    <li><a href="">Products and Solutions</a>
+    <li><a href="{% url 'semiconductorlist' %}">Products and Solutions</a>
         <ul>
             <li><a href="{% url 'semiconductorlist' %}">Semiconductor/LED Inspection Solutions</a></li>
             <li><a href="{% url 'pvinspect' %}">PV Inspection, Test and Sort Solutions</a></li>
@@ -32,7 +31,7 @@
       
         </ul>
     </li>
-    <li><a href="">News and Events</a>
+    <li><a href="{% url 'newslist' %}?page=1">News and Events</a>
         <ul>
             <li><a href="{% url 'newslist' %}?page=1">News</a></li>
             <li><a href="{% url 'press' %}">Press Release</a></li>
@@ -43,7 +42,7 @@
             
         </ul>
     </li>
-    <li><a href="">Investor Relations</a>
+    <li><a href="{% url 'investor' %}">Investor Relations</a>
         <ul>
             <li><a href="{% url 'investor' %}">Announcements</a></li>
             <li><a href="{% url 'cg' %}">Corporate Governance</a></li>
