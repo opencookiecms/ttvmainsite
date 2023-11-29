@@ -35,16 +35,16 @@
                 <div class="row mt-n1-9">
                     {% for smc in smcard %}
                     <div class="col-md-6 col-lg-4 mt-1-9">
-                        <div class="card card-style1 h-100 primary-shadow">
-                            <div class="card-body media p-1-6 p-sm-1-9">
-                                <i class="{{smc.icon}}"></i>
-                                <div class="media-body ms-4">
-                                    <a href="{% url smc.link1 %}">
+                        <a href="{% url smc.link1 %}">
+                            <div class="card card-style1 h-100 primary-shadow">
+                                <div class="card-body media p-1-6 p-sm-1-9">
+                                    <i class="{{smc.icon}}"></i>
+                                    <div class="media-body ms-4">
                                         <h4 class="h5">{{smc.cardcontent}}</h4>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     {% endfor %}
                 </div>
