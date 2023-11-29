@@ -210,8 +210,6 @@ class Slide(models.Model):
     picture = models.ImageField(null=True, blank=True)
     positionhero = models.CharField(max_length=20, null=True, blank=True)
     link1 = models.CharField(max_length=200, null=True, blank=True)
-    link2 = models.CharField(max_length=200, null=True, blank=True)
-    link3 = models.CharField(max_length=200, null=True, blank=True)
     status = models.BooleanField(null=True,blank=True)
     cssclass = models.CharField(max_length=200, null=True, blank=True)
 
