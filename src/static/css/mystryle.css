@@ -25,12 +25,14 @@ a.line {
 }
 
 .expanded-content { 
-    display: none;  
+    display: block;  
     max-height: 0;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
 }
 
 .expanded-content.show {
     display: block;
-    max-height: fit-content;
+    max-height: 200px;
+    opacity: 1;
 }
