@@ -39,7 +39,7 @@
                                 <tbody>
                                     <tr class="expand-con">
                                         <td scope="row">
-                                            <button class="expand-content" onclick="toggleContent()">+ Software & Control Engineer</button>
+                                            <button class="expand-content" onclick="toggleContent()"><span id="chg-when-expand">+</span> Software & Control Engineer</button>
                                             <span class="expanded-content" id="expanded-content">blablabla</span>
                                         </td>
                                     </tr>
@@ -122,14 +122,14 @@
         <script>
             function toggleContent() {
                 var expandedContent = document.getElementById('expanded-content');
-                var expandContent = document.querySelector('.expand-content');
+                var chg = document.getElementById('chg-when-expand');
                 
                 if (expandedContent.style.display === 'none' || expandedContent.style.display === '') {
                     expandedContent.style.display = 'block';
-                    expandContent.innerText = '-';
+                    chg.innerText = '-';
                 } else {
                     expandedContent.style.display = 'none';
-                    expandContent.innerText = '+';
+                    chg.innerText = '+';
                 }
             }
         </script>
