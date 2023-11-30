@@ -12,14 +12,13 @@ a.line {
 }
 
 .expand-con {
-    max-height: fit-content;
+    max-height: 150px;
 }
 
 .expand-content {
     background-color: white;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     cursor: pointer;
 }
 
