@@ -27,7 +27,7 @@ a.line {
 .expanded-content { 
     display: none;  
     opacity: 0;
-    transition: opacity 0.5 ease;
+    transition: 0.5 ease;
 }
 
 .expanded-content.show {
