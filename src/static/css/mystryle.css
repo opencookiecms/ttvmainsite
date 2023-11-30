@@ -20,6 +20,8 @@ a.line {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    border: none;
+    margin: 0 2px 0 2px;
 }
 
 .expanded-content { 
