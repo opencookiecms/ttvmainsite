@@ -10,3 +10,19 @@
 a.line {
     text-decoration: underline;
 }
+
+.expand-con {
+    max-height: fit-content;
+}
+
+.expand-content {
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.expanded-content { 
+    display: none;  
+}
