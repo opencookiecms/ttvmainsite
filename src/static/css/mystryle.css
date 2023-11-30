@@ -2,11 +2,13 @@
     display: none;
 }
 
+/* Product mainpage */
 .pd {
     text-align: justify;
     padding: 0 20px 0 20px;
-}     
+} 
 
+/* Career page */
 a.line {
     text-decoration: underline;
 }
