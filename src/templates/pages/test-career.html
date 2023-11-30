@@ -40,7 +40,7 @@
                                     <tr class="expand-con">
                                         <td scope="row">
                                             <button class="expand-content" onclick="toggleContent()"><span id="chg-when-expand">+</span> Software & Control Engineer</button>
-                                            <span class="expanded-content wow fadeIn" data-wow-delay="200ms" id="expanded-content">blablabla</span>
+                                            <span class="expanded-content" id="expanded-content">blablabla</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -124,11 +124,13 @@
                 var expandedContent = document.getElementById('expanded-content');
                 var chg = document.getElementById('chg-when-expand');
                 
-                if (expandedContent.style.display === 'none' || expandedContent.style.display === '') {
-                    expandedContent.style.display = 'block';
+                //toggle css class
+                expandedContent.classList.toggle('show');
+
+                //update the container
+                if (expandedContent.classList.contains('show')) {
                     chg.innerText = '-';
                 } else {
-                    expandedContent.style.display = 'none';
                     chg.innerText = '+';
                 }
             }
