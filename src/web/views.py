@@ -308,17 +308,17 @@ def newsm(request):
 #     }
 #     return render(request, 'pages/inspectionlist.html',context)
 
-def semiconductorlist(request):
-    company = Company.objects.get(id=1)
-    context = {
-        'icled': True,
-        'title': 'Semiconductor & LED Inspection Solutions',
-        'com':company,
-        'keywords':"automated optical inspection, wirebond aoi, substrate, vision module, LED, post tape, automated optical inspection, axi, optoelectronics, semiconductor aoi, package, 3D inspection, vision, wirebond, wafer, x-ray",
-        'description':"TT Vision's Semiconductor/LED Inspection Solutions and Products: Substrate Package AOI Machine, Wafer AOI Machine, Wirebond AOI Machine"
+# def semiconductorlist(request):
+#     company = Company.objects.get(id=1)
+#     context = {
+#         'icled': True,
+#         'title': 'Semiconductor & LED Inspection Solutions',
+#         'com':company,
+#         'keywords':"automated optical inspection, wirebond aoi, substrate, vision module, LED, post tape, automated optical inspection, axi, optoelectronics, semiconductor aoi, package, 3D inspection, vision, wirebond, wafer, x-ray",
+#         'description':"TT Vision's Semiconductor/LED Inspection Solutions and Products: Substrate Package AOI Machine, Wafer AOI Machine, Wirebond AOI Machine"
 
-    }
-    return render(request, 'pages/semiconductorlist.html',context)
+#     }
+#     return render(request, 'pages/semiconductorlist.html',context)
 
 # def rpv(request, slug):
 
@@ -346,17 +346,17 @@ def semiconductorlist(request):
 #     }
 #     return render(request, 'pages/productviews.html',context)
 
-def icled(request, slug):
-    pr = Product.objects.get(productslug=slug)
-    company = Company.objects.get(id=1)
-    context = {
-        'title': pr,
-        'icled':True,
-        'pr':pr,
-        'com':company
-    }
+# def icled(request, slug):
+#     pr = Product.objects.get(productslug=slug)
+#     company = Company.objects.get(id=1)
+#     context = {
+#         'title': pr,
+#         'icled':True,
+#         'pr':pr,
+#         'com':company
+#     }
 
-    return render(request, 'pages/productviews.html',context)
+#     return render(request, 'pages/productviews.html',context)
 
 #---------------------------new views-------------------------
 #robotic mainpage
@@ -418,6 +418,37 @@ def pinspection(request, slug):
         'com':company,
         'f': fea
     }
+    return render(request, 'pages/productviews.html',context)
+
+#icled mainpage
+def semiconductorlist(request):
+    cat = Category.objects.get(category='Semiconductor ins')
+    pr = Product.objects.filter(productcategory = cat, status = True)
+    company = Company.objects.get(id=1)
+    context = {
+        'icled': True,
+        'pr': pr,
+        'title': 'Semiconductor & LED Inspection Solutions',
+        'com':company,
+        'keywords':"automated optical inspection, wirebond aoi, substrate, vision module, LED, post tape, automated optical inspection, axi, optoelectronics, semiconductor aoi, package, 3D inspection, vision, wirebond, wafer, x-ray",
+        'description':"TT Vision's Semiconductor/LED Inspection Solutions and Products: Substrate Package AOI Machine, Wafer AOI Machine, Wirebond AOI Machine"
+
+    }
+    return render(request, 'pages/semiconductorlist.html',context)
+
+#icled product page
+def icled(request, slug):
+    pr = Product.objects.get(productslug=slug)
+    fea = Productfeas.objects.filter(product = pr)
+    company = Company.objects.get(id=1)
+    context = {
+        'title': pr,
+        'icled':True,
+        'pr':pr,
+        'com':company,
+        'f': fea
+    }
+
     return render(request, 'pages/productviews.html',context)
 
 def semi1(request):

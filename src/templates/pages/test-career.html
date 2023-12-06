@@ -39,13 +39,13 @@
                                 <tbody>
                                     <tr class="expand-con">
                                         <td scope="row">
-                                            <button class="expand-content" onclick="toggleContent()"><span id="chg-when-expand">+</span> Software & Control Engineer</button>
+                                            <button class="expand-content" onclick="toggleContent(1)"><span id="chg-when-expand">+</span> Software & Control Engineer</button>
                                             <span class="expanded-content" id="expanded-content">blablabla</span>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="expand-con">
                                         <td scope="row">
-                                            <button class="expand-content" onclick="toggleContent()"><span id="chg-when-expand">+</span> Mechanical Design Engineer</button>
+                                            <button class="expand-content" onclick="toggleContent(2)"><span id="chg-when-expand">+</span> Mechanical Design Engineer</button>
                                             <span class="expanded-content" id="expanded-content">blablabla2</span>
                                         </td>
                                         
@@ -123,7 +123,7 @@
             </div>
         </section>
         <script>
-            function toggleContent() {
+            function toggleContent(no) {
                 var expandedContent = document.getElementById('expanded-content');
                 var chg = document.getElementById('chg-when-expand');
                 
