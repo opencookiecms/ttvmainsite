@@ -40,13 +40,13 @@
                                     <tr class="expand-con">
                                         <td scope="row">
                                             <button class="expand-content" onclick="toggleContent(1)"><span id="chg-when-expand">+</span> Software & Control Engineer</button>
-                                            <span class="expanded-content" id="expanded-content">blablabla</span>
+                                            <span class="expanded-content" id="expanded-content2">blablabla</span>
                                         </td>
                                     </tr>
                                     <tr class="expand-con">
                                         <td scope="row">
                                             <button class="expand-content" onclick="toggleContent(2)"><span id="chg-when-expand">+</span> Mechanical Design Engineer</button>
-                                            <span class="expanded-content" id="expanded-content">blablabla2</span>
+                                            <span class="expanded-content" id="expanded-content2">blablabla2</span>
                                         </td>
                                         
                                     </tr>
@@ -124,8 +124,8 @@
         </section>
         <script>
             function toggleContent(no) {
-                var expandedContent = document.getElementById('expanded-content');
-                var chg = document.getElementById('chg-when-expand');
+                var expandedContent = document.getElementById('expanded-content{no}');
+                var chg = document.getElementById('chg-when-expand[row="${no}"]');
                 
                 //toggle css class
                 expandedContent.classList.toggle('show');
