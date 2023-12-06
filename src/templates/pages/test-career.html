@@ -125,7 +125,7 @@
         <script>
             function toggleContent(no) {
                 var expandedContent = document.getElementById('expanded-content{no}');
-                var chg = document.getElementById('chg-when-expand[row="${no}"]');
+                var chg = document.querySelector('.chg-when-expand[row="${no}"]');
                 
                 //toggle css class
                 expandedContent.classList.toggle('show');
