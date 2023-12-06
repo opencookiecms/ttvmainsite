@@ -434,7 +434,7 @@ def semiconductorlist(request):
         'description':"TT Vision's Semiconductor/LED Inspection Solutions and Products: Substrate Package AOI Machine, Wafer AOI Machine, Wirebond AOI Machine"
 
     }
-    return render(request, 'pages/semiconductorlist.html',context)
+    return render(request, 'pages/productmainpage.html',context)
 
 #icled product page
 def icled(request, slug):
@@ -448,7 +448,6 @@ def icled(request, slug):
         'com':company,
         'f': fea
     }
-
     return render(request, 'pages/productviews.html',context)
 
 def semi1(request):
