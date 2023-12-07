@@ -40,6 +40,5 @@ a.line {
 
 .expanded-content.show {
     display: block;
-    max-height: 200px;
     opacity: 1;
 }
