@@ -4,11 +4,11 @@
 
 /* Product mainpage */
 .pd {
+    text-align: justify;
     padding: 0 20px 0 20px;
 } 
 
 h5.just {
-    text-align: justify;
     margin: 3.5rem 200px 0 200px;
 }
 
