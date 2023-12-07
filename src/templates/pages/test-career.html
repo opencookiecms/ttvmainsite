@@ -84,22 +84,6 @@
             function toggleContent(no) {
                 var expandedContent = document.getElementById('expanded-content' + no);
                 var chg = document.getElementById('chg-when-expand' + no);
-                
-                //toggle to show the hidden content
-                expandedContent.classList.toggle('show');
-
-                //change the + to -
-                if (expandedContent.classList.contains('show')) {
-                    chg.innerText = '-';
-                } else {
-                    chg.innerText = '+';
-                }
-            }
-        </script> {% endcomment %}
-        {% comment %} <script>
-            function toggleContent(no) {
-                var expandedContent = document.getElementById('expanded-content' + no);
-                var chg = document.getElementById('chg-when-expand' + no);
         
         
                // Toggle to show/hide the hidden content for the selected row
@@ -136,22 +120,30 @@
                 });
             }
         </script> {% endcomment %}
+        <!--Script to toggle job description-->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 var buttons = document.querySelectorAll('.expand-content');
-            
-            
-                buttons.forEach(function(button) {
-                    button.addEventListener('click', function() {
+                buttons.forEach(function (button) {
+                    button.addEventListener('click', function () {
                         var targetId = this.getAttribute('data-row');
                         var targetContent = document.getElementById(targetId);
-            
-            
                         if (targetContent) {
+                            // Close all other expanded content
+                            var allContent = document.querySelectorAll('.expanded-content.show');
+                            allContent.forEach(function (content) {
+                                if (content.id !== targetId) {
+                                    content.classList.remove('show');
+                                    // Update the button text for the closed content
+                                    var closedButton = document.querySelector('[data-row="' + content.id + '"]');
+                                    if (closedButton) {
+                                        closedButton.querySelector('span').innerText = '+';
+                                    }
+                                }
+                            });
+                           // Toggle the visibility of the clicked content
                             targetContent.classList.toggle('show');
-            
-            
-                            // Toggle button text based on the visibility of the content
+                           // Toggle button text based on the visibility of the content
                             var buttonText = this.querySelector('span');
                             if (targetContent.classList.contains('show')) {
                                 buttonText.innerText = '-';
