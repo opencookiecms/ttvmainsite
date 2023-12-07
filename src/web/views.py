@@ -165,9 +165,9 @@ def newsletter(request):
     form = NewsletterForm(request.POST or None)
 
     if request.method == 'POST':
+        form = NewsletterForm()
         if form.is_valid():
             form.save()
-            form = NewsletterForm
             #email contents
             subject = 'Thanks for subscribing to our newsletter!'
             message = f'Dear {form.cleaned_data["newname"]}, \n\nThank you for subscribing to our newsletter. In the meantime, feel free to check out our social media sites:\n Linkedin: https://www.linkedin.com/company/ttvision-technologies/ \nYoutube: https://www.youtube.com/@ttvisiontechnologies/ \n\nRegards,\nTT Vision\nsales@ttvision-tech.com\n604-6456294'
