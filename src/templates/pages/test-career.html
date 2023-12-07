@@ -102,34 +102,38 @@
                 var chg = document.getElementById('chg-when-expand' + no);
         
         
-               // Get all elements with class 'expanded-content'
-                var allExpandedContents = document.querySelectorAll('.expanded-content');
-        
-        
-               // Iterate over all expanded contents
-                allExpandedContents.forEach(function(content) {
-                    // Hide all expanded contents
-                    content.classList.remove('show');
-                });
-        
-        
-               // Hide all plus/minus indicators
-                var allChangeIndicators = document.querySelectorAll('[id^="chg-when-expand"]');
-                allChangeIndicators.forEach(function(indicator) {
-                    indicator.innerText = '+';
-                });
-        
-        
-               // Toggle to show the hidden content for the selected row
+               // Toggle to show/hide the hidden content for the selected row
                 expandedContent.classList.toggle('show');
         
         
-               // Change the + to - for the selected row
-                if (expandedContent.classList.contains('show')) {
-                    chg.innerText = '-';
-                } else {
-                    chg.innerText = '+';
-                }
+               // Change the + to - or - to + for the selected row
+                chg.innerText = (expandedContent.classList.contains('show')) ? '-' : '+';
+        
+        
+               // Get all other expanded content elements
+                var allExpandedContents = document.querySelectorAll('.expanded-content');
+        
+        
+               // Iterate over all other expanded contents
+                allExpandedContents.forEach(function(content) {
+                    // Hide other expanded contents
+                    if (content.id !== 'expanded-content' + no) {
+                        content.classList.remove('show');
+                    }
+                });
+        
+        
+               // Get all other plus/minus indicators
+                var allChangeIndicators = document.querySelectorAll('[id^="chg-when-expand"]');
+        
+        
+               // Iterate over all other indicators
+                allChangeIndicators.forEach(function(indicator) {
+                    // Change other indicators to +
+                    if (indicator.id !== 'chg-when-expand' + no) {
+                        indicator.innerText = '+';
+                    }
+                });
             }
         </script>
         {% endblock content %}
