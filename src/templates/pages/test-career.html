@@ -124,17 +124,18 @@
         </section>
         <script>
             function toggleContent(no) {
-                var expandedContent = document.getElementById('expanded-content${no}');
-                var chg = document.querySelector('.chg-when-expand[row="${no}"]');
+                var expandedContent = document.getElementById('expanded-content' + no);
+                var chg = document.querySelector('.expand-content[row="'+ no + '"]');
+                var chgbutton = chg.querySelector('.chg-when-expand')
                 
                 //toggle css class
                 expandedContent.classList.toggle('show');
 
                 //update the container
                 if (expandedContent.classList.contains('show')) {
-                    chg.innerText = '-';
+                    chgbutton.innerText = '-';
                 } else {
-                    chg.innerText = '+';
+                    chgbutton.innerText = '+';
                 }
             }
         </script>
