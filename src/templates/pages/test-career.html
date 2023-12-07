@@ -36,10 +36,10 @@
                                     <!--For loop to display all fulltime items in job-->
                                     {% for j in job %}
                                     {% if j.jobcat == 'Full Time' %}
-                                    <tr class="expand-con">
+                                    <tr>
                                         <td scope="row">
-                                            <button class="expand-content" onclick="toggleContent(this)"><span id="chg-when-expand">+</span> {{j.jobname}}</button>
-                                            <span class="expanded-content" id="expanded-content">{{ j.jobdesc }}</span>
+                                            <button class="expand-content" data-row="hidden-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
+                                            <span id="expanded-content-{{ j.jobname }}" class="expanded-content">{{ j.jobdesc }}</span>
                                         </td>
                                     </tr>
                                     {% endif %}
@@ -137,22 +137,26 @@
             }
         </script> {% endcomment %}
         <script>
-            function toggleContent(button) {
-                var row = button.parentNode.parentNode; // Get the row
-                var expandedContent = row.querySelector('.expanded-content');
-                var chg = row.querySelector('.chg-when-expand');
-        
-        
-                // Toggle to show the hidden content
-                expandedContent.classList.toggle('show');
-        
-        
-                // Change the + to -
-                if (expandedContent.classList.contains('show')) {
-                    chg.innerText = '-';
-                } else {
-                    chg.innerText = '+';
-                }
-            }
+            document.addEventListener('DOMContentLoaded', function() {
+                var buttons = document.querySelectorAll('.expand-content');
+            
+            
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        var targetId = this.getAttribute('data-row');
+                        var targetContent = document.getElementById(targetId);
+            
+            
+                        targetContent.classList.toggle('show');
+            
+            
+                        if (!targetContent.classList.contains('show')) {
+                            this.querySelector('span').innerText = '-';
+                        } else {
+                            this.querySelector('span').innerText = '+';
+                        }
+                    });
+                });
+            });
         </script>
         {% endblock content %}
