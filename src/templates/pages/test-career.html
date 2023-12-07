@@ -85,20 +85,17 @@
         <script>
             function toggleContent(no) {
                 var expandedContent = document.getElementById('expanded-content' + no);
-                var chgB = document.querySelector('.expand-content[row="'+ no + '"]');
+                var chgbutton = document.querySelector('.expand-content[row="'+ no + '"] span');
                 
                 //toggle to show the hidden content
                 expandedContent.classList.toggle('show');
 
                 //change the + to -
-                chgB.forEach(function(chg){
-                    var chgbutton = chg.querySelector('span');
-                    if (expandedContent.classList.contains('show')) {
-                        chgbutton.innerText = '-';
-                    } else {
-                        chgbutton.innerText = '+';
-                    }
-                });
+                if (expandedContent.classList.contains('show')) {
+                    chgbutton.innerText = '-';
+                } else {
+                    chgbutton.innerText = '+';
+                }
             }
         </script>
         {% endblock content %}
