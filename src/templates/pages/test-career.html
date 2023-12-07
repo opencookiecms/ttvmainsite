@@ -40,10 +40,12 @@
                                         <td scope="row">
                                             <button class="expand-content" data-row="expanded-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
                                             <span id="expanded-content-{{ j.jobname }}" class="expanded-content">Role: {{ j.jobdesc }}</span>
-                                            {% if j.joblink %}
-                                            <a class="indeed" href="{{j.joblink}}">Apply at Indeed</a>
-                                            {% endif %}
                                         </td>
+                                        {% if j.joblink %}
+                                        <td>
+                                            <a class="indeed" href="{{j.joblink}}">Apply at Indeed</a>
+                                        </td>
+                                        {% endif %}
                                     </tr>
                                     {% endif %}
                                     {% endfor %}
