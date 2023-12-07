@@ -5,7 +5,6 @@
         ================================================== -->
         <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/event.jpg'%}">
             <div class="container">
-
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-7 col-xxl-5">
                         <div class="title-style3">
@@ -17,107 +16,115 @@
 
             </div>
         </section>
-
         <!-- TABLES
         ================================================== -->
         <section>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-
                         <div class="mb-6 mb-lg-8 position-relative elements-block">
-
                             <div class="inner-title">
-                                <h2 class="mb-0">Full Time Jobs</h2>
+                                <h2 class="mb-0">Full Time/Part Time Jobs</h2>
                             </div>
-
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Job Title</th>
-                                      
+                                        <th colspan="2" scope="col">Job Title</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!--For loop to display all fulltime items in job-->
+                                    {% for j in job %}
+                                    {% if j.jobcat == 'Full Time' %}
                                     <tr>
-                                        <td scope="row">Software & Control Engineer</td>
-                                    
+                                        <td scope="row">
+                                            <button class="expand-content" data-row="expanded-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
+                                            <span id="expanded-content-{{ j.jobname }}" class="expanded-content">Role: {{ j.jobdesc }}</span>
+                                        </td>
+                                        {% if j.joblink %}
+                                        <td class="indeed">
+                                            <a class="indeedlink" href="{{j.joblink}}">Apply at Indeed</a>
+                                        </td>
+                                        {% endif %}
                                     </tr>
-                                    <tr>
-                                        <td scope="row">Mechanical Design Engineer</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Project Engineer</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Project Coordinator</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Software Development Engineer</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">R&D Engineer</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Application Engineer</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">IT Engineer</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Shipping & Admin Clerk</td>
-                                      
-                                    </tr>
+                                    {% endif %}
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
                         <div class="mb-6 mb-lg-8 position-relative elements-block">
-
                             <div class="inner-title">
                                 <h2 class="mb-0">Internship</h2>
                             </div>
-
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Job Title</th>
-                                     
+                                        <th colspan="2" scope="col">Job Title</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!--For loop to display all Internship items in job-->
+                                    {% for j in job %}
+                                    {% if j.jobcat == 'Internship' %}
                                     <tr>
-                                        <td scope="row">Mechanical Engineering</td>
-                                    
+                                        <td scope="row">
+                                            <button class="expand-content" data-row="expanded-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
+                                            <span id="expanded-content-{{ j.jobname }}" class="expanded-content">Role: {{ j.jobdesc }}</span>
+                                        </td>
+                                        {% if j.joblink %}
+                                        <td class="indeed">
+                                            <a class="indeedlink" href="{{j.joblink}}">Apply at Indeed</a>
+                                        </td>
+                                        {% endif %}
                                     </tr>
-                                    <tr>
-                                        <td scope="row">Electrical & Electronic Engineering</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Mechatronics Engineering</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Computer/IT/Software Engineering</td>
-                                
-                                    </tr>
+                                    {% endif %}
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div class="col-md-6 mx-auto text-center">
                         <h2 class="md-6">Interested to join our team?</h2>
-                        <p>Send your resume <a class='line' href="mailto:hr@ttvision-tech.com"><b>here</b></a> or apply <a href="{% url 'hrform' %}" class="font-weight-bold line"><b>here</b></a></p>
+                        <p>Send your resume <a class="line" href="mailto:hr@ttvision-tech.com"><b>here</b></a> or apply <a href="{% url 'hrform' %}" class="font-weight-bold line"><b>here</b></a></p>
                     </div>
                 </div>
             </div>
         </section>
-
+        <!--Script to toggle job description-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var buttons = document.querySelectorAll('.expand-content');
+                buttons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        var targetId = this.getAttribute('data-row');
+                        var targetContent = document.getElementById(targetId);
+                        if (targetContent) {
+                            // Close all other expanded content
+                            var allContent = document.querySelectorAll('.expanded-content.show');
+                            allContent.forEach(function (content) {
+                                if (content.id !== targetId) {
+                                    content.classList.remove('show');
+                                    // Update the button text for the closed content
+                                    var closedButton = document.querySelector('[data-row="' + content.id + '"]');
+                                    if (closedButton) {
+                                        closedButton.querySelector('span').innerText = '+';
+                                    }
+                                }
+                            });
+                           // Toggle the visibility of the clicked content
+                            targetContent.classList.toggle('show');
+                           // Toggle button text based on the visibility of the content
+                            var buttonText = this.querySelector('span');
+                            if (targetContent.classList.contains('show')) {
+                                buttonText.innerText = '-';
+                            } else {
+                                buttonText.innerText = '+';
+                            }
+                        } else {
+                            console.error('Target content not found for ID:', targetId);
+                        }
+                    });
+                });
+            });
+            </script>
         {% endblock content %}

@@ -1,0 +1,123 @@
+{% extends 'based/based.html' %}
+{% load static %}
+{% block content %}
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/event.jpg'%}">
+            <div class="container">
+
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 col-xxl-5">
+                        <div class="title-style3">
+                            <span>Join Us</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">Careers</h1>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TABLES
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+
+                        <div class="mb-6 mb-lg-8 position-relative elements-block">
+
+                            <div class="inner-title">
+                                <h2 class="mb-0">Full Time Jobs</h2>
+                            </div>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Job Title</th>
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">Software & Control Engineer</td>
+                                    
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Mechanical Design Engineer</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Project Engineer</td>
+                                      
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Project Coordinator</td>
+                                      
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Software Development Engineer</td>
+                                      
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">R&D Engineer</td>
+                                      
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Application Engineer</td>
+                                      
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">IT Engineer</td>
+                                      
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Shipping & Admin Clerk</td>
+                                      
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mb-6 mb-lg-8 position-relative elements-block">
+
+                            <div class="inner-title">
+                                <h2 class="mb-0">Internship</h2>
+                            </div>
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Job Title</th>
+                                     
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">Mechanical Engineering</td>
+                                    
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Electrical & Electronic Engineering</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Mechatronics Engineering</td>
+                                      
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Computer/IT/Software Engineering</td>
+                                
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mx-auto text-center">
+                        <h2 class="md-6">Interested to join our team?</h2>
+                        <p>Send your resume <a class='line' href="mailto:hr@ttvision-tech.com"><b>here</b></a> or apply <a href="{% url 'hrform' %}" class="font-weight-bold line"><b>here</b></a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endblock content %}
