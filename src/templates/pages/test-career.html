@@ -59,7 +59,7 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Job Title</th>
+                                        <th colspan="2" scope="col">Job Title</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,6 +71,11 @@
                                             <button class="expand-content" data-row="expanded-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
                                             <span id="expanded-content-{{ j.jobname }}" class="expanded-content">Role: {{ j.jobdesc }}</span>
                                         </td>
+                                        {% if j.joblink %}
+                                        <td class="indeed">
+                                            <a class="indeedlink" href="{{j.joblink}}">Apply at Indeed</a>
+                                        </td>
+                                        {% endif %}
                                     </tr>
                                     {% endif %}
                                     {% endfor %}
