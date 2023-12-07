@@ -165,7 +165,7 @@ def newsletter(request):
     form = NewsletterForm(request.POST or None)
 
     if request.method == 'POST':
-        form = NewsletterForm()
+        form = NewsletterForm(request.POST)
         if form.is_valid():
             form.save()
             #email contents
