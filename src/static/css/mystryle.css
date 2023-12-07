@@ -41,5 +41,5 @@ a.line {
 }
 
 .indeed {
-    align-self: right;
+    min-width: 200px;
 }
