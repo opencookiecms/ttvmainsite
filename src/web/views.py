@@ -705,7 +705,7 @@ def hrForm(request):
 
 #test
 def tcareer(request):
-
+    job = Job.objects.all()
     company = Company.objects.get(id=1)
     meta = Metapro.objects.get(position=5)
 
@@ -714,6 +714,7 @@ def tcareer(request):
         'com':company,
         'meta':meta,
         'keywords':"job, full time job, internship, intern, career, software and control engineer, mechanical design engineer, project engineer, project coordinator, software development engineer, r&d engineer, application engineer, it engineer, shipping clerk, admin clerk, mechanical engineer, e&e engineering, electrical and electronic engineering, mechatronics engineering, computer engineering, it engineering, software engineering",
-        'description':"TT Vision's Careers and Open Job Positions"
+        'description':"TT Vision's Careers and Open Job Positions",
+        'job' : job,
     }
     return render(request, 'pages/test-career.html',context)
