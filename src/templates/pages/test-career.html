@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-md-6 mx-auto text-center">
                         <h2 class="md-6">Interested to join our team?</h2>
-                        <p>Send your resume <a class='line' href="mailto:hr@ttvision-tech.com"><b>here</b></a> or apply <a href="{% url 'hrform' %}" class="font-weight-bold line"><b>here</b></a></p>
+                        <p>Send your resume <a class="line" href="mailto:hr@ttvision-tech.com"><b>here</b></a> or apply <a href="{% url 'hrform' %}" class="font-weight-bold line"><b>here</b></a></p>
                     </div>
                 </div>
             </div>
@@ -147,16 +147,21 @@
                         var targetContent = document.getElementById(targetId);
             
             
-                        targetContent.classList.toggle('show');
+                        if (targetContent) {
+                            targetContent.classList.toggle('show');
             
             
-                        if (!targetContent.classList.contains('show')) {
-                            this.querySelector('span').innerText = '-';
+                            // Toggle button text based on the visibility of the content
+                            var buttonText = this.querySelector('span');
+                            if (targetContent.classList.contains('show')) {
+                                buttonText.innerText = '-';
+                            } else {
+                                buttonText.innerText = '+';
+                            }
                         } else {
-                            this.querySelector('span').innerText = '+';
+                            console.error('Target content not found for ID:', targetId);
                         }
                     });
                 });
             });
-        </script>
-        {% endblock content %}
+            </script>
