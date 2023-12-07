@@ -454,3 +454,8 @@ class Hr(models.Model):
     resume = models.FileField(upload_to=rfilepath)
     appform = models.FileField(upload_to=afilepath)
 
+#job positions
+class Job(models.Model):
+    jobname = models.CharField(max_length=100, null=False, blank=False)
+    jobdesc = models.TextField(null=False, blank=False)
+    joblink = models.CharField(max_length=400, null=False, blank=False)
