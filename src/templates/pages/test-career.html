@@ -58,13 +58,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!--For loop to display all items in job-->
+                                    <!--For loop to display all Internship items in job-->
                                     {% for j in job %}
                                     {% if j.jobcat == 'Internship' %}
-                                    <tr class="expand-con">
+                                    <tr>
                                         <td scope="row">
-                                            <button class="expand-content" onclick="toggleContent(this)"><span id="chg-when-expand">+</span> {{ j.jobname }}</button>
-                                            <span class="expanded-content" id="expanded-content">{{ j.jobdesc }}</span>
+                                            <button class="expand-content" data-row="expanded-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
+                                            <span id="expanded-content-{{ j.jobname }}" class="expanded-content">{{ j.jobdesc }}</span>
                                         </td>
                                     </tr>
                                     {% endif %}
@@ -80,46 +80,6 @@
                 </div>
             </div>
         </section>
-        {% comment %} <script>
-            function toggleContent(no) {
-                var expandedContent = document.getElementById('expanded-content' + no);
-                var chg = document.getElementById('chg-when-expand' + no);
-        
-        
-               // Toggle to show/hide the hidden content for the selected row
-                expandedContent.classList.toggle('show');
-        
-        
-               // Change the + to - or - to + for the selected row
-                chg.innerText = (expandedContent.classList.contains('show')) ? '-' : '+';
-        
-        
-               // Get all other expanded content elements
-                var allExpandedContents = document.querySelectorAll('.expanded-content');
-        
-        
-               // Iterate over all other expanded contents
-                allExpandedContents.forEach(function(content) {
-                    // Hide other expanded contents
-                    if (content.id !== 'expanded-content' + no) {
-                        content.classList.remove('show');
-                    }
-                });
-        
-        
-               // Get all other plus/minus indicators
-                var allChangeIndicators = document.querySelectorAll('[id^="chg-when-expand"]');
-        
-        
-               // Iterate over all other indicators
-                allChangeIndicators.forEach(function(indicator) {
-                    // Change other indicators to +
-                    if (indicator.id !== 'chg-when-expand' + no) {
-                        indicator.innerText = '+';
-                    }
-                });
-            }
-        </script> {% endcomment %}
         <!--Script to toggle job description-->
         <script>
             document.addEventListener('DOMContentLoaded', function () {
