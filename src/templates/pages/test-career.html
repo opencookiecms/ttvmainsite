@@ -38,7 +38,7 @@
                                     {% if j.jobcat == 'Full Time' %}
                                     <tr>
                                         <td scope="row">
-                                            <button class="expand-content" data-row="hidden-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
+                                            <button class="expand-content" data-row="expanded-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
                                             <span id="expanded-content-{{ j.jobname }}" class="expanded-content">{{ j.jobdesc }}</span>
                                         </td>
                                     </tr>
