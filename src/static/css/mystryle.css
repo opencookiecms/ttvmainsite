@@ -18,10 +18,6 @@ a.line {
     text-decoration: underline;
 }
 
-.expand-con {
-    overflow: hidden;
-}
-
 .expand-content {
     background-color: white;
     text-align: center;
@@ -34,12 +30,12 @@ a.line {
 .expanded-content { 
     display: block;  
     max-height: 0;
+    overflow: hidden;
     transition: max-height 0.5s ease, opacity 0.5s ease;
     opacity: 0;
 }
 
 .expanded-content.show {
-    display: block;
     max-height: 100vh;
     opacity: 1;
 }
