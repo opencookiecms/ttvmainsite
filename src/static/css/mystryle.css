@@ -39,3 +39,7 @@ a.line {
     max-height: 100vh;
     opacity: 1;
 }
+
+.indeed {
+    align-self: right;
+}
