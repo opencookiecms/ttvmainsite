@@ -80,7 +80,7 @@
                 </div>
             </div>
         </section>
-        <script>
+        {% comment %} <script>
             function toggleContent(no) {
                 var expandedContent = document.getElementById('expanded-content' + no);
                 var chg = document.getElementById('chg-when-expand' + no);
@@ -89,6 +89,42 @@
                 expandedContent.classList.toggle('show');
 
                 //change the + to -
+                if (expandedContent.classList.contains('show')) {
+                    chg.innerText = '-';
+                } else {
+                    chg.innerText = '+';
+                }
+            }
+        </script> {% endcomment %}
+        <script>
+            function toggleContent(no) {
+                var expandedContent = document.getElementById('expanded-content' + no);
+                var chg = document.getElementById('chg-when-expand' + no);
+        
+        
+               // Get all elements with class 'expanded-content'
+                var allExpandedContents = document.querySelectorAll('.expanded-content');
+        
+        
+               // Iterate over all expanded contents
+                allExpandedContents.forEach(function(content) {
+                    // Hide all expanded contents
+                    content.classList.remove('show');
+                });
+        
+        
+               // Hide all plus/minus indicators
+                var allChangeIndicators = document.querySelectorAll('[id^="chg-when-expand"]');
+                allChangeIndicators.forEach(function(indicator) {
+                    indicator.innerText = '+';
+                });
+        
+        
+               // Toggle to show the hidden content for the selected row
+                expandedContent.classList.toggle('show');
+        
+        
+               // Change the + to - for the selected row
                 if (expandedContent.classList.contains('show')) {
                     chg.innerText = '-';
                 } else {
