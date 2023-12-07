@@ -170,7 +170,7 @@ def newsletter(request):
             form.save()
             #email contents
             subject = 'Thanks for subscribing to our newsletter!'
-            message = f'Dear {form.cleaned_data["newname"]}, \n\nThank you for subscribing to our newsletter. In the meantime, feel free to check out our social media sites:\n Linkedin: https://www.linkedin.com/company/ttvision-technologies/ \nYoutube: https://www.youtube.com/@ttvisiontechnologies/ \n\nRegards,\nTT Vision\nsales@ttvision-tech.com\n604-6456294'
+            message = f'Dear {form.cleaned_data["newname"]}, \n\nThank you for subscribing to our newsletter. In the meantime, feel free to check out our social media sites:\nLinkedin: https://www.linkedin.com/company/ttvision-technologies/ \nYoutube: https://www.youtube.com/@ttvisiontechnologies/ \n\nRegards,\nTT Vision\nsales@ttvision-tech.com\n+604-6456294'
             #domain email
             from_email = settings.SERVER_EMAIL
             #recipient email
