@@ -39,7 +39,7 @@
                                     {% if j.jobcat == 'Full Time' %}
                                     <tr class="expand-con">
                                         <td scope="row">
-                                            <button class="expand-content" onclick="toggleContent({{ forloop.counter }})" row="{{ forloop.counter }}"><span id="chg-when-expand">+</span>{{j.jobname}}</button>
+                                            <button class="expand-content" onclick="toggleContent({{ forloop.counter }})" row="{{ forloop.counter }}"><span id="chg-when-expand">+</span> {{j.jobname}}</button>
                                             <span class="expanded-content" id="expanded-content{{ forloop.counter }}">{{ j.jobdesc }}</span>
                                         </td>
                                     </tr>
