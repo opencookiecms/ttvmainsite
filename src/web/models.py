@@ -467,4 +467,4 @@ class Job(models.Model):
     jobname = models.CharField(max_length=100, null=False, blank=False)
     jobdesc = models.TextField(null=False, blank=False)
     joblink = models.CharField(max_length=400, null=False, blank=False)
-    jobcat = models.CharField(max_length=20, choices=cats, null=False, blank=False)
+    jobcat = models.CharField(max_length=20, choices=cats, null=False, blank=False, default=cat1)
