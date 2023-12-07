@@ -33,9 +33,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!--For loop to display all items in job-->
+                                    <!--For loop to display all fulltime items in job-->
                                     {% for j in job %}
-                                    <!--display only full time jobs-->
                                     {% if j.jobcat == 'Full Time' %}
                                     <tr class="expand-con">
                                         <td scope="row">
@@ -61,7 +60,6 @@
                                 <tbody>
                                     <!--For loop to display all items in job-->
                                     {% for j in job %}
-                                    <!--display only internship jobs-->
                                     {% if j.jobcat == 'Internship' %}
                                     <tr class="expand-con">
                                         <td scope="row">
