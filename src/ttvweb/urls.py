@@ -45,7 +45,7 @@ urlpatterns = [
     path('investor-relation/announcement', views.investor, name="investor"),
     path('investor-relation/announcement/leap-market', views.leapmarket, name="leapmarket"),
     path('investor-relation/announcement/ace-market',views.acemarket,name='acemarket'),
-    path('careers',views.career, name="career"),
+    path('career',views.career, name="career"),
 
     path('robotic/<str:slug>', views.rpv, name="robotic"),
     path('pv-inspection/<str:slug>',views.pinspection, name="pvinspection"),
@@ -71,7 +71,7 @@ urlpatterns = [
     #tests
     # path('test-robotics-mainpage', views.trobotic, name='test'),
     # path('test-robotics-mainpage/<str:slug>', views.trpv, name="test-robotics-mainpage"),
-    path('test-career',views.tcareer, name="test-career"),
+    #path('test-career',views.career, name="test-career"),
 
 
 ]
