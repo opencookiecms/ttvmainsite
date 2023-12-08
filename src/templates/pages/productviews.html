@@ -73,7 +73,7 @@
                             {% endfor %}
                             </ul>
                         </div>
-                        {% comment %} <!--Application-->
+                        <!--Application-->
                         {% if a.application %}
                             <h5 class="mb-5">Application</h5>
                             <h6 class="mb-6">{{a.appintro}}</h6>
@@ -86,7 +86,7 @@
                                 {% endfor %}
                             </ul>
                         {% endif %}
-                        {% if i.integration %}
+                        {% comment %} {% if i.integration %}
                         <h5 class="mb-5">Machines Integrated</h5>
                         <ul class="list-style1 mb-2-9">
                             {% for i in i %}
