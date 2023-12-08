@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError,HttpResponseRedirect
-from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro, Job
+from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro, Job
 from .forms import ContactForm, NewsletterForm, HrForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json, requests, os
@@ -388,10 +388,10 @@ def robotic(request):
 #robotic product page
 def rpv(request, slug):
     pr = Product.objects.get(productslug=slug)
-    fea = pr.productfeas_set.all()
-    ins = pr.productin_set.all()
-    app = pr.productapp_set.all()
-    spec = pr.productspecs
+    fea = Productfeas.objects.filter(product = pr)
+    ins = Productin.objects.filter(product = pr)
+    app = Productapp.objects.filter(product = pr)
+    spec = Productspecs.objects.filter(product = pr)
     company = Company.objects.get(id=1)
 
     context = {
