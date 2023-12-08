@@ -26,10 +26,10 @@
                             <div class="inner-title">
                                 <h2 class="mb-0">Full Time/Part Time Jobs</h2>
                             </div>
-                            <table class="table table-striped">
+                            <table class="table">
                                 <thead>
                                     <tr>
-                                        <th colspan="2" scope="col">Job Title</th>
+                                        <th colspan="3" scope="col">Job Title</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -41,9 +41,14 @@
                                             <button class="expand-content" data-row="expanded-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
                                             <span id="expanded-content-{{ j.jobname }}" class="expanded-content">Role: {{ j.jobdesc }}</span>
                                         </td>
-                                        {% if j.joblink %}
+                                        {% if j.jobinlink %}
                                         <td class="indeed">
-                                            <a class="indeedlink" href="{{j.joblink}}">Apply at Indeed</a>
+                                            <a class="indeedlink" href="{{j.jobinlink}}">Apply at Indeed</a>
+                                        </td>
+                                        {% endif %}
+                                        {% if j.jobstrlink %}
+                                        <td class="jobstreet">
+                                            <a class="jobstreetlink" href="{{j.jobstrlink}}">Apply at Jobstreet</a>
                                         </td>
                                         {% endif %}
                                     </tr>
@@ -56,10 +61,10 @@
                             <div class="inner-title">
                                 <h2 class="mb-0">Internship</h2>
                             </div>
-                            <table class="table table-striped">
+                            <table class="table">
                                 <thead>
                                     <tr>
-                                        <th colspan="2" scope="col">Job Title</th>
+                                        <th colspan="3" scope="col">Job Title</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,9 +76,14 @@
                                             <button class="expand-content" data-row="expanded-content-{{ j.jobname }}"><span>+</span> {{ j.jobname }}</button>
                                             <span id="expanded-content-{{ j.jobname }}" class="expanded-content">Role: {{ j.jobdesc }}</span>
                                         </td>
-                                        {% if j.joblink %}
+                                        {% if j.jobinlink %}
                                         <td class="indeed">
-                                            <a class="indeedlink" href="{{j.joblink}}">Apply at Indeed</a>
+                                            <a class="indeedlink" href="{{j.jobinlink}}">Apply at Indeed</a>
+                                        </td>
+                                        {% endif %}
+                                        {% if j.jobstrlink %}
+                                        <td class="jobstreet">
+                                            <a class="jobstreetlink" href="{{j.jobstrlink}}">Apply at Jobstreet</a>
                                         </td>
                                         {% endif %}
                                     </tr>
