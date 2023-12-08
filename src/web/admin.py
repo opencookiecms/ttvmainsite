@@ -14,11 +14,11 @@ admin.site.register(Herotypefour)
 admin.site.register(Herotypefive)
 admin.site.register(Post)
 admin.site.register(Category)
-admin.site.register(Product)
 class ProductfeasInline(admin.TabularInline):
     model = Productfeas
     extra = 1
 
+@admin.register(Product)
 class ProductAdmin(admin.ModelAdmin): 
     inlines = [ProductfeasInline]
 
