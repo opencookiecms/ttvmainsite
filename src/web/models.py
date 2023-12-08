@@ -466,8 +466,8 @@ class Job(models.Model):
 
     jobname = models.CharField(max_length=100, null=False, blank=False)
     jobdesc = models.TextField(null=False, blank=False)
-    jobinlink = models.CharField(verbose_name='Indeed Link' max_length=400, null=True, blank=True)
-    jobstrlink = models.CharField(verbose_name='Jobstreet Link' max_length=400, null=True, blank=True)
+    jobinlink = models.CharField(verbose_name='Indeed Link', max_length=400, null=True, blank=True)
+    jobstrlink = models.CharField(verbose_name='Jobstreet Link', max_length=400, null=True, blank=True)
     jobcat = models.CharField(max_length=20, choices=cats, null=False, blank=False, default=cat1)
 
     def __str__(self):
