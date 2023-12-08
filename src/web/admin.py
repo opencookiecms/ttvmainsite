@@ -3,19 +3,6 @@ from django.contrib import admin
 
 from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, PhotoLib, Post, Postsection, Product, Productfeas, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job
 
-#configs
-class ProductfeasAdmin(admin.ModelAdmin):
-#make the data in the category field persistent after clicking add another
-    def response_add(self, request, obj, post_url_continue=None):
-        print("response add is called")
-        if "_addanother" in request.POST:
-            request.POST = request.POST.copy()
-            request.POST['product'] = str(obj.product.id)
-            return super().response_add(request, obj, post_url_continue)
-        else:
-            return super().response_add(request, obj)
-
-
 # Register your models here.
 admin.site.register(Company)
 admin.site.register(Slide)
@@ -28,7 +15,7 @@ admin.site.register(Herotypefive)
 admin.site.register(Post)
 admin.site.register(Category)
 admin.site.register(Product)
-admin.site.register(Productfeas, ProductfeasAdmin)
+admin.site.register(Productfeas)
 admin.site.register(Accordation)
 admin.site.register(PhotoLib)
 admin.site.register(Postsection)
@@ -46,3 +33,22 @@ admin.site.register(Pressrelease)
 admin.site.register(Metapro)
 admin.site.register(Hr)
 admin.site.register(Job)
+
+#configs
+# class ProductfeasAdmin(admin.ModelAdmin):
+# #make the data in the category field persistent after clicking add another
+#     def response_add(self, request, obj, post_url_continue=None):
+#         print("response add is called")
+#         if "_addanother" in request.POST:
+#             request.POST = request.POST.copy()
+#             request.POST['product'] = str(obj.product.id)
+#             return super().response_add(request, obj, post_url_continue)
+#         else:
+#             return super().response_add(request, obj)
+
+class ProductfeasInline(admin.TabularInline):
+    model = Productfeas
+    extra = 1
+
+class ProductAdmin(admin.ModelAdmin): 
+    inlines = [ProductfeasInline]

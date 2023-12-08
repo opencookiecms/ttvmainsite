@@ -51,6 +51,7 @@ class Product(models.Model):
     productdesc = models.TextField(null=True, blank=True)
     productslug =  models.CharField(max_length=200, null=True, blank=True)
     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
+    inlines = [ProductfeasInline]
     productimg = models.ImageField(null=True, blank=True)
     productspec  = models.TextField(null=True, blank=True)
     status = models.BooleanField(blank=True, null=True)
@@ -75,14 +76,14 @@ class Productfeas(models.Model):
 
     def __str__(self):
         return f"{self.product.producttitle} Feature {self.featureno}"
-
+    
 #update featureno    
 @receiver(pre_save, sender=Productfeas)
 def update_featureno(sender, instance, **kwargs):
     if not instance.pk:
         existingNo = Productfeas.objects.filter(product=instance.product).count()
         instance.featureno  = existingNo + 1
-    
+
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     content = models.TextField(null=True, blank=True)
