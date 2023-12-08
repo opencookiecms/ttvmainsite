@@ -15,7 +15,14 @@ admin.site.register(Herotypefive)
 admin.site.register(Post)
 admin.site.register(Category)
 admin.site.register(Product)
-admin.site.register(Productfeas)
+class ProductfeasInline(admin.TabularInline):
+    model = Productfeas
+    extra = 1
+
+class ProductAdmin(admin.ModelAdmin): 
+    inlines = [ProductfeasInline]
+
+#admin.site.register(Productfeas)
 admin.site.register(Accordation)
 admin.site.register(PhotoLib)
 admin.site.register(Postsection)
@@ -45,10 +52,3 @@ admin.site.register(Job)
 #             return super().response_add(request, obj, post_url_continue)
 #         else:
 #             return super().response_add(request, obj)
-
-class ProductfeasInline(admin.TabularInline):
-    model = Productfeas
-    extra = 1
-
-class ProductAdmin(admin.ModelAdmin): 
-    inlines = [ProductfeasInline]
