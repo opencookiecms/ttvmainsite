@@ -86,7 +86,7 @@
                                 {% endfor %}
                             </ul>
                         {% endif %}
-                        {% comment %} {% if i.integration %}
+                        {% if i.integration %}
                         <h5 class="mb-5">Machines Integrated</h5>
                         <ul class="list-style1 mb-2-9">
                             {% for i in i %}
@@ -111,7 +111,7 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                        <!--Specification-->
+                        {% comment %} <!--Specification-->
                         {{ if s.payload }}
                         <h2 class="mb-0">Specification</h2>
                         <div class="row mb-2 mt-n1-9">
