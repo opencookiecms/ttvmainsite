@@ -134,7 +134,7 @@ def update_inno(sender, instance, **kwargs):
         instance.inno  = existingNo + 1
 
 #-------------------product's specs-----------------------
-class Productspec(models.Model):
+class Productspecs(models.Model):
     payload = models.CharField(max_length=100, null=True, blank=True)
     repeatability = models.CharField(max_length=100, null=True, blank=True)
     format = models.CharField(max_length=100, null=True, blank=True)
