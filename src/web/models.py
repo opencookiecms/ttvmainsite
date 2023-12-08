@@ -65,8 +65,9 @@ class Productfeas(models.Model):
     features = models.CharField(max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    featureno = models.IntegerField(default=0, editable=False)
 
-#update featureno (not in use anymore but here for reference)
+#update featureno
     def save(self, *args, **kwargs):
         # Increment the feature count only when creating a new instance
         if not self.pk:
