@@ -86,7 +86,6 @@ def update_featureno(sender, instance, **kwargs):
 
 #-------------------product's applications-----------------------
 class Productapp(models.Model):
-    appintro = models.TextField(null=True, blank=True)
     application = models.CharField(max_length=400, null=True, blank=True)
     appdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
