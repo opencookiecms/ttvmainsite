@@ -111,7 +111,7 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                        {% comment %} <!--Specification-->
+                        <!--Specification-->
                         {{ if s.payload }}
                         <h2 class="mb-0">Specification</h2>
                         <div class="row mb-2 mt-n1-9">
@@ -120,7 +120,7 @@
                                     <span class="text-primary">Cobot Payload</span>
                                     <h3 class="h5 mb-3">{{s.payload}}</h3>  
                                 </div>
-                            </div>
+                            {% comment %} </div>
                             <div class="col-md-6 mt-1-9 wow fadeInUp" style="padding-left:5px" data-wow-delay="100ms">
                                 <div class="process-style12 text-center bg-light-gray rounded">
                                     <span class="text-primary">Repeatability</span>
@@ -158,8 +158,8 @@
                                     <h3 class="h5 mb-3">{{s.requirement}}</h3>
                                 </div>
                             </div>
-                        </div>
-                        {% endif %} {% endcomment %}
+                        </div> {% endcomment %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
