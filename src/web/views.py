@@ -426,6 +426,9 @@ def pinspection(request, slug):
 
     pr = Product.objects.get(productslug=slug)
     fea = Productfeas.objects.filter(product = pr)
+    ins = Productin.objects.filter(product = pr)
+    app = Productapp.objects.filter(product = pr)
+    spec = Productspecs.objects.filter(product = pr)
     company = Company.objects.get(id=1)
 
     context = {
@@ -433,7 +436,10 @@ def pinspection(request, slug):
         'ins':True,
         'pr':pr,
         'com':company,
-        'f': fea
+        'f': fea,
+        'i': ins,
+        'a': app,
+        's': spec
     }
     return render(request, 'pages/productviews.html',context)
 
@@ -457,13 +463,19 @@ def semiconductorlist(request):
 def icled(request, slug):
     pr = Product.objects.get(productslug=slug)
     fea = Productfeas.objects.filter(product = pr)
+    ins = Productin.objects.filter(product = pr)
+    app = Productapp.objects.filter(product = pr)
+    spec = Productspecs.objects.filter(product = pr)
     company = Company.objects.get(id=1)
     context = {
         'title': pr,
         'icled':True,
         'pr':pr,
         'com':company,
-        'f': fea
+        'f': fea,
+        'i': ins,
+        'a': app,
+        's': spec
     }
     return render(request, 'pages/productviews.html',context)
 
