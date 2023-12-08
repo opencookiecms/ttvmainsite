@@ -56,20 +56,109 @@
                         </div>
                     </div>
                     <div class="col-lg-8 order-1 order-lg-2 mb-5 mb-lg-0">
+                        <!--Product image-->
                         <img src="{{pr.productimg.url}}" class="mb-2-9 rounded wow fadeIn" data-wow-delay="200ms" alt="...">
+                        <!--Product info-->
                         <div class="wow fadeIn" data-wow-delay="200ms">
+                            <!--Product name-->
                             <h2 class="mb-3">{{pr.producttitle}}</h2>
                             <h5>Description</h5>
+                            <!--Product Description-->
                             <p>{{pr.productdesc}}</p>
                             <p><h5>Features</h5></p>
+                            <!--Product features-->
                             <ul class="list-style1 mb-2-9">
                             {% for f in f %}
                                 <li>{{f.features}}:<br/>{{f.featuresdesc}}</li>
                             {% endfor %}
                             </ul>
                         </div>
-                        {% if pr.productspec %}
-                            {{pr.productspec | safe}}
+                        <!--Application-->
+                        {% if a.application %}
+                            <h5 class="mb-5">Application</h5>
+                            <h6 class="mb-6">{{a.appintro}}</h6>
+                            <ul class="list-style1 mb-2-9">
+                                {% for a in a %}
+                                <li class="mb-3"><i class="fas fa-check-circle fs-5 mb-0 text-primary align-middle me-2"></i>
+                                    {{a.application}}:<br/>
+                                    {{a.appdesc}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {% if i.integration %}
+                        <h5 class="mb-5">Machines Integrated</h5>
+                        <ul class="list-style1 mb-2-9">
+                            {% for i in i %}
+                            <li class="mb-3">
+                                <i class="fas fa-check-circle fs-5 mb-0 text-primary align-middle me-2"></i>
+                                {{i.integration}}<br/>
+                                {{i.integrationdesc}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <!--Machines Integrated-->
+                        {% if i.integration %}
+                        <h5 class="mb-5">Machines Integrated</h5>
+                        <ul class="list-style1 mb-2-9">
+                            {% for i in i %}
+                            <li class="mb-3">
+                                <i class="fas fa-check-circle fs-5 mb-0 text-primary align-middle me-2"></i>
+                                {{i.integration}}<br/>
+                                {{i.integrationdesc}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <!--Specification-->
+                        {{ if s.payload }}
+                        <h2 class="mb-0">Specification</h2>
+                        <div class="row mb-2 mt-n1-9">
+                            <div class="col-md-6 mt-1-9 wow fadeInUp" style="padding-right:5px" data-wow-delay="100ms">
+                                <div class="process-style12 text-center bg-light-gray rounded">
+                                    <span class="text-primary">Cobot Payload</span>
+                                    <h3 class="h5 mb-3">{{s.payload}}</h3>  
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-1-9 wow fadeInUp" style="padding-left:5px" data-wow-delay="100ms">
+                                <div class="process-style12 text-center bg-light-gray rounded">
+                                    <span class="text-primary">Repeatability</span>
+                                    <h3 class="h5 mb-3">{{s.repeatability}}</h3>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-n1-9">
+                            <div class="col-md-6 mt-1-9 wow fadeInUp" style="padding-right:5px" data-wow-delay="100ms">
+                                <div class="process-style12 text-center bg-light-gray rounded">
+                                    <span class="text-primary">Product Loading Format</span>
+                                    <h3 class="h5 mb-3">{{s.format}}</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-1-9 wow fadeInUp" style="padding-left:5px" data-wow-delay="100ms">
+                                <div class="process-style12 text-center bg-light-gray rounded">
+                                    <span class="text-primary">UPH</span>
+                                    <h3 class="h5 mb-3">{{s.uph}}</h3>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-n1-9">
+                            <div class="col-md-12  mt-1-9 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="process-style12 text-center bg-light-gray rounded">
+                                    <span class="text-primary">Vision Module Accuracy</span>
+                                    <h3 class="h5 mb-3">{{s.accuracy}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-6 mt-n1-9">
+                            <div class="col-md-12 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="process-style12 text-center bg-light-gray rounded">
+                                    <span class="text-primary">Facility Requirement </span>
+                                    <h3 class="h5 mb-3">{{s.requirement}}</h3>
+                                </div>
+                            </div>
+                        </div>
                         {% endif %}
                     </div>
                 </div>

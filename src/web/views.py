@@ -388,7 +388,10 @@ def robotic(request):
 #robotic product page
 def rpv(request, slug):
     pr = Product.objects.get(productslug=slug)
-    fea = Productfeas.objects.filter(product = pr)
+    fea = pr.productfeas_set.all()
+    ins = pr.productin_set.all()
+    app = pr.productapp_set.all()
+    spec = pr.productspec.all()
     company = Company.objects.get(id=1)
 
     context = {
@@ -396,7 +399,10 @@ def rpv(request, slug):
         'rpv': True,
         'pr': pr,
         'com':company,
-        'f': fea
+        'f': fea,
+        'i': ins,
+        'a': app,
+        's': spec
     }
     return render(request, 'pages/productviews.html',context)
 

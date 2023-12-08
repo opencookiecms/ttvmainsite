@@ -1,7 +1,7 @@
 from multiprocessing.dummy import Event
 from django.contrib import admin
 
-from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, PhotoLib, Post, Postsection, Product, Productfeas, Productin, Productapp, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job
+from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, PhotoLib, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspec, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job
 
 # Register your models here.
 admin.site.register(Company)
@@ -26,9 +26,12 @@ class ProductinInline(admin.TabularInline):
     model = Productin
     extra = 1
 
+class ProductspecInline(admin.TabularInline):
+    model = Productspec
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin): 
-    inlines = [ProductfeasInline, ProductappInline, ProductinInline]
+    inlines = [ProductfeasInline, ProductappInline, ProductinInline, ProductspecInline]
 
 #admin.site.register(Productfeas)
 admin.site.register(Accordation)

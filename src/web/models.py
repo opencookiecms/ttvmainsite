@@ -86,6 +86,7 @@ def update_featureno(sender, instance, **kwargs):
 
 #-------------------product's applications-----------------------
 class Productapp(models.Model):
+    appintro = models.TextField(null=True, blank=True)
     application = models.CharField(max_length=400, null=True, blank=True)
     appdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -131,6 +132,16 @@ def update_inno(sender, instance, **kwargs):
     if not instance.pk:
         existingNo = Productin.objects.filter(product=instance.product).count()
         instance.inno  = existingNo + 1
+
+#-------------------product's specs-----------------------
+class Productspec(models.Model):
+    payload = models.CharField(max_length=100, null=True, blank=True)
+    repeatability = models.CharField(max_length=100, null=True, blank=True)
+    format = models.CharField(max_length=100, null=True, blank=True)
+    uph = models.CharField(max_length=100, null=True, blank=True)
+    accuracy = models.CharField(max_length=100, null=True, blank=True)
+    requirement = models.CharField(max_length=100, null=True, blank=True)
+    product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
