@@ -51,7 +51,6 @@ class Product(models.Model):
     productdesc = models.TextField(null=True, blank=True)
     productslug =  models.CharField(max_length=200, null=True, blank=True)
     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
-    inlines = [ProductfeasInline]
     productimg = models.ImageField(null=True, blank=True)
     productspec  = models.TextField(null=True, blank=True)
     status = models.BooleanField(blank=True, null=True)
