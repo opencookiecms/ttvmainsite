@@ -67,21 +67,21 @@ class Productfeas(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 #update featureno (not in use anymore but here for reference)
-#     def save(self, *args, **kwargs):
-#         # Increment the feature count only when creating a new instance
-#         if not self.pk:
-#             existingNo = Productfeas.objects.filter(product=self.product).count()
-#             self.featureno = existingNo + 1
-#         super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        # Increment the feature count only when creating a new instance
+        if not self.pk:
+            existingNo = Productfeas.objects.filter(product=self.product).count()
+            self.featureno = existingNo + 1
+        super().save(*args, **kwargs)
 
-#     def __str__(self):
-#         return f"{self.product.producttitle} Feature {self.featureno}"
+    def __str__(self):
+        return f"{self.product.producttitle} Feature {self.featureno}"
     
-# @receiver(pre_save, sender=Productfeas)
-# def update_featureno(sender, instance, **kwargs):
-#     if not instance.pk:
-#         existingNo = Productfeas.objects.filter(product=instance.product).count()
-#         instance.featureno  = existingNo + 1
+@receiver(pre_save, sender=Productfeas)
+def update_featureno(sender, instance, **kwargs):
+    if not instance.pk:
+        existingNo = Productfeas.objects.filter(product=instance.product).count()
+        instance.featureno  = existingNo + 1
 
 #-------------------product's applications-----------------------
 class Productapp(models.Model):
