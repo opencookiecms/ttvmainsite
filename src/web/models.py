@@ -89,12 +89,48 @@ class Productapp(models.Model):
     application = models.CharField(max_length=400, null=True, blank=True)
     appdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    appno = models.IntegerField(default=0, editable=False)
+
+    #update appno
+    def save(self, *args, **kwargs):
+        # Increment the feature count only when creating a new instance
+        if not self.pk:
+            existingNo = Productapp.objects.filter(product=self.product).count()
+            self.appno = existingNo + 1
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.product.producttitle} Application {self.appno}"
+    
+@receiver(pre_save, sender=Productapp)
+def update_appno(sender, instance, **kwargs):
+    if not instance.pk:
+        existingNo = Productapp.objects.filter(product=instance.product).count()
+        instance.appno  = existingNo + 1
 
 #-------------------product's machine integrated-----------------------
 class Productin(models.Model):
     integration = models.CharField(max_length=400, null=True, blank=True)
     integrationdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    inno = models.IntegerField(default=0, editable=False)
+
+    #update inno
+    def save(self, *args, **kwargs):
+        # Increment the feature count only when creating a new instance
+        if not self.pk:
+            existingNo = Productin.objects.filter(product=self.product).count()
+            self.inno = existingNo + 1
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.product.producttitle} Integrations {self.inno}"
+    
+@receiver(pre_save, sender=Productin)
+def update_inno(sender, instance, **kwargs):
+    if not instance.pk:
+        existingNo = Productin.objects.filter(product=instance.product).count()
+        instance.inno  = existingNo + 1
 
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
