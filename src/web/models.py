@@ -60,28 +60,40 @@ class Product(models.Model):
     def __str__(self):
         return self.producttitle
 
+#-------------------product features-----------------------
 class Productfeas(models.Model):
     features = models.CharField(max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    featureno = models.IntegerField(default=0, editable=False)
 
-    def save(self, *args, **kwargs):
-        # Increment the feature count only when creating a new instance
-        if not self.pk:
-            existingNo = Productfeas.objects.filter(product=self.product).count()
-            self.featureno = existingNo + 1
-        super().save(*args, **kwargs)
+#update featureno (not in use anymore but here for reference)
+#     def save(self, *args, **kwargs):
+#         # Increment the feature count only when creating a new instance
+#         if not self.pk:
+#             existingNo = Productfeas.objects.filter(product=self.product).count()
+#             self.featureno = existingNo + 1
+#         super().save(*args, **kwargs)
 
-    def __str__(self):
-        return f"{self.product.producttitle} Feature {self.featureno}"
+#     def __str__(self):
+#         return f"{self.product.producttitle} Feature {self.featureno}"
     
-#update featureno    
-@receiver(pre_save, sender=Productfeas)
-def update_featureno(sender, instance, **kwargs):
-    if not instance.pk:
-        existingNo = Productfeas.objects.filter(product=instance.product).count()
-        instance.featureno  = existingNo + 1
+# @receiver(pre_save, sender=Productfeas)
+# def update_featureno(sender, instance, **kwargs):
+#     if not instance.pk:
+#         existingNo = Productfeas.objects.filter(product=instance.product).count()
+#         instance.featureno  = existingNo + 1
+
+#-------------------product's applications-----------------------
+class Productapp(models.Model):
+    application = models.CharField(max_length=400, null=True, blank=True)
+    appdesc = models.TextField(null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+#-------------------product's machine integrated-----------------------
+class Productin(models.Model):
+    integration = models.CharField(max_length=400, null=True, blank=True)
+    integrationdesc = models.TextField(null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
