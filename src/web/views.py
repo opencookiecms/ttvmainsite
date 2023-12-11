@@ -391,7 +391,7 @@ def rpv(request, slug):
     fea = Productfeas.objects.filter(product = pr)
     ins = Productin.objects.filter(product = pr)
     app = Productapp.objects.filter(product = pr)
-    spec = pr.productspec
+    spec = pr.productspecs
     company = Company.objects.get(id=1)
 
     context = {
