@@ -391,8 +391,11 @@ def rpv(request, slug):
     fea = Productfeas.objects.filter(product = pr)
     ins = Productin.objects.filter(product = pr)
     app = Productapp.objects.filter(product = pr)
-    spec = pr.productspecs
     company = Company.objects.get(id=1)
+    try: 
+        spec = pr.productspecs
+    except Productspecs.DoesNotExist:
+        spec = None
 
     context = {
         'title': pr,
