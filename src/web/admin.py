@@ -26,7 +26,7 @@ class ProductinInline(admin.TabularInline):
     model = Productin
     extra = 1
 
-class ProductspecInline(admin.TabularInline):
+class ProductspecInline(admin.StackedInline):
     model = Productspecs
 
 @admin.register(Product)
