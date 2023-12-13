@@ -148,7 +148,14 @@
                         {% endif %}
                     </div>
                 </div>
+                <!--Product video-->
+                {% if pr.productvid %}
+                <div class="row">
+                    <div class="col-lg-4 order-2 order-lg-1">
+                        {{pr.productvid}}
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </section>
-
         {% endblock content %}
