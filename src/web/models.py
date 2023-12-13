@@ -52,6 +52,7 @@ class Product(models.Model):
     productslug =  models.CharField(max_length=200, null=True, blank=True)
     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
     productimg = models.ImageField(null=True, blank=True)
+    productvid = models.TextField(null=True, blank=True)
     status = models.BooleanField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
