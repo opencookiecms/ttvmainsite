@@ -1196,19 +1196,19 @@ a {
 
 @media screen and (max-width: $desk-md-screen) {
   .page-title-section2 {
-    padding: 170px 0 110px;
+    padding: 170px 0 110px 5px;
   }
 }
 
 @media screen and (max-width: $desk-xs-screen) {
   .page-title-section2 {
-    padding: 150px 0 90px;
+    padding: 150px 0 90px 5px;
   }
 }
 
 @media screen and (max-width: $tablet-xs-screen) {
   .page-title-section2 {
-    padding: 130px 0 70px;
+    padding: 130px 0 70px 5px;
   }
 }
 
