@@ -152,7 +152,7 @@
                 {% if pr.productvid %}
                 <div class="row">
                     <div class="col-lg-4 order-2 order-lg-1">
-                        {{pr.productvid}}
+                        {{pr.productvid|safe}}
                     </div>
                 </div>
                 {% endif %}
