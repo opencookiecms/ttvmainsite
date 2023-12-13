@@ -26,7 +26,6 @@ urlpatterns = [
     path('contact-us',views.contactus, name="contact"),
     path('contact-us/success',views.contactdone, name="contactdone"),
     path('company-background',views.companybackground, name="cb"),
-    path('mission-vision',views.vision, name="vision"),
     path('award', views.award, name="award"),
     path('event/<str:slug>', views.event, name="event"),
     path('news', views.news, name="news"),
@@ -63,10 +62,13 @@ urlpatterns = [
     
     path('newsletter', views.newsletter, name='newletter'),
     path('news-media', views.mediakit, name='medialink'),
+
     #job application
     path('hrform', views.hrForm, name='hrform'),
     path('hrform/success',views.contactdone, name="contactdone"),
 
+    #not in use
+    # path('mission-vision',views.vision, name="vision"),
 
     #tests
     # path('test-robotics-mainpage', views.trobotic, name='test'),
