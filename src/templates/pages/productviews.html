@@ -43,7 +43,6 @@
                                 <div class="position-relative z-index-9 text-center py-5 px-1-9">
                                     <i class="fa fa-smile-o  text-white mb-4 display-14"></i>
                                     <img src="{% static 'img/ttvimg/customer-service(2).png' %}" alt='Customer Service'/>
-                                    <p>
                                     <h5 class="text-white mb-4">How can we help?</h5>
                                     <div class="separator-line-horrizontal-full bg-white opacity4 mb-4"></div>
                                     <ul class="text-center mb-0 list-unstyled ps-0">
@@ -147,15 +146,15 @@
                         </div>
                         {% endif %}
                     </div>
-                </div>
-                <!--Product video-->
-                {% if pr.productvid %}
-                <div class="row">
-                    <div class="text-center">
-                        {{pr.productvid|safe}}
+                    <!--Product video-->
+                    {% if pr.productvid %}
+                    <div class="row">
+                        <div class="text-center">
+                            {{pr.productvid|safe}}
+                        </div>
                     </div>
+                    {% endif %}
                 </div>
-                {% endif %}
             </div>
         </section>
         {% endblock content %}
