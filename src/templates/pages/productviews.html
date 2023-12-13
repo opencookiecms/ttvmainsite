@@ -150,8 +150,10 @@
                 </div>
                 <!--Product video-->
                 {% if pr.productvid %}
-                <div class="row text-center">
-                    {{pr.productvid|safe}}
+                <div class="row">
+                    <div class="text-center">
+                        {{pr.productvid|safe}}
+                    </div>
                 </div>
                 {% endif %}
             </div>
