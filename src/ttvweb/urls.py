@@ -26,7 +26,6 @@ urlpatterns = [
     path('contact-us',views.contactus, name="contact"),
     path('contact-us/success',views.contactdone, name="contactdone"),
     path('company-background',views.companybackground, name="cb"),
-    path('mission-vision',views.vision, name="vision"),
     path('award', views.award, name="award"),
     path('event/<str:slug>', views.event, name="event"),
     path('news', views.news, name="news"),
@@ -73,7 +72,8 @@ urlpatterns = [
     # path('test-robotics-mainpage/<str:slug>', views.trpv, name="test-robotics-mainpage"),
     #path('test-career',views.career, name="test-career"),
 
-
+    #not in use
+    # path('mission-vision',views.vision, name="vision"),
 ]
 
 if settings.DEBUG:

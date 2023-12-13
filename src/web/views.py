@@ -47,35 +47,22 @@ def companybackground(request):
     company = Company.objects.get(id=1)
     post = Post.objects.get(slug="historyandbussiness")
     meta = Metapro.objects.get(position=2)
+    postvision = Postsection.objects.get(id=1)
+    hero5 = Herotypefive.objects.get(positionhero=1)
+    hero7 = Heroseven.objects.get(positionhero=2)
     context = {
         'title': 'Company Background',
         'com':company,
         'about':'Company Background',
         'post':post,
         'meta':meta,
+        'pv':postvision,
+        'hero5':hero5,
+        'hero7':hero7,
         'keywords': "technology, technology company, technology driven, automated machine vision, pc-based vision systems, vision systems, TTVHB, TT Vision Holdings Berhad, TTVTSB, TT Vision Technologies Sdn Bhd, TTICSB, TT Innovation Centre Sdn Bhd, investment holding company, development and manufacturing, development, manufacturing, manufacturing and development, vision inspection module, optoelectronics, solar wafer, solar cell, discrete components, IC chips, vision guided robotic equipment, vision guided robot, semiconductor components, Goon Koon Yin, Wong Yih Hsow, Jennie Tan Yen-Li",
         'description': "TT Vision's Company Background"
     }
     return render(request, 'pages/companybackground.html',context)
-
-def vision(request):
-    postvision = Postsection.objects.get(id=1)
-    hero5 = Herotypefive.objects.get(positionhero=1)
-    hero7 = Heroseven.objects.get(positionhero=2)
-    company = Company.objects.get(id=1)
-    context = {
-        'title': 'Vision and Mission',
-        'com':company,
-        'pv':postvision,
-        'hero5':hero5,
-        'hero7':hero7,
-        'keywords': "mission, vision, mission and vision, vision and mission, innovate, equipment inspection, innovate equipment inspection, leading brand, equipment vision inspection, vision inspection",
-        'description': "TT Vision's Mission and Vision"
-    }
-
-    
-
-    return render(request, 'pages/vision.html',context)
 
 def semiconductor(request):
     return render(request, 'pages/semiconductor.html')
@@ -750,3 +737,21 @@ def hrForm(request):
     }
 
     return render(request, 'pages/hrform.html', context)
+
+#------------------------not in use--------------------------------
+# def vision(request):
+#     postvision = Postsection.objects.get(id=1)
+#     hero5 = Herotypefive.objects.get(positionhero=1)
+#     hero7 = Heroseven.objects.get(positionhero=2)
+#     company = Company.objects.get(id=1)
+#     context = {
+#         'title': 'Vision and Mission',
+#         'com':company,
+#         'pv':postvision,
+#         'hero5':hero5,
+#         'hero7':hero7,
+#         'keywords': "mission, vision, mission and vision, vision and mission, innovate, equipment inspection, innovate equipment inspection, leading brand, equipment vision inspection, vision inspection",
+#         'description': "TT Vision's Mission and Vision"
+#     }
+
+#     return render(request, 'pages/vision.html',context)
