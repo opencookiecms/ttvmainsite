@@ -1,4 +1,5 @@
 from multiprocessing.dummy import Event
+from typing import Any
 from django.contrib import admin
 
 from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, PhotoLib, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job
@@ -14,9 +15,16 @@ admin.site.register(Herotypefour)
 admin.site.register(Herotypefive)
 admin.site.register(Post)
 admin.site.register(Category)
+#Create a formset of productfeas in product model at Django Admin
 class ProductfeasInline(admin.TabularInline):
     model = Productfeas
     extra = 1
+
+    def get_formset(self, request: Any, obj: Any | None = ..., **kwargs: Any) -> Any:
+        formset = super().get_formset(request, obj, **kwargs)
+        #Formset Title
+        formset.formset_title = 'Product Features'
+        return formset
 
 class ProductappInline(admin.TabularInline):
     model = Productapp
@@ -29,11 +37,11 @@ class ProductinInline(admin.TabularInline):
 class ProductspecInline(admin.StackedInline):
     model = Productspecs
 
+#Register product model with all the formsets
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin): 
     inlines = [ProductfeasInline, ProductappInline, ProductinInline, ProductspecInline]
 
-#admin.site.register(Productfeas)
 admin.site.register(Accordation)
 admin.site.register(PhotoLib)
 admin.site.register(Postsection)
