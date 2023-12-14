@@ -27,8 +27,12 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-11">
+                        <!--Corporate video-->
                         <div class="row text-center mt-n4">
-                            <iframe width="560" height="500" src="https://www.youtube-nocookie.com/embed/WHpq2uhSwsw?si=LArqZIwDPxP0MXBd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <video width="100%" height="100%" controls>
+                                <source src="{% static 'vedio/CorporateVid.mp4' %}" type="video/mp4">
+                                Your browser does not support the media player.
+                            </video>
                         </div>
                         <h2 class="mt-5 mb-1-9 wow fadeIn" data-wow-delay="200ms">{{post.title}}</h2>
                         <div class="border-radius-10 p-1-9 mb-1-9 wow fadeInUp" data-wow-delay="200ms">
