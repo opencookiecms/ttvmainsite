@@ -46,14 +46,14 @@ class Category(models.Model):
 
 #-------------------new product model-----------------------
 class Product(models.Model):
-    producttitle = models.CharField(max_length=100, null=True, blank=True)
-    productintro = models.TextField(null=True, blank=True)
-    productdesc = models.TextField(null=True, blank=True)
-    productslug =  models.CharField(max_length=200, null=True, blank=True)
+    producttitle = models.CharField(verbose_name='Product Name', max_length=100, null=True, blank=True)
+    productintro = models.TextField(verbose_name='Product Description (Product Listing Page)', null=True, blank=True)
+    productdesc = models.TextField(verbose_name='Product Description (More Details Page)', null=True, blank=True)
+    productslug =  models.CharField(verbose_name='Product Link Name', max_length=200, null=True, blank=True)
     productcategory = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
-    productimg = models.ImageField(null=True, blank=True)
-    productvid = models.FileField(upload_to='productvids/', null=True)
-    status = models.BooleanField(blank=True, null=True)
+    productimg = models.ImageField(verbose_name='Product Image', null=True, blank=True)
+    productvid = models.FileField(verbose_name='Product Video', upload_to='productvids/', null=True)
+    status = models.BooleanField(verbose_name='Product Status', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
 
@@ -62,8 +62,8 @@ class Product(models.Model):
 
 #-------------------product features-----------------------
 class Productfeas(models.Model):
-    features = models.CharField(max_length=400, null=True, blank=True)
-    featuresdesc = models.TextField(null=True, blank=True)
+    features = models.CharField(verbose_name='Product Feature', max_length=400, null=True, blank=True)
+    featuresdesc = models.TextField(verbose_name='Product Feature Description', null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     featureno = models.IntegerField(default=0, editable=False)
 
@@ -86,8 +86,8 @@ def update_featureno(sender, instance, **kwargs):
 
 #-------------------product's applications-----------------------
 class Productapp(models.Model):
-    application = models.CharField(max_length=400, null=True, blank=True)
-    appdesc = models.TextField(null=True, blank=True)
+    application = models.CharField(verbose_name='Product Application', max_length=400, null=True, blank=True)
+    appdesc = models.TextField(verbose_name='Product Application Description', null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     appno = models.IntegerField(default=0, editable=False)
 
@@ -110,8 +110,8 @@ def update_appno(sender, instance, **kwargs):
 
 #-------------------product's machine integrated-----------------------
 class Productin(models.Model):
-    integration = models.CharField(max_length=400, null=True, blank=True)
-    integrationdesc = models.TextField(null=True, blank=True)
+    integration = models.CharField(verbose_name='Machines Integrated', max_length=400, null=True, blank=True)
+    integrationdesc = models.TextField(verbose_name='Machines Integrated Description', null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     inno = models.IntegerField(default=0, editable=False)
 
