@@ -19,13 +19,13 @@ admin.site.register(Category)
 class ProductfeasInline(admin.TabularInline):
     model = Productfeas
     #Formset title
-    verbose_name = "Product Features"
+    verbose_name_plural = "Product Features"
     extra = 1
 
 class ProductappInline(admin.TabularInline):
     model = Productapp
     #Formset title
-    verbose_name_plural = "Product Applications"
+    verbose_name = "Product Applications"
     extra = 1
 
 class ProductinInline(admin.TabularInline):
