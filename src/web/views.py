@@ -446,7 +446,7 @@ def semiconductorlist(request):
     company = Company.objects.get(id=1)
     bg = "img/ttvimg/service-1.png"
     context = {
-        'bg': bg
+        'bg': bg,
         'icled': True,
         'pr': pr,
         'title': 'Semiconductor & LED Inspection Solutions',
