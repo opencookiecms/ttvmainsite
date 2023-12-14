@@ -149,11 +149,13 @@
                     <!--Product video-->
                     {% if pr.productvid %}
                     <div class="order-2 order-lg-2 mb-5 mb-lg-0">
-                        <div class="row">
-                            <video width="100%" height="100%" controls>
-                                <source src="{{ pr.productvid.url }}" type="video/mp4">
-                                Your browser does not support the media player.
-                            </video>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <video width="100%" height="100%" controls controlsList="nodownload" muted>
+                                    <source src="{{ pr.productvid.url }}" type="video/mp4">
+                                    Your browser does not support the media player.
+                                </video>
+                            </div>
                         </div>
                     </div>
                     {% endif %}
