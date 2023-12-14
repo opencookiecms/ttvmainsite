@@ -18,24 +18,26 @@ admin.site.register(Category)
 #Create a formset of productfeas in product model at Django Admin
 class ProductfeasInline(admin.TabularInline):
     model = Productfeas
+    #Formset title
+    verbose_name = "Product Features"
     extra = 1
-
-    def get_formset(self, request, obj=None, **kwargs):
-        formset = super().get_formset(request, obj, **kwargs)
-        #Formset Title
-        formset.formset_title = 'Product Features'
-        return formset
 
 class ProductappInline(admin.TabularInline):
     model = Productapp
+    #Formset title
+    verbose_name = "Product Applications"
     extra = 1
 
 class ProductinInline(admin.TabularInline):
     model = Productin
+    #Formset title
+    verbose_name = "Machines Integrated"
     extra = 1
 
 class ProductspecInline(admin.StackedInline):
     model = Productspecs
+    #Formset title
+    verbose_name = "Product Specifications"
 
 #Register product model with all the formsets
 @admin.register(Product)
