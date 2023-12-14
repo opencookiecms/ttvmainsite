@@ -20,7 +20,7 @@ class ProductfeasInline(admin.TabularInline):
     model = Productfeas
     extra = 1
 
-    def get_formset(self, request: Any, obj: Any | None = ..., **kwargs: Any) -> Any:
+    def get_formset(self, request, obj=None, **kwargs):
         formset = super().get_formset(request, obj, **kwargs)
         #Formset Title
         formset.formset_title = 'Product Features'
