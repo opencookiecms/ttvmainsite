@@ -381,7 +381,7 @@ def rpv(request, slug):
     ins = Productin.objects.filter(product = pr)
     app = Productapp.objects.filter(product = pr)
     company = Company.objects.get(id=1)
-    bg = "img/ttvimg/service-3.png"
+    bg = "{% static img/ttvimg/service-3.png %}"
     try: 
         spec = pr.productspecs
     except Productspecs.DoesNotExist:
