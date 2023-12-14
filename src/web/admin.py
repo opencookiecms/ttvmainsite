@@ -25,19 +25,19 @@ class ProductfeasInline(admin.TabularInline):
 class ProductappInline(admin.TabularInline):
     model = Productapp
     #Formset title
-    verbose_name = "Product Applications"
+    verbose_name_plural = "Product Applications"
     extra = 1
 
 class ProductinInline(admin.TabularInline):
     model = Productin
     #Formset title
-    verbose_name = "Machines Integrated"
+    verbose_name_plural = "Machines Integrated"
     extra = 1
 
 class ProductspecInline(admin.StackedInline):
     model = Productspecs
     #Formset title
-    verbose_name = "Product Specifications"
+    verbose_name_plural = "Product Specifications"
 
 #Register product model with all the formsets
 @admin.register(Product)
