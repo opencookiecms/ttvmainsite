@@ -25,7 +25,7 @@ class ProductfeasInline(admin.TabularInline):
 class ProductappInline(admin.TabularInline):
     model = Productapp
     #Formset title
-    verbose_name = "Product Applications"
+    verbose_name_plural = "Product Applications"
     extra = 1
 
 class ProductinInline(admin.TabularInline):
