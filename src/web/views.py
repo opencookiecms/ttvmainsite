@@ -374,7 +374,6 @@ def robotic(request):
 
 #robotic product page
 def rpv(request, slug):
-    cat = Category.objects.get(category='Robotic')
     pr = Product.objects.get(productslug=slug)
     fea = Productfeas.objects.filter(product = pr)
     ins = Productin.objects.filter(product = pr)
@@ -425,6 +424,8 @@ def pinspection(request, slug):
         'cat': cat,
         'title': pr,
         'ins':True,
+        'rpv': False,
+        'icled': False,
         'pr':pr,
         'com':company,
         'f': fea,
