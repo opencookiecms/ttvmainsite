@@ -358,7 +358,7 @@ def robotic(request):
     pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
     context = {
-        'url' : 'robotic',
+        'cat' : cat,
         'pr': pr,
         'rpv': True,
         'title': 'Advance Robotics Solutions',
