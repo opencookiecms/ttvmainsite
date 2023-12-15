@@ -417,11 +417,13 @@ def pinspection(request, slug):
     fea = Productfeas.objects.filter(product = pr)
     ins = Productin.objects.filter(product = pr)
     app = Productapp.objects.filter(product = pr)
-    spec = Productspecs.objects.filter(product = pr)
     company = Company.objects.get(id=1)
-    cat = Category.objects.get(category='PV-Inspection')
+    try: 
+        spec = pr.productspecs
+    except Productspecs.DoesNotExist:
+        spec = None
+    
     context = {
-        'cat': cat,
         'title': pr,
         'ins':True,
         'rpv': False,
@@ -457,11 +459,13 @@ def icled(request, slug):
     fea = Productfeas.objects.filter(product = pr)
     ins = Productin.objects.filter(product = pr)
     app = Productapp.objects.filter(product = pr)
-    spec = Productspecs.objects.filter(product = pr)
     company = Company.objects.get(id=1)
-    cat = Category.objects.get(category='Semiconductor ins')
+    try: 
+        spec = pr.productspecs
+    except Productspecs.DoesNotExist:
+        spec = None
+
     context = {
-        'cat': cat,
         'title': pr,
         'icled':True,
         'pr':pr,
