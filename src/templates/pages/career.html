@@ -78,12 +78,12 @@
                                         </td>
                                         {% if j.jobinlink %}
                                         <td class="indeed">
-                                            <a class="indeedlink" href="{{j.jobinlink}}">Apply at Indeed</a>
+                                            <a class="indeedlink" href="{{ j.jobinlink }}" target="_blank">Apply at Indeed</a>
                                         </td>
                                         {% endif %}
                                         {% if j.jobstrlink %}
                                         <td class="jobstreet">
-                                            <a class="jobstreetlink" href="{{j.jobstrlink}}">Apply at Jobstreet</a>
+                                            <a class="jobstreetlink" href="{{j.jobstrlink}}" target="_blank">Apply at Jobstreet</a>
                                         </td>
                                         {% endif %}
                                     </tr>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-md-6 mx-auto text-center">
                         <h2 class="md-6">Interested to join our team?</h2>
-                        <p>Send your resume <a class="line" href="mailto:hr@ttvision-tech.com"><b>here</b></a> or apply <a href="{% url 'hrform' %}" class="font-weight-bold line"><b>here</b></a></p>
+                        <p>Send your resume <a class="line" href="mailto:hr@ttvision-tech.com"><b>here</b></a> or apply <a href="{% url 'hrform' %}" target="_blank" class="font-weight-bold line"><b>here</b></a></p>
                     </div>
                 </div>
             </div>
