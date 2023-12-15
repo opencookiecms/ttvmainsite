@@ -362,9 +362,7 @@ def robotic(request):
     cat = Category.objects.get(category='Robotic')
     pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
-    bg = "img/ttvimg/service-3.png"
     context = {
-        'bg': bg,
         'pr': pr,
         'rpv': True,
         'title': 'Advance Robotics Solutions',
@@ -376,21 +374,20 @@ def robotic(request):
 
 #robotic product page
 def rpv(request, slug):
+    cat = Category.objects.get(category='Robotic')
     pr = Product.objects.get(productslug=slug)
     fea = Productfeas.objects.filter(product = pr)
     ins = Productin.objects.filter(product = pr)
     app = Productapp.objects.filter(product = pr)
     company = Company.objects.get(id=1)
-    bg = "{% static 'img/ttvimg/service-3.png' %}"
     try: 
         spec = pr.productspecs
     except Productspecs.DoesNotExist:
         spec = None
 
     context = {
-        'bg': bg,
         'title': pr,
-        'rpv': True,
+        'cat': cat,
         'pr': pr,
         'com':company,
         'f': fea,
@@ -405,9 +402,7 @@ def pvinspect(request):
     cat = Category.objects.get(category='PV-Inspection')
     pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
-    bg = "img/ttvimg/service-2.png"
     context = {
-        'bg': bg,
         'ins': True,
         'pr': pr,
         'title': 'PV Inspection, Test and Sort Solutions',
@@ -425,9 +420,9 @@ def pinspection(request, slug):
     app = Productapp.objects.filter(product = pr)
     spec = Productspecs.objects.filter(product = pr)
     company = Company.objects.get(id=1)
-    bg = "img/ttvimg/service-2.png"
+    cat = Category.objects.get(category='PV-Inspection')
     context = {
-        'bg': bg,
+        'cat': cat,
         'title': pr,
         'ins':True,
         'pr':pr,
@@ -444,9 +439,7 @@ def semiconductorlist(request):
     cat = Category.objects.get(category='Semiconductor ins')
     pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
-    bg = "img/ttvimg/service-1.png"
     context = {
-        'bg': bg,
         'icled': True,
         'pr': pr,
         'title': 'Semiconductor & LED Inspection Solutions',
@@ -465,9 +458,9 @@ def icled(request, slug):
     app = Productapp.objects.filter(product = pr)
     spec = Productspecs.objects.filter(product = pr)
     company = Company.objects.get(id=1)
-    bg = "img/ttvimg/service-1.png"
+    cat = Category.objects.get(category='Semiconductor ins')
     context = {
-        'bg': bg,
+        'cat': cat,
         'title': pr,
         'icled':True,
         'pr':pr,
