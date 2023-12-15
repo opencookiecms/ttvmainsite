@@ -387,7 +387,7 @@ def rpv(request, slug):
 
     context = {
         'title': pr,
-        'cat': cat,
+        'rpv': True,
         'pr': pr,
         'com':company,
         'f': fea,
