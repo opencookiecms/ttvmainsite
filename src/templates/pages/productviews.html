@@ -4,21 +4,12 @@
 
         <!-- PAGE TITLE
         ================================================== -->
-        <script>
-            console.log("rpv: {% if rpv %}True{% else %}False{% endif %}");
-            console.log("ins: {% if ins %}True{% else %}False{% endif %}");
-            console.log("icled: {% if icled %}True{% else %}False{% endif %}");
-        </script>
         {% if rpv %} 
-        <p>rpv</p>
         <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-3.png' %}">
         {% elif ins %}
-        <p>ins</p>
         <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-2.png' %}">       
         {% elif icled %}
-        <p>icled</p>
         <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/service-1.png' %}">
-        {% else %}
         {% endif %}
             <div class="container">
                 <div class="row align-items-center justify-content-between">

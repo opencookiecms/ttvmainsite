@@ -64,11 +64,6 @@ def companybackground(request):
     }
     return render(request, 'pages/companybackground.html',context)
 
-def semiconductor(request):
-    return render(request, 'pages/semiconductor.html')
-def pv(request):
-    return render(request, 'pages/pv.html')
-
 def contactus(request):
     company = Company.objects.get(id=1)
     meta = Metapro.objects.get(position=3)
@@ -481,13 +476,6 @@ def icled(request, slug):
     }
     return render(request, 'pages/productviews.html',context)
 
-def semi1(request):
-    return render(request, 'pages/semiconductor.html')
-def semi2(request):
-    return render(request, 'pages/semiconductor2.html')
-def semi3(request):
-    return render(request, 'pages/semiconductor3.html')
-
 def investor(request):
 
     iv = Annoucement.objects.all()
@@ -767,3 +755,15 @@ def hrForm(request):
 #     }
 
 #     return render(request, 'pages/vision.html',context)
+
+# def semiconductor(request):
+#     return render(request, 'pages/semiconductor.html')
+# def pv(request):
+#     return render(request, 'pages/pv.html')
+
+# def semi1(request):
+#     return render(request, 'pages/semiconductor.html')
+# def semi2(request):
+#     return render(request, 'pages/semiconductor2.html')
+# def semi3(request):
+#     return render(request, 'pages/semiconductor3.html')

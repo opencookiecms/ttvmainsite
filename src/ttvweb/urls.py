@@ -34,27 +34,17 @@ urlpatterns = [
     path('news-list',views.newslist, name="newslist"),
     path('press-release', views.press, name="press"),
     path('newsm', views.newsm, name="newsm"),
-
-    path('semiconductor', views.semiconductor, name="semiconductor"),
+#-----------------------------Product-----------------------------
     path('robotic',views.robotic, name="robotic"),
+    path('robotic/<str:slug>', views.rpv, name="robotic"),
     path('pv-inspection',views.pvinspect, name="pvinspect"),
+    path('pv-inspection/<str:slug>',views.pinspection, name="pvinspect"),
     path('semiconductorlist', views.semiconductorlist, name="semiconductorlist"),
-    path('pv-inspections', views.pv, name="pv"),
+    path('semiconductorlist/<str:slug>',views.icled, name="semiconductorlist"),
 
     path('investor-relation/announcement', views.investor, name="investor"),
     path('investor-relation/announcement/leap-market', views.leapmarket, name="leapmarket"),
     path('investor-relation/announcement/ace-market',views.acemarket,name='acemarket'),
-    path('career',views.career, name="career"),
-
-    path('robotic/<str:slug>', views.rpv, name="robotic"),
-    path('pv-inspection/<str:slug>',views.pinspection, name="pvinspection"),
-    path('semiconductor-inspection/<str:slug>',views.icled, name="icled"),
-
-
-    path('semiconductor/wafer-and-package-AOI',views.semi1, name="semi1"),
-    path('semiconductor/wirebond-AOI-Equipment',views.semi2, name="semi2"),
-    path('semiconductor/Substrate-Package-AOI',views.semi3, name="semi3"),
-
     path('investor-relation/enquiry',views.callinaction, name="callinaction"),
     path('investor-relation/corporate-governance',views.coporategovernage, name="cg"),
     path('investor-relation/shareholdermeetings',views.agmegm, name="agmegm"),
@@ -62,10 +52,11 @@ urlpatterns = [
     
     path('newsletter', views.newsletter, name='newletter'),
     path('news-media', views.mediakit, name='medialink'),
-    #job application
+#----------------------------job application page----------------------------
     path('hrform', views.hrForm, name='hrform'),
     path('hrform/success',views.contactdone, name="contactdone"),
-
+#------------------------------Career page-------------------------------
+    path('career',views.career, name="career"),
 
     #tests
     # path('test-robotics-mainpage', views.trobotic, name='test'),
@@ -74,6 +65,11 @@ urlpatterns = [
 
     #not in use
     # path('mission-vision',views.vision, name="vision"),
+    # path('semiconductor', views.semiconductor, name="semiconductor"),
+    # path('pv-inspections', views.pv, name="pv"),
+    # path('semiconductor/wafer-and-package-AOI',views.semi1, name="semi1"),
+    # path('semiconductor/wirebond-AOI-Equipment',views.semi2, name="semi2"),
+    # path('semiconductor/Substrate-Package-AOI',views.semi3, name="semi3"),
 ]
 
 if settings.DEBUG:
