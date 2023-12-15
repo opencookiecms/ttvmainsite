@@ -37,8 +37,8 @@ urlpatterns = [
 #-----------------------------Product-----------------------------
     path('robotic',views.robotic, name="robotic"),
     path('robotic/<str:slug>', views.rpv, name="robotic"),
-    path('pv-inspection',views.pvinspect, name="pvinspect"),
-    path('pv-inspection/<str:slug>',views.pinspection, name="pvinspect"),
+    path('pvinspect',views.pvinspect, name="pvinspect"),
+    path('pvinspect/<str:slug>',views.pinspection, name="pvinspect"),
     path('semiconductorlist', views.semiconductorlist, name="semiconductorlist"),
     path('semiconductorlist/<str:slug>',views.icled, name="semiconductorlist"),
 
