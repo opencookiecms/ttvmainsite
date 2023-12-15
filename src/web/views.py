@@ -358,6 +358,7 @@ def robotic(request):
     pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
     context = {
+        'url' : 'robotic',
         'pr': pr,
         'rpv': True,
         'title': 'Advance Robotics Solutions',
@@ -399,6 +400,7 @@ def pvinspect(request):
     pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
     context = {
+        'url' : 'pvinspect',
         'ins': True,
         'pr': pr,
         'title': 'PV Inspection, Test and Sort Solutions',
@@ -440,6 +442,7 @@ def semiconductorlist(request):
     pr = Product.objects.filter(productcategory = cat, status = True)
     company = Company.objects.get(id=1)
     context = {
+        'url' : 'semiconductorlist',
         'icled': True,
         'pr': pr,
         'title': 'Semiconductor & LED Inspection Solutions',
