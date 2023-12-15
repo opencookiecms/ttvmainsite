@@ -74,7 +74,13 @@
                                 <div class="text-center py-4">
                                     <h2 class="h5 mb-2">{{p.producttitle}}</h2>
                                     <p class="mb-0 small pd">{{p.productintro}}</p>
-                                    <p class="mb-0 small pd"><a class="text-primary" href="{% url 'url' slug=p.productslug %}"><h5>Learn More</h5></a></p>
+                                    {% if p.productcategory == 'Robotic' %}
+                                    <p class="mb-0 small pd"><a class="text-primary" href="{% url 'robotic' slug=p.productslug %}"><h5>Learn More</h5></a></p>
+                                    {% elif p.productcategory == 'PV-Inspection' %}
+                                    <p class="mb-0 small pd"><a class="text-primary" href="{% url 'pvinspect' slug=p.productslug %}"><h5>Learn More</h5></a></p>
+                                    {% elif p.productcategory == 'Semiconductor ins' %}
+                                    <p class="mb-0 small pd"><a class="text-primary" href="{% url 'semiconductorlist' slug=p.productslug %}"><h5>Learn More</h5></a></p>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
