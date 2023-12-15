@@ -387,6 +387,8 @@ def rpv(request, slug):
     context = {
         'title': pr,
         'rpv': True,
+        'icled': False,
+        'ins': False,
         'pr': pr,
         'com':company,
         'f': fea,
@@ -468,6 +470,8 @@ def icled(request, slug):
     context = {
         'title': pr,
         'icled':True,
+        'rpv': False,
+        'ins' : False,
         'pr':pr,
         'com':company,
         'f': fea,
