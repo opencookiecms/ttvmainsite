@@ -697,21 +697,24 @@ def hrForm(request):
             #email contents
             subject = 'Job Application for ' + job 
             message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})'
-            # resume = form.cleaned_data["resume"]
-            # appform = form.cleaned_data["appform"]
+           
             #domain email
             from_email = settings.SERVER_EMAIL
+          
             #recipient email
             recipient_list = ['hr@ttvision-tech.com']
-            #recipient_list = ['adriannasim@gmail.com']
+            #recipient_list = ['adriannasim@gmail.com'] (for testing purposes)
+          
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
-            #attaching files to email
+        
+            #renaming the files using 
             fname = form.cleaned_data["contactname"]
             fname = fname.replace(' ', '_')
             rpath = os.path.join(settings.MEDIA_ROOT, f'resume/resume-{fname}.pdf')
             apath = os.path.join(settings.MEDIA_ROOT, f'resume/applicationform-{fname}.pdf')
 
+            #attaching files to email
             email.attach_file(rpath)
             email.attach_file(apath)
 
