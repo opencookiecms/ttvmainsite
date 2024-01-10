@@ -250,7 +250,6 @@ class PhotoEvent(models.Model):
     def __str__(self):
         return self.imgtitle
 
-
 class Company(models.Model):
     companyname = models.CharField(max_length=100, null=True, blank=True)
     phonenumber = models.CharField(max_length=100, null=True, blank=True)
