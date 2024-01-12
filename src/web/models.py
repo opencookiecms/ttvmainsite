@@ -61,7 +61,7 @@ class Product(models.Model):
         return self.producttitle
 
 #-------------------product features-----------------------
-class Productfeas(models.Moevdel):
+class Productfeas(models.Model):
     features = models.CharField(verbose_name='Product Feature', max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(verbose_name='Product Feature Description', null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
