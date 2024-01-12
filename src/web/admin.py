@@ -58,7 +58,7 @@ class EventPhotosInline(admin.TabularInline):
     extra = 1
 @admin.register(EventNews)
 class EventAdmin(admin.ModelAdmin):
-    inlines = [PhotoEvent]
+    inlines = [EventPhotosInline]
 
 admin.site.register(Annoucement)
 admin.site.register(Contact)
