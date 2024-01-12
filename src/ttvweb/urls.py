@@ -59,7 +59,7 @@ urlpatterns = [
     path('career',views.career, name="career"),
 
     #tests
-    # path('test-robotics-mainpage', views.trobotic, name='test'),
+    path('test-robotics-mainpage', views.trobotic, name='test'),
     # path('test-robotics-mainpage/<str:slug>', views.trpv, name="test-robotics-mainpage"),
     #path('test-career',views.career, name="test-career"),
 
