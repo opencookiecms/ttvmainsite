@@ -525,3 +525,8 @@ class Job(models.Model):
 
     def __str__(self):
         return self.jobname
+    
+#media
+class Media(models.Model):
+    medtitle = models.CharField(max_length=150, null=True,blank=True)
+    img = models.ImageField(null=True, blank=True)

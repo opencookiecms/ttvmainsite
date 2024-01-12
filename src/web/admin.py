@@ -2,7 +2,7 @@ from multiprocessing.dummy import Event
 from typing import Any
 from django.contrib import admin
 
-from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job
+from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job, Media
 
 # Register your models here.
 admin.site.register(Company)
@@ -15,6 +15,7 @@ admin.site.register(Herotypefour)
 admin.site.register(Herotypefive)
 admin.site.register(Post)
 admin.site.register(Category)
+
 #Create a formset of productfeas in product model at Django Admin
 class ProductfeasInline(admin.TabularInline):
     model = Productfeas
@@ -70,6 +71,7 @@ admin.site.register(Pressrelease)
 admin.site.register(Metapro)
 admin.site.register(Hr)
 admin.site.register(Job)
+admin.site.register(Media)
 
 #configs
 # class ProductfeasAdmin(admin.ModelAdmin):
