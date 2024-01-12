@@ -193,7 +193,7 @@ class EventNews(models.Model):
 class PhotoEvent(models.Model):
     event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
     img = models.ImageField(null=True, blank=True)
-    # imgtitle2 = models.CharField(max_length=150, null=True,blank=True)
+    imgtitle = models.CharField(max_length=150, null=True,blank=True)
     # wowdelay = models.CharField(max_length=10, null=True,blank=True)
     # postlib = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
 
@@ -239,10 +239,10 @@ class AnnoucementMeetings(models.Model):
     def __str__(self):
         return self.anoncetitle
 
-# class PhotoLib(models.Model):
-#     imgtitle =  models.CharField(max_length=20, null=True,blank=True)
-#     img = models.ImageField(null=True, blank=True)
-#     postlib = models.ForeignKey(Post, blank=True, null=True,on_delete = models.SET_NULL)
+class PhotoLib(models.Model):
+    imgtitle =  models.CharField(max_length=20, null=True,blank=True)
+    img = models.ImageField(null=True, blank=True)
+    postlib = models.ForeignKey(Post, blank=True, null=True,on_delete = models.SET_NULL)
 
 class Company(models.Model):
     companyname = models.CharField(max_length=100, null=True, blank=True)
