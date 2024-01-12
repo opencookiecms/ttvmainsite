@@ -528,4 +528,4 @@ class Job(models.Model):
 #media
 class Media(models.Model):
     medtitle = models.CharField(max_length=150, null=True,blank=True)
-    img = models.FileField(null=True, blank=True)
+    vid = models.FileField(null=True, blank=True)
