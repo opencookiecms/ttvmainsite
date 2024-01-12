@@ -50,7 +50,7 @@ admin.site.register(Postsection)
 admin.site.register(Herosix)
 admin.site.register(Heroseven)
 admin.site.register(News)
-admin.site.register(PhotoEvent)
+#admin.site.register(PhotoEvent)
 #admin.site.register(EventNews)
 
 #Event
