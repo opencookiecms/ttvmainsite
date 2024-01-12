@@ -45,13 +45,16 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductfeasInline, ProductappInline, ProductinInline, ProductspecInline]
 
 admin.site.register(Accordation)
-admin.site.register(PhotoLib)
+#admin.site.register(PhotoLib)
 admin.site.register(Postsection)
 admin.site.register(Herosix)
 admin.site.register(Heroseven)
 admin.site.register(News)
-admin.site.register(PhotoEvent)
-admin.site.register(EventNews)
+#admin.site.register(PhotoEvent)
+#admin.site.register(EventNews)
+@admin.register(EventNews)
+class EventAdmin(admin.ModelAdmin):
+    inlines = [PhotoEvent]
 admin.site.register(Annoucement)
 admin.site.register(Contact)
 admin.site.register(Timeline)

@@ -61,7 +61,7 @@ class Product(models.Model):
         return self.producttitle
 
 #-------------------product features-----------------------
-class Productfeas(models.Model):
+class Productfeas(models.Moevdel):
     features = models.CharField(verbose_name='Product Feature', max_length=400, null=True, blank=True)
     featuresdesc = models.TextField(verbose_name='Product Feature Description', null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -184,13 +184,22 @@ class EventNews(models.Model):
     ttitle = models.CharField(max_length=150, null=True, blank=True)
     eventtitle = models.CharField(max_length=200, null=True, blank=True)
     eventcontent = models.TextField(null=True, blank=True)
-    eventpic = models.ImageField(null=True, blank=True)
     eventlink = models.CharField(max_length=150, null=True, blank=True)
     slug = models.CharField(max_length=200, null=True, blank=True) 
-    url = models.CharField(max_length=150, null=True, blank=True)
 
     def __str__(self):
         return self.ttitle
+    
+class PhotoEvent(models.Model):
+    imgtitle = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
+    #imgtitle = models.CharField(max_length=150, null=True,blank=True)
+    img = models.ImageField(null=True, blank=True)
+    # imgtitle2 = models.CharField(max_length=150, null=True,blank=True)
+    # wowdelay = models.CharField(max_length=10, null=True,blank=True)
+    # postlib = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
+
+    def __str__(self):
+        return self.imgtitle
 
 class Annoucement(models.Model):
     anoncetitle = models.CharField(max_length=150, null=True, blank=True)
@@ -231,23 +240,10 @@ class AnnoucementMeetings(models.Model):
     def __str__(self):
         return self.anoncetitle
 
-
-
-
-class PhotoLib(models.Model):
-    imgtitle =  models.CharField(max_length=20, null=True,blank=True)
-    img = models.ImageField(null=True, blank=True)
-    postlib = models.ForeignKey(Post, blank=True, null=True,on_delete = models.SET_NULL)
-
-class PhotoEvent(models.Model):
-    imgtitle =  models.CharField(max_length=150, null=True,blank=True)
-    imgtitle2 = models.CharField(max_length=150, null=True,blank=True)
-    img = models.ImageField(null=True, blank=True)
-    wowdelay = models.CharField(max_length=10, null=True,blank=True)
-    postlib = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
-
-    def __str__(self):
-        return self.imgtitle
+# class PhotoLib(models.Model):
+#     imgtitle =  models.CharField(max_length=20, null=True,blank=True)
+#     img = models.ImageField(null=True, blank=True)
+#     postlib = models.ForeignKey(Post, blank=True, null=True,on_delete = models.SET_NULL)
 
 class Company(models.Model):
     companyname = models.CharField(max_length=100, null=True, blank=True)
