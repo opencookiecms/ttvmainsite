@@ -188,11 +188,11 @@ class EventNews(models.Model):
     slug = models.CharField(max_length=200, null=True, blank=True) 
 
     def __str__(self):
-        return self.ttitle
+        return self.slug
     
 class PhotoEvent(models.Model):
-    #imgtitle = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
-    imgtitle = models.CharField(max_length=150, null=True)
+    imgtitle = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
+    #imgtitle = models.CharField(max_length=150, null=True,blank=True)
     img = models.ImageField(null=True, blank=True)
     # imgtitle2 = models.CharField(max_length=150, null=True,blank=True)
     # wowdelay = models.CharField(max_length=10, null=True,blank=True)
