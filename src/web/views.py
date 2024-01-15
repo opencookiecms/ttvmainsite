@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError,HttpResponseRedirect
-from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro, Job, Medias
+from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro, Job, Media
 from .forms import ContactForm, NewsletterForm, HrForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json, requests, os
@@ -694,12 +694,12 @@ def hrForm(request):
 
 def media(request):
     company = Company.objects.get(id=1)
-    media = Medias.objects.all()
+    media = Media.objects.all()
 
     context = {
         'title': 'Media',
         'com':company,
-        'med':Medias,
+        'med':media,
         'keywords':"coverage on TV1, coverage on TV3, coverage on BFM",
         'description': "Media Coverage"
     }
