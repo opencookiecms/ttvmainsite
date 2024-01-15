@@ -40,7 +40,7 @@
                                     <div class="opacity-extra-medium bg-black"></div>
                                     <div class="inner-border"></div>
                                     <div class="text-center position-absolute top-50 start-50 translate-middle z-index-1">
-                                        <video width="400" controls >
+                                        <video width="400"  >
                                             <source src="{{ media.vid.url }}" type="video/mp4">
                                             <source src="{{ media.audio.url }}" type="audio/mp3">
                                             Your browser does not support the video tag.
@@ -48,6 +48,20 @@
                                                 <i class="fa fa-play"></i>
                                             </button>
                                         </video>
+                                        <script>
+                                            var video = document.querySelector('video');
+                                            var playButton = document.getElementById('playButton');
+                                        
+                                            function togglePlay() {
+                                                if (video.paused || video.ended) {
+                                                    video.play();
+                                                    playButton.innerHTML = '<i class="fa fa-pause"></i>';
+                                                } else {
+                                                    video.pause();
+                                                    playButton.innerHTML = '<i class="fa fa-play"></i>';
+                                                }
+                                            }
+                                        </script>
                                     </div>
                                 </div>
 
