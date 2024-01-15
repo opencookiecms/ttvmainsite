@@ -703,8 +703,7 @@ def media(request):
         'keywords':"coverage on TV1, coverage on TV3, coverage on BFM",
         'description': "Media Coverage"
     }
-    return render (request, 'pages/media.html', context)
-
+    return render (request, 'pages/media2.html', context)
 
 #------------------------not in use--------------------------------
 # def vision(request):
