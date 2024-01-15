@@ -40,32 +40,15 @@
                                     <div class="opacity-extra-medium bg-black"></div>
                                     <div class="inner-border"></div>
                                     <div class="text-center position-absolute top-50 start-50 translate-middle z-index-1">
-                                        <video id="myVideo" width="400" controls class="popup-social-video video_btn">
+                                        <video width="400" controls >
                                             <source src="{{ media.vid.url }}" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
-                                        <button type="button" class="btn btn-default btn-sm" onclick="playPause()">
-                                            <span class="glyphicon glyphicon-play"></span> Play
-                                        </button>
                                         
                                     </div>
                                 </div>
 
                             </div>
-                            <script>
-                                var video = document.getElementById("myVideo");
-                                var audio = document.getElementById("myAudio");
-                            
-                                function playPause() {
-                                    if (video.paused) {
-                                        video.play();
-                                        audio.play();
-                                    } else {
-                                        video.pause();
-                                        audio.pause();
-                                    }
-                                }
-                            </script>
                          
 
                         </div>
