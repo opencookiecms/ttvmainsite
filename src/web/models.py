@@ -177,6 +177,7 @@ class News(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     position  = models.IntegerField(null=True, blank=True)
     ct = models.ForeignKey(Category, blank=True, null=True, on_delete = models.SET_NULL)
+    publish = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.titles
@@ -469,6 +470,7 @@ class Newsletter(models.Model):
     mailaddress = models.CharField(max_length=150, null=True, blank=True)
     newname = models.CharField(max_length=150, null=True, blank=True)
     company  = models.CharField(max_length=150, null=True, blank=True)
+    publish = models.DateTimeField(default=timezone.now)
 
 
 class Pressrelease(models.Model):
@@ -479,6 +481,7 @@ class Pressrelease(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     position  = models.IntegerField(null=True, blank=True)
+    publish = models.DateTimeField(default=timezone.now)
 
 class Metapro(models.Model):
     urlcontent = models.CharField(max_length=150, null=True, blank=True)
