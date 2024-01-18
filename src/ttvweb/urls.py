@@ -51,7 +51,7 @@ urlpatterns = [
     path('investor-relation/annual-report',views.annualreport, name="ar"),
     
     path('newsletter', views.newsletter, name='newletter'),
-    path('news-media', views.mediakit, name='medialink'),
+    path('news-media', views.media, name='medialink'),
 #----------------------------job application page----------------------------
     path('hrform', views.hrForm, name='hrform'),
     path('hrform/success',views.contactdone, name="contactdone"),
