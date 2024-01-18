@@ -604,3 +604,21 @@ class HrForm(forms.ModelForm):
             'resume',
             'appform'
         ]
+
+
+class Downloadform(forms.ModelForm):
+
+    contactname = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name Here'}))
+    contactemail = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Email Here'}))
+    companyname = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Company Name Here'}))
+    contacttel = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control'}))
+    capcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+
+    class Meta:
+        fields = [
+            'contactname', 
+            'contactemail', 
+            'companyname',  
+            'contacttel',
+            'contacttel'
+        ]
