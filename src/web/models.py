@@ -217,6 +217,7 @@ class Annoucement(models.Model):
     ancategory = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     ancreated_at = models.DateTimeField(auto_now_add=True, editable=False)
     anupdated_at = models.DateTimeField(auto_now=True, editable=False)
+    publish = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.anoncetitle
