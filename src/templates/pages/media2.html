@@ -1,4 +1,4 @@
-{"% extends 'based/based.html' %}
+{% extends 'based/based.html' %}
 {% block content %}
 {% load static %}
         <!-- PAGE TITLE
@@ -58,63 +58,6 @@
             </section>
 
                         </div>
-                        {"% extends 'based/based.html' %}
-                        {% block content %}
-                        {% load static %}
-                                <!-- PAGE TITLE
-                                ================================================== -->
-                                <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/event.jpg'%}">
-                                    <div class="container">
-                        
-                                        <div class="row align-items-center justify-content-between">
-                                            <div class="col-lg-7 col-xxl-5">
-                                                <div class="title-style3">
-                                                    <span>medium</span>
-                                                </div>
-                                                <h1 class="text-white mb-0 text-shadow-large">Media</h1>
-                                            </div>
-                                        </div>
-                        
-                                    </div>
-                                </section>
-                        
-                                <!-- BLOG
-                                ================================================== -->
-                                <section>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-8 mb-2-9 mb-lg-0 mt-n2-9">
-                                              
-                                                {% for media in med %}
-                        
-                                                <div class="mb-6 mb-lg-8 position-relative elements-block">
-                        
-                                                    <div class="inner-title">
-                                                        <h2 class="mb-0">{{media.medtitle}}</h2>
-                                                    </div>
-                        
-                                                    <!--  video section -->
-                                                    <div class="min-height-300">
-                        
-                                                        <div class="bg-img cover-background min-height-300" data-overlay-dark="0" data-background="{% static 'img/bg/5559852.jpg' %}">
-                                                            <div class="opacity-extra-medium bg-black"></div>
-                                                            <div class="inner-border"></div>
-                                                            <div class="text-center position-absolute top-50 start-50 translate-middle z-index-1">
-                                                                <video width="400" controls >
-                                                                    <source src="{{ media.vid.url }}" type="video/mp4">
-                                                                    Your browser does not support the video tag.
-                                                                </video>
-                                                                
-                                                            </div>
-                                                        </div>
-                        
-                                                    </div>
-                                                 
-                                                </div>
-                                                </div>
-                                                {% endfor %}
-                        
-                                            </div>
                                                 
                         <div class="col-lg-4">
                             <div class="ps-lg-4 ps-xl-5">
