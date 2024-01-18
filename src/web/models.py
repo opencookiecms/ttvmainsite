@@ -3,6 +3,7 @@ from django.utils.translation import gettext as _
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
+from django.utils import timezone
 import os
 
 # Create your models here.
@@ -529,4 +530,5 @@ class Job(models.Model):
 class Media(models.Model):
     medtitle = models.CharField(max_length=150, null=True,blank=True)
     vid = models.FileField(null=True, blank=True)
+    publish = models.datetimefield(default=timezone.now)
 
