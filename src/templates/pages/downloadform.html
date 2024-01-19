@@ -1,0 +1,106 @@
+{% extends 'based/based.html' %}
+{% block content %}
+{% load static %}
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section2 top-position1 bg-img cover-background text-start" data-overlay-dark="7" data-background="{% static 'img/ttvimg/event.jpg'%}">
+            <div class="container">
+
+                <div class="row align-items-cjustifyenter -content-between">
+                    <div class="col-lg-7 col-xxl-10">
+                        <div class="title-style3">
+                            <span>Our excellence service</span>
+                        </div>
+                        <h1 class="text-white mb-0 text-shadow-large">Request for Brocher</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM
+        ================================================== -->
+        <section class="overflow-visible p-0">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 wow fadeIn" data-wow-delay="400ms">
+                        <div class="primary-shadow bg-white p-1-6 p-sm-2-9 rounded z-index-9 position-relative">
+                            <form id="jobapp" action="{% url 'hrform' %}" method="post" enctype="multipart/form-data" onclick="">
+                                {% csrf_token %}
+                                <div class="quform-elements">
+                                    <div class="row">
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-6">
+                                            <div class="quform-element form-group">
+                                                <label for="name">Your Name <span class="quform-required">*</span></label>
+                                                <div class="quform-input">
+                                                    {{form.contactname}}
+                                                    <small class="text-danger"></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-6">
+                                            <div class="quform-element form-group">
+                                                <label for="email">Your Email <span class="quform-required">*</span></label>
+                                                <div class="quform-input">
+                                                    {{form.contactemail}}
+                                                    <small class="text-danger"></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+                                         <!-- Begin Text input element -->
+                                         <div class="col-md-6">
+                                            <div class="quform-element form-group">
+                                                <label for="name">Your Company <span class="quform-required">*</span></label>
+                                                <div class="quform-input">
+                                                    {{form.companyname}}
+                                                    <small class="text-danger"></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-6">
+                                            <div class="quform-element form-group">
+                                                <label for="phone">Contact Number <span class="quform-required">*</span></label>
+                                                <div class="quform-input">
+                                                    <input type="tel" id="{{form.contacttel.id_for_label}}" name="{{form.contacttel.name}}" class="form-control"/>
+                                                    <small class="text-danger"></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+                                        <!-- Begin Captcha element -->
+                                        {{form.capcha}}
+                                        <!-- End Captcha element -->
+                                        <!-- Begin Submit button -->
+                                        <div class="col-md-12 p-3">
+                                            <div class="quform-submit-inner">
+                                                <button class="butn-style1" type="submit"><span>Submit Request</span></button>
+                                            </div>
+                                            <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
+                                        </div>
+                                        <!-- End Submit button -->
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Javascripts-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const disabledOptions = document.querySelectorAll('select option[disabled]');
+                disabledOptions.forEach(option => {
+                    option.addEventListener('click', function(e) {
+                        e.preventDefault();
+                    });
+                });
+            });
+        </script>
+        {% endblock content %}

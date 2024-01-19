@@ -606,7 +606,7 @@ class HrForm(forms.ModelForm):
         ]
 
 
-class Downloadform(forms.ModelForm):
+class ReqForm(forms.ModelForm):
 
     contactname = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name Here'}))
     contactemail = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Email Here'}))

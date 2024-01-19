@@ -536,3 +536,10 @@ class Media(models.Model):
     vid = models.FileField(null=True, blank=True)
     publish = models.DateTimeField(default=timezone.now)
 
+#Request Form
+class ReqForm(models.Model):
+    contactname = models.CharField(max_length=100, null=False, blank=False)
+    contactemail = models.EmailField(null=False, blank=False)
+    companyname = models.CharField(max_length=100, null=False, blank=False)
+    contacttel = models.CharField(max_length=20, null=False, blank=False)
+
