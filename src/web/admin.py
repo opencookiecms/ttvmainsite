@@ -2,7 +2,7 @@ from multiprocessing.dummy import Event
 from typing import Any
 from django.contrib import admin
 
-from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job, Media
+from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job, Media, ReqForm
 
 # Register your models here.
 admin.site.register(Company)
@@ -72,6 +72,7 @@ admin.site.register(Metapro)
 admin.site.register(Hr)
 admin.site.register(Job)
 admin.site.register(Media)
+admin.site.register(ReqForm)
 
 #configs
 # class ProductfeasAdmin(admin.ModelAdmin):
