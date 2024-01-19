@@ -5,7 +5,7 @@ from django.utils.html import strip_tags
 from django.conf import settings
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError,HttpResponseRedirect
 from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, PhotoEvent, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro, Job, Media
-from .forms import ContactForm, NewsletterForm, HrForm
+from .forms import ContactForm, NewsletterForm, HrForm, ReqForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json, requests, os
 
@@ -704,6 +704,18 @@ def media(request):
         'description': "Media Coverage"
     }
     return render (request, 'pages/media2.html', context)
+
+def hrForm(request):
+    if request.method == 'POST':
+        form = ReqForm(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = ReqForm()
+
+    return render (request, 'ReqForm.html', {'form': form})
+
+
 
 #------------------------not in use--------------------------------
 # def vision(request):
