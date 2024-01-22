@@ -155,12 +155,12 @@ def award(request):
 def event(request,slug):
 
     events = EventNews.objects.get(slug=slug)
-    eventtitle = EventNews.objects.all()
+    allevents = EventNews.objects.all()
     photo = EventPhoto.objects.filter(event = events)
     company = Company.objects.get(id=1)
     context = {
         'title': events,
-        'etitle':eventtitle,
+        'allevents':allevents,
         'e':events,
         'photo':photo,
         'com':company,
