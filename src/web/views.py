@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError,HttpResponseRedirect
-from web.models import Accordation, Annoucement, Category, Company, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro, Job, Media
+from web.models import Accordation, Annoucement, Category, Company, EventNews, EventPhoto, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline,AnnoucementMeetings, Newsletter,Pressrelease, Metapro, Job, Media
 from .forms import ContactForm, NewsletterForm, HrForm, ReqForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json, requests, os
@@ -156,7 +156,7 @@ def event(request,slug):
 
     events = EventNews.objects.filter(slug=slug).first()
     eventtitle = EventNews.objects.all()
-    pe = PhotoEvent.objects.filter(postlib__slug=slug)
+    pe = EventPhoto.objects.filter(postlib__slug=slug)
     company = Company.objects.get(id=1)
     context = {
         'title': events,
