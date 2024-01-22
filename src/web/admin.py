@@ -52,15 +52,14 @@ admin.site.register(Herosix)
 admin.site.register(Heroseven)
 admin.site.register(News)
 admin.site.register(EventNews)
-admin.site.register(EventPhoto)
 
 #Event
-# class EventPhotosInline(admin.TabularInline):
-#     model = EventPhoto
-#     extra = 1
-# @admin.register(EventNews)
-# class EventAdmin(admin.ModelAdmin):
-#     inlines = [EventPhotosInline]
+class EventPhotosInline(admin.TabularInline):
+    model = EventPhoto
+    extra = 1
+@admin.register(EventNews)
+class EventAdmin(admin.ModelAdmin):
+    inlines = [EventPhotosInline]
 
 admin.site.register(Annoucement)
 admin.site.register(Contact)
