@@ -2,7 +2,7 @@ from multiprocessing.dummy import Event
 from typing import Any
 from django.contrib import admin
 
-from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, EventPhoto, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job, Media, ReqForm
+from web.models import Accordation, Annoucement, Category, Company, Contact, EventNews, Heroseven, Herosix, Herotypefive, Herotypefour, Herotypeone, Herotypethree, Herotypetwo, News, Post, Postsection, Product, Productfeas, Productin, Productapp, Productspecs, Slide, Smallcard, Timeline, AnnoucementMeetings, Newsletter ,Pressrelease, Metapro, Hr, Job, Media, ReqForm
 
 # Register your models here.
 admin.site.register(Company)
@@ -51,15 +51,15 @@ admin.site.register(Postsection)
 admin.site.register(Herosix)
 admin.site.register(Heroseven)
 admin.site.register(News)
-#admin.site.register(EventNews)
+admin.site.register(EventNews)
 
 #Event
-class EventPhotosInline(admin.TabularInline):
-    model = EventPhoto
-    extra = 1
-@admin.register(EventNews)
-class EventAdmin(admin.ModelAdmin):
-    inlines = [EventPhotosInline]
+# class EventPhotosInline(admin.TabularInline):
+#     model = EventPhoto
+#     extra = 1
+# @admin.register(EventNews)
+# class EventAdmin(admin.ModelAdmin):
+#     inlines = [EventPhotosInline]
 
 admin.site.register(Annoucement)
 admin.site.register(Contact)
