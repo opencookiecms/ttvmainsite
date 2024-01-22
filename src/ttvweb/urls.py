@@ -58,7 +58,7 @@ urlpatterns = [
 #------------------------------Career page-------------------------------
     path('career',views.career, name="career"),
 
-    path('request',views.re, name="request"),
+    #path('request',views.re, name="request"),
 
     #tests
     #path('test', views.media, name='test'),

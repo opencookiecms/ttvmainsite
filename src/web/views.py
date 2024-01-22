@@ -715,8 +715,6 @@ def hrForm(request):
 
     return render (request, 'ReqForm.html', {'form': form})
 
-
-
 #------------------------not in use--------------------------------
 # def vision(request):
 #     postvision = Postsection.objects.get(id=1)
