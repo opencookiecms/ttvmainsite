@@ -154,7 +154,7 @@ class EventNews(models.Model):
     def __str__(self):
         return self.ttitle
     
-class EventPhoto(models.Model):
+class EPhotos(models.Model):
     event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
     img = models.ImageField(null=True, blank=True)
     imgtitle = models.CharField(max_length=150, null=True,blank=True)
