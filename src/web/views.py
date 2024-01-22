@@ -154,9 +154,9 @@ def award(request):
 
 def event(request,slug):
 
-    events = EventNews.objects.filter(slug=slug).first()
+    events = EventNews.objects.get(slug=slug)
     eventtitle = EventNews.objects.all()
-    pe = EventPhoto.objects.filter(postlib__slug=slug)
+    pe = EventPhoto.objects.filter(event = events)
     company = Company.objects.get(id=1)
     context = {
         'title': events,
