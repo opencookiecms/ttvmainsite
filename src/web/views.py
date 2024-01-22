@@ -156,13 +156,13 @@ def event(request,slug):
 
     events = EventNews.objects.get(slug=slug)
     eventtitle = EventNews.objects.all()
-    pe = EventPhoto.objects.filter(event = events)
+    photo = EventPhoto.objects.filter(event = events)
     company = Company.objects.get(id=1)
     context = {
         'title': events,
         'etitle':eventtitle,
         'e':events,
-        'pe':pe,
+        'photo':photo,
         'com':company,
         'keywords':"events",
         'description':"TT Vision's Past Events - "

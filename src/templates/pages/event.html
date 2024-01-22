@@ -38,8 +38,7 @@
                             <div class="bg-img bg-dark cover-background rounded wow fadeInUp" data-wow-delay="200ms" data-overlay-dark="85" data-background="img/bg/bg-06.jpg">
                                 <div class="position-relative z-index-9 text-center py-5 px-1-9">
                                     <i class="fa fa-smile-o  text-white mb-4 display-14"></i>
-                                    <img src="{% static 'img/ttvimg/customer-service(2).png' %}" alt='Customer Service'/>
-                                    <p>
+                                    <img src="{% static 'img/ttvimg/customer-service(2).png' %}" alt='Customer Service' />
                                     <h5 class="text-white mb-4">How can we help?</h5>
                                     <div class="separator-line-horrizontal-full bg-white opacity4 mb-4"></div>
                                     <ul class="text-center mb-0 list-unstyled ps-0">
@@ -63,9 +62,9 @@
                         <div class="row mb-2-9">
                         </div>
                         <div class="row mb-2-9 mt-n4 justified-gallery" id="mygallery">
-                            {% for p in pe %}
+                            {% for p in photo %}
                             <div class="col-md-4 mt-4 wow fadeInUp" data-wow-delay="200ms">
-                                <img src="/media/{{p.img}}" class="rounded" alt="ttvision images">
+                                <img src="{{p.img}}" class="rounded" />
                             </div>
                             {% endfor %}
                         </div>
