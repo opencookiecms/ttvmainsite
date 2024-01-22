@@ -154,10 +154,31 @@ class EventNews(models.Model):
     def __str__(self):
         return self.ttitle
     
+def efilepath (instance, filename):
+    return os.path.join({instance.event.slug} ,f'{instance.event.slug}-{instance.pk}.jpg')
+
 class EventPhoto(models.Model):
     imgtitle = models.CharField(max_length=150, null=True,blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to=efilepath)
     event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
+    imgno = models.IntegerField(default=0, editable=False)
+
+    #update imgno
+    def save(self, *args, **kwargs):
+        # Increment the feature count only when creating a new instance
+        if not self.pk:
+            existingNo = EventPhoto.objects.filter(eventnews=self.ttitle).count()
+            self.imgno = existingNo + 1
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.eventnews.ttitle} Feature {self.imgno}"
+    
+@receiver(pre_save, sender=Productfeas)
+def update_featureno(sender, instance, **kwargs):
+    if not instance.pk:
+        existingNo = Productfeas.objects.filter(product=instance.product).count()
+        instance.featureno  = existingNo + 1
 
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
