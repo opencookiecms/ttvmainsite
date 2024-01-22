@@ -155,9 +155,9 @@ class EventNews(models.Model):
         return self.ttitle
     
 class EventPhoto(models.Model):
+    imgtitle = models.CharField(max_length=150, null=True,blank=True)
     image = models.ImageField(null=True, blank=True)
-    # event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
-    # imgtitle = models.CharField(max_length=150, null=True,blank=True)
+    event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
 
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
