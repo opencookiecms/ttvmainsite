@@ -619,6 +619,5 @@ class ReqForm(forms.ModelForm):
             'contactname', 
             'contactemail', 
             'companyname',  
-            'contacttel',
             'contacttel'
         ]

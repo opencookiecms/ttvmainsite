@@ -192,15 +192,10 @@ class EventNews(models.Model):
     def __str__(self):
         return self.ttitle
     
-class PhotoEvent(models.Model):
+class EventPhoto(models.Model):
     event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
     img = models.ImageField(null=True, blank=True)
     imgtitle = models.CharField(max_length=150, null=True,blank=True)
-    # wowdelay = models.CharField(max_length=10, null=True,blank=True)
-    # postlib = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
-
-    def __str__(self):
-        return self.imgtitle
 
 class Annoucement(models.Model):
     anoncetitle = models.CharField(max_length=150, null=True, blank=True)

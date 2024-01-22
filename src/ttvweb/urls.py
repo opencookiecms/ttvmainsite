@@ -58,6 +58,8 @@ urlpatterns = [
 #------------------------------Career page-------------------------------
     path('career',views.career, name="career"),
 
+    path('request',views.re, name="request"),
+
     #tests
     #path('test', views.media, name='test'),
     # path('test-robotics-mainpage/<str:slug>', views.trpv, name="test-robotics-mainpage"),
