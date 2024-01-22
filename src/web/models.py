@@ -156,7 +156,7 @@ class EventNews(models.Model):
     
 class EventPhoto(models.Model):
     # event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
-    # img = models.ImageField(null=True, blank=True)
+    img = models.ImageField(null=True, blank=True)
     # imgtitle = models.CharField(max_length=150, null=True,blank=True)
 
 class Post(models.Model):
