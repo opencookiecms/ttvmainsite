@@ -159,9 +159,6 @@ class EventPhoto(models.Model):
     # event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
     # imgtitle = models.CharField(max_length=150, null=True,blank=True)
 
-class PhotoEvent(models.Model):
-    image = models.ImageField(null=True, blank=True)
-
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     content = models.TextField(null=True, blank=True)

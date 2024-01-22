@@ -52,6 +52,7 @@ admin.site.register(Herosix)
 admin.site.register(Heroseven)
 admin.site.register(News)
 admin.site.register(EventNews)
+admin.site.register(EventPhoto)
 
 #Event
 # class EventPhotosInline(admin.TabularInline):
