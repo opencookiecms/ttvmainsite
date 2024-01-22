@@ -143,6 +143,22 @@ class Productspecs(models.Model):
     requirement = models.CharField(max_length=100, null=True, blank=True)
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
+#-------------------------events-----------------------
+class EventNews(models.Model):
+    ttitle = models.CharField(max_length=150, null=True, blank=True)
+    eventtitle = models.CharField(max_length=200, null=True, blank=True)
+    eventcontent = models.TextField(null=True, blank=True)
+    eventlink = models.CharField(max_length=150, null=True, blank=True)
+    slug = models.CharField(max_length=200, null=True, blank=True) 
+
+    def __str__(self):
+        return self.ttitle
+    
+class EventPhoto(models.Model):
+    event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
+    img = models.ImageField(null=True, blank=True)
+    imgtitle = models.CharField(max_length=150, null=True,blank=True)
+
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     content = models.TextField(null=True, blank=True)
@@ -182,20 +198,6 @@ class News(models.Model):
     def __str__(self):
         return self.titles
 
-class EventNews(models.Model):
-    ttitle = models.CharField(max_length=150, null=True, blank=True)
-    eventtitle = models.CharField(max_length=200, null=True, blank=True)
-    eventcontent = models.TextField(null=True, blank=True)
-    eventlink = models.CharField(max_length=150, null=True, blank=True)
-    slug = models.CharField(max_length=200, null=True, blank=True) 
-
-    def __str__(self):
-        return self.ttitle
-    
-class EventPhoto(models.Model):
-    event = models.ForeignKey(EventNews, blank=True, null=True,on_delete = models.SET_NULL)
-    img = models.ImageField(null=True, blank=True)
-    imgtitle = models.CharField(max_length=150, null=True,blank=True)
 
 class Annoucement(models.Model):
     anoncetitle = models.CharField(max_length=150, null=True, blank=True)
