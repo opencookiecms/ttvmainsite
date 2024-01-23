@@ -560,9 +560,6 @@ class Media(models.Model):
     def is_published(self):
         return self.published <=timezone.now()
     
-    current_datetime=datetime.now()
-    some_future_datetime=current_datetime+timedelta(days=1)
-    
 new_post = Post.objects.create(
     title="Scheduled Post",
     content="this is scheduled",
