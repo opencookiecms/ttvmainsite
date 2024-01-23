@@ -6,6 +6,7 @@ from django.dispatch import receiver
 from django.utils import timezone
 import os
 
+
 # Create your models here.
 
 class Category(models.Model):
@@ -550,8 +551,11 @@ class Job(models.Model):
 class Media(models.Model):
     medtitle = models.CharField(max_length=150, null=True,blank=True)
     vid = models.FileField(null=True, blank=True)
-    publish = models.DateTimeField(default=timezone.now)
+    publish = models.DateTimeField(null=True, blank=True)
 
+def schedule_publish(sender, instance, **kwargs):
+    if instance.publish_date and instance.punlish_date > timezone.now():
+        print(f"Scheduling post '{instance.medtitle}' for {instance.publish_date}")
 #Request Form
 class ReqForm(models.Model):
     contactname = models.CharField(max_length=100, null=False, blank=False)
