@@ -552,6 +552,11 @@ class Media(models.Model):
     vid = models.FileField(null=True, blank=True)
     publish = models.DateTimeField(default=timezone.now)
 
+    def publish(self):
+        self.published_at = timezone.now()
+        self.save()
+
+
 #Request Form
 class ReqForm(models.Model):
     contactname = models.CharField(max_length=100, null=False, blank=False)
