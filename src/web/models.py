@@ -4,8 +4,11 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.utils import timezone
+from datetime import datetime, timedelta
 import os
 
+current_datetime=datetime.now()
+some_future_datetime=current_datetime+timedelta(days=1)
 
 # Create your models here.
 
@@ -556,6 +559,9 @@ class Media(models.Model):
 
     def is_published(self):
         return self.published <=timezone.now()
+    
+    current_datetime=datetime.now()
+    some_future_datetime=current_datetime+timedelta(days=1)
     
 new_post = Post.objects.create(
     title="Scheduled Post",
