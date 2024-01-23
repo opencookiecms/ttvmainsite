@@ -63,7 +63,7 @@ urlpatterns = [
     #path('request',views.re, name="request"),
 
     #tests
-    #path('test', views.media, name='test'),
+    path('test', views.media, name='test'),
     # path('test-robotics-mainpage/<str:slug>', views.trpv, name="test-robotics-mainpage"),
     #path('test-career',views.career, name="test-career"),
 
