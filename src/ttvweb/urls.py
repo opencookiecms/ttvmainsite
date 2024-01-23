@@ -65,7 +65,7 @@ urlpatterns = [
     #tests
     #path('test', views.media, name='test'),
     # path('test-robotics-mainpage/<str:slug>', views.trpv, name="test-robotics-mainpage"),
-    path('test-career',views.career, name="test-career"),
+    #path('test-career',views.career, name="test-career"),
 
     #not in use
     # path('mission-vision',views.vision, name="vision"),
