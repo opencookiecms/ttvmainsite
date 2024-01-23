@@ -566,7 +566,7 @@ class Media(models.Model):
 new_post = Post.objects.create(
     title="Scheduled Post",
     content="this is scheduled",
-    published=some_future_datetime,
+    publish_date=some_future_datetime,
 )
 
 #Request Form
