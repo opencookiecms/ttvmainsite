@@ -695,6 +695,7 @@ def hrForm(request):
 def media(request):
     company = Company.objects.get(id=1)
     media = Media.objects.all()
+    meta = Metapro.objects.get(position=3)
 
     context = {
         'title': 'Media',
@@ -705,16 +706,66 @@ def media(request):
     }
     return render (request, 'pages/media2.html', context)
 
-def hrForm(request):
+def req(request):
+    company = Company.objects.get(id=1)
+    meta = Metapro.objects.get(position=3)
+
     if request.method == 'POST':
         form = ReqForm(request.POST)
-        if form.is_valid():
-            pass
+       
+        # if form.is_valid():
+        #     # Save the form data to the database
+        #     form.save()
+        #     # Send an email with the form data
+        #     #check which job type he is applying for
+        #     if form.cleaned_data["jobtype"] == 'Full Time':
+        #         job = form.cleaned_data["fulltime"]
+        #     elif form.cleaned_data["jobtype"] == 'Internship':
+        #         job = form.cleaned_data["internship"]
+
+        #     #email contents
+        #     subject = 'Job Application for ' + job 
+        #     message = f'Name: {form.cleaned_data["contactname"]}\nEmail: {form.cleaned_data["contactemail"]}\nPhone Number: {form.cleaned_data["contacttel"]}\nCountry: {form.cleaned_data["country"]}\nJob Position Applied: {job} ({form.cleaned_data["jobtype"]})'
+           
+        #     #domain email
+        #     from_email = settings.SERVER_EMAIL
+          
+        #     #recipient email
+        #     recipient_list = ['mvr-enews@ttvision-tech.com']
+        #     #recipient_list = ['adriannasim@gmail.com'] (for testing purposes)
+          
+        #     #attaching contents to the email to be sent
+        #     email = EmailMessage(subject, message, from_email, recipient_list)
+        
+        #     #renaming the files using 
+        #     fname = form.cleaned_data["contactname"]
+        #     fname = fname.replace(' ', '_')
+        #     rpath = os.path.join(settings.MEDIA_ROOT, f'resume/resume-{fname}.pdf')
+        #     apath = os.path.join(settings.MEDIA_ROOT, f'resume/applicationform-{fname}.pdf')
+
+        #     #attaching files to email
+        #     email.attach_file(rpath)
+        #     email.attach_file(apath)
+
+        #     email.send()
+        #     #redirect to success
+        #     return redirect('contactdone')
+        # else:
+        #     print(form.errors)
+        #     print('Failed to send')
     else:
-        form = ReqForm()
+        form = HrForm()
 
-    return render (request, 'ReqForm.html', {'form': form})
+    context = {
+        'title': 'Request Form',
+        'form':form,
+        'com':company,
+        'meta':meta,
+        'keywords': "contact, contact us, location, tel, telephone, email, fax, phone, sales@ttvision-tech.com, 604-6456294, 604-6456295",
+        'description': "Contact Us At Email: 'sales@ttvision-tech.com' | Tel: 604-6456294 | Fax:604-6456295 | Location: Plot 106, Hilir Sungai Keluang 5, Bayan Lepas Phase 4, 11900, Penang, Malaysia"
+    }
 
+    return render(request, 'pages/ReqForm.html', context)
 #------------------------not in use--------------------------------
 # def vision(request):
 #     postvision = Postsection.objects.get(id=1)
