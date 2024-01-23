@@ -553,7 +553,7 @@ class Media(models.Model):
     publish = models.DateTimeField(default=timezone.now)
 
     def publish(self):
-        self.published_at = timezone.now()
+        self.publish = timezone.now()
         self.save()
 
 
