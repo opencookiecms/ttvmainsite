@@ -561,7 +561,7 @@ current_datetime=datetime.now()
 some_future_datetime_str="2024-01-20 12:0:0"
 some_future_datetime=datetime.strptime(some_future_datetime_str, "%Y-%m-%d %H:%M:%S")
     
-new_media = Post.objects.create(
+new_media = Media.objects.create(
     medtitle="Scheduled Post",
     vid=None,
     publish_date=some_future_datetime,
