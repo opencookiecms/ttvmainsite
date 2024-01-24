@@ -7,10 +7,6 @@ from django.utils import timezone
 from datetime import datetime, timedelta
 import os
 
-current_datetime=datetime.now()
-some_future_datetime_str="2024-01-20 12:0:0"
-some_future_datetime=datetime.strptime(some_future_datetime_str, "%Y-%m-%d %H:%M:%S")
-
 # Create your models here.
 
 class Category(models.Model):
@@ -560,6 +556,10 @@ class Media(models.Model):
 
     def is_published(self):
         return self.published or (self.publish_date and self.publish_date >=timezone.now())
+    
+current_datetime=datetime.now()
+some_future_datetime_str="2024-01-20 12:0:0"
+some_future_datetime=datetime.strptime(some_future_datetime_str, "%Y-%m-%d %H:%M:%S")
     
 new_media = Post.objects.create(
     medtitle="Scheduled Post",
