@@ -8,7 +8,8 @@ from datetime import datetime, timedelta
 import os
 
 current_datetime=datetime.now()
-some_future_datetime=current_datetime+timedelta(days=1)
+some_future_datetime_str="2024-01-20 12:0:0"
+some_future_datetime=datetime.strptime(some_future_datetime_str, "%Y-%m-%d %H:%M:%S")
 
 # Create your models here.
 
