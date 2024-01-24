@@ -551,6 +551,8 @@ class Job(models.Model):
 class Media(models.Model):
     medtitle = models.CharField(max_length=150, null=True,blank=True)
     vid = models.FileField(null=True, blank=True)
+    publish_date = models.DateTimeField()
+    published = models.BooleanField()
 
 #Request Form
 class ReqForm(models.Model):
