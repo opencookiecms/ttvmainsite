@@ -711,7 +711,7 @@ def req(request):
     meta = Metapro.objects.get(position=3)
 
     if request.method == 'POST':
-        form = ReqForm(request.POST)
+        form = ReqForm(request.POST or None)
        
         # if form.is_valid():
         #     # Save the form data to the database
@@ -753,8 +753,6 @@ def req(request):
         # else:
         #     print(form.errors)
         #     print('Failed to send')
-    else:
-        form = ReqForm()
 
     context = {
         'title': 'Request Form',

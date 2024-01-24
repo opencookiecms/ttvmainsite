@@ -615,7 +615,7 @@ class ReqForm(forms.ModelForm):
     capcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     class Meta:
-        model =Req
+        model = Req
         fields = [
             'contactname', 
             'contactemail', 
