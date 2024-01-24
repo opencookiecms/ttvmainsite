@@ -58,8 +58,8 @@ urlpatterns = [
 #------------------------------Career page-------------------------------
     path('career',views.career, name="career"),
 
-    path('reqform',views.req, name="reqform"),
-    path('reqform/success',views.contactdone, name="contactdone"),
+    path('request',views.req, name="request"),
+    path('request/success',views.contactdone, name="contactdone"),
     #path('request',views.re, name="request"),
 
     #tests
