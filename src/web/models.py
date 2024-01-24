@@ -551,7 +551,7 @@ class Job(models.Model):
 #media
 class Media(models.Model):
     medtitle = models.CharField(max_length=150, null=True,blank=True)
-    vid = models.FileField(upload_to='videos/'null=True, blank=True)
+    vid = models.FileField(upload_to='videos/', null=True, blank=True)
     publish_date = models.DateTimeField(default=timezone.now)
     published = models.BooleanField(default=False)
 
