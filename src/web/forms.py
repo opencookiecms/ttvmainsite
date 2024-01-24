@@ -1,6 +1,6 @@
 from django import forms
 from django.db import models
-from .models import Contact, Newsletter, Hr, ReqForm
+from .models import Contact, Newsletter, Hr, Req
 from django_countries import Countries
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
@@ -616,7 +616,7 @@ class ReqForm(forms.ModelForm):
     capcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     class Meta:
-        models=ReqForm
+        models=Req
         fields = [
             'contactname', 
             'contactemail', 
