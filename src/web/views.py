@@ -754,7 +754,7 @@ def req(request):
         #     print(form.errors)
         #     print('Failed to send')
     else:
-        form = ReqForm()
+        form = HrForm()
 
     context = {
         'title': 'Request Form',
