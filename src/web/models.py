@@ -554,19 +554,6 @@ class Media(models.Model):
     publish_date = models.DateTimeField()
     published=models.BooleanField(default=False)
 
-    def is_published(self):
-        return self.published or (self.publish_date and self.publish_date >=timezone.now())
-    
-current_datetime=datetime.now()
-some_future_datetime_str="2024-01-20 12:0:0"
-some_future_datetime=datetime.strptime(some_future_datetime_str, "%Y-%m-%d %H:%M:%S")
-    
-new_media = Media.objects.create(
-    medtitle="Scheduled Post",
-    vid=None,
-    publish_date=some_future_datetime,
-)
-
 #Request Form
 class ReqForm(models.Model):
     contactname = models.CharField(max_length=100, null=False, blank=False)
