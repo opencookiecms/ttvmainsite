@@ -71,7 +71,7 @@ admin.site.register(Metapro)
 admin.site.register(Hr)
 admin.site.register(Job)
 admin.site.register(Media)
-admin.site.register(ReqForm)
+admin.site.register(Req)
 
 #configs
 # class ProductfeasAdmin(admin.ModelAdmin):
