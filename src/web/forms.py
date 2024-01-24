@@ -1,6 +1,6 @@
 from django import forms
 from django.db import models
-from .models import Contact, Newsletter, Hr, Request
+from .models import Contact, Newsletter, Hr, ReqForm
 from django_countries import Countries
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox

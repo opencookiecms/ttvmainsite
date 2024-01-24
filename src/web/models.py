@@ -554,7 +554,7 @@ class Media(models.Model):
     vid = models.FileField(upload_to='videos/', null=True, blank=True)
 
 #Request Form
-class Request(models.Model):
+class ReqForm(models.Model):
     contactname = models.CharField(max_length=100, null=False, blank=False)
     contactemail = models.EmailField(null=False, blank=False)
     companyname = models.CharField(max_length=100, null=False, blank=False)
