@@ -5,6 +5,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.utils import timezone
 from datetime import datetime, timedelta
+from django.core.files import File
 import os
 
 # Create your models here.
@@ -550,20 +551,25 @@ class Job(models.Model):
 #media
 class Media(models.Model):
     medtitle = models.CharField(max_length=150, null=True,blank=True)
-    vid = models.FileField(null=True, blank=True)
-    publish_date = models.DateTimeField(null=True)
+    vid = models.FileField(upload_to='videos/'null=True, blank=True)
+    publish_date = models.DateTimeField(default=timezone.now)
     published = models.BooleanField(default=False)
 
     def is_published(self):
         return self.published or (self.publish_date and self.publish_date >=timezone.now())
     
 current_datetime=datetime.now()
-some_future_datetime_str="2024-01-20 12:00:00"
+some_future_datetime_str="2024-01-25 12:00:00"
 some_future_datetime=datetime.strptime(some_future_datetime_str, "%Y-%m-%d %H:%M:%S")
     
+video_path='C:\Users\MSI KATANA\Downloads\29 Dec 2022 - TTVHB - Coverage on TV3.mp4'
+
+with open(video_path,'rb') as video_file:
+    video=File(video_file)
+    
 new_media = Media.objects.create(
-    medtitle="Scheduled Post",
-    vid=None,
+    medtitle="Test",
+    vid=video,
     publish_date=some_future_datetime,
     )
 
