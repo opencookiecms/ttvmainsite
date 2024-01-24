@@ -590,6 +590,7 @@ class HrForm(forms.ModelForm):
     resume = forms.FileField(label='Upload Your Resume', required=False, widget=forms.ClearableFileInput(attrs={'multiple': False}))
     appform = forms.FileField(label='Upload Your Application Form', required=False, widget=forms.ClearableFileInput(attrs={'multiple': False}))
     capcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+    companyname = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Company Name Here'}))
 
     class Meta:
         model = Hr
