@@ -558,7 +558,7 @@ class Media(models.Model):
     published=models.BooleanField(default=False)
 
     def is_published(self):
-        return self.published and self.publish_date >=timezone.now()
+        return self.published or (self.publish_date and self.publish_date >=timezone.now())
     
 new_post = Post.objects.create(
     title="Scheduled Post",
