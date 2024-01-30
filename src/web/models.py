@@ -147,9 +147,9 @@ class Productspecs(models.Model):
 
 #-------------------------events-----------------------
 class EventNews(models.Model):
-    ttitle = models.CharField(max_length=150, null=True, blank=True)
-    eventcontent = models.TextField(null=True, blank=True)
-    slug = models.CharField(max_length=200, null=True, blank=True) 
+    ttitle = models.CharField(verbose_name='Event Title', max_length=150, null=True, blank=True)
+    eventcontent = models.TextField(verbose_name='Event Description', null=True, blank=True)
+    slug = models.CharField(verbose_name='Event Link', max_length=200, null=True, blank=True) 
 
     def __str__(self):
         return self.ttitle
