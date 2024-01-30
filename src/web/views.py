@@ -107,6 +107,7 @@ def newsletter(request):
         form = NewsletterForm(request.POST)
         if form.is_valid():
             form.save()
+            #first email (to customer)-----------------------------------------------------------------------
             #email contents
             subject = 'Thanks for subscribing to our newsletter!'
             message = f'Dear {form.cleaned_data["newname"]}, \n\nThank you for subscribing to our newsletter. In the meantime, feel free to check out our social media sites:\nLinkedin: https://www.linkedin.com/company/ttvision-technologies/ \nYoutube: https://www.youtube.com/@ttvisiontechnologies/ \n\nRegards,\nTT Vision\nsales@ttvision-tech.com\n+604-6456294'
@@ -117,6 +118,18 @@ def newsletter(request):
             #attaching contents to the email to be sent
             email = EmailMessage(subject, message, from_email, recipient_list)
             email.send()
+
+            #second email (to sales dept)-------------------------------------------------------------------
+            #email contents
+            subject2 = 'New Newsletter Subscription'
+            message2 = f'Name: {form.cleaned_data["newname"]}\nCompany Name: {form.cleaned_data["company"]}\nEmail: {form.cleaned_data["mailaddress"]}'
+            #recipient email
+            #recipient_list2 = ['mvr-enews@ttvision-tech.com']
+            recipient_list2 = ['adriannasim@gmail.com'] #testing
+            #attaching contents to the email to be sent
+            email2 = EmailMessage(subject2, message2, from_email, recipient_list2)
+            email2.send()
+
             #redirect to success
             return redirect('contactdone')
         else:
