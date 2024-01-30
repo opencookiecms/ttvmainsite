@@ -30,11 +30,39 @@
                             <div class="list-style5 mb-1-9 wow fadeInUp" data-wow-delay="200ms">
                                 <ul class="bg-light mb-0">
                                     {% for i in allevents %}
+                                        {if i.slug == }
                                     <li><a href="{% url 'event' slug=i.slug %}">{{i.ttitle}}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
-                            <!--Second row (Enquiry container)-->
+                            <!-- Second row (Paginator)-->
+                            <div class="wow fadeIn mt-2-9" data-wow-delay="200ms">
+                                {% if allevents.has_other_pages %}
+                                <ul class="pagination justify-content-center d-block d-sm-flex text-center text-sm-start">
+    
+                                    {% if news.has_previous %}
+                                    <li><a class="page-numbers" href="news-list?page={{ news.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
+                                    {% else %}
+          
+                                    {% endif %}
+                                    
+                                    {% for i in news.paginator.page_range %}
+                                        {% if news.number == i %}
+                                        <li><span aria-current="page" class="page-numbers current">{{ i }}</span></li>
+                                        {% else %}
+                                        <li><a class="page-numbers" href="news-list?page={{ i }}">{{ i }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+    
+                                    {% if news.has_next %}
+                                    <li><a class="page-numbers" href="news-list?page={{ news.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
+                                    {% else %}
+                                 
+                                    {% endif %}
+                                </ul>
+                                {% endif %}
+                            </div>
+                            <!--Third row (Enquiry container)-->
                             <div class="bg-img bg-dark cover-background rounded wow fadeInUp" data-wow-delay="200ms" data-overlay-dark="85" data-background="img/bg/bg-06.jpg">
                                 <div class="position-relative z-index-9 text-center py-5 px-1-9">
                                     <i class="fa fa-smile-o  text-white mb-4 display-14"></i>
