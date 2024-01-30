@@ -122,10 +122,10 @@ def newsletter(request):
             #second email (to sales dept)-------------------------------------------------------------------
             #email contents
             subject2 = 'New Newsletter Subscription'
-            message2 = f'Name: {form.cleaned_data["newname"]}\nCompany Name: {form.cleaned_data["company"]}\nEmail: {form.cleaned_data["mailaddress"]}'
+            message2 = f'Customer Name: {form.cleaned_data["newname"]}\nCompany Name: {form.cleaned_data["company"]}\nCustomer Email: {form.cleaned_data["mailaddress"]}'
             #recipient email
-            #recipient_list2 = ['mvr-enews@ttvision-tech.com']
-            recipient_list2 = ['adriannasim@gmail.com'] #testing
+            recipient_list2 = ['mvr-enews@ttvision-tech.com']
+            #recipient_list2 = ['adriannasim@gmail.com'] #testing
             #attaching contents to the email to be sent
             email2 = EmailMessage(subject2, message2, from_email, recipient_list2)
             email2.send()

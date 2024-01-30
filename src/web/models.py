@@ -489,7 +489,6 @@ class Newsletter(models.Model):
     mailaddress = models.CharField(max_length=150, null=True, blank=True)
     newname = models.CharField(max_length=150, null=True, blank=True)
     company  = models.CharField(max_length=150, null=True, blank=True)
-    publish = models.DateTimeField(default=timezone.now)
 
 
 class Pressrelease(models.Model):
