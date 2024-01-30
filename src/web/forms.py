@@ -20,6 +20,7 @@ class NewsletterForm(forms.ModelForm):
     mailaddress = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name Here'}))
     newname = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name Here'}))
     company  = forms.CharField(required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name Here'}))
+    capcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     class Meta:
         model = Newsletter
