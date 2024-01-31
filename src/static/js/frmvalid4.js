@@ -84,7 +84,6 @@ formhr.addEventListener('submit', function (e){
     let isUsernameValid = checkUsernameReq(),
         isEmailValid = checkEmailReq(),
         isCompanyValid = checkCompanyReq();
-        
 
     let isFormValid = isUsernameValid &&
         isEmailValid &&
