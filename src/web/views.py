@@ -761,8 +761,8 @@ def req(request):
         #     email.attach_file(apath)
 
         #     email.send()
-        #     #redirect to success
-        #     return redirect('contactdone')
+            #redirect to success
+            return redirect('contactdone')
         # else:
         #     print(form.errors)
         #     print('Failed to send')
