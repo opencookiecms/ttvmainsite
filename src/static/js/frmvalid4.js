@@ -80,7 +80,7 @@ const showSuccessReq = (input) => {
     error.textContent = '';
 }
 
-formhr.addEventListener('submit', function (e){
+reqform.addEventListener('submit', function (e){
     e.preventDefault();
 
     let isUsernameValid = checkUsernameReq(),
@@ -111,7 +111,7 @@ const debounceReq = (fn, delay = 500) => {
     };
 };
 
-formhr.addEventListener('input', debounceReq(function (e) {
+reqform.addEventListener('input', debounceReq(function (e) {
     switch (e.target.id) {
         case 'username':
             checkUsernameReq();
@@ -121,7 +121,6 @@ formhr.addEventListener('input', debounceReq(function (e) {
             break;
     }
 }));
-
 
 var input = document.querySelector("#id_contacttel");
 var iti = window.intlTelInput(input, {
