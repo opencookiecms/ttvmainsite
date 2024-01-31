@@ -113,11 +113,14 @@ const debounceReq = (fn, delay = 500) => {
 
 reqform.addEventListener('input', debounceReq(function (e) {
     switch (e.target.id) {
-        case 'username':
+        case 'name':
             checkUsernameReq();
             break;
         case 'email':
             checkEmailReq();
+            break;
+        case 'company':
+            checkCompanyReq();
             break;
     }
 }));
