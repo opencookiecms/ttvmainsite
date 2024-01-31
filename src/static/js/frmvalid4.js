@@ -42,9 +42,6 @@ const checkCompanyReq = () => {
     console.log ('Company Input:', company);
     if (!isRequiredReq(company)) {
         showErrorReq(reqcompany, 'Company cannot be blank.');
-    } else if (!isCompanyValid(company)) {
-        console.log('Validation Failed');
-        showErrorReq(reqcompany, 'Company is not valid.')
     } else {
         showSuccessReq(reqcompany);
         valid = true;
