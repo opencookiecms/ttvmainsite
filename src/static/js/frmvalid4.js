@@ -42,7 +42,7 @@ const checkCompanyReq = () => {
     const company = reqcompany.value.trim();
     if (!isRequiredReq(company)) {
         showErrorReq(reqcompany, 'Company cannot be blank.');
-    } else if (!isCompanyValid(email)) {
+    } else if (!isCompanyValid(company)) {
         showErrorReq(reqcompany, 'Company is not valid.')
     } else {
         showSuccessReq(reqcompany);
