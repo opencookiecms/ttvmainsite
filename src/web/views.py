@@ -778,7 +778,7 @@ def req(request):
         'description': "Contact Us At Email: 'sales@ttvision-tech.com' | Tel: 604-6456294 | Fax:604-6456295 | Location: Plot 106, Hilir Sungai Keluang 5, Bayan Lepas Phase 4, 11900, Penang, Malaysia"
     }
 
-    return render(request, 'pages/req.html', context)
+    return render(request, 'pages/reqpage.html', context)
 #------------------------not in use--------------------------------
 # def vision(request):
 #     postvision = Postsection.objects.get(id=1)
