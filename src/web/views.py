@@ -726,9 +726,9 @@ def req(request):
     if request.method == 'POST':
         form = ReqForm(request.POST)
        
-        # if form.is_valid():
-        #     # Save the form data to the database
-        #     form.save()
+        if form.is_valid():
+            # Save the form data to the database
+            form.save()
         #     # Send an email with the form data
         #     #check which job type he is applying for
         #     if form.cleaned_data["jobtype"] == 'Full Time':
