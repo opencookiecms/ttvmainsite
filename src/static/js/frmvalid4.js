@@ -22,7 +22,6 @@ const checkUsernameReq = () => {
     return valid;
 };
 
-
 const checkEmailReq = () => {
     let valid = false;
     const email = reqemail.value.trim();
