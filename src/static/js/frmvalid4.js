@@ -39,7 +39,7 @@ const checkEmailReq = () => {
 const checkCompanyReq = () => {
     let valid = false;
     const company = reqcompany.value.trim();
-    console.log ('Company Input:', company)
+    console.log ('Company Input:', company);
     if (!isRequiredReq(company)) {
         showErrorReq(reqcompany, 'Company cannot be blank.');
     } else if (!isCompanyValid(company)) {
